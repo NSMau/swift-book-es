@@ -1,5 +1,5 @@
 .DS_Store
-# .docc-build
+.docc-build
 .swiftpm
 /.build
 /Package.resolved
