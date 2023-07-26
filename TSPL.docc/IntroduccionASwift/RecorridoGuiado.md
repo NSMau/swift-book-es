@@ -1,10 +1,10 @@
-# A Swift Tour
+# Un Recorrido por Swift
 
-Explore the features and syntax of Swift.
+Explora las características y la sintaxis de Swift.
 
-Tradition suggests that the first program in a new language
-should print the words “Hello, world!” on the screen.
-In Swift, this can be done in a single line:
+Es costumbre que el primer programa en un nuevo lenguaje
+imprima la frase “¡Hola, mundo!” en la pantalla.
+En Swift, esto se puede conseguir mediante una sola línea de código:
 
 <!--
   K&R uses “hello, world”.
@@ -12,8 +12,8 @@ In Swift, this can be done in a single line:
 -->
 
 ```swift
-print("Hello, world!")
-// Prints "Hello, world!"
+print("¡Hola, mundo!")
+// Imprime "¡Hola, mundo!"
 ```
 
 <!--
@@ -25,23 +25,23 @@ print("Hello, world!")
   ```
 -->
 
-If you have written code in C or Objective-C,
-this syntax looks familiar to you ---
-in Swift, this line of code is a complete program.
-You don't need to import a separate library for functionality like
-input/output or string handling.
-Code written at global scope is used
-as the entry point for the program,
-so you don't need a `main()` function.
-You also don't need to write semicolons
-at the end of every statement.
+Si has desarollado anteriormente en C u Objective-C,
+esta sintaxis te resultará familiar;
+en Swift, esta línea de código representa un programa completo.
+No hace falta importar una biblioteca aparte
+para contar con funciones como entrada/salida o manejo de cadenas de texto.
+Todo código escrito en el ámbito (_scope_) global se utiliza
+como punto de entrada para el programa,
+por lo que no necesitamos una función `main()`.
+Tampoco hace falta escribir punto y coma
+al final de cada declaración.
 
-This tour gives you enough information
-to start writing code in Swift
-by showing you how to accomplish a variety of programming tasks.
-Don’t worry if you don’t understand something ---
-everything introduced in this tour
-is explained in detail in the rest of this book.
+Esta guía te proporciona suficiente información
+para comenzar a desarrollar código en Swift
+al enseñarte cómo realizar una variedad de tareas de programación.
+No te preocupes si hay algo que no entiendes ---
+todo lo presentado en esta guía
+se explica en detalle en el resto de este libro.
 
 ## Simple Values
 
