@@ -1,4 +1,4 @@
-# About Swift
+# Acerca de Swift
 
 Understand the high-level goals of the language.
 

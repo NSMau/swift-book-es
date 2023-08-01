@@ -12,11 +12,11 @@
 
 ## Topics
 
-### Welcome to Swift
+### Introduccion a Swift
 
-- <doc:AboutSwift>
-- <doc:Compatibility>
-- <doc:GuidedTour>
+- <doc:AcercaDeSwift>
+- <doc:Compatibilidad>
+- <doc:RecorridoGuiado>
 
 ### Language Guide
 

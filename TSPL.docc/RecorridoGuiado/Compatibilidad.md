@@ -1,4 +1,4 @@
-# Version Compatibility
+# Compatibilidad de versiones
 
 Learn what functionality is available in older language modes.
 
