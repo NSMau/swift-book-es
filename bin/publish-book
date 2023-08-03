@@ -28,7 +28,7 @@ set -eu
 # any changes to the content.
 export DOCC_JSON_PRETTYPRINT="YES"
 
-output="./swift-book"
+output="./docs"
 
 # Start at the top level directory of the repository.
 cd "$(git rev-parse --show-toplevel)"
@@ -38,7 +38,7 @@ cp -n TSPL.docc/header-publish.html TSPL.docc/header.html
 
 docc convert \
     --experimental-enable-custom-templates \
-    --hosting-base-path swift-book \
+    --hosting-base-path https://patternina.github.io/swift-book-es \
     --output-path "$output" \
     TSPL.docc
 
@@ -47,7 +47,7 @@ rm TSPL.docc/header.html
 # Copy the redirect pages into every location where the legacy RST-based
 # pipeline created an HTML page, to keep links to those chapters and
 # sections working.
-cp -r bin/redirects/GuidedTour "$output"
+cp -r bin/redirects/RecorridoGuiado "$output"
 cp -r bin/redirects/LanguageGuide "$output"
 cp -r bin/redirects/ReferenceManual "$output"
 cp -r bin/redirects/RevisionHistory "$output"
