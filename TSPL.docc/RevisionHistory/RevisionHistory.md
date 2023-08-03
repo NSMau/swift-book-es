@@ -415,7 +415,7 @@ Review the recent changes to this book.
   about property observers being called
   when you pass a property as an in-out parameter.
 - Added a section about error handling
-  to the <doc:GuidedTour> chapter.
+  to the <doc:RecorridoGuiado> chapter.
 - Updated figures in the
   <doc:AutomaticReferenceCounting#Weak-References>
   section to show the deallocation process more clearly.
@@ -447,7 +447,7 @@ Review the recent changes to this book.
 - Improved the discussion of autoclosures
   in the <doc:Closures#Autoclosures> section.
 - Added an example that uses the `??` operator
-  to the <doc:GuidedTour> chapter.
+  to the <doc:RecorridoGuiado> chapter.
 
 **2015-09-16**
 

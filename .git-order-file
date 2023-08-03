@@ -15,9 +15,9 @@
 # discussions of the -O option, and the git-config(1) man page's
 # discussion of diff.orderFile option.
 
-TSPL.docc/GuidedTour/AboutSwift.md
-TSPL.docc/GuidedTour/Compatibility.md
-TSPL.docc/GuidedTour/GuidedTour.md
+TSPL.docc/IntroduccionASwift/AcercaDeSwift.md
+TSPL.docc/IntroduccionASwift/Compatibilidad.md
+TSPL.docc/IntroduccionASwift/RecorridoGuiado.md
 
 TSPL.docc/LanguageGuide/TheBasics.md
 TSPL.docc/LanguageGuide/BasicOperators.md

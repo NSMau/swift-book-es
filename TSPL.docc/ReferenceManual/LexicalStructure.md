@@ -120,7 +120,7 @@ identifiers that begin with two underscores
 are reserved for the Swift compiler and standard library.
 
 To use a reserved word as an identifier,
-put a backtick (\`) before and after it.
+put a backtick (`` ` ``) before and after it.
 For example, `class` isn't a valid identifier,
 but `` `class` `` is valid.
 The backticks aren't considered part of the identifier;
