@@ -12,7 +12,7 @@
 
 ## Temas
 
-### Bienvenido a Swift
+### Introduccion a Swift
 
 - <doc:AcercaDeSwift>
 - <doc:Compatibilidad>
