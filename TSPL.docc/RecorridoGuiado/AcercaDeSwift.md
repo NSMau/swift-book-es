@@ -1,6 +1,6 @@
 # Acerca de Swift
 
-Comprende los objetivos generales del lenguaje.
+Comprende los objetivos de alto nivel del lenguaje.
 
 Swift es una forma increíble de desarrollar software;
 ya sea para teléfonos, computadoras, servidores
@@ -58,11 +58,11 @@ Estamos impacientes por ver lo que creas con él.
 > Conoce más acerca del uso del [software beta de Apple](https://developer.apple.com/es/support/beta-software/).
 
 <!--
-This source file is part of the Swift.org open source project
+Este archivo fuente es parte del proyecto de código abierto Swift.org
 
-Copyright (c) 2014 - 2023 Apple Inc. and the Swift project authors
-Licensed under Apache License v2.0 with Runtime Library Exception
+Copyright (c) 2014 - 2023 Apple Inc. y los autores del proyecto Swift
+Licenciado bajo la Licencia Apache v2.0 con Runtime Library Exception
 
-See https://swift.org/LICENSE.txt for license information
-See https://swift.org/CONTRIBUTORS.txt for the list of Swift project authors
+Consulta https://swift.org/LICENSE.txt para información sobre la licencia
+Consulta https://swift.org/CONTRIBUTING.txt para ver la lista de autores del proyecto Swift
 -->
