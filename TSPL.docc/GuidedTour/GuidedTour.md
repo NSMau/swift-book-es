@@ -43,7 +43,7 @@ No te preocupes si hay algo que no entiendes ---
 todo lo presentado en esta guía
 se explica en detalle en el resto de este libro.
 
-## Valores sencillos
+## Valores Sencillos
 
 Usa `let` para crear una constante y `var` para crear una variable.
 No hace falta saber el valor de una constante a la hora de compilar,
@@ -323,7 +323,7 @@ let diccionarioVacio: [String: Float] = [:]
   ```
 -->
 
-## Flujo de control
+## Flujo de Control
 
 Usa `if` y `switch` para crear condicionales,
 y usa `for-in`, `while`, y `repeat-while`
@@ -712,7 +712,7 @@ print(total)
 Usa `..<` para crear un rango que omita el valor superior,
 y usa `...` para crear uno que incluya ambos valores.
 
-## Funciones y clausuras
+## Funciones y Clausuras
 
 Usa `func` para declarar una función.
 Para llamar una función,
@@ -1058,7 +1058,7 @@ print(numerosOrdenados)
   Omitted custom operators as "advanced" topics.
 -->
 
-## Objetos y clases
+## Objetos y Clases
 
 Usa `class` seguido del nombre de la clase para crear una clase.
 La declaración de una propiedad en una clase, se escribe igual
@@ -1448,7 +1448,7 @@ let longitudDeLosLados = cuadradoOpcional?.longitudDeLosLados
   ```
 -->
 
-## Enumeraciones y estructuras
+## Enumeraciones y Estructuras
 
 Usa `enum` para crear una enumeración.
 Al igual que las clases y todos los demás tipos con nombre,
@@ -1878,7 +1878,7 @@ Task {
   ```
 -->
 
-## Protocolos y extensiones
+## Protocolos y Extensiones
 
 Usa `protocol` para declarar un protocolo.
 
@@ -2053,7 +2053,7 @@ Esto significa que no puedes acceder, de manera accidental,
 a métodos o propiedades que la clase implementa
 además de su conformidad con el protocolo.
 
-## Manejo de errores
+## Manejo de Errores
 
 Para representar errores, usa cualquier tipo que adopte el protocolo `Error`.
 
@@ -2441,7 +2441,7 @@ es lo mismo que escribir `<T> ... where T: Equatable`.
 <!--
 This source file is part of the Swift.org open source project
 
-Copyright (c) 2014 - 2022 Apple Inc. and the Swift project authors
+Copyright (c) 2014 - 2023 Apple Inc. and the Swift project authors
 Licensed under Apache License v2.0 with Runtime Library Exception
 
 See https://swift.org/LICENSE.txt for license information

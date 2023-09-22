@@ -1,4 +1,4 @@
-# Advanced Operators
+# Operadores Avanzados
 
 Define custom operators, perform bitwise operations, and use builder syntax.
 
@@ -28,7 +28,7 @@ with custom precedence and associativity values.
 These operators can be used and adopted in your code like any of the predefined operators,
 and you can even extend existing types to support the custom operators you define.
 
-## Bitwise Operators
+## Operadores Bit a Bit
 
 *Bitwise operators* enable you to manipulate
 the individual raw data bits within a data structure.
@@ -39,7 +39,7 @@ such as encoding and decoding data for communication over a custom protocol.
 
 Swift supports all of the bitwise operators found in C, as described below.
 
-### Bitwise NOT Operator
+### Operador NOT Bit a Bit
 
 The *bitwise NOT operator* (`~`) inverts all bits in a number:
 
@@ -81,7 +81,7 @@ Zeros become ones, and ones become zeros.
 The value of `invertedBits` is `11110000`,
 which is equal to an unsigned decimal value of `240`.
 
-### Bitwise AND Operator
+### Operador AND Bit a Bit
 
 The *bitwise AND operator* (`&`) combines the bits of two numbers.
 It returns a new number whose bits are set to `1`
@@ -112,7 +112,7 @@ let middleFourBits = firstSixBits & lastSixBits  // equals 00111100
   ```
 -->
 
-### Bitwise OR Operator
+### Operador OR Bit a Bit
 
 The *bitwise OR operator* (`|`) compares the bits of two numbers.
 The operator returns a new number whose bits are set to `1`
@@ -144,7 +144,7 @@ let combinedbits = someBits | moreBits  // equals 11111110
   ```
 -->
 
-### Bitwise XOR Operator
+### Operador XOR Bit a Bit
 
 The *bitwise XOR operator*, or “exclusive OR operator” (`^`),
 compares the bits of two numbers.
@@ -178,7 +178,7 @@ let outputBits = firstBits ^ otherBits  // equals 00010001
   ```
 -->
 
-### Bitwise Left and Right Shift Operators
+### Operadores Bit a Bit de Desplazamiento a la Izquierda y a la Derecha
 
 The *bitwise left shift operator* (`<<`)
 and *bitwise right shift operator* (`>>`)
@@ -194,7 +194,7 @@ whereas shifting it to the right by one position halves its value.
   TODO: mention the caveats to this claim.
 -->
 
-#### Shifting Behavior for Unsigned Integers
+#### Comportamiento de Desplazamiento para Enteros Sin Signo
 
 The bit-shifting behavior for unsigned integers is as follows:
 
@@ -308,7 +308,7 @@ Because `0x000099` already equals `0x99`,
 which has a decimal value of `153`,
 this value is used without shifting it to the right,
 
-#### Shifting Behavior for Signed Integers
+#### Comportamiento de Desplazamiento para Enteros Con Signo
 
 The shifting behavior is more complex for signed integers than for unsigned integers,
 because of the way signed integers are represented in binary.
@@ -376,7 +376,7 @@ shifting either of them to the right moves them closer to zero.
 Keeping the sign bit the same during this shift means that
 negative integers remain negative as their value moves closer to zero.
 
-## Overflow Operators
+## Operadores de Desbordamiento
 
 If you try to insert a number into an integer constant or variable
 that can't hold that value,
@@ -422,7 +422,7 @@ These operators all begin with an ampersand (`&`):
 - Overflow subtraction (`&-`)
 - Overflow multiplication (`&*`)
 
-### Value Overflow
+### Desbordamiento de Valores
 
 Numbers can overflow in both the positive and negative direction.
 
@@ -496,7 +496,7 @@ or `255` in decimal.
 Overflow also occurs for signed integers.
 All addition and subtraction for signed integers is performed in bitwise fashion,
 with the sign bit included as part of the numbers being added or subtracted,
-as described in <doc:AdvancedOperators#Bitwise-Left-and-Right-Shift-Operators>.
+as described in <doc:AdvancedOperators#Operadores-Bit-a-Bit-de-Desplazamiento-a-la-Izquierda-y-a-la-Derecha>.
 
 ```swift
 var signedOverflow = Int8.min
@@ -533,7 +533,7 @@ wraps around from the maximum valid integer value back to the minimum,
 and overflow in the negative direction
 wraps around from the minimum value to the maximum.
 
-## Precedence and Associativity
+## Precedencia y Asociatividad
 
 Operator *precedence* gives some operators higher priority than others;
 these operators are applied first.
@@ -666,7 +666,7 @@ see [Operator Declarations](https://developer.apple.com/documentation/swift/oper
 > Be careful to ensure that operator interactions still behave in the way you intend
 > when porting existing code to Swift.
 
-## Operator Methods
+## Métodos Operadores
 
 Classes and structures can provide their own implementations of existing operators.
 This is known as *overloading* the existing operators.
@@ -754,7 +754,7 @@ to make the vector `(5.0, 5.0)`, as illustrated below.
 
 ![](vectorAddition)
 
-### Prefix and Postfix Operators
+### Operadores Prefijos y Postfijos
 
 The example shown above demonstrates a custom implementation of a binary infix operator.
 Classes and structures can also provide implementations
@@ -819,7 +819,7 @@ let alsoPositive = -negative
   ```
 -->
 
-### Compound Assignment Operators
+### Operadores de Asignación Compuestos
 
 *Compound assignment operators* combine assignment (`=`) with another operation.
 For example, the addition assignment operator (`+=`)
@@ -899,7 +899,7 @@ original += vectorToAdd
   ```
 -->
 
-### Equivalence Operators
+### Operadores de Equivalencia
 
 By default, custom classes and structures don't have an implementation of
 the *equivalence operators*,
@@ -970,14 +970,14 @@ if twoThree == anotherTwoThree {
 
 In many simple cases, you can ask Swift
 to provide synthesized implementations of the equivalence operators for you,
-as described in <doc:Protocols#Adopting-a-Protocol-Using-a-Synthesized-Implementation>.
+as described in <doc:Protocols#Adoptando-Un-Protocolo-Mediante-Una-Implementación-Sintetizada>.
 
-## Custom Operators
+## Operadores Personalizados
 
 You can declare and implement your own *custom operators* in addition to
 the standard operators provided by Swift.
 For a list of characters that can be used to define custom operators,
-see <doc:LexicalStructure#Operators>.
+see <doc:LexicalStructure#Operadores>.
 
 New operators are declared at a global level using the `operator` keyword,
 and are marked with the `prefix`, `infix` or `postfix` modifiers:
@@ -1038,12 +1038,12 @@ let afterDoubling = +++toBeDoubled
   ```
 -->
 
-### Precedence for Custom Infix Operators
+### Precedencia para Operadores Interfijos Personalizados
 
 Custom infix operators each belong to a precedence group.
 A precedence group specifies an operator's precedence relative
 to other infix operators, as well as the operator's associativity.
-See <doc:AdvancedOperators#Precedence-and-Associativity> for an explanation of
+See <doc:AdvancedOperators#Precedencia-y-Asociatividad> for an explanation of
 how these characteristics affect an infix operator's interaction
 with other infix operators.
 
@@ -1095,7 +1095,7 @@ including a complete list of the operator precedence groups and associativity se
 see [Operator Declarations](https://developer.apple.com/documentation/swift/operator_declarations).
 For more information about precedence groups and to see the syntax for
 defining your own operators and precedence groups,
-see <doc:Declarations#Operator-Declaration>.
+see <doc:Declarations#Declaración-de-Operadores>.
 
 > Note: You don't specify a precedence when defining a prefix or postfix operator.
 > However, if you apply both a prefix and a postfix operator to the same operand,
@@ -1126,7 +1126,7 @@ see <doc:Declarations#Operator-Declaration>.
   ```
 -->
 
-## Result Builders
+## Constructores de Resultados
 
 A *result builder* is a type you define
 that adds syntax for creating nested data,
@@ -1561,16 +1561,16 @@ see <doc:Attributes#resultBuilder>.
   TODO: generic operators
 -->
 
-> Beta Software:
+> Software Beta:
 >
-> This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+> Esta documentación contiene información preliminar sobre una API o tecnología en desarrollo. Esta información está sujeta a cambios, y todo software implementado en conformidad con esta documentación debe ser testeado con el software final del sistema operativo.
 >
-> Learn more about using [Apple's beta software](https://developer.apple.com/support/beta-software/).
+> Conoce más acerca del uso del [software beta de Apple](https://developer.apple.com/es/support/beta-software/).
 
 <!--
 This source file is part of the Swift.org open source project
 
-Copyright (c) 2014 - 2022 Apple Inc. and the Swift project authors
+Copyright (c) 2014 - 2023 Apple Inc. and the Swift project authors
 Licensed under Apache License v2.0 with Runtime Library Exception
 
 See https://swift.org/LICENSE.txt for license information

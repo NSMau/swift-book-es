@@ -1,4 +1,4 @@
-# Declarations
+# Declaraciones
 
 Introduce types, operators, variables, and other names and constructs.
 
@@ -882,7 +882,7 @@ repeatGreeting("Hello, world!", count: 2) //  count is labeled, greeting is not
   ```
 -->
 
-### In-Out Parameters
+### Parámetros *in-out*
 
 In-out parameters are passed as follows:
 
@@ -2708,7 +2708,7 @@ and you use the `async` keyword to indicate this.
 To see examples of initializers in various type declarations,
 see <doc:Initialization>.
 
-### Failable Initializers
+### Inicializadores Falibles
 
 A *failable initializer* is a type of initializer that produces an optional instance
 or an implicitly unwrapped optional instance of the type the initializer is declared on.
@@ -3482,7 +3482,7 @@ For more information, see <doc:Macros>.
 TODO TR: Confirm that the 'where' clause goes after the equals sign.
 -->
 
-## Operator Declaration
+## Declaración de Operadores
 
 An *operator declaration* introduces a new infix, prefix,
 or postfix operator into your program

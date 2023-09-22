@@ -1,4 +1,4 @@
-# Structures and Classes
+# Estructuras y Clases
 
 Model custom types that encapsulate data.
 
@@ -21,7 +21,7 @@ automatically made available for other code to use.
 > instances of *either* a class or a structure type.
 > Because of this, the more general term *instance* is used.
 
-## Comparing Structures and Classes
+## Comparando Estructuras y Clases
 
 Structures and classes in Swift have many things in common.
 Both can:
@@ -61,7 +61,7 @@ see [Choosing Between Structures and Classes](https://developer.apple.com/docume
 > Note: Classes and actors share many of the same characteristics and behaviors.
 > For information about actors, see <doc:Concurrency>.
 
-### Definition Syntax
+### Sintaxis de Definición
 
 Structures and classes have a similar definition syntax.
 You introduce structures with the `struct` keyword
@@ -153,7 +153,7 @@ and an optional `String` value called `name`.
 The `name` property is automatically given a default value of `nil`,
 or “no `name` value”, because it's of an optional type.
 
-### Structure and Class Instances
+### Instancias de Estructuras y Clases
 
 The `Resolution` structure definition and the `VideoMode` class definition
 only describe what a `Resolution` or `VideoMode` will look like.
@@ -189,7 +189,7 @@ in <doc:Initialization>.
   for all properties on a structure or class.
 -->
 
-### Accessing Properties
+### Accediendo a Propiedades
 
 You can access the properties of an instance using *dot syntax*.
 In dot syntax, you write the property name immediately after the instance name,
@@ -248,7 +248,7 @@ print("The width of someVideoMode is now \(someVideoMode.resolution.width)")
   ```
 -->
 
-### Memberwise Initializers for Structure Types
+### Inicializadores a Nivel de Miembro Para Tipos de Estructura
 
 All structures have an automatically generated *memberwise initializer*,
 which you can use to initialize the member properties of new structure instances.
@@ -283,7 +283,7 @@ Initializers are described in more detail in <doc:Initialization>.
   ```
 -->
 
-## Structures and Enumerations Are Value Types
+## Las Estructuras y las Enumeraciones Son Tipos de Valor
 
 A *value type* is a type whose value is *copied*
 when it's assigned to a variable or constant,
@@ -456,7 +456,7 @@ the copy of the original value that was stored in `rememberedDirection`.
   TODO: Should I give an example of passing a value type to a function here?
 -->
 
-## Classes Are Reference Types
+## Las Clases Son Tipos de Referencia
 
 Unlike value types, *reference types* are *not* copied
 when they're assigned to a variable or constant,
@@ -569,7 +569,7 @@ not the values of the constant references to that `VideoMode`.
   and about how you can make a class that's a value type.
 -->
 
-### Identity Operators
+### Operadores de Identidad
 
 Because classes are reference types,
 it's possible for multiple constants and variables to refer to
@@ -650,7 +650,7 @@ for some appropriate meaning of *equal*, as defined by the type's designer.
 When you define your own custom structures and classes,
 it's your responsibility to decide what qualifies as two instances being equal.
 The process of defining your own implementations of the `==` and `!=` operators
-is described in <doc:AdvancedOperators#Equivalence-Operators>.
+is described in <doc:AdvancedOperators#Operadores-de-Equivalencia>.
 
 <!--
   - test: `classesDontGetEqualityByDefault`
@@ -684,7 +684,7 @@ is described in <doc:AdvancedOperators#Equivalence-Operators>.
   TODO: This needs clarifying with regards to function references.
 -->
 
-### Pointers
+### Punteros
 
 If you have experience with C, C++, or Objective-C,
 you may know that these languages use *pointers* to refer to addresses in memory.
@@ -710,16 +710,16 @@ see [Manual Memory Management](https://developer.apple.com/documentation/swift/s
   QUESTION: what's the deal with tuples and reference types / value types?
 -->
 
-> Beta Software:
+> Software Beta:
 >
-> This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+> Esta documentación contiene información preliminar sobre una API o tecnología en desarrollo. Esta información está sujeta a cambios, y todo software implementado en conformidad con esta documentación debe ser testeado con el software final del sistema operativo.
 >
-> Learn more about using [Apple's beta software](https://developer.apple.com/support/beta-software/).
+> Conoce más acerca del uso del [software beta de Apple](https://developer.apple.com/es/support/beta-software/).
 
 <!--
 This source file is part of the Swift.org open source project
 
-Copyright (c) 2014 - 2022 Apple Inc. and the Swift project authors
+Copyright (c) 2014 - 2023 Apple Inc. and the Swift project authors
 Licensed under Apache License v2.0 with Runtime Library Exception
 
 See https://swift.org/LICENSE.txt for license information

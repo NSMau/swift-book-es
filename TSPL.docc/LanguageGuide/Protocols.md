@@ -1295,7 +1295,7 @@ print(somethingTextRepresentable.textualDescription)
 > Note: Types don't automatically adopt a protocol just by satisfying its requirements.
 > They must always explicitly declare their adoption of the protocol.
 
-## Adopting a Protocol Using a Synthesized Implementation
+## Adoptando Un Protocolo Mediante Una Implementación Sintetizada
 
 Swift can automatically provide the protocol conformance
 for `Equatable`, `Hashable`, and `Comparable`

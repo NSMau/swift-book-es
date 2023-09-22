@@ -1,4 +1,4 @@
-# Strings and Characters
+# Cadenas y caracteres
 
 Store and manipulate text.
 
@@ -34,7 +34,7 @@ and provides support for accessing those characters in various Unicode represent
 > For more information about using `String` with Foundation and Cocoa,
 > see [Bridging Between String and NSString](https://developer.apple.com/documentation/swift/string#2919514).
 
-## String Literals
+## Literales de cadena
 
 You can include predefined `String` values within your code as *string literals*.
 A string literal is a sequence of characters
@@ -57,7 +57,7 @@ let someString = "Some string literal value"
 Note that Swift infers a type of `String` for the `someString` constant
 because it's initialized with a string literal value.
 
-### Multiline String Literals
+### Literales de cadena de varias líneas
 
 If you need a string that spans several lines,
 use a multiline string literal ---
@@ -220,7 +220,7 @@ the first and last lines in the string don't begin with any whitespace.
 The middle line has more indentation than the closing quotation marks,
 so it starts with that extra four-space indentation.
 
-### Special Characters in String Literals
+### Caracteres especiales en literales de cadena
 
 String literals can include the following special characters:
 
@@ -229,7 +229,7 @@ String literals can include the following special characters:
   `\"` (double quotation mark) and `\'` (single quotation mark)
 - An arbitrary Unicode scalar value, written as `\u{`*n*`}`,
   where *n* is a 1--8 digit hexadecimal number
-  (Unicode is discussed in <doc:StringsAndCharacters#Unicode> below)
+  (Unicode is discussed in <doc:CadenasYCaracteres#Unicode> below)
 
 <!--
   - test: `stringLiteralUnicodeScalar`
@@ -306,7 +306,7 @@ Escaping all three quotation marks \"\"\"
   ```
 -->
 
-### Extended String Delimiters
+### Delimitadores de cadena extendidos
 
 You can place a string literal within *extended delimiters*
 to include special characters in a string
@@ -347,7 +347,7 @@ Here are three more double quotes: """
   ```
 -->
 
-## Initializing an Empty String
+## Inicialización de una cadena vacía
 
 To create an empty `String` value as the starting point
 for building a longer string,
@@ -396,7 +396,7 @@ if emptyString.isEmpty {
   TODO: init(size, character)
 -->
 
-## String Mutability
+## Mutabilidad de una cadena
 
 You indicate whether a particular `String` can be modified (or *mutated*)
 by assigning it to a variable (in which case it can be modified),
@@ -448,7 +448,7 @@ constantString += " and another Highlander"
 > where you choose between two classes (`NSString` and `NSMutableString`)
 > to indicate whether a string can be mutated.
 
-## Strings Are Value Types
+## Las cadenas son tipos de valor
 
 Swift's `String` type is a *value type*.
 If you create a new `String` value,
@@ -456,7 +456,7 @@ that `String` value is *copied* when it's passed to a function or method,
 or when it's assigned to a constant or variable.
 In each case, a new copy of the existing `String` value is created,
 and the new copy is passed or assigned, not the original version.
-Value types are described in <doc:ClassesAndStructures#Structures-and-Enumerations-Are-Value-Types>.
+Value types are described in <doc:ClasesYEstructuras#Las-estructuras-y-las-enumeraciones-son-tipos-de-valor>.
 
 Swift's copy-by-default `String` behavior ensures that
 when a function or method passes you a `String` value,
@@ -470,7 +470,7 @@ so that actual copying takes place only when absolutely necessary.
 This means you always get great performance
 when working with strings as value types.
 
-## Working with Characters
+## Trabajando con caracteres
 
 You can access the individual `Character` values for a `String`
 by iterating over the string with a `for`-`in` loop:
@@ -501,7 +501,7 @@ for character in "Dog!🐶" {
   ```
 -->
 
-The `for`-`in` loop is described in <doc:ControlFlow#For-In-Loops>.
+The `for`-`in` loop is described in <doc:FlujoDeControl#Ciclos-for-in>.
 
 Alternatively, you can create a stand-alone `Character` constant or variable
 from a single-character string literal by providing a `Character` type annotation:
@@ -539,7 +539,7 @@ print(catString)
   ```
 -->
 
-## Concatenating Strings and Characters
+## Concatenación de cadenas y caracteres
 
 `String` values can be added together (or *concatenated*)
 with the addition operator (`+`) to create a new `String` value:
@@ -679,7 +679,7 @@ so when it's combined with `end`
 the result has three lines,
 as expected.
 
-## String Interpolation
+## Interpolación de cadenas
 
 *String interpolation* is a way to construct a new `String` value
 from a mix of constants, variables, literals, and expressions
@@ -769,7 +769,7 @@ such as a text file or web page.
 Swift's `String` and `Character` types are fully Unicode-compliant,
 as described in this section.
 
-### Unicode Scalar Values
+### Valores escalares Unicode
 
 Behind the scenes,
 Swift's native `String` type is built from *Unicode scalar values*.
@@ -782,7 +782,7 @@ some scalars are reserved for future assignment or for use in UTF-16 encoding.
 Scalar values that have been assigned to a character typically also have a name,
 such as `LATIN SMALL LETTER A` and `FRONT-FACING BABY CHICK` in the examples above.
 
-### Extended Grapheme Clusters
+### Grupos de grafemas extendidos
 
 Every instance of Swift's `Character` type represents
 a single *extended grapheme cluster*.
@@ -890,7 +890,7 @@ let regionalIndicatorForUS: Character = "\u{1F1FA}\u{1F1F8}"
   ```
 -->
 
-## Counting Characters
+## Conteo de caracteres
 
 To retrieve a count of the `Character` values in a string,
 use the `count` property of the string:
@@ -967,12 +967,12 @@ print("the number of characters in \(word) is \(word.count)")
 > the number of 16-bit code units within the string's UTF-16 representation
 > and not the number of Unicode extended grapheme clusters within the string.
 
-## Accessing and Modifying a String
+## Acceso y modificación de una cadena
 
 You access and modify a string through its methods and properties,
 or by using subscript syntax.
 
-### String Indices
+### Índices de una cadena
 
 Each `String` value has an associated *index type*,
 `String.Index`,
@@ -1100,7 +1100,7 @@ for index in greeting.indices {
 > This includes `String`, as shown here,
 > as well as collection types such as `Array`, `Dictionary`, and `Set`.
 
-### Inserting and Removing
+### Insertar y remover
 
 To insert a single character into a string at a specified index,
 use the `insert(_:at:)` method,
@@ -1170,7 +1170,7 @@ welcome.removeSubrange(range)
 > This includes `String`, as shown here,
 > as well as collection types such as `Array`, `Dictionary`, and `Set`.
 
-## Substrings
+## Subcadenas
 
 When you get a substring from a string ---
 for example, using a subscript or a method like `prefix(_:)` ---
@@ -1256,16 +1256,16 @@ The figure below shows these relationships:
 > to accept a `StringProtocol` value.
 > You can call such functions with either a `String` or `Substring` value.
 
-## Comparing Strings
+## Comparación de cadenas
 
 Swift provides three ways to compare textual values:
 string and character equality, prefix equality, and suffix equality.
 
-### String and Character Equality
+### Igualdad de cadenas y caracteres
 
 String and character equality is checked with the “equal to” operator (`==`)
 and the “not equal to” operator (`!=`),
-as described in <doc:BasicOperators#Comparison-Operators>:
+as described in <doc:OperadoresBasicos#Operadores-de-comparación>:
 
 ```swift
 let quotation = "We're a lot alike, you and I."
@@ -1404,7 +1404,7 @@ if latinCapitalLetterA != cyrillicCapitalLetterA {
   https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/Strings/Articles/SearchingStrings.html#//apple_ref/doc/uid/20000149-SW4
 -->
 
-### Prefix and Suffix Equality
+### Igualdad de prefijo y sufijo
 
 To check whether a string has a particular string prefix or suffix,
 call the string's `hasPrefix(_:)` and `hasSuffix(_:)` methods,
@@ -1556,9 +1556,9 @@ print("\(mansionCount) mansion scenes; \(cellCount) cell scenes")
 > Note: The `hasPrefix(_:)` and `hasSuffix(_:)` methods
 > perform a character-by-character canonical equivalence comparison between
 > the extended grapheme clusters in each string,
-> as described in <doc:StringsAndCharacters#String-and-Character-Equality>.
+> as described in <doc:CadenasYCaracteres#Igualdad-de-cadenas-y-caracteres>.
 
-## Unicode Representations of Strings
+## Representación Unicode de cadenas
 
 When a Unicode string is written to a text file or some other storage,
 the Unicode scalars in that string are encoded in one of
@@ -1571,7 +1571,7 @@ and the UTF-32 encoding form (which encodes a string as 32-bit code units).
 Swift provides several different ways to access Unicode representations of strings.
 You can iterate over the string with a `for`-`in` statement,
 to access its individual `Character` values as Unicode extended grapheme clusters.
-This process is described in <doc:StringsAndCharacters#Working-with-Characters>.
+This process is described in <doc:CadenasYCaracteres#Trabajando-con-caracteres>.
 
 Alternatively, access a `String` value
 in one of three other Unicode-compliant representations:
@@ -1599,7 +1599,7 @@ let dogString = "Dog‼🐶"
   ```
 -->
 
-### UTF-8 Representation
+### Representación UTF-8
 
 You can access a UTF-8 representation of a `String`
 by iterating over its `utf8` property.
@@ -1653,7 +1653,7 @@ are a four-byte UTF-8 representation of the `DOG FACE` character.
   (which returns a NativeArray, but handwave this for now)
 -->
 
-### UTF-16 Representation
+### Representación UTF-16
 
 You can access a UTF-16 representation of a `String`
 by iterating over its `utf16` property.
@@ -1705,7 +1705,7 @@ are a UTF-16 surrogate pair representation of the `DOG FACE` character.
 These values are a high-surrogate value of `U+D83D` (decimal value `55357`)
 and a low-surrogate value of `U+DC36` (decimal value `56374`).
 
-### Unicode Scalar Representation
+### Representación escalar Unicode
 
 You can access a Unicode scalar representation of a `String` value
 by iterating over its `unicodeScalars` property.
@@ -1785,16 +1785,16 @@ for scalar in dogString.unicodeScalars {
   ```
 -->
 
-> Beta Software:
+> Software Beta:
 >
-> This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+> Esta documentación contiene información preliminar sobre una API o tecnología en desarrollo. Esta información está sujeta a cambios, y todo software implementado en conformidad con esta documentación debe ser testeado con el software final del sistema operativo.
 >
-> Learn more about using [Apple's beta software](https://developer.apple.com/support/beta-software/).
+> Conoce más acerca del uso del [software beta de Apple](https://developer.apple.com/es/support/beta-software/).
 
 <!--
 This source file is part of the Swift.org open source project
 
-Copyright (c) 2014 - 2022 Apple Inc. and the Swift project authors
+Copyright (c) 2014 - 2023 Apple Inc. and the Swift project authors
 Licensed under Apache License v2.0 with Runtime Library Exception
 
 See https://swift.org/LICENSE.txt for license information

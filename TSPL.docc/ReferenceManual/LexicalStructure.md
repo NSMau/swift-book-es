@@ -1174,7 +1174,7 @@ you must use the extended delimiter syntax.
 >
 > *extended-regular-expression-literal-delimiter* → **`#`** *extended-regular-expression-literal-delimiter*_?_
 
-## Operators
+## Operadores
 
 The Swift standard library defines a number of operators for your use,
 many of which are discussed in <doc:BasicOperators>
