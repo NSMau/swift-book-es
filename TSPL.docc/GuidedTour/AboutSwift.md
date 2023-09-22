@@ -1,6 +1,6 @@
 # Acerca de Swift
 
-Comprende los objetivos generales del lenguaje.
+Comprende los objetivos de alto nivel del lenguaje.
 
 Swift es una forma increíble de desarrollar software;
 ya sea para teléfonos, computadoras, servidores

@@ -1,4 +1,4 @@
-# Properties
+# Propiedades
 
 Access stored and computed values that are part of an instance or type.
 
@@ -108,7 +108,7 @@ and a constant stored property called `length`.
 In the example above, `length` is initialized when the new range is created
 and can't be changed thereafter, because it's a constant property.
 
-### Stored Properties of Constant Structure Instances
+### Propiedades almacenadas de instancias de estructuras constantes
 
 If you create an instance of a structure
 and assign that instance to a constant,
@@ -484,7 +484,7 @@ struct AlternativeRect {
 
 <!-- Apple Books screenshot ends here. -->
 
-### Shorthand Getter Declaration
+### Declaración concisa de *getters*
 
 If the entire body of a getter is a single expression,
 the getter implicitly returns that expression.

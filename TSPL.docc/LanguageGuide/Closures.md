@@ -1,4 +1,4 @@
-# Closures
+# Clausuras
 
 Group code that executes together, without creating a named function.
 
@@ -13,7 +13,7 @@ This is known as *closing over* those constants and variables.
 Swift handles all of the memory management of capturing for you.
 
 > Note: Don't worry if you aren't familiar with the concept of capturing.
-> It's explained in detail below in <doc:Closures#Capturing-Values>.
+> It's explained in detail below in <doc:Closures#Captura-de-Valores>.
 
 Global and nested functions, as introduced in <doc:Functions>,
 are actually special cases of closures.
@@ -35,9 +35,9 @@ These optimizations include:
 - Shorthand argument names
 - Trailing closure syntax
 
-## Closure Expressions
+## Expresiones Clausura
 
-Nested functions, as introduced in <doc:Functions#Nested-Functions>,
+Nested functions, as introduced in <doc:Functions#Funciones-Anidadas>,
 are a convenient means of naming and defining self-contained blocks of code
 as part of a larger function.
 However, it's sometimes useful to write shorter versions of function-like constructs
@@ -52,7 +52,7 @@ The closure expression examples below illustrate these optimizations
 by refining a single example of the `sorted(by:)` method over several iterations,
 each of which expresses the same functionality in a more succinct way.
 
-### The Sorted Method
+### El Método Sorted
 
 Swift's standard library provides a method called `sorted(by:)`,
 which sorts an array of values of a known type,
@@ -128,7 +128,7 @@ what is essentially a single-expression function (`a > b`).
 In this example, it would be preferable to write the sorting closure inline,
 using closure expression syntax.
 
-### Closure Expression Syntax
+### Sintaxis de Expresiones Clausura
 
 Closure expression syntax has the following general form:
 
@@ -196,7 +196,7 @@ This illustrates that the overall call to the `sorted(by:)` method has remained 
 A pair of parentheses still wrap the entire argument for the method.
 However, that argument is now an inline closure.
 
-### Inferring Type From Context
+### Inferencia de Tipos a Partir del Contexto
 
 Because the sorting closure is passed as an argument to a method,
 Swift can infer the types of its parameters
@@ -235,7 +235,7 @@ and it's safe for a reader to assume that
 the closure is likely to be working with `String` values,
 because it's assisting with the sorting of an array of strings.
 
-### Implicit Returns from Single-Expression Closures
+### Devolución Implícita Desde Clausuras de Una Sola Expresión
 
 Single-expression closures can implicitly return the result of their single expression
 by omitting the `return` keyword from their declaration,
@@ -260,7 +260,7 @@ Because the closure's body contains a single expression (`s1 > s2`)
 that returns a `Bool` value,
 there's no ambiguity, and the `return` keyword can be omitted.
 
-### Shorthand Argument Names
+### Nombres de Argumentos Concisos
 
 Swift automatically provides shorthand argument names to inline closures,
 which can be used to refer to the values of the closure's arguments
@@ -309,7 +309,7 @@ the shorthand arguments `$0` and `$1` are both of type `String`.
   ```
 -->
 
-### Operator Methods
+### Métodos Operadores
 
 There's actually an even *shorter* way to write the closure expression above.
 Swift's `String` type defines its string-specific implementation of
@@ -333,9 +333,9 @@ reversedNames = names.sorted(by: >)
   ```
 -->
 
-For more about operator methods, see <doc:AdvancedOperators#Operator-Methods>.
+For more about operator methods, see <doc:AdvancedOperators#Métodos-Operadores>.
 
-## Trailing Closures
+## Clausuras Colgantes
 
 If you need to pass a closure expression to a function as the function's final argument
 and the closure expression is long,
@@ -388,7 +388,7 @@ someFunctionThatTakesAClosure() {
   ```
 -->
 
-The string-sorting closure from the <doc:Closures#Closure-Expression-Syntax> section above
+The string-sorting closure from the <doc:Closures#Sintaxis-de-Expresiones-Clausura> section above
 can be written outside of the `sorted(by:)` method's parentheses as a trailing closure:
 
 ```swift
@@ -628,7 +628,7 @@ instead of using just one closure that handles both circumstances.
 > An alternate approach is to use asynchronous code,
 > as described in <doc:Concurrency>.
 
-## Capturing Values
+## Captura de Valores
 
 A closure can *capture* constants and variables
 from the surrounding context in which it's defined.
@@ -681,7 +681,7 @@ This means that it returns a *function*, rather than a simple value.
 The function it returns has no parameters,
 and returns an `Int` value each time it's called.
 To learn how functions can return other functions,
-see <doc:Functions#Function-Types-as-Return-Types>.
+see <doc:Functions#Tipos-de-Funciones-Como-Tipos-de-Devolución>.
 
 The `makeIncrementer(forIncrement:)` function defines an integer variable called `runningTotal`,
 to store the current running total of the incrementer that will be returned.
@@ -833,9 +833,9 @@ incrementByTen()
 > and the closure captures that instance by referring to the instance or its members,
 > you will create a strong reference cycle between the closure and the instance.
 > Swift uses *capture lists* to break these strong reference cycles.
-> For more information, see <doc:AutomaticReferenceCounting#Strong-Reference-Cycles-for-Closures>.
+> For more information, see <doc:AutomaticReferenceCounting#Ciclos-de-Referencias-Fuertes-Para-Clausuras>.
 
-## Closures Are Reference Types
+## Las Clausuras Son Tipos de Referencia
 
 In the example above,
 `incrementBySeven` and `incrementByTen` are constants,
@@ -884,7 +884,7 @@ is the same as calling `incrementByTen`.
 Because both of them refer to the same closure,
 they both increment and return the same running total.
 
-## Escaping Closures
+## Clausuras Que Escapan
 
 A closure is said to *escape* a function
 when the closure is passed as an argument to the function,
@@ -1039,7 +1039,7 @@ However,
 an escaping closure can't capture a mutable reference to `self`
 when `self` is an instance of a structure or an enumeration.
 Structures and enumerations don’t allow shared mutability,
-as discussed in <doc:ClassesAndStructures#Structures-and-Enumerations-Are-Value-Types>.
+as discussed in <doc:ClassesAndStructures#Las-Estructuras-y-las-Enumeraciones-Son-Tipos-de-Valor>.
 
 ```swift
 struct SomeStruct {
@@ -1125,7 +1125,7 @@ a mutable reference to `self` for structures.
   ```
 -->
 
-## Autoclosures
+## Autoclausuras
 
 An *autoclosure* is a closure that's automatically created
 to wrap an expression that's being passed as an argument to a function.
@@ -1277,7 +1277,7 @@ serve(customer: customersInLine.remove(at: 0))
 
 If you want an autoclosure that's allowed to escape,
 use both the `@autoclosure` and `@escaping` attributes.
-The `@escaping` attribute is described above in <doc:Closures#Escaping-Closures>.
+The `@escaping` attribute is described above in <doc:Closures#Clausuras-Que-Escapan>.
 
 ```swift
 // customersInLine is ["Barry", "Daniella"]
@@ -1332,16 +1332,16 @@ As a result,
 the value of the `customerProvider` argument
 must be allowed to escape the function's scope.
 
-> Beta Software:
+> Software Beta:
 >
-> This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+> Esta documentación contiene información preliminar sobre una API o tecnología en desarrollo. Esta información está sujeta a cambios, y todo software implementado en conformidad con esta documentación debe ser testeado con el software final del sistema operativo.
 >
-> Learn more about using [Apple's beta software](https://developer.apple.com/support/beta-software/).
+> Conoce más acerca del uso del [software beta de Apple](https://developer.apple.com/es/support/beta-software/).
 
 <!--
 This source file is part of the Swift.org open source project
 
-Copyright (c) 2014 - 2022 Apple Inc. and the Swift project authors
+Copyright (c) 2014 - 2023 Apple Inc. and the Swift project authors
 Licensed under Apache License v2.0 with Runtime Library Exception
 
 See https://swift.org/LICENSE.txt for license information

@@ -1,4 +1,4 @@
-# Error Handling
+# Manejo de Errores
 
 Respond to and recover from errors.
 
@@ -29,7 +29,7 @@ and to communicate to the user any errors it can't resolve.
 > For more information about this class,
 > see [Handling Cocoa Errors in Swift](https://developer.apple.com/documentation/swift/cocoa_design_patterns/handling_cocoa_errors_in_swift).
 
-## Representing and Throwing Errors
+## Representar y Arrojar Errores
 
 In Swift, errors are represented by
 values of types that conform to the `Error` protocol.
@@ -83,7 +83,7 @@ throw VendingMachineError.insufficientFunds(coinsNeeded: 5)
   ```
 -->
 
-## Handling Errors
+## Manejo de Errores
 
 When an error is thrown,
 some surrounding piece of code must be responsible
@@ -117,7 +117,7 @@ These keywords are described in the sections below.
 > of a `throw` statement
 > are comparable to those of a `return` statement.
 
-### Propagating Errors Using Throwing Functions
+### Propagación de Errores Mediante Funciones Que Arrojan Errores
 
 To indicate that a function, method, or initializer can throw an error,
 you write the `throws` keyword in the function's declaration
@@ -379,7 +379,7 @@ struct PurchasedSnack {
   ```
 -->
 
-### Handling Errors Using Do-Catch
+### Manejo de Errores Mediante do-catch
 
 You use a `do`-`catch` statement to handle errors
 by running a block of code.
@@ -584,7 +584,7 @@ this `catch` clause handles them by printing a message.
 Any other errors are propagated to the surrounding scope,
 including any vending-machine errors that might be added later.
 
-### Converting Errors to Optional Values
+### Conversión de Errores En Valores Opcionales
 
 You use `try?` to handle an error by converting it to an optional value.
 If an error is thrown while evaluating the `try?` expression,
@@ -667,7 +667,7 @@ func fetchData() -> Data? {
   ```
 -->
 
-### Disabling Error Propagation
+### Inhabilitar la Propagación de Errores
 
 Sometimes you know a throwing function or method
 won't, in fact, throw an error at runtime.
@@ -699,7 +699,7 @@ let photo = try! loadImage(atPath: "./Resources/John Appleseed.jpg")
   ```
 -->
 
-## Specifying Cleanup Actions
+## Especificando Acciones de Limpieza
 
 You use a `defer` statement to execute a set of statements
 just before code execution leaves the current block of code.
@@ -773,16 +773,16 @@ has a corresponding call to `close(_:)`.
 > Note: You can use a `defer` statement
 > even when no error handling code is involved.
 
-> Beta Software:
+> Software Beta:
 >
-> This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+> Esta documentación contiene información preliminar sobre una API o tecnología en desarrollo. Esta información está sujeta a cambios, y todo software implementado en conformidad con esta documentación debe ser testeado con el software final del sistema operativo.
 >
-> Learn more about using [Apple's beta software](https://developer.apple.com/support/beta-software/).
+> Conoce más acerca del uso del [software beta de Apple](https://developer.apple.com/es/support/beta-software/).
 
 <!--
 This source file is part of the Swift.org open source project
 
-Copyright (c) 2014 - 2022 Apple Inc. and the Swift project authors
+Copyright (c) 2014 - 2023 Apple Inc. and the Swift project authors
 Licensed under Apache License v2.0 with Runtime Library Exception
 
 See https://swift.org/LICENSE.txt for license information

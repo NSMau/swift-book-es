@@ -1,4 +1,4 @@
-# Basic Operators
+# Operadores Básicos
 
 Perform operations like assignment, arithmetic, and comparison.
 
@@ -20,7 +20,7 @@ to avoid unexpected results when working with numbers that become larger or smal
 than the allowed value range of the type that stores them.
 You can opt in to value overflow behavior
 by using Swift's overflow operators,
-as described in <doc:AdvancedOperators#Overflow-Operators>.
+as described in <doc:AdvancedOperators#Operadores-de-Desbordamiento>.
 
 Swift also provides range operators that aren't found in C,
 such as `a..<b` and `a...b`,
@@ -31,7 +31,7 @@ This chapter describes the common operators in Swift.
 and describes how to define your own custom operators
 and implement the standard operators for your own custom types.
 
-## Terminology
+## Terminología
 
 Operators are unary, binary, or ternary:
 
@@ -48,7 +48,7 @@ The values that operators affect are *operands*.
 In the expression `1 + 2`, the `+` symbol is an infix operator
 and its two operands are the values `1` and `2`.
 
-## Assignment Operator
+## Operador de Asignación
 
 The *assignment operator* (`a = b`)
 initializes or updates the value of `a` with the value of `b`:
@@ -143,7 +143,7 @@ Swift helps you to avoid these kinds of errors in your code.
   If so, is there a convincing argument as to why this is a good thing?
 -->
 
-## Arithmetic Operators
+## Operadores Aritméticos
 
 Swift supports the four standard *arithmetic operators* for all number types:
 
@@ -181,7 +181,7 @@ Swift supports the four standard *arithmetic operators* for all number types:
 Unlike the arithmetic operators in C and Objective-C,
 the Swift arithmetic operators don't allow values to overflow by default.
 You can opt in to value overflow behavior by using Swift's overflow operators
-(such as `a &+ b`). See <doc:AdvancedOperators#Overflow-Operators>.
+(such as `a &+ b`). See <doc:AdvancedOperators#Operadores-de-Desbordamiento>.
 
 The addition operator is also supported for `String` concatenation:
 
@@ -199,7 +199,7 @@ The addition operator is also supported for `String` concatenation:
   ```
 -->
 
-### Remainder Operator
+### Operador de Residuo
 
 The *remainder operator* (`a % b`)
 works out how many multiples of `b` will fit inside `a`
@@ -288,7 +288,7 @@ giving a remainder value of `-1`.
 The sign of `b` is ignored for negative values of `b`.
 This means that `a % b` and `a % -b` always give the same answer.
 
-### Unary Minus Operator
+### Operador Unario de Resta
 
 The sign of a numeric value can be toggled using a prefixed `-`,
 known as the *unary minus operator*:
@@ -312,7 +312,7 @@ let plusThree = -minusThree   // plusThree equals 3, or "minus minus three"
 The unary minus operator (`-`) is prepended directly before the value it operates on,
 without any white space.
 
-### Unary Plus Operator
+### Operador Unario de Suma
 
 The *unary plus operator* (`+`) simply returns
 the value it operates on, without any change:
@@ -336,7 +336,7 @@ Although the unary plus operator doesn't actually do anything,
 you can use it to provide symmetry in your code for positive numbers
 when also using the unary minus operator for negative numbers.
 
-## Compound Assignment Operators
+## Operadores de Asignación Compuestos
 
 Like C, Swift provides *compound assignment operators* that combine assignment (`=`) with another operation.
 One example is the *addition assignment operator* (`+=`):
@@ -368,7 +368,7 @@ that performs both tasks at the same time.
 For information about the operators provided by the Swift standard library,
 see [Operator Declarations](https://developer.apple.com/documentation/swift/operator_declarations).
 
-## Comparison Operators
+## Operadores de Comparación
 
 Swift supports the following comparison operators:
 
@@ -381,7 +381,7 @@ Swift supports the following comparison operators:
 
 > Note: Swift also provides two *identity operators* (`===` and `!==`),
 > which you use to test whether two object references both refer to the same object instance.
-> For more information, see <doc:ClassesAndStructures#Identity-Operators>.
+> For more information, see <doc:ClassesAndStructures#Operadores-de-Identidad>.
 
 Each of the comparison operators returns a `Bool` value to indicate whether or not the statement is true:
 
@@ -551,7 +551,7 @@ with the `<` operator because the `<` operator can't be applied to
   How about with your own types?
 -->
 
-## Ternary Conditional Operator
+## Operador Condicional Ternario
 
 The *ternary conditional operator* is a special operator with three parts,
 which takes the form `question ? answer1 : answer2`.
@@ -660,7 +660,7 @@ Use the ternary conditional operator with care, however.
 Its conciseness can lead to hard-to-read code if overused.
 Avoid combining multiple instances of the ternary conditional operator into one compound statement.
 
-## Nil-Coalescing Operator
+## Operador nil-coalescing
 
 The *nil-coalescing operator* (`a ?? b`)
 unwraps an optional `a` if it contains a value,
@@ -752,12 +752,12 @@ colorNameToUse = userDefinedColorName ?? defaultColorName
   ```
 -->
 
-## Range Operators
+## Operadores de Rango
 
 Swift includes several *range operators*,
 which are shortcuts for expressing a range of values.
 
-### Closed Range Operator
+### Operador de Rango Cerrado
 
 The *closed range operator* (`a...b`)
 defines a range that runs from `a` to `b`,
@@ -823,7 +823,7 @@ for index in 1...5 {
 
 For more about `for`-`in` loops, see <doc:ControlFlow>.
 
-### Half-Open Range Operator
+### Operador de Rango Semiabierto
 
 The *half-open range operator* (`a..<b`)
 defines a range that runs from `a` to `b`,
@@ -899,9 +899,9 @@ Note that the array contains four items,
 but `0..<count` only counts as far as `3`
 (the index of the last item in the array),
 because it's a half-open range.
-For more about arrays, see <doc:CollectionTypes#Arrays>.
+For more about arrays, see <doc:CollectionTypes#Arreglos>.
 
-### One-Sided Ranges
+### Rangos Unilaterales
 
 The closed range operator
 has an alternative form for ranges that continue
@@ -1012,7 +1012,7 @@ range.contains(-1)  // true
   ```
 -->
 
-## Logical Operators
+## Operadores Lógicos
 
 *Logical operators* modify or combine
 the Boolean logic values `true` and `false`.
@@ -1022,7 +1022,7 @@ Swift supports the three standard logical operators found in C-based languages:
 - Logical AND (`a && b`)
 - Logical OR (`a || b`)
 
-### Logical NOT Operator
+### Operador Lógico NOT
 
 The *logical NOT operator* (`!a`) inverts a Boolean value so that `true` becomes `false`,
 and `false` becomes `true`.
@@ -1061,7 +1061,7 @@ careful choice of Boolean constant and variable names
 can help to keep code readable and concise,
 while avoiding double negatives or confusing logic statements.
 
-### Logical AND Operator
+### Operador Lógico AND
 
 The *logical AND operator* (`a && b`) creates logical expressions
 where both values must be `true` for the overall expression to also be `true`.
@@ -1102,7 +1102,7 @@ if enteredDoorCode && passedRetinaScan {
   ```
 -->
 
-### Logical OR Operator
+### Operador Lógico OR
 
 The *logical OR operator*
 (`a || b`) is an infix operator made from two adjacent pipe characters.
@@ -1149,7 +1149,7 @@ if hasDoorKey || knowsOverridePassword {
   ```
 -->
 
-### Combining Logical Operators
+### Combinación de Operadores Lógicos
 
 You can combine multiple logical operators to create longer compound expressions:
 
@@ -1194,7 +1194,7 @@ so the overall compound expression still evaluates to `true`.
 > meaning that compound expressions with multiple logical operators
 > evaluate the leftmost subexpression first.
 
-### Explicit Parentheses
+### Paréntesis Explícitos
 
 It's sometimes useful to include parentheses when they're not strictly needed,
 to make the intention of a complex expression easier to read.
@@ -1231,16 +1231,16 @@ but the overall intention is clearer to the reader.
 Readability is always preferred over brevity;
 use parentheses where they help to make your intentions clear.
 
-> Beta Software:
+> Software Beta:
 >
-> This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+> Esta documentación contiene información preliminar sobre una API o tecnología en desarrollo. Esta información está sujeta a cambios, y todo software implementado en conformidad con esta documentación debe ser testeado con el software final del sistema operativo.
 >
-> Learn more about using [Apple's beta software](https://developer.apple.com/support/beta-software/).
+> Conoce más acerca del uso del [software beta de Apple](https://developer.apple.com/es/support/beta-software/).
 
 <!--
 This source file is part of the Swift.org open source project
 
-Copyright (c) 2014 - 2022 Apple Inc. and the Swift project authors
+Copyright (c) 2014 - 2023 Apple Inc. and the Swift project authors
 Licensed under Apache License v2.0 with Runtime Library Exception
 
 See https://swift.org/LICENSE.txt for license information

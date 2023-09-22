@@ -38,7 +38,7 @@ but they both follow the same model for macro expansion,
 and you implement them both using the same approach.
 The following sections describe both kinds of macros in more detail.
 
-## Freestanding Macros
+## Macros Freestanding
 
 To call a freestanding macro,
 you write a number sign (`#`) before its name,
@@ -70,7 +70,7 @@ Freestanding macros can produce a value, like `#function` does,
 or they can perform an action at compile time, like `#warning` does.
 <!-- SE-0397: or they can generate new declarations.  -->
 
-## Attached Macros
+## Macros Adjuntas
 
 To call an attached macro,
 you write an at sign (`@`) before its name,
@@ -152,7 +152,7 @@ that uses a macro to generate all of the static variables
 is easier to read and easier to maintain
 than the manually coded version, earlier.
 
-## Macro Declarations
+## Declaración de Macros
 
 In most Swift code,
 when you implement a symbol, like a function or type,
@@ -286,7 +286,7 @@ including a full list of macro roles,
 see <doc:Attributes#attached> and <doc:Attributes#freestanding>
 in <doc:Attributes>.
 
-## Macro Expansion
+## Expansión de Macros
 
 When building Swift code that uses macros,
 the compiler calls the macros' implementation to expand them.
@@ -318,7 +318,7 @@ and returns an unsigned 32-bit integer
 that corresponds to the ASCII values in the string joined together.
 Some file formats use integers like this to identify data
 because they're compact but still readable in a debugger.
-The <doc:Macros#Implementing-a-Macro> section below
+The <doc:Macros#Implementación-de-Una-Macro> section below
 shows how to implement this macro.
 
 To expand the macros in the code above,
@@ -439,7 +439,7 @@ this lets the outer macro modify the inner macro before it's expanded.
   (TR: Likely need to iterate on details here)
 -->
 
-## Implementing a Macro
+## Implementación de Una Macro
 
 To implement a macro, you make two components:
 A type that performs the macro expansion,
@@ -657,7 +657,7 @@ https://github.com/apple/swift-syntax/blob/main/Sources/SwiftSyntaxBuilder/Synta
 
 -->
 
-## Developing and Debugging Macros
+## Desarrollo y Depuración de Macros
 
 Macros are well suited to development using tests:
 They transform one AST into another AST
@@ -721,6 +721,12 @@ in no particular order:
 
 - `TokenSyntax`
 -->
+
+> Software Beta:
+>
+> Esta documentación contiene información preliminar sobre una API o tecnología en desarrollo. Esta información está sujeta a cambios, y todo software implementado en conformidad con esta documentación debe ser testeado con el software final del sistema operativo.
+>
+> Conoce más acerca del uso del [software beta de Apple](https://developer.apple.com/es/support/beta-software/).
 
 <!--
 This source file is part of the Swift.org open source project

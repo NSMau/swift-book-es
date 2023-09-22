@@ -1,4 +1,4 @@
-# Automatic Reference Counting
+# Conteo Automático de Referencias
 
 Model the lifetime of objects and their relationships.
 
@@ -22,7 +22,7 @@ Reference counting applies only to instances of classes.
 Structures and enumerations are value types, not reference types,
 and aren't stored and passed by reference.
 
-## How ARC Works
+## Cómo Funciona el Conteo Automático de Referencias
 
 Every time you create a new instance of a class,
 ARC allocates a chunk of memory to store information about that instance.
@@ -53,7 +53,7 @@ The reference is called a "strong" reference because
 it keeps a firm hold on that instance,
 and doesn't allow it to be deallocated for as long as that strong reference remains.
 
-## ARC in Action
+## Conteo Automático de Referencias En Acción
 
 Here's an example of how Automatic Reference Counting works.
 This example starts with a simple class called `Person`,
@@ -199,7 +199,7 @@ reference3 = nil
   ```
 -->
 
-## Strong Reference Cycles Between Class Instances
+## Ciclos de Referencias Fuertes Entre Instancias de Clase
 
 In the examples above,
 ARC is able to track the number of references to the new `Person` instance you create
@@ -215,7 +215,7 @@ You resolve strong reference cycles
 by defining some of the relationships between classes
 as weak or unowned references instead of as strong references.
 This process is described in
-<doc:AutomaticReferenceCounting#Resolving-Strong-Reference-Cycles-Between-Class-Instances>.
+<doc:AutomaticReferenceCounting#Resolución-de-Ciclos-de-Referencias-Fuertes-Entre-Instancias-de-Clase>.
 However, before you learn how to resolve a strong reference cycle,
 it's useful to understand how such a cycle is caused.
 
@@ -374,7 +374,7 @@ the `john` and `unit4A` variables to `nil`:
 The strong references between the `Person` instance
 and the `Apartment` instance remain and can't be broken.
 
-## Resolving Strong Reference Cycles Between Class Instances
+## Resolución de Ciclos de Referencias Fuertes Entre Instancias de Clase
 
 Swift provides two ways to resolve strong reference cycles
 when you work with properties of class type:
@@ -399,7 +399,7 @@ has the same lifetime or a longer lifetime.
   should be marked as weak or unowned?"
 -->
 
-### Weak References
+### Referencias Débiles
 
 A *weak reference* is a reference that doesn't keep a strong hold
 on the instance it refers to,
@@ -576,7 +576,7 @@ it too is deallocated:
 > as soon as their last strong reference is removed,
 > making weak references unsuitable for such a purpose.
 
-### Unowned References
+### Referencias Unowned
 
 Like a weak reference,
 an *unowned reference* doesn't keep
@@ -784,7 +784,7 @@ after the `john` variable is set to `nil`.
   Try expanding the example above so each customer has an array of credit cards.
 -->
 
-### Unowned Optional References
+### Referencias Opcionales Unowned
 
 You can mark an optional reference to a class as unowned.
 In terms of the ARC ownership model,
@@ -947,7 +947,7 @@ that other courses might have.
   ```
 -->
 
-### Unowned References and Implicitly Unwrapped Optional Properties
+### Referencias Unowned y Propiedades Opcionales Extraídas de Forma Implícita
 
 The examples for weak and unowned references above
 cover two of the more common scenarios
@@ -1033,7 +1033,7 @@ and stores this instance in its `country` property.
 The initializer for `City` is called from within the initializer for `Country`.
 However, the initializer for `Country` can't pass `self` to the `City` initializer
 until a new `Country` instance is fully initialized,
-as described in <doc:Initialization#Two-Phase-Initialization>.
+as described in <doc:Initialization#Inicialización-de-Dos-Fases>.
 
 To cope with this requirement,
 you declare the `capitalCity` property of `Country` as
@@ -1042,7 +1042,7 @@ indicated by the exclamation point at the end of its type annotation (`City!`).
 This means that the `capitalCity` property has a default value of `nil`,
 like any other optional,
 but can be accessed without the need to unwrap its value
-as described in <doc:TheBasics#Implicitly-Unwrapped-Optionals>.
+as described in <doc:TheBasics#Opcionales-Extraídos-Implícitamente>.
 
 Because `capitalCity` has a default `nil` value,
 a new `Country` instance is considered fully initialized
@@ -1080,7 +1080,7 @@ The `capitalCity` property can be used and accessed like a non-optional value
 once initialization is complete,
 while still avoiding a strong reference cycle.
 
-## Strong Reference Cycles for Closures
+## Ciclos de Referencias Fuertes para Clausuras
 
 You saw above how a strong reference cycle can be created
 when two class instance properties hold a strong reference to each other.
@@ -1276,7 +1276,7 @@ the closure *captures* self,
 which means that it holds a strong reference back to the `HTMLElement` instance.
 A strong reference cycle is created between the two.
 (For more information about capturing values in a closure,
-see <doc:Closures#Capturing-Values>.)
+see <doc:Closures#Captura-de-Valores>.)
 
 > Note: Even though the closure refers to `self` multiple times,
 > it only captures one strong reference to the `HTMLElement` instance.
@@ -1301,7 +1301,7 @@ paragraph = nil
 Note that the message in the `HTMLElement` deinitializer isn't printed,
 which shows that the `HTMLElement` instance isn't deallocated.
 
-## Resolving Strong Reference Cycles for Closures
+## Resolución de Ciclos de Referencias Fuertes para Clausuras
 
 You resolve a strong reference cycle between a closure and a class instance
 by defining a *capture list* as part of the closure's definition.
@@ -1318,7 +1318,7 @@ the relationships between the different parts of your code.
 > whenever you refer to a member of `self` within a closure.
 > This helps you remember that it's possible to capture `self` by accident.
 
-### Defining a Capture List
+### Definición de una Lista de Captura
 
 Each item in a capture list is a pairing of the `weak` or `unowned` keyword
 with a reference to a class instance (such as `self`)
@@ -1379,7 +1379,7 @@ lazy var someClosure = {
   ```
 -->
 
-### Weak and Unowned References
+### Referencias Débiles y Unowned
 
 Define a capture in a closure as an unowned reference
 when the closure and the instance it captures will always refer to each other,
@@ -1401,7 +1401,7 @@ This enables you to check for their existence within the closure's body.
 
 An unowned reference is the appropriate capture method to use to resolve
 the strong reference cycle in the `HTMLElement` example
-from <doc:AutomaticReferenceCounting#Strong-Reference-Cycles-for-Closures> above.
+from <doc:AutomaticReferenceCounting#Ciclos-de-Referencias-Fuertes-Para-Clausuras> above.
 Here's how you write the `HTMLElement` class to avoid the cycle:
 
 ```swift
@@ -1510,7 +1510,7 @@ paragraph = nil
 -->
 
 For more information about capture lists,
-see <doc:Expressions#Capture-Lists>.
+see <doc:Expressions#Listas-de-Captura>.
 
 > Beta Software:
 >

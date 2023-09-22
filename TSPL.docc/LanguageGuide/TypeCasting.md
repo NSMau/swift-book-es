@@ -1,4 +1,4 @@
-# Type Casting
+# Conversión de Tipos
 
 Determine a value's runtime type and give it more specific type information.
 
@@ -317,7 +317,7 @@ whenever a `Song` is found in the library.
   The reference shows the behavior in a contrived example.
 -->
 
-## Type Casting for Any and AnyObject
+## Conversión de tipos para Any y AnyObject
 
 Swift provides two special types for working with nonspecific types:
 

@@ -1,100 +1,103 @@
-# The Book’s Structure
+# Estructura del libro
 
-TSPL is divided into three main parts, plus some front matter,
-which serve complementary functions:
+TSPL está dividido en tres partes principales, además de un material de portada,
+los cuales cumplen funciones complementarias:
 
-**A Swift Tour**,
-commonly referred to as “the tour”,
-shows you a bunch of interesting Swift code,
-but it tells you almost nothing about how the language works.
-For example, the guide has an entire chapter about optional chaining,
-but it’s summarized in just a few sentences in the tour.
-The tour just needs to give you the syntax and a taste of how to use it;
-it relies on the guide to provide the actual in-depth explanation
-of how optional chaining works in general and when you should use it.
+**Un recorrido guiado**,
+comúnmente conocido como “el recorrido”,
+te muestra un montón de código Swift interesante,
+pero no te dice casi nada sobre cómo funciona el lenguaje.
+Por ejemplo, la guía tiene un capítulo entero sobre encadenamiento opcional,
+pero está resumido en solo unas pocas frases en el recorrido.
+El recorrido sólo necesita darte la sintaxis y una idea de cómo usarla;
+depende de la guía para proporcionar la verdadera explicación en profundidad
+sobre cómo funciona el encadenamiento opcional en general y cuándo debe usarse.
 
-The intention of the tour is that
-it can be read in its entirety in a single sitting.
-A beginner will get a high-level view of what’s possible in Swift.
-A reader with more programming background will learn
-“enough Swift to be dangerous” — that is,
-enough of the language syntax to start muddling along on a first project,
-and then come back to TSPL when they’re ready to learn more than
-just surface level syntax for concepts they already know from other languages.
+La intención de la guía es que
+pueda leerse en su totalidad en una sola sesión.
+Un principiante obtendrá una visión general de lo que es posible en Swift.
+Un lector con más experiencia en programación aprenderá
+“suficiente Swift para ser peligroso”, es decir,
+lo suficiente sobre la sintaxis del lenguaje para empezar a experimentar en un primer proyecto,
+y luego retomar TSPL cuando esté listo para aprender más que
+la sintaxis superficial de conceptos que ya conocen de otros lenguajes.
 
-**Language Guide**,
-commonly referred to as “the guide”,
-leads you through the Swift language in a pedagogically useful, linear order.
-It doesn't promise to show you every feature of
-the language or the standard library,
-and it hand-waves over the exact details
-of some of the more complicated underlying bits.
-The guide leans on the reference to resolve the nitty-gritty detail questions
-and to exhaustively cover the language.
-Unlike the reference,
-it walks you through step-by-step explanations,
-showing examples of the language features in action,
-and it assumes very little prior knowledge.
+**La guía del lenguaje**,
+comúnmente conocida como "la guía",
+te conduce a través del lenguaje Swift en un orden pedagógicamente útil y lineal.
+No promete mostrarte cada característica del
+lenguaje o de la librería estándar,
+y pasa por alto los detalles exactos
+de algunas de las partes subyacentes más complicadas.
+La guía se apoya en la referencia para resolver aquellas preguntas sobre detalles específicos
+y para cubrir exhaustivamente el lenguaje.
+A diferencia de la referencia,
+te guiará a través de explicaciones paso a paso,
+mostrando ejemplos de las características del lenguaje en acción,
+y asume muy pocos conocimientos previos.
 
-To maintain the promise of a linear reading order
-when you add new sections to the guide,
-make sure that all of the syntax and concepts that you use in your explanations
-are already discussed in previous chapters.
-“The Basics” exists, in large part, to introduce a bunch of syntax and concepts
-that the early chapters of the guide need
-— many topics from “The Basics” are covered again later in the guide in more detail.
+Al agregar nuevas secciones a la guía,
+asegúrate de que toda la sintaxis y los conceptos que utilices en tus explicaciones
+ya hayan sido tratados en capítulos anteriores,
+de manera que se pueda mantener la promesa de un orden de lectura lineal.
+“Fundamentos” existe, en mayor parte, para introducir un montón de sintaxis y conceptos
+que se necesitan en los primeros capítulos de la guía
+— muchos de los temas de “Fundamentos” se vuelven a tratar más adelante en la guía
+con mayor detenimiento.
 
-The guide includes types from the standard library for two reasons:
-they’re needed by an explanation of a language concept,
-or they’re so common that readers wouldn’t
-be able to build anything useful without them.
-The latter reason includes a judgement call.
-When new types are introduced in the standard library,
-we usually need to discuss whether & where to add them to TSPL.
+La guía incluye tipos de la biblioteca estándar por dos razones:
+estos son necesarios para la explicación de un concepto del lenguaje,
+o son tan comunes que los lectores no podrían
+ser capaces de construir nada útil sin ellos.
+Esta última razón incluye un juicio de valor.
+Al introducir nuevos tipos en la biblioteca estándar,
+es usual que tengamos que discutir si se deben o no añadir a TSPL,
+al igual que dónde deben ser agregados.
 
-The guide can be broken down into three major chunks:
-basic topics, data-modeling topics, and advanced topics.
-Basic topics is everything before the introduction of
-enumerations, structures, and classes.
-Advanced topics is everything after deinitialization.
-Data modeling is the content in between.
-The linear flow is intended to make sense,
-even if you stop reading for a while between chunks.
-For example, reading just the basic topics gives you enough information
-to write programs that have only unstructured “primitive” data.
-The chapters in each chunk are ordered with fundamental topics at the beginning,
-and topics that most readers can skip at the end.
+La guía puede dividirse en tres partes principales:
+temas básicos, temas de modelado de datos y temas avanzados.
+Los temas básicos son todo lo anterior a la introducción de
+enumeraciones, estructuras, y clases.
+Los temas avanzados son todos aquellos posteriores a *desinicialización*.
+El modelado de datos es el contenido en medio de estos.
+El flujo lineal pretende tener sentido,
+incluso si dejas de leer por un tiempo entre las secciones.
+Por ejemplo, leer sólo los temas básicos te da suficiente información
+para escribir programas que sólo tienen datos “primitivos” no estructurados.
+Los capítulos de cada sección están ordenados con los temas fundamentales al principio,
+y, al final, los temas que la mayoría de los lectores pueden saltarse.
 
-**Language Reference**,
-commonly referred to as “the reference”,
-describes every aspect of the Swift language in complete detail,
-but it makes no attempt to be an instructional text.
-Its material is ordered according to the shape of the formal grammar,
-and it hand-waves over examples and applications.
-Several places explicitly link back to the guide for examples.
-It doesn't need to be as approachable for beginners,
-because the guide handles that,
-but it does need to be accurate and unambiguous,
-shining its flashlight into infrequently explored areas of the language.
-To accomplish that,
-it sometimes must sacrifice approachability or user-friendliness.
-That's ok — many readers won't even need the reference,
-but if the reference is unclear,
-the readers who need an answer have nowhere else to go.
+**La referencia del lenguaje**,
+comúnmente conocida como “la referencia”,
+describe cada aspecto del lenguaje Swift con todo detalle,
+pero no intenta ser un texto instructivo.
+Su material está ordenado acorde a la estructura de la gramática formal,
+y pasa por alto ejemplos y aplicativos.
+Para ejemplos, muchas partes remiten al lector, de manera explícita, de vuelta a la guía.
+No hace falta que la referencia sea tan accesible para los principiantes,
+puesto que la guía se encarga de eso,
+pero sí tiene que ser precisa y carecer de ambigüedades,
+haciendo énfasis en las áreas menos exploradas del lenguaje.
+Para lograr esto,
+a veces debe sacrificar la accesibilidad o la facilidad de uso.
+Esto no es un problema, puesto que muchos lectores ni siquiera necesitarán la referencia;
+pero si esta no es clara,
+aquellos lectores que necesiten una respuesta, no tendrán adónde ir.
 
-Within the reference, sections follow a predictable four-part structure:
+Dentro de la referencia, las secciones siguen una estructura predecible de cuatro partes:
 
-* A few sentences briefly describe the language construct named by the heading.
-* A code outline shows its general syntactic shape.
-* A few paragraphs describe it in more detail.
-* A grammar formally describes the syntax.
+* Algunas oraciones describen, brevemente, la construcción lingüística nombrada por el título.
+* Un esquema de código muestra su forma sintáctica general.
+* Algunos párrafos lo describen con más detalle.
+* Una gramática describe la sintaxis de manera formal.
 
-The purpose of the formal grammar
-is to be able to unambiguously answer questions of what’s valid Swift
-(without commenting on meaning)
-for readers whose question wasn’t fully answered by the prose in the reference.
-It’s primarily aimed at human readers,
-which means it’s not always suitable for generating a parser for Swift code.
+El objetivo de la gramática formal
+es poder responder sin ambigüedad a preguntas sobre qué se considera código Swift válido
+(sin comentar sobre el significado)
+para aquellos lectores cuya pregunta no fue totalmente respondida por la prosa de la referencia.
+Está dirigida, principalmente, a lectores humanos,
+lo que significa que no siempre resulta adecuada
+para generar un analizador sintáctico (*parser*) de código Swift.
 
 # Terms and Rules
 
