@@ -1,57 +1,60 @@
-# About Swift
+# Acerca de Swift
 
-Understand the high-level goals of the language.
+Comprende los objetivos de alto nivel del lenguaje.
 
-Swift is a fantastic way to write software,
-whether it’s for phones, desktops, servers,
-or anything else that runs code.
-It's a safe, fast, and interactive programming language
-that combines the best in modern language thinking
-with wisdom from the wider Apple engineering culture
-and the diverse contributions from its open-source community.
-The compiler is optimized for performance
-and the language is optimized for development,
-without compromising on either.
+Swift es una forma increíble de desarrollar software;
+ya sea para teléfonos, computadoras, servidores
+o cualquier otra cosa que ejecute código.
+Es un lenguaje de programación seguro, rápido, e interactivo
+que combina lo mejor del pensamiento de lenguaje moderno
+con los conocimientos de la vasta cultura de ingeniería de Apple
+y las diversas contribuciones de su comunidad de código abierto.
+El compilador está optimizado para el rendimiento
+y el lenguaje está optimizado para el desarrollo,
+sin llegar a comprometer ninguno de los dos.
 
-Swift is friendly to new programmers.
-It's an industrial-quality programming language
-that's as expressive and enjoyable as a scripting language.
-Writing Swift code in a playground
-lets you experiment with code and see the results immediately,
-without the overhead of building and running an app.
+Swift es amigable para los nuevos programadores.
+Es un lenguaje de programación de calidad industrial,
+tan expresivo y agradable como un lenguaje de secuencia de comandos.
+Escribir código Swift en un *playground*
+te permite experimentar con el código y ver los resultados de manera inmediata,
+sin la sobrecarga de crear y ejecutar una aplicación.
 
-Swift defines away large classes of common programming errors
-by adopting modern programming patterns:
+Swift elimina una gran cantidad de errores de programación comunes
+mediante la adopción de patrones de programación modernos:
 
-- Variables are always initialized before use.
-- Array indices are checked for out-of-bounds errors.
-- Integers are checked for overflow.
-- Optionals ensure that `nil` values are handled explicitly.
-- Memory is managed automatically.
-- Error handling allows controlled recovery from unexpected failures.
+- Las variables siempre se inicializan antes de ser usadas.
+- Se verifican los índices de los arreglos en busca de
+  errores fuera de límites (*out-of-bound errors*).
+- Se verifica el desborde de números enteros.
+- Los opcionales aseguran que los valores nulos (`nil`)
+  se manejen explícitamente.
+- La memoria se gestiona automáticamente.
+- El manejo de errores permite la recuperación controlada de fallas inesperadas.
 
-Swift code is compiled and optimized to get the most out of modern hardware.
-The syntax and standard library have been designed
-based on the guiding principle that
-the obvious way to write your code should also perform the best.
-Its combination of safety and speed make Swift an excellent choice for
-everything from "Hello, world!" to an entire operating system.
+El código Swift es compilado y optimizado para aprovechar al máximo el hardware
+moderno.
+La sintaxis y la biblioteca estándar han sido diseñadas
+con base en el principio guía de que
+la forma obvia de escribir tu código debe ser también la de mejor desempeño.
+Su combinación de seguridad y rapidez hacen de Swift una excelente opción para
+todo, desde un «¡Hola, mundo!» hasta todo un sistema operativo.
 
-Swift combines powerful type inference and pattern matching with
-a modern, lightweight syntax,
-allowing complex ideas to be expressed in a clear and concise manner.
-As a result, code is not just easier to write,
-but easier to read and maintain as well.
+Swift combina una poderosa inferencia de tipos y concordancia de patrones
+(*pattern matching*) con una sintaxis moderna y ligera,
+lo que permite expresar ideas complejas de forma clara y concisa.
+Como resultado, el código no solo es más fácil de escribir,
+sino también más fácil de leer y mantener.
 
-Swift has been years in the making,
-and it continues to evolve with new features and capabilities.
-Our goals for Swift are ambitious.
-We can’t wait to see what you create with it.
+Swift se ha estado desarrollando por años
+y continúa evolucionando con nuevas funciones y capacidades.
+Nuestros objetivos para Swift son ambiciosos.
+Estamos impacientes por ver lo que creas con él.
 
 <!--
 This source file is part of the Swift.org open source project
 
-Copyright (c) 2014 - 2022 Apple Inc. and the Swift project authors
+Copyright (c) 2014 - 2023 Apple Inc. and the Swift project authors
 Licensed under Apache License v2.0 with Runtime Library Exception
 
 See https://swift.org/LICENSE.txt for license information
