@@ -1,11 +1,11 @@
-# Version Compatibility
+# Compatibilidad de versiones
 
-Learn what functionality is available in older language modes.
+Aprende cuáles funcionalidades están disponibles en versiones anteriores del lenguaje.
 
-This book describes Swift 5.9,
-the default version of Swift that's included in Xcode 15.
-You can use Xcode 15 to build targets
-that are written in either Swift 5.9, Swift 4.2, or Swift 4.
+Este libro describe Swift 5.9,
+la versión predeterminada de Swift que se incluye en Xcode 15.
+Puedes usar Xcode 15 para compilar *targets*
+que han sido desarrollados en Swift 5.9, Swift 4.2, o Swift 4.
 
 <!--
   - test: `swift-version`
@@ -22,37 +22,39 @@ that are written in either Swift 5.9, Swift 4.2, or Swift 4.
   ```
 -->
 
-When you use Xcode 15 to build Swift 4 and Swift 4.2 code,
-most Swift 5.9 functionality is available.
-That said,
-the following changes are available only to code that uses Swift 5.9 or later:
+Al usar Xcode 15 para compilar código Swift 4 y Swift 4.2,
+la mayoría de las funcionalidades de Swift 5.9 estarán disponibles.
+Dicho esto,
+los siguientes cambios solo están disponibles
+para código desarrollado en Swift 5.9 o posterior:
 
-- Functions that return an opaque type require the Swift 5.1 runtime.
-- The `try?` expression doesn't introduce an extra level of optionality
-  to expressions that already return optionals.
-- Large integer literal initialization expressions are inferred
-  to be of the correct integer type.
-  For example, `UInt64(0xffff_ffff_ffff_ffff)` evaluates to the correct value
-  rather than overflowing.
+-   Las funciones que devuelven un tipo opaco requieren el runtime de Swift 5.1.
+-   La expresión `try?` no introduce un nivel adicional de opcionalidad en las
+    expresiones que ya devuelven opcionales.
+-   Se infiere que las expresiones de inicialización de enteros literales
+    grandes son del tipo de entero correcto.
+    Por ejemplo, `UInt64(0xffff_ffff_ffff_ffff)` resulta en el valor correcto
+    en lugar de desbordarse.
 
-Concurrency requires Swift 5.9 or later,
-and a version of the Swift standard library
-that provides the corresponding concurrency types.
-On Apple platforms, set a deployment target
-of at least iOS 13, macOS 10.15, tvOS 13, or watchOS 6.
+La concurrencia requiere Swift 5.9 o posterior,
+y una versión de la biblioteca estándar de Swift
+que proporcione los tipos de concurrencia correspondientes.
+En las plataformas de Apple,
+fija un objetivo de implementación (*deployment target*)
+de, por lo menos, iOS 13, macOS 10.15, tvOS 13, o watchOS 6.
 
-A target written in Swift 5.9 can depend on
-a target that's written in Swift 4.2 or Swift 4,
-and vice versa.
-This means, if you have a large project
-that's divided into multiple frameworks,
-you can migrate your code from Swift 4 to Swift 5.9
-one framework at a time.
+Un *target* escrito en Swift 5.9 puede depender
+de uno escrito en Swift 4.2 o Swift 4,
+y viceversa.
+Esto significa que si tienes un proyecto grande
+que está dividido en varios *frameworks*,
+podrás migrar tu código de Swift 4 a Swift 5.9
+un *framework* a la vez.
 
 <!--
 This source file is part of the Swift.org open source project
 
-Copyright (c) 2014 - 2022 Apple Inc. and the Swift project authors
+Copyright (c) 2014 - 2023 Apple Inc. and the Swift project authors
 Licensed under Apache License v2.0 with Runtime Library Exception
 
 See https://swift.org/LICENSE.txt for license information
