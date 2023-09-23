@@ -1,10 +1,10 @@
-# A Swift Tour
+# Un recorrido por Swift
 
-Explore the features and syntax of Swift.
+Explora las características y la sintaxis de Swift.
 
-Tradition suggests that the first program in a new language
-should print the words “Hello, world!” on the screen.
-In Swift, this can be done in a single line:
+Es costumbre que el primer programa en un nuevo lenguaje
+imprima la frase «¡Hola, mundo!» en la pantalla.
+En Swift, esto se puede conseguir mediante una sola línea de código:
 
 <!--
   K&R uses “hello, world”.
@@ -12,8 +12,8 @@ In Swift, this can be done in a single line:
 -->
 
 ```swift
-print("Hello, world!")
-// Prints "Hello, world!"
+print("¡Hola, mundo!")
+// Imprime "¡Hola, mundo!"
 ```
 
 <!--
@@ -25,37 +25,36 @@ print("Hello, world!")
   ```
 -->
 
-If you have written code in C or Objective-C,
-this syntax looks familiar to you ---
-in Swift, this line of code is a complete program.
-You don't need to import a separate library for functionality like
-input/output or string handling.
-Code written at global scope is used
-as the entry point for the program,
-so you don't need a `main()` function.
-You also don't need to write semicolons
-at the end of every statement.
+Si has desarollado anteriormente en C u Objective-C,
+esta sintaxis te resultará familiar;
+en Swift, esta línea de código representa un programa completo.
+No hace falta importar una biblioteca aparte
+para contar con funciones como entrada/salida o manejo de cadenas de texto.
+Todo código escrito en el ámbito (*scope*) global se utiliza
+como punto de entrada para el programa,
+por lo que no necesitamos una función `main()`.
+Tampoco hace falta escribir punto y coma
+al final de cada declaración.
 
-This tour gives you enough information
-to start writing code in Swift
-by showing you how to accomplish a variety of programming tasks.
-Don’t worry if you don’t understand something ---
-everything introduced in this tour
-is explained in detail in the rest of this book.
+Esta guía te proporciona suficiente información
+para comenzar a desarrollar código en Swift
+al enseñarte cómo realizar una variedad de tareas de programación.
+No te preocupes si hay algo que no entiendes;
+todo lo presentado en esta guía
+se explica en detalle en el resto de este libro.
 
-## Simple Values
+## Valores sencillos
 
-Use `let` to make a constant and `var` to make a variable.
-The value of a constant
-doesn't need to be known at compile time,
-but you must assign it a value exactly once.
-This means you can use constants to name a value
-that you determine once but use in many places.
+Usa `let` para crear una constante y `var` para crear una variable.
+No hace falta saber el valor de una constante a la hora de compilar,
+pero tal valor debe asignarse exactamente una única vez.
+Esto significa que puedes usar constantes para nombrar un valor
+que solo se define una vez, pero que se usa en muchas partes.
 
 ```swift
-var myVariable = 42
-myVariable = 50
-let myConstant = 42
+var miVariable = 42
+miVariable = 50
+let miConstante = 42
 ```
 
 <!--
@@ -68,24 +67,24 @@ let myConstant = 42
   ```
 -->
 
-A constant or variable must have the same type
-as the value you want to assign to it.
-However, you don't always have to write the type explicitly.
-Providing a value when you create a constant or variable
-lets the compiler infer its type.
-In the example above,
-the compiler infers that `myVariable` is an integer
-because its initial value is an integer.
+Una constante o variable debe ser del mismo tipo
+que el valor que se le quiera asignar.
+Sin embargo, no siempre tienes que escribir el tipo explícitamente.
+El hecho de proporcionar un valor al crear una variable o constante,
+le permite al compilador inferir el tipo de dicha variable o constante.
+En el ejemplo anterior,
+el compilador infiere que `miVariable` es un entero
+porque su valor inicial es un entero.
 
-If the initial value doesn't provide enough information
-(or if there isn't an initial value),
-specify the type by writing it after the variable,
-separated by a colon.
+Si el valor inicial no proporciona suficiente información
+(o si no hay un valor inicial),
+especifica el tipo escribiéndolo después de la variable,
+separado por dos puntos (`:`).
 
 ```swift
-let implicitInteger = 70
-let implicitDouble = 70.0
-let explicitDouble: Double = 70
+let enteroImplicito = 70
+let doubleImplicito = 70.0
+let doubleExplicito: Double = 70
 ```
 
 <!--
@@ -98,17 +97,17 @@ let explicitDouble: Double = 70
   ```
 -->
 
-> Experiment: Create a constant with
-> an explicit type of `Float` and a value of `4`.
+> Experimento: Crea una constante
+> con un tipo explícito de `Float` y un valor de `4`.
 
-Values are never implicitly converted to another type.
-If you need to convert a value to a different type,
-explicitly make an instance of the desired type.
+Los valores nunca se convierten a un tipo diferente implícitamente.
+Si necesitas convertir un valor a un tipo diferente,
+debes crear —de manera explícita— una instancia del tipo deseado.
 
 ```swift
-let label = "The width is "
-let width = 94
-let widthLabel = label + String(width)
+let etiqueta = "El ancho es "
+let ancho = 94
+let anchoDeLaEtiqueta = etiqueta + String(ancho)
 ```
 
 <!--
@@ -123,8 +122,8 @@ let widthLabel = label + String(width)
   ```
 -->
 
-> Experiment: Try removing the conversion to `String` from the last line.
-> What error do you get?
+> Experimento: Intenta removiendo la conversión a `String` de la última línea.
+> ¿Cuál error te aparece?
 
 <!--
   TODO: Discuss with Core Writers ---
@@ -132,16 +131,16 @@ let widthLabel = label + String(width)
   helping you learn something?
 -->
 
-There's an even simpler way to include values in strings:
-Write the value in parentheses,
-and write a backslash (`\`) before the parentheses.
-For example:
+Hay una manera incluso más sencilla de insertar valores en una cadena de texto —
+escribe el valor en paréntesis,
+y agrega una barra invertida (`\`) antes de los paréntesis.
+Por ejemplo:
 
 ```swift
-let apples = 3
-let oranges = 5
-let appleSummary = "I have \(apples) apples."
-let fruitSummary = "I have \(apples + oranges) pieces of fruit."
+let manzanas = 3
+let naranjas = 5
+let totalManzanas = "Tengo \(manzanas) manzanas."
+let totalFrutas = "Tengo \(manzanas + naranjas) frutas."
 ```
 
 <!--
@@ -159,24 +158,24 @@ let fruitSummary = "I have \(apples + oranges) pieces of fruit."
   ```
 -->
 
-> Experiment: Use `\()` to
-> include a floating-point calculation in a string
-> and to include someone’s name in a greeting.
+> Experimento: Usa `\()` para
+> incluir un operación con números de coma flotante en una cadena de texto
+> y para incluir el nombre de alguien en un saludo.
 
-Use three double quotation marks (`"""`) for strings
-that take up multiple lines.
-Indentation at the start of each quoted line is removed,
-as long as it matches the indentation of the closing quotation marks.
-For example:
+Usa tres comillas dobles (`"""`) para cadenas de texto
+que ocupan más de una línea.
+La sangría (*indentation*) al inicio de cada línea de la cadena es removida
+siempre y cuando concuerde con la sangría de las comillas de cierre.
+Por ejemplo:
 
 ```swift
-let quotation = """
-        Even though there's whitespace to the left,
-        the actual lines aren't indented.
-            Except for this line.
-        Double quotes (") can appear without being escaped.
+let cita = """
+        Aun cuando hay espacios en blanco a la izquierda,
+        las líneas como tal no llevan sangría.
+            Excepto por esta línea.
+        Las comillas dobles (") pueden aparecer sin escaparlas.
 
-        I still have \(apples + oranges) pieces of fruit.
+        Todavía tengo \(manzanas + naranjas) frutas.
         """
 ```
 
@@ -196,10 +195,10 @@ let quotation = """
   <rdar://problem/49129068> Swift code formatting damages indentation
 -->
 
-Create arrays and dictionaries using brackets (`[]`),
-and access their elements by writing
-the index or key in brackets.
-A comma is allowed after the last element.
+Crea arreglos y diccionarios usando corchetes (`[]`),
+y accede a sus elementos referenciando
+su índice o llave en corchetes.
+Está permitido agregar una coma después del último elemento.
 
 <!--
   REFERENCE
@@ -240,14 +239,14 @@ A comma is allowed after the last element.
 -->
 
 ```swift
-var fruits = ["strawberries", "limes", "tangerines"]
-fruits[1] = "grapes"
+var frutas = ["fresas", "limas", "mandarinas"]
+frutas[1] = "uvas"
 
-var occupations = [
-    "Malcolm": "Captain",
-    "Kaylee": "Mechanic",
+var ocupaciones = [
+    "Malcolm": "Capitán",
+    "Kaylee": "Mecánica",
  ]
-occupations["Jayne"] = "Public Relations"
+ocupaciones["Jayne"] = "Relaciones Públicas"
 ```
 
 <!--
@@ -267,12 +266,12 @@ occupations["Jayne"] = "Public Relations"
 
 <!-- Apple Books screenshot begins here. -->
 
-Arrays automatically grow as you add elements.
+Los arreglos crecen automáticamente a medida que agregas elementos.
 
 ```swift
-fruits.append("blueberries")
-print(fruits)
-// Prints "["strawberries", "grapes", "tangerines", "blueberries"]"
+frutas.append("moras")
+print(frutas)
+// Imprime "["fresas", "uvas", "mandarinas", "moras"]"
 ```
 
 <!--
@@ -285,13 +284,13 @@ print(fruits)
   ```
 -->
 
-You also use brackets to write an empty array or dictionary.
-For an array, write `[]`,
-and for a dictionary, write `[:]`.
+También puedes usar corchetes para crear un arreglo o un diccionario vacíos.
+Para un arreglo, usa `[]`
+y, para un diccionario, usa `[:]`.
 
 ```swift
-fruits = []
-occupations = [:]
+frutas = []
+ocupaciones = [:]
 ```
 
 <!--
@@ -303,13 +302,13 @@ occupations = [:]
   ```
 -->
 
-If you're assigning an empty array or dictionary to a new variable,
-or another place where there isn't any type information,
-you need to specify the type.
+Si asignas un arreglo o un diccionario vacíos a una nueva variable,
+o a algún otro lugar donde no hay ninguna información sobre el tipo,
+tendrás que especificarlo.
 
 ```swift
-let emptyArray: [String] = []
-let emptyDictionary: [String: Float] = [:]
+let arregloVacio: [String] = []
+let diccionarioVacio: [String: Float] = [:]
 ```
 
 <!--
@@ -324,26 +323,29 @@ let emptyDictionary: [String: Float] = [:]
   ```
 -->
 
-## Control Flow
+## Flujo de control
 
-Use `if` and `switch` to make conditionals,
-and use `for`-`in`, `while`, and `repeat`-`while`
-to make loops.
-Parentheses around the condition or loop variable are optional.
-Braces around the body are required.
+Usa `if` y `switch` para crear condicionales,
+y usa `for-in`, `while`, y `repeat-while`
+para crear ciclos.
+El uso de paréntesis alrededor de la condición
+o de la variable del ciclo es opcional.
+El uso de llaves alrededor del cuerpo del ciclo es obligatorio.
 
 ```swift
-let individualScores = [75, 43, 103, 87, 12]
-var teamScore = 0
-for score in individualScores {
-    if score > 50 {
-        teamScore += 3
+let puntajesIndividuales = [75, 43, 103, 87, 12]
+var puntajeDelEquipo = 0
+
+for puntaje in puntajesIndividuales {
+    if puntaje > 50 {
+        puntajeDelEquipo += 3
     } else {
-        teamScore += 1
+        puntajeDelEquipo += 1
     }
 }
-print(teamScore)
-// Prints "11"
+
+print(puntajeDelEquipo)
+// Imprime "11"
 ```
 
 <!--
@@ -377,33 +379,33 @@ print(teamScore)
   << Would you like a jelly baby?
 -->
 
-In an `if` statement,
-the conditional must be a Boolean expression ---
-this means that code such as `if score { ... }` is an error,
-not an implicit comparison to zero.
+En una instrucción `if`,
+el condicional debe ser una expresión booleana;
+esto significa, que una instrucción tipo `if puntaje { ... }` es un error,
+pues no se hace una comparación explícita con cero.
 
-You can write `if` or `switch`
-after the equal sign (`=`) of an assignment
-or after `return`,
-to choose a value based on the condition.
+Puede escribir `if` o `switch`
+después del signo igual (`=`) de una asignación
+o después de `return`,
+para elegir un valor en función de la condición.
 
 ```swift
-let scoreDecoration = if teamScore > 10 {
+let decoracionDelPuntaje = if puntajeDelEquipo > 10 {
     "🎉"
 } else {
     ""
 }
-print("Score:", teamScore, scoreDecoration)
-// Prints "Score: 11 🎉"
+print("Puntaje:", puntajeDelEquipo, decoracionDelPuntaje)
+// Imprime "Puntaje: 11 🎉"
 ```
 
-You can use `if` and `let` together
-to work with values that might be missing.
-These values are represented as optionals.
-An optional value either contains a value
-or contains `nil` to indicate that a value is missing.
-Write a question mark (`?`) after the type of a value
-to mark the value as optional.
+Puedes usar `if` y `let` en conjunto
+para lidiar con valores que podrían no existir.
+Estos valores son representados como opcionales.
+Un valor opcional puede contener o un valor
+o `nil`, para indicar la ausencia de un valor.
+Agrega un signo de interrogación (`?`) después del tipo de un valor
+para marcar dicho valor como opcional.
 
 <!-- Apple Books screenshot ends here. -->
 
@@ -415,14 +417,15 @@ to mark the value as optional.
 -->
 
 ```swift
-var optionalString: String? = "Hello"
-print(optionalString == nil)
-// Prints "false"
+var cadenaOpcional: String? = "Hola"
+print(cadenaOpcional == nil)
+// Imprime "false"
 
-var optionalName: String? = "John Appleseed"
-var greeting = "Hello!"
-if let name = optionalName {
-    greeting = "Hello, \(name)"
+var nombreOpcional: String? = "John Appleseed"
+var saludo = "¡Hola!"
+
+if let nombre = nombreOpcional {
+    saludo = "¡Hola, \(nombre)!"
 }
 ```
 
@@ -444,27 +447,27 @@ if let name = optionalName {
   ```
 -->
 
-> Experiment: Change `optionalName` to `nil`.
-> What greeting do you get?
-> Add an `else` clause that sets a different greeting
-> if `optionalName` is `nil`.
+> Experimento: Cambia el valor de `nombreOpcional` por `nil`.
+> ¿Cuál saludo obtienes?
+> Agrega una cláusula `else` que defina un saludo diferente
+> si `nombreOpcional` es `nil`.
 
-If the optional value is `nil`,
-the conditional is `false` and the code in braces is skipped.
-Otherwise, the optional value is unwrapped and assigned
-to the constant after `let`,
-which makes the unwrapped value available
-inside the block of code.
+Si el valor opcional es `nil`,
+el condicional resulta ser `false` y el código en las llaves es ignorado.
+En caso contrario, se extrae el valor opcional y se le asigna
+a la constante que le sigue a `let`,
+lo cual hace que el valor extraído esté disponible
+dentro del bloque de código.
 
-Another way to handle optional values
-is to provide a default value using the `??` operator.
-If the optional value is missing,
-the default value is used instead.
+Otra forma de manejar valores opcionales
+es proporcionar un valor predeterminado mediante el uso del operador `??`.
+Si el valor opcional no existe,
+se usará el valor predeterminado en su lugar.
 
 ```swift
-let nickname: String? = nil
-let fullName: String = "John Appleseed"
-let informalGreeting = "Hi \(nickname ?? fullName)"
+let alias: String? = nil
+let nombreCompleto: String = "John Appleseed"
+let saludoInformal = "Hola, \(alias ?? nombreCompleto)"
 ```
 
 <!--
@@ -479,14 +482,14 @@ let informalGreeting = "Hi \(nickname ?? fullName)"
   ```
 -->
 
-You can use a shorter spelling to unwrap a value,
-using the same name for that unwrapped value.
+Puedes usar una sintaxis más concisa para extraer un valor,
+usando el mismo nombre para dicho valor extraído.
 
 ```swift
-if let nickname {
-    print("Hey, \(nickname)")
+if let alias {
+    print("Hey, \(alias)")
 }
-// Doesn't print anything, because nickname is nil.
+// No imprime nada porque alias es nil.
 ```
 
 <!--
@@ -499,10 +502,10 @@ if let nickname {
   ```
 -->
 
-Switches support any kind of data
-and a wide variety of comparison operations ---
-they aren't limited to integers
-and tests for equality.
+Los ciclos `switch` soportan cualquier tipo de datos
+al igual que una gran variedad de operaciones comparativas;
+estos no se limitan a enteros
+y comprobaciones de igualdad.
 
 <!--
   REFERENCE
@@ -513,18 +516,18 @@ and tests for equality.
 -->
 
 ```swift
-let vegetable = "red pepper"
-switch vegetable {
-case "celery":
-    print("Add some raisins and make ants on a log.")
-case "cucumber", "watercress":
-    print("That would make a good tea sandwich.")
-case let x where x.hasSuffix("pepper"):
-    print("Is it a spicy \(x)?")
+let vegetal = "pimiento rojo"
+switch vegetal {
+case "apio":
+    print("Un par de vegetales más y tendrás un buen jugo verde.")
+case "pepino", "cebolla":
+    print("Útil para una buena ensalada.")
+case let x where x.hasSuffix("pimiento"):
+    print("¿Es un \(x) picante?")
 default:
-    print("Everything tastes good in soup.")
+    print("Todo sabe bien en una sopa.")
 }
-// Prints "Is it a spicy red pepper?"
+// Imprime "¿Es un pimiento rojo picante?"
 ```
 
 <!--
@@ -546,30 +549,30 @@ default:
   ```
 -->
 
-> Experiment: Try removing the default case.
-> What error do you get?
+> Experimento: Remueve el caso `default`.
+> ¿Cuál es el error que aparece?
 
-Notice how `let` can be used in a pattern
-to assign the value that matched the pattern
-to a constant.
+Observa cómo es posible usar `let` con un patrón
+para asignar, a una constante,
+el valor que concuerde con dicho patrón.
 
-After executing the code inside the switch case that matched,
-the program exits from the switch statement.
-Execution doesn't continue to the next case,
-so you don't need to explicitly break out of the switch
-at the end of each case’s code.
+Una vez ejecutado el código dentro del caso que concuerda,
+el programa abandona la sentencia `switch`.
+La ejecución no continúa al siguiente caso,
+por lo que no tienes que indicar, explícitamente, la salida del ciclo
+al final del código de cada caso.
 
 <!--
   Omitting mention of "fallthrough" keyword.
   It's in the guide/reference if you need it.
 -->
 
-You use `for`-`in` to iterate over items in a dictionary
-by providing a pair of names to use
-for each key-value pair.
-Dictionaries are an unordered collection,
-so their keys and values are iterated over
-in an arbitrary order.
+Puedes usar `for`-`in` para iterar sobre los elementos de un diccionario,
+proporcionando un par de nombres a usar
+para cada par llave-valor.
+Los diccionarios son colecciones sin un orden particular,
+por lo que se itera sobre sus llaves y valores
+de manera arbitraria.
 
 <!--
   REFERENCE
@@ -580,21 +583,23 @@ in an arbitrary order.
 -->
 
 ```swift
-let interestingNumbers = [
-    "Prime": [2, 3, 5, 7, 11, 13],
+let numerosInteresantes = [
+    "Primos": [2, 3, 5, 7, 11, 13],
     "Fibonacci": [1, 1, 2, 3, 5, 8],
-    "Square": [1, 4, 9, 16, 25],
+    "Cuadrados": [1, 4, 9, 16, 25],
 ]
-var largest = 0
-for (_, numbers) in interestingNumbers {
-    for number in numbers {
-        if number > largest {
-            largest = number
+var numeroMayor = 0
+
+for (_, numeros) in numerosInteresantes {
+    for numero in numeros {
+        if numero > numeroMayor {
+            numeroMayor = numero
         }
     }
 }
-print(largest)
-// Prints "25"
+
+print(numeroMayor)
+// Imprime "25"
 ```
 
 <!--
@@ -619,12 +624,11 @@ print(largest)
   ```
 -->
 
-> Experiment: Replace the `_` with a variable name,
-> and keep track of which kind of number was the largest.
+> Experimento: Reemplaza `_` por el nombre de una variable
+> y hazle seguimiento al tipo de número que resultó ser el mayor.
 
-Use `while` to repeat a block of code until a condition changes.
-The condition of a loop can be at the end instead,
-ensuring that the loop is run at least once.
+Usa `while` para repetir un bloque de código hasta que una condición cambie.
+La condición de un ciclo puede ir al final, para asegurar que este se ejecute al menos una vez.
 
 <!--
   REFERENCE
@@ -639,14 +643,14 @@ while n < 100 {
     n *= 2
 }
 print(n)
-// Prints "128"
+// Imprime "128"
 
 var m = 2
 repeat {
     m *= 2
 } while m < 100
 print(m)
-// Prints "128"
+// Imprime "128"
 ```
 
 <!--
@@ -669,13 +673,13 @@ print(m)
   ```
 -->
 
-> Experiment:
-> Change the condition from `m < 100` to `m < 0`
-> to see how `while` and `repeat`-`while` behave differently
-> when the loop condition is already true.
+> Experimento:
+> Cambia la condición de `m < 100` a `m < 0`
+> para ver cómo `while` y `repeat`-`while` se comportan diferente
+> cuando la condición del ciclo es verdadera desde un inicio.
 
-You can keep an index in a loop
-by using `..<` to make a range of indexes.
+Es posible tener índices en un ciclo,
+mediante el uso de `..<` para crear un rango de índices.
 
 ```swift
 var total = 0
@@ -683,7 +687,7 @@ for i in 0..<4 {
     total += i
 }
 print(total)
-// Prints "6"
+// Imprime "6"
 ```
 
 <!--
@@ -699,16 +703,16 @@ print(total)
   ```
 -->
 
-Use `..<` to make a range that omits its upper value,
-and use `...` to make a range that includes both values.
+Usa `..<` para crear un rango que omita el valor superior,
+y usa `...` para crear uno que incluya ambos valores.
 
-## Functions and Closures
+## Funciones y clausuras
 
-Use `func` to declare a function.
-Call a function by following its name
-with a list of arguments in parentheses.
-Use `->` to separate the parameter names and types
-from the function's return type.
+Usa `func` para declarar una función.
+Para llamar una función,
+escribe una lista de argumentos en paréntesis después de su nombre.
+Usa `->` para separar el nombre de los parámetros y sus tipos
+del tipo que devuelve la función.
 
 <!--
   REFERENCE
@@ -719,10 +723,10 @@ from the function's return type.
 -->
 
 ```swift
-func greet(person: String, day: String) -> String {
-    return "Hello \(person), today is \(day)."
+func saludar(persona: String, dia: String) -> String {
+    return "Hola, \(persona), hoy es \(dia)."
 }
-greet(person: "Bob", day: "Tuesday")
+saludar(persona: "Bob", dia: "martes")
 ```
 
 <!--
@@ -739,20 +743,20 @@ greet(person: "Bob", day: "Tuesday")
   ```
 -->
 
-> Experiment: Remove the `day` parameter.
-> Add a parameter to include today’s lunch special in the greeting.
+> Experimento: Remueve el parámetro `dia`.
+> Agrega un parámetro que incluya el almuerzo especial de hoy en el saludo.
 
-By default,
-functions use their parameter names
-as labels for their arguments.
-Write a custom argument label before the parameter name,
-or write `_` to use no argument label.
+Por defecto,
+las funciones usan los nombres de sus parámetros
+como etiquetas para sus argumentos.
+Crea tu propia etiqueta de argumento anteponiéndola al nombre del parámetro,
+o agrega `_` para no usar una etiqueta de argumento.
 
 ```swift
-func greet(_ person: String, on day: String) -> String {
-    return "Hello \(person), today is \(day)."
+func saludar(_ persona: String, el dia: String) -> String {
+    return "Hola, \(persona), hoy es \(dia)."
 }
-greet("John", on: "Wednesday")
+saludar("John", el: "miércoles")
 ```
 
 <!--
@@ -769,10 +773,10 @@ greet("John", on: "Wednesday")
   ```
 -->
 
-Use a tuple to make a compound value ---
-for example, to return multiple values from a function.
-The elements of a tuple can be referred to
-either by name or by number.
+Usa una tupla para crear un valor compuesto;
+por ejemplo, para devolver múltiples valores desde una función.
+Los elementos de una tupla se pueden referenciar
+bien sea por nombre o por número.
 
 <!--
   REFERENCE
@@ -783,27 +787,27 @@ either by name or by number.
 -->
 
 ```swift
-func calculateStatistics(scores: [Int]) -> (min: Int, max: Int, sum: Int) {
-    var min = scores[0]
-    var max = scores[0]
-    var sum = 0
+func calcularEstadisticas(puntajes: [Int]) -> (min: Int, max: Int, suma: Int) {
+    var min = puntajes[0]
+    var max = puntajes[0]
+    var suma = 0
 
-    for score in scores {
-        if score > max {
-            max = score
-        } else if score < min {
-            min = score
+    for puntaje in puntajes {
+        if puntaje > max {
+            max = puntaje
+        } else if puntaje < min {
+            min = puntaje
         }
-        sum += score
+        suma += puntaje
     }
 
-    return (min, max, sum)
+    return (min, max, suma)
 }
-let statistics = calculateStatistics(scores: [5, 3, 100, 3, 9])
-print(statistics.sum)
-// Prints "120"
-print(statistics.2)
-// Prints "120"
+let estadisticas = calcularEstadisticas(puntajes: [5, 3, 100, 3, 9])
+print(estadisticas.suma)
+// Imprime "120"
+print(estadisticas.2)
+// Imprime "120"
 ```
 
 <!--
@@ -836,23 +840,23 @@ print(statistics.2)
   ```
 -->
 
-Functions can be nested.
-Nested functions have access to variables
-that were declared in the outer function.
-You can use nested functions
-to organize the code in a function
-that's long or complex.
+Las funciones pueden anidarse.
+Las funciones anidadas tienen acceso a variables
+que hayan sido declaradas en la función externa.
+Puedes usar funciones anidadas
+para organizar el código de una función
+que es larga o compleja.
 
 ```swift
-func returnFifteen() -> Int {
+func devolverQuince() -> Int {
     var y = 10
-    func add() {
+    func agregar() {
         y += 5
     }
-    add()
+    agregar()
     return y
 }
-returnFifteen()
+devolverQuince()
 ```
 
 <!--
@@ -874,18 +878,18 @@ returnFifteen()
   ```
 -->
 
-Functions are a first-class type.
-This means that a function can return another function as its value.
+Las funciones son un tipo de primera clase.
+Esto quiere decir que una función puede devolver otra función como su valor.
 
 ```swift
-func makeIncrementer() -> ((Int) -> Int) {
-    func addOne(number: Int) -> Int {
-        return 1 + number
+func crearIncrementador() -> ((Int) -> Int) {
+    func agregarUno(numero: Int) -> Int {
+        return 1 + numero
     }
-    return addOne
+    return agregarUno
 }
-var increment = makeIncrementer()
-increment(7)
+var incrementar = crearIncrementador()
+incrementar(7)
 ```
 
 <!--
@@ -906,22 +910,22 @@ increment(7)
   ```
 -->
 
-A function can take another function as one of its arguments.
+Una función puede tomar a otra función como uno de sus argumentos.
 
 ```swift
-func hasAnyMatches(list: [Int], condition: (Int) -> Bool) -> Bool {
-    for item in list {
-        if condition(item) {
+func coincideAlguno(lista: [Int], condicion: (Int) -> Bool) -> Bool {
+    for elemento in lista {
+        if condicion(elemento) {
             return true
         }
     }
     return false
 }
-func lessThanTen(number: Int) -> Bool {
-    return number < 10
+func menorQueDiez(numero: Int) -> Bool {
+    return numero < 10
 }
-var numbers = [20, 19, 7, 12]
-hasAnyMatches(list: numbers, condition: lessThanTen)
+var numeros = [20, 19, 7, 12]
+coincideAlguno(lista: numeros, condicion: menorQueDiez)
 ```
 
 <!--
@@ -947,20 +951,21 @@ hasAnyMatches(list: numbers, condition: lessThanTen)
   ```
 -->
 
-Functions are actually a special case of closures:
-blocks of code that can be called later.
-The code in a closure has access to things like variables and functions
-that were available in the scope where the closure was created,
-even if the closure is in a different scope when it's executed ---
-you saw an example of this already with nested functions.
-You can write a closure without a name
-by surrounding code with braces (`{}`).
-Use `in` to separate the arguments and return type from the body.
+Las funciones son, en realidad, un caso especial de las clausuras:
+bloques de código que pueden ser llamados más tarde.
+El código en una clausura tiene acceso a elementos como variables y funciones
+que están disponibles en el ámbito en el cual se creó la clausura,
+incluso si la clausura se encuentra en un ámbito diferente al ejecutarse;
+ya has visto un ejemplo de esto con las funciones anidadas.
+Puedes crear una clausura anónima
+al encerrar el código en llaves (`{}`).
+Usa `in` para separar los argumentos y el tipo devuelto por la función
+del cuerpo de la función.
 
 ```swift
-numbers.map({ (number: Int) -> Int in
-    let result = 3 * number
-    return result
+numeros.map({ (numero: Int) -> Int in
+    let resultado = 3 * numero
+    return resultado
 })
 ```
 
@@ -978,20 +983,21 @@ numbers.map({ (number: Int) -> Int in
   ```
 -->
 
-> Experiment: Rewrite the closure to return zero for all odd numbers.
+> Experimento: Reescribe la clausura de manera que devuelva cero
+> para todos los números impares.
 
-You have several options for writing closures more concisely.
-When a closure's type is already known,
-such as the callback for a delegate,
-you can omit the type of its parameters,
-its return type, or both.
-Single statement closures implicitly return the value
-of their only statement.
+Existen muchas maneras de crear una clausura de forma más concisa.
+Cuando se conoce el tipo de una clausura,
+como en el caso de un *callback* para un delegado,
+puedes omitir el tipo de sus parámetros,
+el tipo devuelto, o ambos.
+Las clausuras de una sola sentencia devuelven el valor
+de su única sentencia de manera implícita.
 
 ```swift
-let mappedNumbers = numbers.map({ number in 3 * number })
-print(mappedNumbers)
-// Prints "[60, 57, 21, 36]"
+let numerosMapeados = numeros.map({ numero in 3 * numero })
+print(numerosMapeados)
+// Imprime "[60, 57, 21, 36]"
 ```
 
 <!--
@@ -1004,17 +1010,17 @@ print(mappedNumbers)
   ```
 -->
 
-You can refer to parameters by number instead of by name ---
-this approach is especially useful in very short closures.
-A closure passed as the last argument to a function
-can appear immediately after the parentheses.
-When a closure is the only argument to a function,
-you can omit the parentheses entirely.
+Puedes referenciar parámetros por número en vez de nombre;
+este enfoque es, especialmente, útil para clausuras muy concisas.
+Una clausura que se pasa como el último argumento de una función
+puede aparecer inmediatamente después de los paréntesis.
+Cuando una clausura es el único argumento de una función,
+puedes omitir los paréntesis por completo.
 
 ```swift
-let sortedNumbers = numbers.sorted { $0 > $1 }
-print(sortedNumbers)
-// Prints "[20, 19, 12, 7]"
+let numerosOrdenados = numeros.sorted { $0 > $1 }
+print(numerosOrdenados)
+// Imprime "[20, 19, 12, 7]"
 ```
 
 <!--
@@ -1039,13 +1045,13 @@ print(sortedNumbers)
   Omitted custom operators as "advanced" topics.
 -->
 
-## Objects and Classes
+## Objetos y clases
 
-Use `class` followed by the class's name to create a class.
-A property declaration in a class is written the same way
-as a constant or variable declaration,
-except that it's in the context of a class.
-Likewise, method and function declarations are written the same way.
+Usa `class` seguido del nombre de la clase para crear una clase.
+La declaración de una propiedad en una clase, se escribe igual
+que la declaración de una constante o variable,
+excepto que esta existiría en el contexto de una clase.
+Similarmente, la declaración de métodos y funciones se hace de la misma forma.
 
 <!--
   REFERENCE
@@ -1058,10 +1064,10 @@ Likewise, method and function declarations are written the same way.
 -->
 
 ```swift
-class Shape {
-    var numberOfSides = 0
-    func simpleDescription() -> String {
-        return "A shape with \(numberOfSides) sides."
+class Figura {
+    var numeroDeLados = 0
+    func descripcionBasica() -> String {
+        return "Una figura con \(numeroDeLados) lados."
     }
 }
 ```
@@ -1081,18 +1087,18 @@ class Shape {
   ```
 -->
 
-> Experiment: Add a constant property with `let`,
-> and add another method that takes an argument.
+> Experimento: Agrega una propiedad constante con `let`
+> y otro método que tome un argumento.
 
-Create an instance of a class
-by putting parentheses after the class name.
-Use dot syntax to access
-the properties and methods of the instance.
+Crea una instancia de una clase
+al poner paréntesis después del nombre de la clase.
+Usa la sintaxis de punto para acceder
+a las propiedades y métodos de la instancia.
 
 ```swift
-var shape = Shape()
-shape.numberOfSides = 7
-var shapeDescription = shape.simpleDescription()
+var figura = Figura()
+figura.numeroDeLados = 7
+var descripcionDeLaFigura = figura.descripcionBasica()
 ```
 
 <!--
@@ -1107,21 +1113,21 @@ var shapeDescription = shape.simpleDescription()
   ```
 -->
 
-This version of the `Shape` class is missing something important:
-an initializer to set up the class when an instance is created.
-Use `init` to create one.
+A esta versión de la clase `Figura` le hace falta algo importante:
+un inicializador que configure la clase al crear una instancia.
+Usa `init` para crear uno.
 
 ```swift
-class NamedShape {
-    var numberOfSides: Int = 0
-    var name: String
+class FiguraConNombre {
+    var numeroDeLados: Int = 0
+    var nombre: String
 
-    init(name: String) {
-       self.name = name
+    init(nombre: String) {
+       self.nombre = nombre
     }
 
-    func simpleDescription() -> String {
-       return "A shape with \(numberOfSides) sides."
+    func descripcionBasica() -> String {
+       return "Una figura con \(numeroDeLados) lados."
     }
 }
 ```
@@ -1149,52 +1155,52 @@ class NamedShape {
   ```
 -->
 
-Notice how `self` is used to distinguish the `name` property
-from the `name` argument to the initializer.
-The arguments to the initializer are passed like a function call
-when you create an instance of the class.
-Every property needs a value assigned ---
-either in its declaration (as with `numberOfSides`)
-or in the initializer (as with `name`).
+Observa cómo se usa `self` para diferenciar la propiedad `nombre`
+del argumento (del inicializador) `nombre`.
+Al crear una instancia de una clase,
+los argumentos del inicializador se pasan como cuando se llama una función.
+Cada propiedad requiere que se le asigne un valor,
+bien sea al declararla (como con `numeroDeLados`)
+o en el inicializador (como con `nombre`).
 
-Use `deinit` to create a deinitializer
-if you need to perform some cleanup
-before the object is deallocated.
+Usa `deinit` para crear un «desinicializador» (*deinitializer*)
+si necesitas llevar a cabo alguna limpieza
+antes de que el objeto sea «desasignado» (*deallocated*).
 
-Subclasses include their superclass name
-after their class name,
-separated by a colon.
-There's no requirement for classes to subclass any standard root class,
-so you can include or omit a superclass as needed.
+Las subclases incluyen el nombre de su súperclase
+después de su propio nombre,
+separados por una coma.
+No es requerimiento para las clases *subclasificar* ninguna clase base estándar,
+por lo que puedes incluir u omitir una súperclase si así lo requieres.
 
-Methods on a subclass that override the superclass's implementation
-are marked with `override` ---
-overriding a method by accident, without `override`,
-is detected by the compiler as an error.
-The compiler also detects methods with `override`
-that don't actually override any method in the superclass.
+Los métodos de una subclase que sustituyen la implementación de una súperclase
+se marcan con `override`;
+sustituir un método por accidente, sin usar `override`,
+es detectado por el compilador como un error.
+El compilador también detecta métodos con `override`
+que no sustituyen ningún método de la súperclase.
 
 ```swift
-class Square: NamedShape {
-    var sideLength: Double
+class Cuadrado: FiguraConNombre {
+    var longitudDeLosLados: Double
 
-    init(sideLength: Double, name: String) {
-        self.sideLength = sideLength
-        super.init(name: name)
-        numberOfSides = 4
+    init(longitudDeLosLados: Double, nombre: String) {
+        self.longitudDeLosLados = longitudDeLosLados
+        super.init(nombre: nombre)
+        numeroDeLados = 4
     }
 
     func area() -> Double {
-        return sideLength * sideLength
+        return longitudDeLosLados * longitudDeLosLados
     }
 
-    override func simpleDescription() -> String {
-        return "A square with sides of length \(sideLength)."
+    override func descripcionBasica() -> String {
+        return "Un cuadrado con lados de longitud \(longitudDeLosLados)."
     }
 }
-let test = Square(sideLength: 5.2, name: "my test square")
-test.area()
-test.simpleDescription()
+let prueba = Cuadrado(longitudDeLosLados: 5.2, name: "mi cuadrado de prueba")
+prueba.area()
+prueba.descripcionBasica()
 ```
 
 <!--
@@ -1230,45 +1236,45 @@ test.simpleDescription()
   ```
 -->
 
-> Experiment: Make another subclass of `NamedShape`
-> called `Circle`
-> that takes a radius and a name
-> as arguments to its initializer.
-> Implement an `area()` and a `simpleDescription()` method
-> on the `Circle` class.
+> Experimento: Crea otra subclase de `FiguraConNombre`
+> llamada `Circulo`,
+> que tome un radio y un nombre
+> como argumentos para su inicializador.
+> Implementa los métodos `area()` y `descripcionBasica()`
+> en la clase `Circulo`.
 
-In addition to simple properties that are stored,
-properties can have a getter and a setter.
+Aparte de ser simples propiedades que se pueden almacenar,
+las propiedades pueden tener un *getter* y un *setter*.
 
 ```swift
-class EquilateralTriangle: NamedShape {
-    var sideLength: Double = 0.0
+class TrianguloEquilatero: FiguraConNombre {
+    var longitudDeLosLados: Double = 0.0
 
-    init(sideLength: Double, name: String) {
-        self.sideLength = sideLength
-        super.init(name: name)
-        numberOfSides = 3
+    init(longitudDeLosLados: Double, nombre: String) {
+        self.longitudDeLosLados = longitudDeLosLados
+        super.init(nombre: nombre)
+        numeroDeLados = 3
     }
 
-    var perimeter: Double {
+    var perimetro: Double {
         get {
-             return 3.0 * sideLength
+             return 3.0 * longitudDeLosLados
         }
         set {
-            sideLength = newValue / 3.0
+            longitudDeLosLados = newValue / 3.0
         }
     }
 
-    override func simpleDescription() -> String {
-        return "An equilateral triangle with sides of length \(sideLength)."
+    override func descripcionBasica() -> String {
+        return "Un triángulo equilátero con lados de longitud \(longitudDeLosLados)."
     }
 }
-var triangle = EquilateralTriangle(sideLength: 3.1, name: "a triangle")
-print(triangle.perimeter)
-// Prints "9.3"
-triangle.perimeter = 9.9
-print(triangle.sideLength)
-// Prints "3.3000000000000003"
+var triangulo = TrianguloEquilatero(longitudDeLosLados: 3.1, nombre: "un triángulo")
+print(triangulo.perimetro)
+// Imprime "9.3"
+triangulo.perimetro = 9.9
+print(triangulo.longitudDeLosLados)
+// Imprime "3.3000000000000003"
 ```
 
 <!--
@@ -1306,26 +1312,28 @@ print(triangle.sideLength)
   ```
 -->
 
-In the setter for `perimeter`,
-the new value has the implicit name `newValue`.
-You can provide an explicit name in parentheses after `set`.
+En el *setter* de `perimetro`,
+el nuevo valor tiene el nombre implícito de `newValue`.
+Puedes proporcionar un nombre explícito en paréntesis después de `set`.
 
-Notice that the initializer for the `EquilateralTriangle` class
-has three different steps:
+Observa que el inicializador de la clase `TrianguloEquilatero`
+tiene tres pasos diferentes:
 
-1. Setting the value of properties that the subclass declares.
-2. Calling the superclass's initializer.
-3. Changing the value of properties defined by the superclass.
-   Any additional setup work that uses methods, getters, or setters
-   can also be done at this point.
+1. Establecer el valor de las propiedades declaradas por la subclase.
+2. Llamar al inicializador de la súperclase.
+3. Cambiar el valor de las propiedades definidas por la súperclase.
+   Cualquier otra configuración adicional que use métodos, *getters*, o *setters*
+   también puede llevarse a cabo en este punto.
 
-If you don't need to compute the property
-but still need to provide code that's run before and after setting a new value,
-use `willSet` and `didSet`.
-The code you provide is run any time the value changes outside of an initializer.
-For example, the class below ensures
-that the side length of its triangle
-is always the same as the side length of its square.
+Si no necesitas calcular la propiedad,
+pero igual necesitas proporcionar código
+para ejecutar antes y después de establecer un nuevo valor,
+usa `willSet` y `didSet`.
+El código que proporciones se ejecutará
+cada vez que el valor cambie fuera del inicializador.
+Por ejemplo, la clase a continuación se asegura
+de que la longitud de los lados de su triángulo
+siempre sea la misma que la longitud de los lados de su cuadrado.
 
 <!--
   This triangle + square example could use improvement.
@@ -1335,30 +1343,30 @@ is always the same as the side length of its square.
 -->
 
 ```swift
-class TriangleAndSquare {
-    var triangle: EquilateralTriangle {
+class TrianguloYCuadrado {
+    var triangulo: TrianguloEquilatero {
         willSet {
-            square.sideLength = newValue.sideLength
+            cuadrado.longitudDeLosLados = newValue.longitudDeLosLados
         }
     }
-    var square: Square {
+    var cuadrado: Cuadrado {
         willSet {
-            triangle.sideLength = newValue.sideLength
+            triangulo.longitudDeLosLados = newValue.longitudDeLosLados
         }
     }
-    init(size: Double, name: String) {
-        square = Square(sideLength: size, name: name)
-        triangle = EquilateralTriangle(sideLength: size, name: name)
+    init(tamano: Double, nombre: String) {
+        cuadrado = Cuadrado(longitudDeLosLados: tamano, nombre: nombre)
+        triangulo = TrianguloEquilatero(longitudDeLosLados: tamano, nombre: nombre)
     }
 }
-var triangleAndSquare = TriangleAndSquare(size: 10, name: "another test shape")
-print(triangleAndSquare.square.sideLength)
-// Prints "10.0"
-print(triangleAndSquare.triangle.sideLength)
-// Prints "10.0"
-triangleAndSquare.square = Square(sideLength: 50, name: "larger square")
-print(triangleAndSquare.triangle.sideLength)
-// Prints "50.0"
+var trianguloYCuadrado = TrianguloYCuadrado(tamano: 10, nombre: "otra figura de prueba")
+print(trianguloYCuadrado.cuadrado.longitudDeLosLados)
+// Imprime "10.0"
+print(trianguloYCuadrado.triangulo.longitudDeLosLados)
+// Imprime "10.0"
+trianguloYCuadrado.cuadrado = Cuadrado(longitudDeLosLados: 50, nombre: "cuadrado más grande")
+print(trianguloYCuadrado.triangulo.longitudDeLosLados)
+// Imprime "50.0"
 ```
 
 <!--
@@ -1399,19 +1407,19 @@ print(triangleAndSquare.triangle.sideLength)
   to use them outside a class or a struct.
 -->
 
-When working with optional values,
-you can write `?` before operations like methods, properties, and subscripting.
-If the value before the `?` is `nil`,
-everything after the `?` is ignored
-and the value of the whole expression is `nil`.
-Otherwise, the optional value is unwrapped,
-and everything after the `?` acts on the unwrapped value.
-In both cases,
-the value of the whole expression is an optional value.
+Al trabajar con valores opcionales,
+puedes escribir `?` antes de operaciones como métodos, propiedades, y *subscripting*.
+Si el valor antes de `?` es `nil`,
+todo lo que sigue a `?` es ignorado
+y el valor de toda la expresión es `nil`.
+En caso contrario, se extrae el valor opcional
+y todo lo que sigue a `?` opera sobre el valor extraído.
+En ambos casos,
+el valor de toda la expresión es un valor opcional.
 
 ```swift
-let optionalSquare: Square? = Square(sideLength: 2.5, name: "optional square")
-let sideLength = optionalSquare?.sideLength
+let cuadradoOpcional: Cuadrado? = Cuadrado(longitudDeLosLados: 2.5, nombre: "cuadrado opcional")
+let longitudDeLosLados = cuadradoOpcional?.longitudDeLosLados
 ```
 
 <!--
@@ -1423,11 +1431,11 @@ let sideLength = optionalSquare?.sideLength
   ```
 -->
 
-## Enumerations and Structures
+## Enumeraciones y estructuras
 
-Use `enum` to create an enumeration.
-Like classes and all other named types,
-enumerations can have methods associated with them.
+Usa `enum` para crear una enumeración.
+Al igual que las clases y todos los demás tipos con nombre,
+las enumeraciones pueden tener métodos asociados con ellas.
 
 <!--
   REFERENCE
@@ -1440,28 +1448,28 @@ enumerations can have methods associated with them.
 -->
 
 ```swift
-enum Rank: Int {
-    case ace = 1
-    case two, three, four, five, six, seven, eight, nine, ten
-    case jack, queen, king
+enum Escala: Int {
+    case _as = 1
+    case dos, tres, cuatro, cinco, seis, siete, ocho, nueve, diez
+    case jack, reina, rey
 
-    func simpleDescription() -> String {
+    func descripcionBasica() -> String {
         switch self {
-        case .ace:
-            return "ace"
+        case ._as:
+            return "as"
         case .jack:
             return "jack"
-        case .queen:
-            return "queen"
-        case .king:
-            return "king"
+        case .reina:
+            return "reina"
+        case .rey:
+            return "rey"
         default:
             return String(self.rawValue)
         }
     }
 }
-let ace = Rank.ace
-let aceRawValue = ace.rawValue
+let _as = Escala._as
+let valorBrutoDeAs = _as.rawValue
 ```
 
 <!--
@@ -1495,26 +1503,27 @@ let aceRawValue = ace.rawValue
   ```
 -->
 
-> Experiment: Write a function that compares two `Rank` values
-> by comparing their raw values.
+> Experimento: Crea una función que compare dos valores de tipo `Escala`
+> comparando sus valores brutos.
 
-By default, Swift assigns the raw values starting at zero
-and incrementing by one each time,
-but you can change this behavior by explicitly specifying values.
-In the example above, `Ace` is explicitly given a raw value of `1`,
-and the rest of the raw values are assigned in order.
-You can also use strings or floating-point numbers
-as the raw type of an enumeration.
-Use the `rawValue` property to access the raw value of an enumeration case.
+De manera predeterminada, Swift asigna los valores brutos comenzando por cero
+y aumentando en uno cada vez,
+pero puedes cambiar dicho comportamiento al especificar valores explícitamente.
+En el ejemplo anterior, `_as` recibe, explícitamente, un valor bruto de `1`
+y el resto de los valores brutos se asignan en orden.
+También puedes usar cadenas de texto o números de coma flotante
+como el tipo bruto de una enumeración.
+Usa la propiedad `rawValue` para acceder al valor bruto del caso de una enumeración.
 
-Use the `init?(rawValue:)` initializer
-to make an instance of an enumeration from a raw value.
-It returns either the enumeration case matching the raw value
-or `nil` if there's no matching `Rank`.
+Utiliza el inicializador `init?(rawValue:)`
+para crear una instancia de una enumeración a partir de un valor bruto.
+Este inicializador devuelve el caso (de la enumeración)
+que coincida con el valor bruto
+o `nil` si no existe una enumeración `Escala`.
 
 ```swift
-if let convertedRank = Rank(rawValue: 3) {
-    let threeDescription = convertedRank.simpleDescription()
+if let escalaTransformada = Escala(rawValue: 3) {
+    let descripcionDelTres = escalaTransformada.descripcionBasica()
 }
 ```
 
@@ -1530,31 +1539,31 @@ if let convertedRank = Rank(rawValue: 3) {
   ```
 -->
 
-The case values of an enumeration are actual values,
-not just another way of writing their raw values.
-In fact,
-in cases where there isn't a meaningful raw value,
-you don't have to provide one.
+Los valores de los casos de una enumeración son valores reales,
+y no solo otra forma de escribir sus valores brutos.
+De hecho,
+en los casos en los que no existe un valor bruto significativo,
+no es necesario que proporciones uno.
 
 ```swift
-enum Suit {
-    case spades, hearts, diamonds, clubs
+enum Palo {
+    case picas, corazones, diamantes, treboles
 
-    func simpleDescription() -> String {
+    func descripcionBasica() -> String {
         switch self {
-        case .spades:
-            return "spades"
-        case .hearts:
-            return "hearts"
-        case .diamonds:
-            return "diamonds"
-        case .clubs:
-            return "clubs"
+        case .picas:
+            return "picas"
+        case .corazones:
+            return "corazones"
+        case .diamantes:
+            return "diamantes"
+        case .treboles:
+            return "treboles"
         }
     }
 }
-let hearts = Suit.hearts
-let heartsDescription = hearts.simpleDescription()
+let corazones = Palo.corazones
+let descripcionDeCorazones = corazones.descripcionBasica()
 ```
 
 <!--
@@ -1584,8 +1593,8 @@ let heartsDescription = hearts.simpleDescription()
   ```
 -->
 
-> Experiment: Add a `color()` method to `Suit` that returns "black"
-> for spades and clubs, and returns "red" for hearts and diamonds.
+> Experimento: Crea un método `color()` para la enumeración `Palo`
+> que devuelva “negro” para picas y tréboles, y “rojo” para corazones y diamantes.
 
 <!--
   Suits are in Bridge order, which matches Unicode order.
@@ -1593,32 +1602,33 @@ let heartsDescription = hearts.simpleDescription()
   Wikipedia lists a good half dozen orders.
 -->
 
-Notice the two ways that the `hearts` case of the enumeration
-is referred to above:
-When assigning a value to the `hearts` constant,
-the enumeration case `Suit.hearts` is referred to by its full name
-because the constant doesn't have an explicit type specified.
-Inside the switch,
-the enumeration case is referred to by the abbreviated form `.hearts`
-because the value of `self` is already known to be a suit.
-You can use the abbreviated form
-anytime the value's type is already known.
+Fíjate en las dos formas en las que se hizo referencia
+al caso `corazones` de la enumeración:
+al asignar un valor a la constante `corazones`,
+el caso `Palo.corazones` se referencia por su nombre completo
+porque no se especificó un tipo explícito para la constante.
+Dentro del ciclo `switch`,
+el caso se referencia mediante la forma abreviada `.corazones`
+porque ya sabemos que el valor de `self` es un tipo de palo.
+Puedes utilizar la forma abreviada
+cada vez que conozcas el tipo del valor por anticipado.
 
-If an enumeration has raw values,
-those values are determined as part of the declaration,
-which means every instance of a particular enumeration case
-always has the same raw value.
-Another choice for enumeration cases
-is to have values associated with the case ---
-these values are determined when you make the instance,
-and they can be different for each instance of an enumeration case.
-You can think of the associated values
-as behaving like stored properties of the enumeration case instance.
-For example,
-consider the case of requesting
-the sunrise and sunset times from a server.
-The server either responds with the requested information,
-or it responds with a description of what went wrong.
+Si una enumeración tiene valores brutos,
+se establece que dicho valores forman parte de la declaración,
+lo que significa que cada instancia de un caso de enumeración en particular
+siempre tendrá el mismo valor bruto.
+Otra opción para los casos de enumeraciones
+es tener valores asociados con el caso;
+estos valores se determinan al crear la instancia
+y pueden ser diferentes para cada instancia de un caso de enumeración.
+Puedes ver a los valores asociados
+como valores que se comportan de manera similar a las propiedades almacenadas
+de la instancia del caso de enumeración.
+Por ejemplo,
+considera el caso en el que se le pide a un servidor
+las horas de salida y puesta del sol.
+El servidor responderá con la información solicitada
+o responderá con una descripción de lo que haya salido mal.
 
 <!--
   REFERENCE
@@ -1655,21 +1665,21 @@ or it responds with a description of what went wrong.
 -->
 
 ```swift
-enum ServerResponse {
-    case result(String, String)
-    case failure(String)
+enum RespuestaDelServidor {
+    case resultado(String, String)
+    case falla(String)
 }
 
-let success = ServerResponse.result("6:00 am", "8:09 pm")
-let failure = ServerResponse.failure("Out of cheese.")
+let exito = RespuestaDelServidor.resultado("6:00 am", "6:30 pm")
+let error = RespuestaDelServidor.falla("Se ha agotado el queso.")
 
-switch success {
-case let .result(sunrise, sunset):
-    print("Sunrise is at \(sunrise) and sunset is at \(sunset).")
-case let .failure(message):
-    print("Failure...  \(message)")
+switch exito {
+case let .resultado(amanecer, atardecer):
+    print("El amanecer es a las \(amanecer) y el atardecer es a las \(atardecer).")
+case let .falla(mensaje):
+    print("Error... \(mensaje)")
 }
-// Prints "Sunrise is at 6:00 am and sunset is at 8:09 pm."
+// Imprime "El amanecer es a las 6:00 am y el atardecer es a las 6:30 pm."
 ```
 
 <!--
@@ -1694,30 +1704,30 @@ case let .failure(message):
   ```
 -->
 
-> Experiment: Add a third case to `ServerResponse` and to the switch.
+> Experimento: Agrega un tercer caso a `RespuestaDelServidor` y al ciclo `switch`.
 
-Notice how the sunrise and sunset times
-are extracted from the `ServerResponse` value
-as part of matching the value against the switch cases.
+Observa cómo las horas del amanecer y del atardecer
+se extraen del valor `RespuestaDelServidor`
+como parte de la comparación del valor con los casos del ciclo `switch`.
 
-Use `struct` to create a structure.
-Structures support many of the same behaviors as classes,
-including methods and initializers.
-One of the most important differences
-between structures and classes is that
-structures are always copied when they're passed around in your code,
-but classes are passed by reference.
+Usa `struct` para crear una estructura.
+Las estructuras soportan muchos de los mismos comportamientos que las clases,
+incluyendo métodos e inicializadores.
+Una de las diferencias más importantes
+entre las estructuras y las clases es que
+las estructuras siempre se copian cuando se pasan en el código,
+mientras que las clases se pasan por referencia.
 
 ```swift
-struct Card {
-    var rank: Rank
-    var suit: Suit
-    func simpleDescription() -> String {
-        return "The \(rank.simpleDescription()) of \(suit.simpleDescription())"
+struct Carta {
+    var escala: Escala
+    var palo: Palo
+    func descripcionBasica() -> String {
+        return "El \(escala.descripcionBasica()) de \(palo.descripcionBasica())"
     }
 }
-let threeOfSpades = Card(rank: .three, suit: .spades)
-let threeOfSpadesDescription = threeOfSpades.simpleDescription()
+let tresDePicas = Carta(escala: .tres, palo: .picas)
+let descripcionDelTresDePicas = tresDePicas.descripcionBasica()
 ```
 
 <!--
@@ -1738,17 +1748,17 @@ let threeOfSpadesDescription = threeOfSpades.simpleDescription()
   ```
 -->
 
-> Experiment: Write a function that returns an array containing
-> a full deck of cards,
-> with one card of each combination of rank and suit.
+> Experimento: Crea una función que devuelva un arreglo que contenga
+> una baraja completa de cartas,
+> con una carta de cada combinación de escala y palo.
 
-## Concurrency
+## Concurrencia
 
-Use `async` to mark a function that runs asynchronously.
+Usa `async` para marcar una función que se ejecuta de manera asíncrona:
 
 ```swift
-func fetchUserID(from server: String) async -> Int {
-    if server == "primary" {
+func buscarIDDeUsuario(en servidor: String) async -> Int {
+    if servidor == "principal" {
         return 97
     }
     return 501
@@ -1768,15 +1778,16 @@ func fetchUserID(from server: String) async -> Int {
   ```
 -->
 
-You mark a call to an asynchronous function by writing `await` in front of it.
+Para marcar el llamado a una función asíncrona,
+agrega la palabra clave `await` antes de la invocación de la función:
 
 ```swift
-func fetchUsername(from server: String) async -> String {
-    let userID = await fetchUserID(from: server)
-    if userID == 501 {
+func buscarNombreDeUsuario(en servidor: String) async -> String {
+    let idDeUsuario = await buscarIDDeUsuario(en: servidor)
+    if idDeUsuario == 501 {
         return "John Appleseed"
     }
-    return "Guest"
+    return "Visitante"
 }
 ```
 
@@ -1794,15 +1805,15 @@ func fetchUsername(from server: String) async -> String {
   ```
 -->
 
-Use `async let` to call an asynchronous function,
-letting it run in parallel with other asynchronous code.
-When you use the value it returns, write `await`.
+Usa `async let` para llamar a una función asíncrona
+permitiéndole ejecutarse en paralelo con otro código asíncrono.
+Si necesitas usar el valor que devuelve, utiliza `await`:
 
 ```swift
-func connectUser(to server: String) async {
-    async let userID = fetchUserID(from: server)
-    async let username = fetchUsername(from: server)
-    let greeting = await "Hello \(username), user ID \(userID)"
+func conectarUsuario(a servidor: String) async {
+    async let idDeUsuario = buscarIDDeUsuario(en: servidor)
+    async let nombreDeUsuario = buscarNombreDeUsuario(en: servidor)
+    let saludo = await "Hola, \(nombreDeUsuario), ID de usuario \(idDeUsuario)"
     print(greeting)
 }
 ```
@@ -1820,14 +1831,14 @@ func connectUser(to server: String) async {
   ```
 -->
 
-Use `Task` to call asynchronous functions from synchronous code,
-without waiting for them to return.
+Usa `Task` para invocar funciones asíncronas desde código sincrónico,
+sin tener que esperar a que estas devuelvan su valor.
 
 ```swift
 Task {
-    await connectUser(to: "primary")
+    await conectarUsuario(a: "primario")
 }
-// Prints "Hello Guest, user ID 97"
+// Imprime "Hola, Visitante, ID de usuario 97"
 ```
 
 <!--
@@ -1842,37 +1853,37 @@ Task {
   ```
 -->
 
-Use task groups to structure concurrent code.
+Usa grupos de tareas para estructurar código concurrente.
 
 ```swift
-let userIDs = await withTaskGroup(of: Int.self) { taskGroup in
-    for server in ["primary", "secondary", "development"] {
+let idsDeUsuarios = await withTaskGroup(of: Int.self) { taskGroup in
+    for servidor in ["primario", "secundario", "desarrollo"] {
         taskGroup.addTask {
-            return await fetchUserID(from: server)
+            return await buscarIDDeusuario(en: servidor)
         }
     }
 
-    var results: [Int] = []
-    for await result in taskGroup {
-        results.append(result)
+    var resultados: [Int] = []
+    for await resultado in taskGroup {
+        resultados.append(resultado)
     }
-    return results
+    return resultados
 }
 ```
 
-Actors are similar to classes,
-except they ensure that different asynchronous functions
-can safely interact with an instance of the same actor at the same time.
+Los actoreis son similares a las clases,
+excepto que estos aseguran que diferentes funciones asíncronas
+puedan interactuar de manera segura con una instancia del mismo actor al mismo tiempo.
 
 ```swift
-actor ServerConnection {
-    var server: String = "primary"
-    private var activeUsers: [Int] = []
-    func connect() async -> Int {
-        let userID = await fetchUserID(from: server)
-        // ... communicate with server ...
-        activeUsers.append(userID)
-        return userID
+actor ConexionAlServidor {
+    var servidor: String = "primario"
+    private var usuariosActivos: [Int] = []
+    func conectar() async -> Int {
+        let idDeUsuario = await buscarIDDeUsuario(en: servidor)
+        // ... Comunicación con el servidor ...
+        usuariosActivos.append(idDeUsuario)
+        return idDeUsuario
     }
 }
 ```
@@ -1892,14 +1903,14 @@ actor ServerConnection {
   ```
 -->
 
-When you call a method on an actor or access one of its properties,
-you mark that code with `await`
-to indicate that it might have to wait for other code
-that's already running on the actor to finish.
+Cuando llamas a un método de un actor o accedes a una de sus propiedades,
+marcas dicho código con `await`
+para indicar que podría tener que esperar a que otro código
+que ya se está ejecutando en el actor termine.
 
 ```swift
-let server = ServerConnection()
-let userID = await server.connect()
+let servidor = ConexionAlServidor()
+let idDeUsuario = await servidor.conectar()
 ```
 
 <!--
@@ -1911,15 +1922,14 @@ let userID = await server.connect()
   ```
 -->
 
+## Protocolos y extensiones
 
-## Protocols and Extensions
-
-Use `protocol` to declare a protocol.
+Usa `protocol` para declarar un protocolo.
 
 ```swift
-protocol ExampleProtocol {
-     var simpleDescription: String { get }
-     mutating func adjust()
+protocol EjemploDeProtocolo {
+     var descripcionBasica: String { get }
+     mutating func ajustar()
 }
 ```
 
@@ -1934,7 +1944,7 @@ protocol ExampleProtocol {
   ```
 -->
 
-Classes, enumerations, and structures can all adopt protocols.
+Las clases, enumeraciones, y estructuras pueden adoptar protocolos.
 
 <!--
   REFERENCE
@@ -1945,26 +1955,26 @@ Classes, enumerations, and structures can all adopt protocols.
 -->
 
 ```swift
-class SimpleClass: ExampleProtocol {
-     var simpleDescription: String = "A very simple class."
-     var anotherProperty: Int = 69105
-     func adjust() {
-          simpleDescription += "  Now 100% adjusted."
+class ClaseBasica: EjemploDeProtocolo {
+     var descripcionBasica: String = "Una clase muy básica."
+     var otraPropiedad: Int = 69105
+     func ajustar() {
+          descripcionBasica += " Ahora 100% ajustada."
      }
 }
-var a = SimpleClass()
-a.adjust()
-let aDescription = a.simpleDescription
+var a = ClaseBasica()
+a.ajustar()
+let descripcionDeA = a.descripcionBasica
 
-struct SimpleStructure: ExampleProtocol {
-     var simpleDescription: String = "A simple structure"
-     mutating func adjust() {
-          simpleDescription += " (adjusted)"
+struct EstructuraBasica: EjemploDeProtocolo {
+     var descripcionBasica: String = "Una estructura básica"
+     mutating func ajustar() {
+          descripcionBasica += " (ajustada)"
      }
 }
-var b = SimpleStructure()
-b.adjust()
-let bDescription = b.simpleDescription
+var b = EstructuraBasica()
+b.ajustar()
+let descripcionDeB = b.descripcionBasica
 ```
 
 <!--
@@ -1998,35 +2008,35 @@ let bDescription = b.simpleDescription
   ```
 -->
 
-> Experiment: Add another requirement to `ExampleProtocol`.
-> What changes do you need to make
-> to `SimpleClass` and `SimpleStructure`
-> so that they still conform to the protocol?
+> Experimento: Agrega otro requerimiento a `EjemploDeProtocolo`.
+> ¿Qué cambios debes hacer en
+> `ClaseBasica` y `EstructuraBasica`
+> de manera que estas sigan estando en conformidad con el protocolo?
 
-Notice the use of the `mutating` keyword
-in the declaration of `SimpleStructure`
-to mark a method that modifies the structure.
-The declaration of `SimpleClass` doesn't need
-any of its methods marked as mutating
-because methods on a class can always modify the class.
+Observa el uso de la palabra clave `mutating`
+en la declaración de `EstructuraBasica`
+para marcar un método que modifica la estructura.
+La declaración de `ClaseBasica` no requiere
+que ninguno de sus métodos esté marcado como mutante
+ya que los métodos de una clase siempre pueden modificar la clase misma.
 
-Use `extension` to add functionality to an existing type,
-such as new methods and computed properties.
-You can use an extension to add protocol conformance
-to a type that's declared elsewhere,
-or even to a type that you imported from a library or framework.
+Utiliza `extension` para agregar funcionalidad a un tipo existente,
+como nuevos métodos y propiedades calculadas.
+Puedes usar una extensión para hacer que un tipo se ajuste a un protocolo,
+bien sea un tipo que se declara en otro lugar,
+o incluso un tipo que importas desde una biblioteca o *framework*.
 
 ```swift
-extension Int: ExampleProtocol {
-    var simpleDescription: String {
-        return "The number \(self)"
+extension Int: EjemploDeProtocolo {
+    var descripcionBasica: String {
+        return "El número \(self)"
     }
-    mutating func adjust() {
+    mutating func ajustar() {
         self += 42
     }
  }
-print(7.simpleDescription)
-// Prints "The number 7"
+print(7.descripcionBasica)
+// Imprime "El número 7"
 ```
 
 <!--
@@ -2046,21 +2056,21 @@ print(7.simpleDescription)
   ```
 -->
 
-> Experiment: Write an extension for the `Double` type
-> that adds an `absoluteValue` property.
+> Experimento: Crea una extensión para el tipo `Double`
+> que agregue la propiedad `valorAbsoluto`.
 
-You can use a protocol name just like any other named type ---
-for example, to create a collection of objects
-that have different types
-but that all conform to a single protocol.
-When you work with values whose type is a boxed protocol type,
-methods outside the protocol definition aren't available.
+Puedes usar el nombre de un protocolo como cualquier otro tipo con nombre;
+por ejemplo, para crear una colección de objetos
+que tiene tipos diferentes,
+pero que todos se ajusten a un solo protocolo.
+Al trabajar con valores cuyo tipo es un tipo de protocolo,
+los métodos externos a la definición del protocolo no estarán disponibles.
 
 ```swift
-let protocolValue: any ExampleProtocol = a
-print(protocolValue.simpleDescription)
-// Prints "A very simple class.  Now 100% adjusted."
-// print(protocolValue.anotherProperty)  // Uncomment to see the error
+let valorProtocolo: any EjemploDeProtocolo = a
+print(valorProtocolo.descripcionBasica)
+// Imprime "Una clase muy básica. Ahora 100% ajustada."
+// print(valorProtocolo.otraPropiedad)  // Habilita esta línea para ver el error
 ```
 
 <!--
@@ -2074,16 +2084,16 @@ print(protocolValue.simpleDescription)
   ```
 -->
 
-Even though the variable `protocolValue`
-has a runtime type of `SimpleClass`,
-the compiler treats it as the given type of `ExampleProtocol`.
-This means that you can't accidentally access
-methods or properties that the class implements
-in addition to its protocol conformance.
+Aun cuando el tipo de runtime de la variable `valorProtocolo`
+es del tipo `ClaseBasica`,
+el compilador la trata como el tipo dado de `EjemploDeProtocolo`.
+Esto significa que no puedes acceder, de manera accidental,
+a métodos o propiedades que la clase implementa
+además de su conformidad con el protocolo.
 
-## Error Handling
+## Manejo de errores
 
-You represent errors using any type that adopts the `Error` protocol.
+Para representar errores, usa cualquier tipo que adopte el protocolo `Error`.
 
 <!--
   REFERENCE
@@ -2105,10 +2115,10 @@ You represent errors using any type that adopts the `Error` protocol.
 -->
 
 ```swift
-enum PrinterError: Error {
-    case outOfPaper
-    case noToner
-    case onFire
+enum ErrorDeLaImpresora: Error {
+    case sinPapel
+    case sinToner
+    case enLlamas
 }
 ```
 
@@ -2124,18 +2134,18 @@ enum PrinterError: Error {
   ```
 -->
 
-Use `throw` to throw an error
-and `throws` to mark a function that can throw an error.
-If you throw an error in a function,
-the function returns immediately and the code that called the function
-handles the error.
+Usa `throw` para arrojar un error
+y `throws` para marcar una función que puede arrojar un error.
+Si arrojas un error en una función,
+la función se interrumpe inmediatamente y el código que llamó a la función
+se encargará de manejar el error.
 
 ```swift
-func send(job: Int, toPrinter printerName: String) throws -> String {
-    if printerName == "Never Has Toner" {
-        throw PrinterError.noToner
+func enviar(tarea: Int, impresoraDestino nombreDeImpresora: String) throws -> String {
+    if nombreDeImpresora == "Nunca Tiene Toner" {
+        throw ErrorDeLaImpresora.sinToner
     }
-    return "Job sent"
+    return "Tarea enviada"
 }
 ```
 
@@ -2152,22 +2162,23 @@ func send(job: Int, toPrinter printerName: String) throws -> String {
   ```
 -->
 
-There are several ways to handle errors.
-One way is to use `do`-`catch`.
-Inside the `do` block,
-you mark code that can throw an error by writing `try` in front of it.
-Inside the `catch` block,
-the error is automatically given the name `error`
-unless you give it a different name.
+Hay muchas maneras de manejar los errores.
+Una de ellas es usar `do`-`catch`.
+Dentro del bloque `do`,
+marcas todo código que pueda arrojar un error,
+agregando `try` delante del mismo.
+Dentro del bloque `catch`,
+al error se le asigna automáticamente el nombre `error`,
+a menos que le asignes un nombre diferente.
 
 ```swift
 do {
-    let printerResponse = try send(job: 1040, toPrinter: "Bi Sheng")
-    print(printerResponse)
+    let respuestaDeImpresora = try enviar(tarea: 1040, impresoraDestino: "Bi Sheng")
+    print(respuestaDeImpresora)
 } catch {
     print(error)
 }
-// Prints "Job sent"
+// Imprime "Tarea enviada"
 ```
 
 <!--
@@ -2184,8 +2195,8 @@ do {
   ```
 -->
 
-> Experiment: Change the printer name to `"Never Has Toner"`,
-> so that the `send(job:toPrinter:)` function throws an error.
+> Experimento: Cambia el nombre de la impresora a `“Nunca Tiene Toner”`,
+> de manera que la función `enviar(tarea:impresoraDestino:)` arroje un error.
 
 <!--
   Assertion tests the change that the Experiment box instructs you to make.
@@ -2205,10 +2216,10 @@ do {
   ```
 -->
 
-You can provide multiple `catch` blocks
-that handle specific errors.
-You write a pattern after `catch` just as you do
-after `case` in a switch.
+Puedes usar múltiples bloques `catch`
+que manejen errores específicos.
+Para ello, escribe un patrón después de `catch` al igual que harías
+después de `case` en un ciclo `switch`.
 
 <!--
   REFERENCE
@@ -2217,16 +2228,16 @@ after `case` in a switch.
 
 ```swift
 do {
-    let printerResponse = try send(job: 1440, toPrinter: "Gutenberg")
-    print(printerResponse)
-} catch PrinterError.onFire {
-    print("I'll just put this over here, with the rest of the fire.")
-} catch let printerError as PrinterError {
-    print("Printer error: \(printerError).")
+    let respuestaDeImpresora = try enviar(tarea: 1440, impresoraDestino: "Gutenberg")
+    print(respuestaDeImpresora)
+} catch ErrorDeLaImpresora.enLlamas {
+    print("Dejaré esto por aquí, con el resto del fuego.")
+} catch let errorDeLaImpresora as ErrorDeLaImpresora {
+    print("Error de la impresora: \(errorDeLaImpresora).")
 } catch {
     print(error)
 }
-// Prints "Job sent"
+// Imprime "Tarea enviada"
 ```
 
 <!--
@@ -2247,21 +2258,21 @@ do {
   ```
 -->
 
-> Experiment: Add code to throw an error inside the `do` block.
-> What kind of error do you need to throw
-> so that the error is handled by the first `catch` block?
-> What about the second and third blocks?
+> Experimento: Añade código para arrojar un error dentro del bloque `do`.
+> ¿Qué tipo de error es necesario arrojar
+> para que este sea manejado por el primer bloque `catch`?
+> ¿Qué tal con los bloques segundo y tercero?
 
-Another way to handle errors
-is to use `try?` to convert the result to an optional.
-If the function throws an error,
-the specific error is discarded and the result is `nil`.
-Otherwise, the result is an optional containing
-the value that the function returned.
+Otra forma de manejar los errores
+es usar `try?` para convertir el resultado en un opcional.
+Si la función arroja un error,
+el error específico es descartado y el resultado es `nil`.
+En caso contrario, el resultado es un opcional
+que contiene el valor devuelto por la función.
 
 ```swift
-let printerSuccess = try? send(job: 1884, toPrinter: "Mergenthaler")
-let printerFailure = try? send(job: 1885, toPrinter: "Never Has Toner")
+let exitoImpresora = try? enviar(tarea: 1884, impresoraDestino: "Mergenthaler")
+let fallaImpresora = try? enviar(tarea: 1885, impresoraDestino: "Nunca Tiene Toner")
 ```
 
 <!--
@@ -2277,31 +2288,32 @@ let printerFailure = try? send(job: 1885, toPrinter: "Never Has Toner")
   ```
 -->
 
-Use `defer` to write a block of code
-that's executed after all other code in the function,
-just before the function returns.
-The code is executed regardless of whether the function throws an error.
-You can use `defer` to write setup and cleanup code next to each other,
-even though they need to be executed at different times.
+Usa `defer` para crear un bloque de código
+que se ejecute después de todo el código de una función,
+justo antes de que la función devuelva su valor.
+El código se ejecuta sin importar que la función arroje un error.
+Puedes utilizar `defer` para escribir códigos de configuración y limpieza,
+uno al lado del otro,
+aun cuando estos deban ejecutarse en momentos diferentes.
 
 ```swift
-var fridgeIsOpen = false
-let fridgeContent = ["milk", "eggs", "leftovers"]
+var elRefrigeradorEstaAbierto = false
+let contenidoDelRefrigerador = ["leche", "huevos", "sobras"]
 
-func fridgeContains(_ food: String) -> Bool {
-    fridgeIsOpen = true
+func elRefrigeradorContiene(_ alimento: String) -> Bool {
+    elRefrigeradorEstaAbierto = true
     defer {
-        fridgeIsOpen = false
+        elRefrigeradorEstaAbierto = false
     }
 
-    let result = fridgeContent.contains(food)
-    return result
+    let resultado = contenidoDelRefrigerador.contains(alimento)
+    return resultado
 }
-if fridgeContains("banana") {
-    print("Found a banana")
+if elRefrigeradorContiene("banano") {
+    print("Hay un banano")
 }
-print(fridgeIsOpen)
-// Prints "false"
+print(elRefrigeradorEstaAbierto)
+// Imprime "false"
 ```
 
 <!--
@@ -2329,10 +2341,10 @@ print(fridgeIsOpen)
   ```
 -->
 
-## Generics
+## Genéricos
 
-Write a name inside angle brackets
-to make a generic function or type.
+Escribe un nombre entre paréntesis angulares (`<>`)
+para crear una función o tipo genéricos.
 
 <!--
   REFERENCE
@@ -2342,14 +2354,14 @@ to make a generic function or type.
 -->
 
 ```swift
-func makeArray<Item>(repeating item: Item, numberOfTimes: Int) -> [Item] {
-    var result: [Item] = []
-    for _ in 0..<numberOfTimes {
-         result.append(item)
+func crearArreglo<Item>(repitiendo item: Item, numeroDeVeces: Int) -> [Item] {
+    var resultado: [Item] = []
+    for _ in 0..<numeroDeVeces {
+         resultado.append(item)
     }
-    return result
+    return resultado
 }
-makeArray(repeating: "knock", numberOfTimes: 4)
+crearArreglo(repitiendo: "toc", numeroDeVeces: 4)
 ```
 
 <!--
@@ -2370,17 +2382,17 @@ makeArray(repeating: "knock", numberOfTimes: 4)
   ```
 -->
 
-You can make generic forms of functions and methods,
-as well as classes, enumerations, and structures.
+También puedes crear formas genéricas de funciones y métodos,
+como también de clases, enumeraciones, y estructuras.
 
 ```swift
-// Reimplement the Swift standard library's optional type
+// Reimplementa el tipo opcional de la librería estándar de Swift
 enum OptionalValue<Wrapped> {
     case none
     case some(Wrapped)
 }
-var possibleInteger: OptionalValue<Int> = .none
-possibleInteger = .some(100)
+var posibleEntero: OptionalValue<Int> = .none
+posibleEntero = .some(100)
 ```
 
 <!--
@@ -2397,12 +2409,12 @@ possibleInteger = .some(100)
   ```
 -->
 
-Use `where` right before the body
-to specify a list of requirements ---
-for example,
-to require the type to implement a protocol,
-to require two types to be the same,
-or to require a class to have a particular superclass.
+Utiliza `where` justo antes del cuerpo de la función
+para especificar una lista de requerimientos;
+por ejemplo,
+para requerir el tipo para implementar un protocolo,
+para requerir que dos tipos sean el mismo,
+o para requerir que una clase tenga una súperclase en particular.
 
 ```swift
 func anyCommonElements<T: Sequence, U: Sequence>(_ lhs: T, _ rhs: U) -> Bool
@@ -2443,17 +2455,17 @@ anyCommonElements([1, 2, 3], [3])
   ```
 -->
 
-> Experiment: Modify the `anyCommonElements(_:_:)` function
-> to make a function that returns an array
-> of the elements that any two sequences have in common.
+> Experimento: Modifica la función `anyCommonElements(_:_:)`
+> para crear una función que devuelva un arreglo
+> de los elementos que dos secuencias cualesquiera tienen en común.
 
-Writing `<T: Equatable>`
-is the same as writing `<T> ... where T: Equatable`.
+Escribir `<T: Equatable>`
+es lo mismo que escribir `<T> ... where T: Equatable`.
 
 <!--
 This source file is part of the Swift.org open source project
 
-Copyright (c) 2014 - 2022 Apple Inc. and the Swift project authors
+Copyright (c) 2014 - 2023 Apple Inc. and the Swift project authors
 Licensed under Apache License v2.0 with Runtime Library Exception
 
 See https://swift.org/LICENSE.txt for license information
