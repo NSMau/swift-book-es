@@ -1,4 +1,4 @@
-# Operadores Básicos
+# Operadores básicos
 
 Perform operations like assignment, arithmetic, and comparison.
 
@@ -20,7 +20,7 @@ to avoid unexpected results when working with numbers that become larger or smal
 than the allowed value range of the type that stores them.
 You can opt in to value overflow behavior
 by using Swift's overflow operators,
-as described in <doc:AdvancedOperators#Operadores-de-Desbordamiento>.
+as described in <doc:AdvancedOperators#Operadores-de-desbordamiento>.
 
 Swift also provides range operators that aren't found in C,
 such as `a..<b` and `a...b`,
@@ -48,7 +48,7 @@ The values that operators affect are *operands*.
 In the expression `1 + 2`, the `+` symbol is an infix operator
 and its two operands are the values `1` and `2`.
 
-## Operador de Asignación
+## Operador de asignación
 
 The *assignment operator* (`a = b`)
 initializes or updates the value of `a` with the value of `b`:
@@ -143,7 +143,7 @@ Swift helps you to avoid these kinds of errors in your code.
   If so, is there a convincing argument as to why this is a good thing?
 -->
 
-## Operadores Aritméticos
+## Operadores aritméticos
 
 Swift supports the four standard *arithmetic operators* for all number types:
 
@@ -181,7 +181,7 @@ Swift supports the four standard *arithmetic operators* for all number types:
 Unlike the arithmetic operators in C and Objective-C,
 the Swift arithmetic operators don't allow values to overflow by default.
 You can opt in to value overflow behavior by using Swift's overflow operators
-(such as `a &+ b`). See <doc:AdvancedOperators#Operadores-de-Desbordamiento>.
+(such as `a &+ b`). See <doc:AdvancedOperators#Operadores-de-desbordamiento>.
 
 The addition operator is also supported for `String` concatenation:
 
@@ -199,7 +199,7 @@ The addition operator is also supported for `String` concatenation:
   ```
 -->
 
-### Operador de Residuo
+### Operador de residuo
 
 The *remainder operator* (`a % b`)
 works out how many multiples of `b` will fit inside `a`
@@ -288,7 +288,7 @@ giving a remainder value of `-1`.
 The sign of `b` is ignored for negative values of `b`.
 This means that `a % b` and `a % -b` always give the same answer.
 
-### Operador Unario de Resta
+### Operador unario de resta
 
 The sign of a numeric value can be toggled using a prefixed `-`,
 known as the *unary minus operator*:
@@ -312,7 +312,7 @@ let plusThree = -minusThree   // plusThree equals 3, or "minus minus three"
 The unary minus operator (`-`) is prepended directly before the value it operates on,
 without any white space.
 
-### Operador Unario de Suma
+### Operador unario de suma
 
 The *unary plus operator* (`+`) simply returns
 the value it operates on, without any change:
@@ -336,7 +336,7 @@ Although the unary plus operator doesn't actually do anything,
 you can use it to provide symmetry in your code for positive numbers
 when also using the unary minus operator for negative numbers.
 
-## Operadores de Asignación Compuestos
+## Operadores de asignación compuestos
 
 Like C, Swift provides *compound assignment operators* that combine assignment (`=`) with another operation.
 One example is the *addition assignment operator* (`+=`):
@@ -368,7 +368,7 @@ that performs both tasks at the same time.
 For information about the operators provided by the Swift standard library,
 see [Operator Declarations](https://developer.apple.com/documentation/swift/operator_declarations).
 
-## Operadores de Comparación
+## Operadores de comparación
 
 Swift supports the following comparison operators:
 
@@ -381,7 +381,7 @@ Swift supports the following comparison operators:
 
 > Note: Swift also provides two *identity operators* (`===` and `!==`),
 > which you use to test whether two object references both refer to the same object instance.
-> For more information, see <doc:ClassesAndStructures#Operadores-de-Identidad>.
+> For more information, see <doc:ClassesAndStructures#Operadores-de-identidad>.
 
 Each of the comparison operators returns a `Bool` value to indicate whether or not the statement is true:
 
@@ -551,7 +551,7 @@ with the `<` operator because the `<` operator can't be applied to
   How about with your own types?
 -->
 
-## Operador Condicional Ternario
+## Operador condicional ternario
 
 The *ternary conditional operator* is a special operator with three parts,
 which takes the form `question ? answer1 : answer2`.
@@ -752,12 +752,12 @@ colorNameToUse = userDefinedColorName ?? defaultColorName
   ```
 -->
 
-## Operadores de Rango
+## Operadores de rango
 
 Swift includes several *range operators*,
 which are shortcuts for expressing a range of values.
 
-### Operador de Rango Cerrado
+### Operador de rango cerrado
 
 The *closed range operator* (`a...b`)
 defines a range that runs from `a` to `b`,
@@ -823,7 +823,7 @@ for index in 1...5 {
 
 For more about `for`-`in` loops, see <doc:ControlFlow>.
 
-### Operador de Rango Semiabierto
+### Operador de rango semiabierto
 
 The *half-open range operator* (`a..<b`)
 defines a range that runs from `a` to `b`,
@@ -901,7 +901,7 @@ but `0..<count` only counts as far as `3`
 because it's a half-open range.
 For more about arrays, see <doc:CollectionTypes#Arreglos>.
 
-### Rangos Unilaterales
+### Rangos unilaterales
 
 The closed range operator
 has an alternative form for ranges that continue
@@ -1012,7 +1012,7 @@ range.contains(-1)  // true
   ```
 -->
 
-## Operadores Lógicos
+## Operadores lógicos
 
 *Logical operators* modify or combine
 the Boolean logic values `true` and `false`.
@@ -1022,7 +1022,7 @@ Swift supports the three standard logical operators found in C-based languages:
 - Logical AND (`a && b`)
 - Logical OR (`a || b`)
 
-### Operador Lógico NOT
+### Operador lógico NOT
 
 The *logical NOT operator* (`!a`) inverts a Boolean value so that `true` becomes `false`,
 and `false` becomes `true`.
@@ -1061,7 +1061,7 @@ careful choice of Boolean constant and variable names
 can help to keep code readable and concise,
 while avoiding double negatives or confusing logic statements.
 
-### Operador Lógico AND
+### Operador lógico AND
 
 The *logical AND operator* (`a && b`) creates logical expressions
 where both values must be `true` for the overall expression to also be `true`.
@@ -1102,7 +1102,7 @@ if enteredDoorCode && passedRetinaScan {
   ```
 -->
 
-### Operador Lógico OR
+### Operador lógico OR
 
 The *logical OR operator*
 (`a || b`) is an infix operator made from two adjacent pipe characters.
@@ -1149,7 +1149,7 @@ if hasDoorKey || knowsOverridePassword {
   ```
 -->
 
-### Combinación de Operadores Lógicos
+### Combinación de operadores lógicos
 
 You can combine multiple logical operators to create longer compound expressions:
 
@@ -1194,7 +1194,7 @@ so the overall compound expression still evaluates to `true`.
 > meaning that compound expressions with multiple logical operators
 > evaluate the leftmost subexpression first.
 
-### Paréntesis Explícitos
+### Paréntesis explícitos
 
 It's sometimes useful to include parentheses when they're not strictly needed,
 to make the intention of a complex expression easier to read.

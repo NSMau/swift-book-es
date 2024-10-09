@@ -1,4 +1,4 @@
-# Flujo de Control
+# Flujo de control
 
 Structure code with branches, loops, and early exits.
 
@@ -194,7 +194,7 @@ Consider drawing the tick marks for every minute on a watch face.
 You want to draw `60` tick marks, starting with the `0` minute.
 Use the half-open range operator (`..<`) to include the
 lower bound but not the upper bound.
-For more about ranges, see <doc:BasicOperators#Operadores-de-Rango>.
+For more about ranges, see <doc:BasicOperators#Operadores-de-rango>.
 
 ```swift
 let minutes = 60
@@ -614,7 +614,7 @@ the loop's `while` condition confirms that `square` is still on the board.
 This behavior removes the need for the array bounds check
 seen in the `while` loop version of the game described earlier.
 
-## Instrucciones Condicionales
+## Instrucciones condicionales
 
 It's often useful to execute different pieces of code based on certain conditions.
 You might want to run an extra piece of code when an error occurs,
@@ -840,7 +840,7 @@ one branch of the `if` expression has a string value
 and the other branch has a `nil` value.
 The `nil` value could be used as a value for any optional type,
 so you have to explicitly write that `freezeWarning` is an optional string,
-as described in <doc:TheBasics#Anotaciones-de-Tipo>.
+as described in <doc:TheBasics#Anotaciones-de-tipo>.
 
 An alternate way to provide this type information
 is to provide an explicit type for `nil`,
@@ -999,7 +999,7 @@ on the right-hand side of an assignment,
 as shown in the example above,
 and as the value that a function or closure returns.
 
-#### Ausencia de Fallthrough Implícito
+#### Ausencia de *fallthrough* implícito
 
 In contrast with `switch` statements in C and Objective-C,
 `switch` statements in Swift don't
@@ -1013,7 +1013,7 @@ and avoids executing more than one `switch` case by mistake.
 > Note: Although `break` isn't required in Swift,
 > you can use a `break` statement to match and ignore a particular case
 > or to break out of a matched case before that case has completed its execution.
-> For details, see <doc:ControlFlow#Uso-de-break-En-una-Instrucción-switch>.
+> For details, see <doc:ControlFlow#Uso-de-break-en-una-instrucción-switch>.
 
 The body of each case *must* contain at least one executable statement.
 It isn't valid to write the following code, because the first case is empty:
@@ -1091,13 +1091,13 @@ default:
 For readability,
 a compound case can also be written over multiple lines.
 For more information about compound cases,
-see <doc:ControlFlow#Casos-Compuestos>.
+see <doc:ControlFlow#Casos-compuestos>.
 
 > Note: To explicitly fall through at the end of a particular `switch` case,
 > use the `fallthrough` keyword,
 > as described in <doc:ControlFlow#fallthrough>.
 
-#### Coincidencia de Intervalos
+#### Coincidencia de intervalos
 
 Values in `switch` cases can be checked for their inclusion in an interval.
 This example uses number intervals
@@ -1228,7 +1228,7 @@ the first matching case is always used.
 The point (0, 0) would match `case (0, 0)` first,
 and so all other matching cases would be ignored.
 
-#### Vinculación de Valores
+#### Vinculación de valores
 
 A `switch` case can name the value or values it matches to temporary constants or variables,
 for use in the body of the case.
@@ -1349,7 +1349,7 @@ only if the `where` clause's condition evaluates to `true` for that value.
 As in the previous example, the final case matches all possible remaining values,
 and so a `default` case isn't needed to make the `switch` statement exhaustive.
 
-#### Casos Compuestos
+#### Casos compuestos
 
 Multiple switch cases that share the same body
 can be combined by writing several patterns after `case`,
@@ -1440,7 +1440,7 @@ and `distance` is an integer in both patterns ---
 which means that the code in the body of the `case`
 can always access a value for `distance`.
 
-## Instrucciones de Transferencia de Control
+## Instrucciones de transferencia de control
 
 *Control transfer statements* change the order in which your code is executed,
 by transferring control from one piece of code to another.
@@ -1454,7 +1454,7 @@ Swift has five control transfer statements:
 
 The `continue`, `break`, and `fallthrough` statements are described below.
 The `return` statement is described in <doc:Functions>,
-and the `throw` statement is described in <doc:ErrorHandling#Propagación-de-Errores-Mediante-Funciones-Que-Arrojan-Errores>.
+and the `throw` statement is described in <doc:ErrorHandling#Propagación-de-errores-mediante-funciones-que-arrojan-errores>.
 
 ### continue
 
@@ -1509,7 +1509,7 @@ The `break` statement can be used inside a `switch` or loop statement
 when you want to terminate the execution of the `switch` or loop statement
 earlier than would otherwise be the case.
 
-#### Uso de break En un Ciclo
+#### Uso de `break` en un ciclo
 
 When used inside a loop statement,
 `break` ends the loop's execution immediately
@@ -1521,7 +1521,7 @@ and no further iterations of the loop are started.
   TODO: I need an example here.
 -->
 
-#### Uso de break En una Instrucción switch
+#### Uso de `break` en una instrucción `switch`
 
 When used inside a `switch` statement,
 `break` causes the `switch` statement to end its execution immediately
@@ -1691,7 +1691,7 @@ the number `5` is correctly identified as a prime number.
 > directly to the statements inside the next case (or `default` case) block,
 > as in C's standard `switch` statement behavior.
 
-### Instrucciones Etiquetadas
+### Instrucciones etiquetadas
 
 In Swift, you can nest loops and conditional statements
 inside other loops and conditional statements
@@ -1897,7 +1897,7 @@ and to determine whether the move is allowed:
 > Doing so is consistent with the label's use alongside the `break` statement
 > and helps make the game's logic clearer to read and understand.
 
-## Salida Temprana
+## Salida temprana
 
 A `guard` statement, like an `if` statement,
 executes statements depending on the Boolean value of an expression.

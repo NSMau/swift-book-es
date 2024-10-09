@@ -332,7 +332,7 @@ like array.removeFirst(...) ---
 otherwise, using `_ = foo()` at the call site is better.
 -->
 
-### Funciones Que Devuelven Múltiples Valores
+### Funciones que devuelven múltiples valores
 
 You can use a tuple type as the return type for a function
 to return multiple values as part of one compound return value.
@@ -694,7 +694,7 @@ someFunction(1, secondParameterName: 2)
 If a parameter has an argument label,
 the argument *must* be labeled when you call the function.
 
-### Parámetros Con Valores Predeterminados
+### Parámetros con valores predeterminados
 
 You can define a *default value* for any parameter in a function
 by assigning a value to the parameter after that parameter's type.

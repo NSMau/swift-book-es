@@ -1,0 +1,2036 @@
+[1;33mwarning: 'Adoptando-un-protocolo-mediante-una-implementación-sintetizada' doesn't exist at '/The-Swift-Programming-Language/Protocols'[0;0m
+   --> LanguageGuide/AdvancedOperators.md:973:32-973:94
+971 | In many simple cases, you can ask Swift
+972 | to provide synthesized implementations of the equivalence operators for you,
+973 + as described in <doc:Protocols#[1;32mAdoptando-un-protocolo-mediante-una-implementación-sintetizad[0;0ma>.
+    |                                ╰─[1;39msuggestion: Replace 'Adoptando-un-protocolo-mediante-una-implementación-sintetizada' with 'Adoptando-Un-Protocolo-Mediante-Una-Implementación-Sintetizada'[0;0m
+974 |
+975 | ## Operadores personalizados
+
+[1;33mwarning: 'Declaración-de-operadores' doesn't exist at '/The-Swift-Programming-Language/Declarations'[0;0m
+    --> LanguageGuide/AdvancedOperators.md:1098:23-1098:48
+1096 | For more information about precedence groups and to see the syntax for
+1097 | defining your own operators and precedence groups,
+1098 + see <doc:Declarations#[1;32mDeclaración-de-operadore[0;0ms>.
+     |                       ╰─[1;39msuggestion: Replace 'Declaración-de-operadores' with 'Declaración-de-Operadores'[0;0m
+1099 |
+1100 | > Note: You don't specify a precedence when defining a prefix or postfix operator.
+
+[1;33mwarning: 'Ciclos-de-Referencias-Fuertes-Para-Clausuras' doesn't exist at '/The-Swift-Programming-Language/AutomaticReferenceCounting'[0;0m
+    --> LanguageGuide/AutomaticReferenceCounting.md:1404:38-1404:82
+1402 | An unowned reference is the appropriate capture method to use to resolve
+1403 | the strong reference cycle in the `HTMLElement` example
+1404 + from <doc:AutomaticReferenceCounting#[1;32mCiclos-de-Referencias-Fuertes-Para-Clausuras[0;0m> above.
+     |                                      ├─[1;39msuggestion: Replace 'Ciclos-de-Referencias-Fuertes-Para-Clausuras' with 'Ciclos-de-referencias-fuertes-para-clausuras'[0;0m
+     |                                      ├─[1;39msuggestion: Replace 'Ciclos-de-Referencias-Fuertes-Para-Clausuras' with 'Ciclos-de-referencias-fuertes-entre-instancias-de-clase'[0;0m
+     |                                      ╰─[1;39msuggestion: Replace 'Ciclos-de-Referencias-Fuertes-Para-Clausuras' with 'Resolución-de-ciclos-de-referencias-fuertes-para-clausuras'[0;0m
+1405 | Here's how you write the `HTMLElement` class to avoid the cycle:
+1406 |
+
+[1;33mwarning: 'Listas-de-captura' doesn't exist at '/The-Swift-Programming-Language/Expressions'[0;0m
+    --> LanguageGuide/AutomaticReferenceCounting.md:1513:22-1513:39
+1511 |
+1512 | For more information about capture lists,
+1513 + see <doc:Expressions#[1;32mListas-de-captura[0;0m>.
+     |                      ╰─[1;39msuggestion: Replace 'Listas-de-captura' with 'Listas-de-Captura'[0;0m
+1514 |
+1515 | > Beta Software:
+
+[1;33mwarning: 'Funciones-anidadas' doesn't exist at '/The-Swift-Programming-Language/Functions'[0;0m
+  --> LanguageGuide/Closures.md:40:51-40:69
+38 | ## Expresiones clausura
+39 |
+40 + Nested functions, as introduced in <doc:Functions#[1;32mFunciones-anidadas[0;0m>,
+   |                                                   ├─[1;39msuggestion: Replace 'Funciones-anidadas' with 'Funciones-Anidadas'[0;0m
+   |                                                   ├─[1;39msuggestion: Replace 'Funciones-anidadas' with 'Funciones-Sin-Parámetros'[0;0m
+   |                                                   ├─[1;39msuggestion: Replace 'Funciones-anidadas' with 'Funciones-Con-Múltiples-Parámetros'[0;0m
+   |                                                   ├─[1;39msuggestion: Replace 'Funciones-anidadas' with 'Funciones-Con-Devolución-Implícita'[0;0m
+   |                                                   ├─[1;39msuggestion: Replace 'Funciones-anidadas' with 'Funciones-Sin-Valores-de-Devolución'[0;0m
+   |                                                   ╰─[1;39msuggestion: Replace 'Funciones-anidadas' with 'Funciones-que-devuelven-múltiples-valores'[0;0m
+41 | are a convenient means of naming and defining self-contained blocks of code
+42 | as part of a larger function.
+
+[1;33mwarning: 'Tipos-de-funciones-como-tipos-de-devolución' doesn't exist at '/The-Swift-Programming-Language/Functions'[0;0m
+   --> LanguageGuide/Closures.md:684:20-684:63
+682 | and returns an `Int` value each time it's called.
+683 | To learn how functions can return other functions,
+684 + see <doc:Functions#[1;32mTipos-de-funciones-como-tipos-de-devolució[0;0mn>.
+    |                    ├─[1;39msuggestion: Replace 'Tipos-de-funciones-como-tipos-de-devolución' with 'Tipos-de-Funciones-Como-Tipos-de-Devolución'[0;0m
+    |                    ├─[1;39msuggestion: Replace 'Tipos-de-funciones-como-tipos-de-devolución' with 'Tipos-de-Funciones-Como-Tipos-de-Parámetros'[0;0m
+    |                    ╰─[1;39msuggestion: Replace 'Tipos-de-funciones-como-tipos-de-devolución' with 'Parámetros-de-Funciones-y-Valores-de-Devolución'[0;0m
+685 |
+686 | The `makeIncrementer(forIncrement:)` function defines an integer variable called `runningTotal`,
+
+[1;33mwarning: 'Especificando-Acciones-de-Limpieza' doesn't exist at '/The-Swift-Programming-Language/ErrorHandling'[0;0m
+    --> LanguageGuide/ControlFlow.md:2114:24-2114:58
+2112 | However, deferred code does execute after an error is thrown;
+2113 | for information about using `defer` with error handling,
+2114 + see <doc:ErrorHandling#[1;32mEspecificando-Acciones-de-Limpieza[0;0m>.
+     |                        ╰─[1;39msuggestion: Replace 'Especificando-Acciones-de-Limpieza' with 'Especificando-acciones-de-limpieza'[0;0m
+2115 |
+2116 | ## Comprobación de la Disponibilidad de APIs
+
+[1;33mwarning: 'Atributos-de-Declaración' doesn't exist at '/The-Swift-Programming-Language/Attributes'[0;0m
+    --> LanguageGuide/ControlFlow.md:2163:40-2163:64
+2161 | the availability condition takes a list of platform names and versions.
+2162 | You use platform names such as `iOS`, `macOS`, `watchOS`, and `tvOS` ---
+2163 + for the full list, see <doc:Attributes#[1;32mAtributos-de-Declaració[0;0mn>.
+2164 | In addition to specifying major version numbers like iOS 8 or macOS 10.10,
+2165 | you can specify minor versions numbers like iOS 11.2.6 and macOS 10.13.3.
+
+[1;33mwarning: 'Inicializadores-falibles' doesn't exist at '/The-Swift-Programming-Language/Declarations'[0;0m
+   --> LanguageGuide/Enumerations.md:648:47-648:71
+646 | > Note: The raw value initializer is a failable initializer,
+647 | > because not every raw value will return an enumeration case.
+648 + > For more information, see <doc:Declarations#[1;32mInicializadores-falibles[0;0m>.
+    |                                               ╰─[1;39msuggestion: Replace 'Inicializadores-falibles' with 'Inicializadores-Falibles'[0;0m
+649 |
+650 | If you try to find a planet with a position of `11`,
+
+[1;33mwarning: 'Extensión-de-protocolos' doesn't exist at '/The-Swift-Programming-Language/Protocols'[0;0m
+  --> LanguageGuide/Extensions.md:25:38-25:61
+23 | you can even extend a protocol to provide implementations of its requirements
+24 | or add additional functionality that conforming types can take advantage of.
+25 + For more details, see <doc:Protocols#[1;32mExtensión-de-protocolo[0;0ms>.
+26 |
+27 | > Note: Extensions can add new functionality to a type,
+
+[1;33mwarning: 'Agregar-conformidad-protocolaria-mediante-una-extensión' doesn't exist at '/The-Swift-Programming-Language/Protocols'[0;0m
+   --> LanguageGuide/Extensions.md:123:16-123:71
+121 |
+122 | Adding protocol conformance in this way is described in
+123 + <doc:Protocols#[1;32mAgregar-conformidad-protocolaria-mediante-una-extensió[0;0mn>.
+124 |
+125 | An extension can be used to extend an existing generic type,
+
+[1;33mwarning: 'Extendiendo-un-tipo-genérico' doesn't exist at '/The-Swift-Programming-Language/Generics'[0;0m
+   --> LanguageGuide/Extensions.md:126:31-126:59
+124 |
+125 | An extension can be used to extend an existing generic type,
+126 + as described in <doc:Generics#[1;32mExtendiendo-un-tipo-genéric[0;0mo>.
+    |                               ╰─[1;39msuggestion: Replace 'Extendiendo-un-tipo-genérico' with 'Extending-a-Generic-Type'[0;0m
+127 | You can also extend a generic type to conditionally add functionality,
+128 | as described in <doc:Generics#Extensiones-con-una-cláusula-where-genérica>.
+
+[1;33mwarning: 'Extensiones-con-una-cláusula-where-genérica' doesn't exist at '/The-Swift-Programming-Language/Generics'[0;0m
+   --> LanguageGuide/Extensions.md:128:31-128:74
+126 | as described in <doc:Generics#Extendiendo-un-tipo-genérico>.
+127 | You can also extend a generic type to conditionally add functionality,
+128 + as described in <doc:Generics#[1;32mExtensiones-con-una-cláusula-where-genéri[0;0mca>.
+    |                               ╰─[1;39msuggestion: Replace 'Extensiones-con-una-cláusula-where-genérica' with 'Extensions-with-a-Generic-Where-Clause'[0;0m
+129 |
+130 | > Note: If you define an extension to add new functionality to an existing type,
+
+[1;33mwarning: 'Parámetros-Con-Valores-Predeterminados' doesn't exist at '/The-Swift-Programming-Language/Functions'[0;0m
+   --> LanguageGuide/Functions.md:110:22-110:60
+108 | > These variations on function syntax are discussed below
+109 | > in <doc:Functions#Etiquetas-de-Argumentos-y-Nombres-de-Parámetros-de-Funciones>
+110 + > and <doc:Functions#[1;32mParámetros-Con-Valores-Predeterminado[0;0ms>.
+    |                      ├─[1;39msuggestion: Replace 'Parámetros-Con-Valores-Predeterminados' with 'Parámetros-con-valores-predeterminados'[0;0m
+    |                      ╰─[1;39msuggestion: Replace 'Parámetros-Con-Valores-Predeterminados' with 'Parámetros-de-Funciones-y-Valores-de-Devolución'[0;0m
+111 |
+112 | The body of the `greet(person:)` function starts by
+
+[1;33mwarning: 'Declaración-Concisa-de-getters' doesn't exist at '/The-Swift-Programming-Language/Properties'[0;0m
+   --> LanguageGuide/Functions.md:542:34-542:64
+540 | Any function that you write as just one `return` line can omit the `return`.
+541 |
+542 + As you'll see in <doc:Properties#[1;32mDeclaración-Concisa-de-getter[0;0ms>,
+    |                                  ╰─[1;39msuggestion: Replace 'Declaración-Concisa-de-getters' with 'Declaración-concisa-de-getters'[0;0m
+543 | property getters can also use an implicit return.
+544 |
+
+[1;33mwarning: 'In-Out-Parameters' doesn't exist at '/The-Swift-Programming-Language/Functions'[0;0m
+  --> LanguageGuide/Generics.md:48:32-48:49
+46 |
+47 | This function makes use of in-out parameters to swap the values of `a` and `b`,
+48 + as described in <doc:Functions#[1;32mIn-Out-Parameters[0;0m>.
+49 |
+50 | The `swapTwoInts(_:_:)` function swaps the original value of `b` into `a`,
+
+[1;33mwarning: 'Dictionaries' doesn't exist at '/The-Swift-Programming-Language/CollectionTypes'[0;0m
+   --> LanguageGuide/Generics.md:565:38-565:50
+563 | Swift's `Dictionary` type places a limitation on
+564 | the types that can be used as keys for a dictionary.
+565 + As described in <doc:CollectionTypes#[1;32mDictionaries[0;0m>,
+    |                                      ╰─[1;39msuggestion: Replace 'Dictionaries' with 'Diccionarios'[0;0m
+566 | the type of a dictionary's keys must be *hashable*.
+567 | That is, it must provide a way to make itself uniquely representable.
+
+[1;33mwarning: 'Observadores-de-propiedades' doesn't exist at '/The-Swift-Programming-Language/Properties'[0;0m
+   --> LanguageGuide/Inheritance.md:432:65-432:92
+430 | This enables you to be notified when the value of an inherited property changes,
+431 | regardless of how that property was originally implemented.
+432 + For more information on property observers, see <doc:Properties#[1;32mObservadores-de-propiedades[0;0m>.
+433 |
+434 | > Note: You can't add property observers to
+
+[1;33mwarning: 'Herencide-de-clases-e-inicialización' doesn't exist at '/The-Swift-Programming-Language/Initialization'[0;0m
+   --> LanguageGuide/Initialization.md:691:21-691:57
+689 | all stored properties they inherit are assigned a suitable value during initialization.
+690 | These responsibilities are described in
+691 + <doc:Initialization#[1;32mHerencide-de-clases-e-inicializació[0;0mn> below.
+    |                     ╰─[1;39msuggestion: Replace 'Herencide-de-clases-e-inicialización' with 'Herencia-de-clases-e-inicialización'[0;0m
+692 |
+693 | For value types, you use `self.init` to refer to other initializers
+
+[1;33mwarning: 'Etiquetas-de-argumentos-y-nombres-de-parámetros-de-funciones' doesn't exist at '/The-Swift-Programming-Language/Functions'[0;0m
+   --> LanguageGuide/Methods.md:113:32-113:92
+111 | Function parameters can have both a name (for use within the function's body)
+112 | and an argument label (for use when calling the function),
+113 + as described in <doc:Functions#[1;32mEtiquetas-de-argumentos-y-nombres-de-parámetros-de-funcione[0;0ms>.
+    |                                ╰─[1;39msuggestion: Replace 'Etiquetas-de-argumentos-y-nombres-de-parámetros-de-funciones' with 'Etiquetas-de-Argumentos-y-Nombres-de-Parámetros-de-Funciones'[0;0m
+114 | The same is true for method parameters,
+115 | because methods are just functions that are associated with a type.
+
+[1;33mwarning: 'Functions-Without-Return-Values' doesn't exist at '/The-Swift-Programming-Language/Functions'[0;0m
+   --> LanguageGuide/OptionalChaining.md:510:32-510:63
+508 | This method doesn't specify a return type.
+509 | However, functions and methods with no return type have an implicit return type of `Void`,
+510 + as described in <doc:Functions#[1;32mFunctions-Without-Return-Values[0;0m>.
+511 | This means that they return a value of `()`, or an empty tuple.
+512 |
+
+[1;33mwarning: 'Default-Property-Values' doesn't exist at '/The-Swift-Programming-Language/Initialization'[0;0m
+  --> LanguageGuide/Properties.md:70:37-70:60
+68 |
+69 | You can provide a default value for a stored property as part of its definition,
+70 + as described in <doc:Initialization#[1;32mDefault-Property-Values[0;0m>.
+71 | You can also set and modify the initial value for a stored property during initialization.
+72 | This is true even for constant stored properties,
+
+[1;33mwarning: 'Assigning-Constant-Properties-During-Initialization' doesn't exist at '/The-Swift-Programming-Language/Initialization'[0;0m
+  --> LanguageGuide/Properties.md:73:37-73:88
+71 | You can also set and modify the initial value for a stored property during initialization.
+72 | This is true even for constant stored properties,
+73 + as described in <doc:Initialization#[1;32mAssigning-Constant-Properties-During-Initialization[0;0m>.
+74 |
+75 | The example below defines a structure called `FixedLengthRange`,
+
+[1;33mwarning: 'Functions-With-an-Implicit-Return' doesn't exist at '/The-Swift-Programming-Language/Functions'[0;0m
+   --> LanguageGuide/Properties.md:535:32-535:65
+533 | Omitting the `return` from a getter
+534 | follows the same rules as omitting `return` from a function,
+535 + as described in <doc:Functions#[1;32mFunctions-With-an-Implicit-Return[0;0m>.
+    |                                ╰─[1;39msuggestion: Replace 'Functions-With-an-Implicit-Return' with 'Funciones-Con-Devolución-Implícita'[0;0m
+536 |
+537 | ### Read-Only Computed Properties
+
+[1;33mwarning: 'Overriding' doesn't exist at '/The-Swift-Programming-Language/Inheritance'[0;0m
+   --> LanguageGuide/Properties.md:656:56-656:66
+654 | use the property's setter to observe and respond to value changes,
+655 | instead of trying to create an observer.
+656 + Overriding properties is described in <doc:Inheritance#[1;32mOverriding[0;0m>.
+    |                                                        ╰─[1;39msuggestion: Replace 'Overriding' with 'Sustituciones-Overriding'[0;0m
+657 |
+658 | <!--
+
+[1;33mwarning: 'Initializer-Delegation-for-Value-Types' doesn't exist at '/The-Swift-Programming-Language/Initialization'[0;0m
+   --> LanguageGuide/Properties.md:743:27-743:65
+741 | >
+742 | > For more information about initializer delegation,
+743 + > see <doc:Initialization#[1;32mInitializer-Delegation-for-Value-Types[0;0m>
+744 | > and <doc:Initialization#Initializer-Delegation-for-Class-Types>.
+745 |
+
+[1;33mwarning: 'Initializer-Delegation-for-Class-Types' doesn't exist at '/The-Swift-Programming-Language/Initialization'[0;0m
+   --> LanguageGuide/Properties.md:744:27-744:65
+742 | > For more information about initializer delegation,
+743 | > see <doc:Initialization#Initializer-Delegation-for-Value-Types>
+744 + > and <doc:Initialization#[1;32mInitializer-Delegation-for-Class-Types[0;0m>.
+745 |
+746 | <!--
+
+[1;33mwarning: 'In-Out-Parameters' doesn't exist at '/The-Swift-Programming-Language/Declarations'[0;0m
+   --> LanguageGuide/Properties.md:858:25-858:42
+856 | > The value is always written back to the property at the end of the function.
+857 | > For a detailed discussion of the behavior of in-out parameters,
+858 + > see <doc:Declarations#[1;32mIn-Out-Parameters[0;0m>.
+    |                         ╰─[1;39msuggestion: Replace 'In-Out-Parameters' with 'Special-Kinds-of-Parameters'[0;0m
+859 |
+860 | <!--
+
+[1;33mwarning: 'Modifying-Value-Types-from-Within-Instance-Methods' doesn't exist at '/The-Swift-Programming-Language/Methods'[0;0m
+   --> LanguageGuide/Protocols.md:384:43-384:93
+382 | to indicate that the method is allowed to modify the instance it belongs to
+383 | and any properties of that instance.
+384 + This process is described in <doc:Methods#[1;32mModifying-Value-Types-from-Within-Instance-Methods[0;0m>.
+385 |
+386 | If you define a protocol instance method requirement
+
+[1;33mwarning: 'Required-Initializers' doesn't exist at '/The-Swift-Programming-Language/Initialization'[0;0m
+   --> LanguageGuide/Protocols.md:550:25-550:46
+548 |
+549 | For more information on required initializers,
+550 + see <doc:Initialization#[1;32mRequired-Initializers[0;0m>.
+551 |
+552 | <!--
+
+[1;33mwarning: 'Preventing-Overrides' doesn't exist at '/The-Swift-Programming-Language/Inheritance'[0;0m
+   --> LanguageGuide/Protocols.md:601:61-601:81
+599 | > on classes that are marked with the `final` modifier,
+600 | > because final classes can't subclassed.
+601 + > For more about the `final` modifier, see <doc:Inheritance#[1;32mPreventing-Overrides[0;0m>.
+602 |
+603 | <!--
+
+[1;33mwarning: 'Failable-Initializers' doesn't exist at '/The-Swift-Programming-Language/Initialization'[0;0m
+   --> LanguageGuide/Protocols.md:668:35-668:56
+666 |
+667 | Protocols can define failable initializer requirements for conforming types,
+668 + as defined in <doc:Initialization#[1;32mFailable-Initializers[0;0m>.
+669 |
+670 | A failable initializer requirement can be satisfied by
+
+[1;33mwarning: 'Strong-Reference-Cycles-Between-Class-Instances' doesn't exist at '/The-Swift-Programming-Language/AutomaticReferenceCounting'[0;0m
+   --> LanguageGuide/Protocols.md:864:37-864:84
+862 | delegates are declared as weak references.
+863 | For information about weak references,
+864 + see <doc:AutomaticReferenceCounting#[1;32mStrong-Reference-Cycles-Between-Class-Instances[0;0m>.
+865 | Marking the protocol as class-only
+866 | lets the `SnakesAndLadders` class later in this chapter
+
+[1;33mwarning: 'Break' doesn't exist at '/The-Swift-Programming-Language/ControlFlow'[0;0m
+   --> LanguageGuide/Protocols.md:948:22-948:27
+946 |
+947 | For a description of the *Snakes and Ladders* gameplay,
+948 + see <doc:ControlFlow#[1;32mBreak[0;0m>.
+    |                      ╰─[1;39msuggestion: Replace 'Break' with 'break'[0;0m
+949 |
+950 | This version of the game is wrapped up as a class called `SnakesAndLadders`,
+
+[1;33mwarning: 'Structures-and-Enumerations-Are-Value-Types' doesn't exist at '/The-Swift-Programming-Language/ClassesAndStructures'[0;0m
+    --> LanguageGuide/Protocols.md:1713:33-1713:76
+1711 | > reference semantics rather than value semantics.
+1712 | > For more about reference and value semantics,
+1713 + > see <doc:ClassesAndStructures#[1;32mStructures-and-Enumerations-Are-Value-Types[0;0m>
+1714 | > and <doc:ClassesAndStructures#Classes-Are-Reference-Types>.
+1715 |
+
+[1;33mwarning: 'Classes-Are-Reference-Types' doesn't exist at '/The-Swift-Programming-Language/ClassesAndStructures'[0;0m
+    --> LanguageGuide/Protocols.md:1714:33-1714:60
+1712 | > For more about reference and value semantics,
+1713 | > see <doc:ClassesAndStructures#Structures-and-Enumerations-Are-Value-Types>
+1714 + > and <doc:ClassesAndStructures#[1;32mClasses-Are-Reference-Types[0;0m>.
+1715 |
+1716 | <!--
+
+[1;33mwarning: 'CadenasYCaracteres' doesn't exist at '/The-Swift-Programming-Language/StringsAndCharacters'[0;0m
+   --> LanguageGuide/StringsAndCharacters.md:232:33-232:51
+230 | - An arbitrary Unicode scalar value, written as `\u{`*n*`}`,
+231 |   where *n* is a 1--8 digit hexadecimal number
+232 +   (Unicode is discussed in <doc:[1;32mCadenasYCaracteres[0;0m#Unicode> below)
+    |                                 ├─[1;39msuggestion: Replace 'CadenasYCaracteres' with 'Igualdad-de-cadenas-y-caracteres'[0;0m
+    |                                 ├─[1;39msuggestion: Replace 'CadenasYCaracteres' with 'Concatenación-de-cadenas-y-caracteres'[0;0m
+    |                                 ╰─[1;39msuggestion: Replace 'CadenasYCaracteres' with 'Conteo-de-caracteres'[0;0m
+233 |
+234 | <!--
+
+[1;33mwarning: 'ClasesYEstructuras' doesn't exist at '/The-Swift-Programming-Language/StringsAndCharacters'[0;0m
+   --> LanguageGuide/StringsAndCharacters.md:459:35-459:53
+457 | In each case, a new copy of the existing `String` value is created,
+458 | and the new copy is passed or assigned, not the original version.
+459 + Value types are described in <doc:[1;32mClasesYEstructuras[0;0m#Las-estructuras-y-las-enumeraciones-son-tipos-de-valor>.
+460 |
+461 | Swift's copy-by-default `String` behavior ensures that
+
+[1;33mwarning: 'FlujoDeControl' doesn't exist at '/The-Swift-Programming-Language/StringsAndCharacters'[0;0m
+   --> LanguageGuide/StringsAndCharacters.md:504:42-504:56
+502 | -->
+503 |
+504 + The `for`-`in` loop is described in <doc:[1;32mFlujoDeControl[0;0m#Ciclos-for-in>.
+505 |
+506 | Alternatively, you can create a stand-alone `Character` constant or variable
+
+[1;33mwarning: 'OperadoresBasicos' doesn't exist at '/The-Swift-Programming-Language/StringsAndCharacters'[0;0m
+    --> LanguageGuide/StringsAndCharacters.md:1268:22-1268:39
+1266 | String and character equality is checked with the “equal to” operator (`==`)
+1267 | and the “not equal to” operator (`!=`),
+1268 + as described in <doc:[1;32mOperadoresBasicos[0;0m#Operadores-de-comparación>:
+1269 |
+1270 | ```swift
+
+[1;33mwarning: 'CadenasYCaracteres' doesn't exist at '/The-Swift-Programming-Language/StringsAndCharacters'[0;0m
+    --> LanguageGuide/StringsAndCharacters.md:1559:24-1559:42
+1557 | > perform a character-by-character canonical equivalence comparison between
+1558 | > the extended grapheme clusters in each string,
+1559 + > as described in <doc:[1;32mCadenasYCaracteres[0;0m#Igualdad-de-cadenas-y-caracteres>.
+     |                        ├─[1;39msuggestion: Replace 'CadenasYCaracteres' with 'Igualdad-de-cadenas-y-caracteres'[0;0m
+     |                        ├─[1;39msuggestion: Replace 'CadenasYCaracteres' with 'Concatenación-de-cadenas-y-caracteres'[0;0m
+     |                        ╰─[1;39msuggestion: Replace 'CadenasYCaracteres' with 'Conteo-de-caracteres'[0;0m
+1560 |
+1561 | ## Representación Unicode de cadenas
+
+[1;33mwarning: 'CadenasYCaracteres' doesn't exist at '/The-Swift-Programming-Language/StringsAndCharacters'[0;0m
+    --> LanguageGuide/StringsAndCharacters.md:1574:35-1574:53
+1572 | You can iterate over the string with a `for`-`in` statement,
+1573 | to access its individual `Character` values as Unicode extended grapheme clusters.
+1574 + This process is described in <doc:[1;32mCadenasYCaracteres[0;0m#Trabajando-con-caracteres>.
+     |                                   ├─[1;39msuggestion: Replace 'CadenasYCaracteres' with 'Igualdad-de-cadenas-y-caracteres'[0;0m
+     |                                   ├─[1;39msuggestion: Replace 'CadenasYCaracteres' with 'Concatenación-de-cadenas-y-caracteres'[0;0m
+     |                                   ╰─[1;39msuggestion: Replace 'CadenasYCaracteres' with 'Conteo-de-caracteres'[0;0m
+1575 |
+1576 | Alternatively, access a `String` value
+
+[1;33mwarning: 'Parámetros-variádicos' doesn't exist at '/The-Swift-Programming-Language/Functions'[0;0m
+   --> LanguageGuide/Subscripts.md:195:32-195:53
+193 | subscripts can take a varying number of parameters
+194 | and provide default values for their parameters,
+195 + as discussed in <doc:Functions#[1;32mParámetros-variádic[0;0mos>
+    |                                ├─[1;39msuggestion: Replace 'Parámetros-variádicos' with 'Parámetros-Variádicos'[0;0m
+    |                                ├─[1;39msuggestion: Replace 'Parámetros-variádicos' with 'Parámetros-in-out'[0;0m
+    |                                ├─[1;39msuggestion: Replace 'Parámetros-variádicos' with 'Parámetros-con-valores-predeterminados'[0;0m
+    |                                ╰─[1;39msuggestion: Replace 'Parámetros-variádicos' with 'Parámetros-de-Funciones-y-Valores-de-Devolución'[0;0m
+196 | and <doc:Functions#Parámetros-con-valores-predeterminados>.
+197 | However, unlike functions,
+
+[1;33mwarning: '`' doesn't exist at '/The-Swift-Programming-Language/TheBasics'[0;0m
+   --> LanguageGuide/TheBasics.md:222:56-222:57
+220 | > Nota: Si necesitas darle a una constante o variable el mismo nombre
+221 | > que una palabra clave reservada de Swift,
+222 + > encierra la palabra clave con comillas invertidas (``[1;32m [0;0m` ``)
+223 | > al usarla como nombre de una variable o constante.
+224 | > Sin embargo, evita usar palabras clave como nombres
+
+[1;33mwarning: 'Result-Builders' doesn't exist at '/The-Swift-Programming-Language/AdvancedOperators'[0;0m
+    --> ReferenceManual/Attributes.md:1451:28-1451:43
+1449 | for creating nested data structures in a natural, declarative way.
+1450 | For an example of how to use the `resultBuilder` attribute,
+1451 + see <doc:AdvancedOperators#[1;32mResult-Builders[0;0m>.
+1452 |
+1453 | #### Result-Building Methods
+
+[1;33mwarning: 'Autoclosures' doesn't exist at '/The-Swift-Programming-Language/Closures'[0;0m
+    --> ReferenceManual/Attributes.md:2297:19-2297:31
+2295 | and that returns a value of the type of the expression.
+2296 | For an example of how to use the `autoclosure` attribute,
+2297 + see <doc:Closures#[1;32mAutoclosures[0;0m> and <doc:Types#Function-Type>.
+     |                   ╰─[1;39msuggestion: Replace 'Autoclosures' with 'Autoclausuras'[0;0m
+2298 |
+2299 | ### convention
+
+[1;33mwarning: 'Escaping-Closures' doesn't exist at '/The-Swift-Programming-Language/Closures'[0;0m
+    --> ReferenceManual/Attributes.md:2341:19-2341:36
+2339 | require explicit use of `self.` for properties or methods.
+2340 | For an example of how to use the `escaping` attribute,
+2341 + see <doc:Closures#[1;32mEscaping-Closures[0;0m>.
+2342 |
+2343 | ### Sendable
+
+[1;33mwarning: 'Constants-and-Variables' doesn't exist at '/The-Swift-Programming-Language/TheBasics'[0;0m
+   --> ReferenceManual/Declarations.md:251:20-251:43
+249 |
+250 | For more information about constants and for guidance about when to use them,
+251 + see <doc:TheBasics#[1;32mConstants-and-Variables[0;0m> and <doc:Properties#Stored-Properties>.
+    |                    ├─[1;39msuggestion: Replace 'Constants-and-Variables' with 'Constantes-y-variables'[0;0m
+    |                    ├─[1;39msuggestion: Replace 'Constants-and-Variables' with 'Impresión-de-Constantes-y-Variables'[0;0m
+    |                    ├─[1;39msuggestion: Replace 'Constants-and-Variables' with 'Nombrar-constantes-y-variables'[0;0m
+    |                    ╰─[1;39msuggestion: Replace 'Constants-and-Variables' with 'Declaración-de-constantes-y-variables'[0;0m
+252 |
+253 | > Grammar of a constant declaration:
+
+[1;33mwarning: 'Overriding' doesn't exist at '/The-Swift-Programming-Language/Inheritance'[0;0m
+   --> ReferenceManual/Declarations.md:281:76-281:86
+279 |
+280 | You can override a property in a subclass by marking the subclass's property declaration
+281 + with the `override` declaration modifier, as described in <doc:Inheritance#[1;32mOverriding[0;0m>.
+    |                                                                            ╰─[1;39msuggestion: Replace 'Overriding' with 'Sustituciones-Overriding'[0;0m
+282 |
+283 | ### Stored Variables and Stored Variable Properties
+
+[1;33mwarning: 'Overriding-Property-Observers' doesn't exist at '/The-Swift-Programming-Language/Inheritance'[0;0m
+   --> ReferenceManual/Declarations.md:378:66-378:95
+376 | You can add property observers to any stored property. You can also add property
+377 | observers to any inherited property (whether stored or computed) by overriding
+378 + the property within a subclass, as described in <doc:Inheritance#[1;32mOverriding-Property-Observers[0;0m>.
+379 |
+380 | The initializer *expression* is optional in the context of a class or structure declaration,
+
+[1;33mwarning: 'In-Out-Parameters' doesn't exist at '/The-Swift-Programming-Language/Declarations'[0;0m
+   --> ReferenceManual/Declarations.md:777:22-777:39
+775 | the parameter can be modified inside the scope of the function.
+776 | In-out parameters are discussed in detail
+777 + in <doc:Declarations#[1;32mIn-Out-Parameters[0;0m>, below.
+    |                      ╰─[1;39msuggestion: Replace 'In-Out-Parameters' with 'Special-Kinds-of-Parameters'[0;0m
+778 |
+779 | A function declaration whose *statements*
+
+[1;33mwarning: 'Nested-Functions' doesn't exist at '/The-Swift-Programming-Language/Functions'[0;0m
+   --> ReferenceManual/Declarations.md:810:20-810:36
+808 |
+809 | For a discussion of nested functions,
+810 + see <doc:Functions#[1;32mNested-Functions[0;0m>.
+811 |
+812 | ### Parameter Names
+
+[1;33mwarning: 'In-Out-Parameters' doesn't exist at '/The-Swift-Programming-Language/Functions'[0;0m
+    --> ReferenceManual/Declarations.md:998:20-998:37
+996  |
+997  | For more discussion and examples of in-out parameters,
+998  + see <doc:Functions#[1;32mIn-Out-Parameters[0;0m>.
+999  |
+1000 | <!--
+
+[1;33mwarning: 'Variadic-Parameters' doesn't exist at '/The-Swift-Programming-Language/Functions'[0;0m
+    --> ReferenceManual/Declarations.md:1058:20-1058:39
+1056 | For example, the variadic parameter `Int...` is treated as `[Int]`.
+1057 | For an example that uses a variadic parameter,
+1058 + see <doc:Functions#[1;32mVariadic-Parameters[0;0m>.
+1059 |
+1060 | A parameter with an equal sign (`=`) and an expression after its type
+
+[1;33mwarning: 'Structures-and-Enumerations-Are-Value-Types' doesn't exist at '/The-Swift-Programming-Language/ClassesAndStructures'[0;0m
+    --> ReferenceManual/Declarations.md:1556:31-1556:74
+1554 | variables or constants, or when passed as arguments to a function call.
+1555 | For information about value types,
+1556 + see <doc:ClassesAndStructures#[1;32mStructures-and-Enumerations-Are-Value-Types[0;0m>.
+1557 |
+1558 | You can extend the behavior of an enumeration type with an extension declaration,
+
+[1;33mwarning: 'Associated-Values' doesn't exist at '/The-Swift-Programming-Language/Enumerations'[0;0m
+    --> ReferenceManual/Declarations.md:1624:23-1624:40
+1622 |
+1623 | For more information and to see examples of cases with associated value types,
+1624 + see <doc:Enumerations#[1;32mAssociated-Values[0;0m>.
+1625 |
+1626 | #### Enumerations with Indirection
+
+[1;33mwarning: 'Raw-Values' doesn't exist at '/The-Swift-Programming-Language/Enumerations'[0;0m
+    --> ReferenceManual/Declarations.md:1802:23-1802:33
+1800 | as in `ExampleEnum(rawValue: 5)`, which returns an optional case.
+1801 | For more information and to see examples of cases with raw-value types,
+1802 + see <doc:Enumerations#[1;32mRaw-Values[0;0m>.
+1803 |
+1804 | ### Accessing Enumeration Cases
+
+[1;33mwarning: 'Enumeration-Syntax' doesn't exist at '/The-Swift-Programming-Language/Enumerations'[0;0m
+    --> ReferenceManual/Declarations.md:1809:35-1809:53
+1807 | as in `EnumerationType.enumerationCase`. When the enumeration type can be inferred
+1808 | from context, you can omit it (the dot is still required),
+1809 + as described in <doc:Enumerations#[1;32mEnumeration-Syntax[0;0m>
+     |                                   ╰─[1;39msuggestion: Replace 'Enumeration-Syntax' with 'Enumeraciones-recursivas'[0;0m
+1810 | and <doc:Expressions#Implicit-Member-Expression>.
+1811 |
+
+[1;33mwarning: 'Matching-Enumeration-Values-with-a-Switch-Statement' doesn't exist at '/The-Swift-Programming-Language/Enumerations'[0;0m
+    --> ReferenceManual/Declarations.md:1813:31-1813:82
+1811 |
+1812 | To check the values of enumeration cases, use a `switch` statement,
+1813 + as shown in <doc:Enumerations#[1;32mMatching-Enumeration-Values-with-a-Switch-Statement[0;0m>.
+1814 | The enumeration type is pattern-matched against the enumeration case patterns
+1815 | in the case blocks of the `switch` statement,
+
+[1;33mwarning: 'Enumeration-Case-Pattern' doesn't exist at '/The-Swift-Programming-Language/Patterns'[0;0m
+    --> ReferenceManual/Declarations.md:1816:31-1816:55
+1814 | The enumeration type is pattern-matched against the enumeration case patterns
+1815 | in the case blocks of the `switch` statement,
+1816 + as described in <doc:Patterns#[1;32mEnumeration-Case-Pattern[0;0m>.
+1817 |
+1818 | <!--
+
+[1;33mwarning: 'Initializers' doesn't exist at '/The-Swift-Programming-Language/Initialization'[0;0m
+    --> ReferenceManual/Declarations.md:1938:39-1938:51
+1936 |
+1937 | - Call one of the initializers declared within the structure,
+1938 +   as described in <doc:Initialization#[1;32mInitializers[0;0m>.
+     |                                       ├─[1;39msuggestion: Replace 'Initializers' with 'Inicializadores'[0;0m
+     |                                       ├─[1;39msuggestion: Replace 'Initializers' with 'Inicializadores-falibles'[0;0m
+     |                                       ╰─[1;39msuggestion: Replace 'Initializers' with 'Inicializadores-obligatorios'[0;0m
+1939 | - If no initializers are declared,
+1940 |   call the structure's memberwise initializer,
+
+[1;33mwarning: 'Memberwise-Initializers-for-Structure-Types' doesn't exist at '/The-Swift-Programming-Language/Initialization'[0;0m
+    --> ReferenceManual/Declarations.md:1941:39-1941:82
+1939 | - If no initializers are declared,
+1940 |   call the structure's memberwise initializer,
+1941 +   as described in <doc:Initialization#[1;32mMemberwise-Initializers-for-Structure-Types[0;0m>.
+1942 | - If no initializers are declared,
+1943 |   and all properties of the structure declaration were given initial values,
+
+[1;33mwarning: 'Default-Initializers' doesn't exist at '/The-Swift-Programming-Language/Initialization'[0;0m
+    --> ReferenceManual/Declarations.md:1945:39-1945:59
+1943 |   and all properties of the structure declaration were given initial values,
+1944 |   call the structure's default initializer,
+1945 +   as described in <doc:Initialization#[1;32mDefault-Initializers[0;0m>.
+1946 |
+1947 | The process of initializing a structure's declared properties
+
+[1;33mwarning: 'Accessing-Properties' doesn't exist at '/The-Swift-Programming-Language/ClassesAndStructures'[0;0m
+    --> ReferenceManual/Declarations.md:1951:43-1951:63
+1949 |
+1950 | Properties of a structure instance can be accessed using dot (`.`) syntax,
+1951 + as described in <doc:ClassesAndStructures#[1;32mAccessing-Properties[0;0m>.
+1952 |
+1953 | Structures are value types; instances of a structure are copied when assigned to
+
+[1;33mwarning: 'Structures-and-Enumerations-Are-Value-Types' doesn't exist at '/The-Swift-Programming-Language/ClassesAndStructures'[0;0m
+    --> ReferenceManual/Declarations.md:1956:31-1956:74
+1954 | variables or constants, or when passed as arguments to a function call.
+1955 | For information about value types,
+1956 + see <doc:ClassesAndStructures#[1;32mStructures-and-Enumerations-Are-Value-Types[0;0m>.
+1957 |
+1958 | You can extend the behavior of a structure type with an extension declaration,
+
+[1;33mwarning: 'Automatic-Initializer-Inheritance' doesn't exist at '/The-Swift-Programming-Language/Initialization'[0;0m
+    --> ReferenceManual/Declarations.md:2033:21-2033:54
+2031 | the current class, designated initializers declared in the *superclass* are only
+2032 | inherited when the subclass meets the conditions described in
+2033 + <doc:Initialization#[1;32mAutomatic-Initializer-Inheritance[0;0m>.
+2034 | Swift classes don't inherit from a universal base class.
+2035 |
+
+[1;33mwarning: 'Initializers' doesn't exist at '/The-Swift-Programming-Language/Initialization'[0;0m
+    --> ReferenceManual/Declarations.md:2039:39-2039:51
+2037 |
+2038 | - Call one of the initializers declared within the class,
+2039 +   as described in <doc:Initialization#[1;32mInitializers[0;0m>.
+     |                                       ├─[1;39msuggestion: Replace 'Initializers' with 'Inicializadores'[0;0m
+     |                                       ├─[1;39msuggestion: Replace 'Initializers' with 'Inicializadores-falibles'[0;0m
+     |                                       ╰─[1;39msuggestion: Replace 'Initializers' with 'Inicializadores-obligatorios'[0;0m
+2040 | - If no initializers are declared,
+2041 |   and all properties of the class declaration were given initial values,
+
+[1;33mwarning: 'Default-Initializers' doesn't exist at '/The-Swift-Programming-Language/Initialization'[0;0m
+    --> ReferenceManual/Declarations.md:2043:39-2043:59
+2041 |   and all properties of the class declaration were given initial values,
+2042 |   call the class's default initializer,
+2043 +   as described in <doc:Initialization#[1;32mDefault-Initializers[0;0m>.
+2044 |
+2045 | Access properties of a class instance with dot (`.`) syntax,
+
+[1;33mwarning: 'Accessing-Properties' doesn't exist at '/The-Swift-Programming-Language/ClassesAndStructures'[0;0m
+    --> ReferenceManual/Declarations.md:2046:43-2046:63
+2044 |
+2045 | Access properties of a class instance with dot (`.`) syntax,
+2046 + as described in <doc:ClassesAndStructures#[1;32mAccessing-Properties[0;0m>.
+2047 |
+2048 | Classes are reference types; instances of a class are referred to, rather than copied,
+
+[1;33mwarning: 'Classes-Are-Reference-Types' doesn't exist at '/The-Swift-Programming-Language/ClassesAndStructures'[0;0m
+    --> ReferenceManual/Declarations.md:2051:31-2051:58
+2049 | when assigned to variables or constants, or when passed as arguments to a function call.
+2050 | For information about reference types,
+2051 + see <doc:ClassesAndStructures#[1;32mClasses-Are-Reference-Types[0;0m>.
+2052 |
+2053 | You can extend the behavior of a class type with an extension declaration,
+
+[1;33mwarning: 'Actors' doesn't exist at '/The-Swift-Programming-Language/Concurrency'[0;0m
+    --> ReferenceManual/Declarations.md:2090:22-2090:28
+2088 | For a discussion and several examples of actors
+2089 | that include various kinds of declarations,
+2090 + see <doc:Concurrency#[1;32mActors[0;0m>.
+     |                      ╰─[1;39msuggestion: Replace 'Actors' with 'Actores'[0;0m
+2091 |
+2092 | Actor types can adopt any number of protocols,
+
+[1;33mwarning: 'Initializers' doesn't exist at '/The-Swift-Programming-Language/Initialization'[0;0m
+    --> ReferenceManual/Declarations.md:2101:39-2101:51
+2099 |
+2100 | - Call one of the initializers declared within the actor,
+2101 +   as described in <doc:Initialization#[1;32mInitializers[0;0m>.
+     |                                       ├─[1;39msuggestion: Replace 'Initializers' with 'Inicializadores'[0;0m
+     |                                       ├─[1;39msuggestion: Replace 'Initializers' with 'Inicializadores-falibles'[0;0m
+     |                                       ╰─[1;39msuggestion: Replace 'Initializers' with 'Inicializadores-obligatorios'[0;0m
+2102 | - If no initializers are declared,
+2103 |   and all properties of the actor declaration were given initial values,
+
+[1;33mwarning: 'Default-Initializers' doesn't exist at '/The-Swift-Programming-Language/Initialization'[0;0m
+    --> ReferenceManual/Declarations.md:2105:39-2105:59
+2103 |   and all properties of the actor declaration were given initial values,
+2104 |   call the actor's default initializer,
+2105 +   as described in <doc:Initialization#[1;32mDefault-Initializers[0;0m>.
+2106 |
+2107 | By default, members of an actor are isolated to that actor.
+
+[1;33mwarning: 'Accessing-Properties' doesn't exist at '/The-Swift-Programming-Language/ClassesAndStructures'[0;0m
+    --> ReferenceManual/Declarations.md:2132:43-2132:63
+2130 |
+2131 | Properties of an actor instance can be accessed using dot (`.`) syntax,
+2132 + as described in <doc:ClassesAndStructures#[1;32mAccessing-Properties[0;0m>.
+2133 |
+2134 | Actors are reference types; instances of an actor are referred to, rather than copied,
+
+[1;33mwarning: 'Classes-Are-Reference-Types' doesn't exist at '/The-Swift-Programming-Language/ClassesAndStructures'[0;0m
+    --> ReferenceManual/Declarations.md:2137:31-2137:58
+2135 | when assigned to variables or constants, or when passed as arguments to a function call.
+2136 | For information about reference types,
+2137 + see <doc:ClassesAndStructures#[1;32mClasses-Are-Reference-Types[0;0m>.
+2138 |
+2139 | You can extend the behavior of an actor type with an extension declaration,
+
+[1;33mwarning: 'Failable-Initializers' doesn't exist at '/The-Swift-Programming-Language/Initialization'[0;0m
+    --> ReferenceManual/Declarations.md:2803:25-2803:46
+2801 |
+2802 | For more information and to see examples of failable initializers,
+2803 + see <doc:Initialization#[1;32mFailable-Initializers[0;0m>.
+2804 |
+2805 | > Grammar of an initializer declaration:
+
+[1;33mwarning: 'Operators' doesn't exist at '/The-Swift-Programming-Language/LexicalStructure'[0;0m
+    --> ReferenceManual/Declarations.md:3501:34-3501:43
+3499 | `infix`, `prefix`, or `postfix` declaration modifier before the `operator` keyword.
+3500 | In each form, the name of the operator can contain only the operator characters
+3501 + defined in <doc:LexicalStructure#[1;32mOperators[0;0m>.
+     |                                  ╰─[1;39msuggestion: Replace 'Operators' with 'Operadores'[0;0m
+3502 |
+3503 | The following form declares a new infix operator:
+
+[1;33mwarning: 'Custom-Operators' doesn't exist at '/The-Swift-Programming-Language/AdvancedOperators'[0;0m
+    --> ReferenceManual/Declarations.md:3552:28-3552:44
+3550 | declaration modifier.
+3551 | To see an example of how to create and implement a new operator,
+3552 + see <doc:AdvancedOperators#[1;32mCustom-Operators[0;0m>.
+3553 |
+3554 | > Grammar of an operator declaration:
+
+[1;33mwarning: 'Preventing-Overrides' doesn't exist at '/The-Swift-Programming-Language/Inheritance'[0;0m
+    --> ReferenceManual/Declarations.md:3713:24-3713:44
+3711 |   to indicate that a class member can't be overridden in any subclass.
+3712 |   For an example of how to use the `final` attribute,
+3713 +   see <doc:Inheritance#[1;32mPreventing-Overrides[0;0m>.
+3714 |
+3715 | - term `lazy`:
+
+[1;33mwarning: 'Unowned-References' doesn't exist at '/The-Swift-Programming-Language/AutomaticReferenceCounting'[0;0m
+    --> ReferenceManual/Declarations.md:3773:39-3773:57
+3771 |   the type is non-optional.
+3772 |   For an example and more information about the `unowned` modifier,
+3773 +   see <doc:AutomaticReferenceCounting#[1;32mUnowned-References[0;0m>.
+3774 |
+3775 | - term `unowned(safe)`:
+
+[1;33mwarning: 'Unowned-References' doesn't exist at '/The-Swift-Programming-Language/AutomaticReferenceCounting'[0;0m
+    --> ReferenceManual/Declarations.md:3791:39-3791:57
+3789 |   the type is non-optional.
+3790 |   For an example and more information about the `unowned` modifier,
+3791 +   see <doc:AutomaticReferenceCounting#[1;32mUnowned-References[0;0m>.
+3792 |
+3793 | - term `weak`:
+
+[1;33mwarning: 'Weak-References' doesn't exist at '/The-Swift-Programming-Language/AutomaticReferenceCounting'[0;0m
+    --> ReferenceManual/Declarations.md:3802:39-3802:54
+3800 |   its value is `nil`.
+3801 |   For an example and more information about the `weak` modifier,
+3802 +   see <doc:AutomaticReferenceCounting#[1;32mWeak-References[0;0m>.
+3803 |
+3804 | ### Access Control Levels
+
+[1;33mwarning: 'Getters-and-Setters' doesn't exist at '/The-Swift-Programming-Language/AccessControl'[0;0m
+    --> ReferenceManual/Declarations.md:3852:36-3852:55
+3850 | for the setter of a variable or subscript that's less than or equal
+3851 | to the access level of the variable or subscript itself,
+3852 + as discussed in <doc:AccessControl#[1;32mGetters-and-Setters[0;0m>.
+     |                                    ╰─[1;39msuggestion: Replace 'Getters-and-Setters' with 'Getters-y-setters'[0;0m
+3853 |
+3854 | > Grammar of a declaration modifier:
+
+[1;33mwarning: 'In-Out-Parameters' doesn't exist at '/The-Swift-Programming-Language/Functions'[0;0m
+  --> ReferenceManual/Expressions.md:57:20-57:37
+55 |
+56 | For more information about in-out parameters and to see an example,
+57 + see <doc:Functions#[1;32mIn-Out-Parameters[0;0m>.
+58 |
+59 | In-out expressions are also used
+
+[1;33mwarning: 'Ternary-Conditional-Operator' doesn't exist at '/The-Swift-Programming-Language/BasicOperators'[0;0m
+   --> ReferenceManual/Expressions.md:401:25-401:53
+399 |
+400 | For an example that uses the ternary conditional operator,
+401 + see <doc:BasicOperators#[1;32mTernary-Conditional-Operator[0;0m>.
+402 |
+403 | > Grammar of a conditional operator:
+
+[1;33mwarning: 'Escaping-Closures' doesn't exist at '/The-Swift-Programming-Language/Closures'[0;0m
+    --> ReferenceManual/Expressions.md:1054:65-1054:82
+1052 | Otherwise, the closure expression is escaping.
+1053 |
+1054 + For more information about escaping closures, see <doc:Closures#[1;32mEscaping-Closures[0;0m>.
+1055 |
+1056 | #### Listas de Captura
+
+[1;33mwarning: 'Closure-Expressions' doesn't exist at '/The-Swift-Programming-Language/Closures'[0;0m
+    --> ReferenceManual/Expressions.md:1274:19-1274:38
+1272 |
+1273 | For more information and examples of closure expressions,
+1274 + see <doc:Closures#[1;32mClosure-Expressions[0;0m>.
+1275 | For more information and examples of capture lists,
+1276 | see <doc:AutomaticReferenceCounting#Resolving-Strong-Reference-Cycles-for-Closures>.
+
+[1;33mwarning: 'Resolving-Strong-Reference-Cycles-for-Closures' doesn't exist at '/The-Swift-Programming-Language/AutomaticReferenceCounting'[0;0m
+    --> ReferenceManual/Expressions.md:1276:37-1276:83
+1274 | see <doc:Closures#Closure-Expressions>.
+1275 | For more information and examples of capture lists,
+1276 + see <doc:AutomaticReferenceCounting#[1;32mResolving-Strong-Reference-Cycles-for-Closures[0;0m>.
+1277 |
+1278 | <!--
+
+[1;33mwarning: 'Operators' doesn't exist at '/The-Swift-Programming-Language/LexicalStructure'[0;0m
+  --> ReferenceManual/LexicalStructure.md:21:28-21:37
+19 | Whitespace has two uses: to separate tokens in the source file
+20 | and to distinguish between prefix, postfix, and infix operators
+21 + (see <doc:LexicalStructure#[1;32mOperators[0;0m>),
+   |                            ╰─[1;39msuggestion: Replace 'Operators' with 'Operadores'[0;0m
+22 | but is otherwise ignored.
+23 | The following characters are considered whitespace:
+
+[1;33mwarning: '`' doesn't exist at '/The-Swift-Programming-Language/LexicalStructure'[0;0m
+   --> ReferenceManual/LexicalStructure.md:123:19-123:20
+121 |
+122 | To use a reserved word as an identifier,
+123 + put a backtick (``[1;32m [0;0m` ``) before and after it.
+124 | For example, `class` isn't a valid identifier,
+125 | but `` `class` `` is valid.
+
+[1;33mwarning: '`class`' doesn't exist at '/The-Swift-Programming-Language/LexicalStructure'[0;0m
+   --> ReferenceManual/LexicalStructure.md:125:7-125:14
+123 | put a backtick (`` ` ``) before and after it.
+124 | For example, `class` isn't a valid identifier,
+125 + but ``[1;32m `class[0;0m` `` is valid.
+126 | The backticks aren't considered part of the identifier;
+127 | `` `x` `` and `x` have the same meaning.
+
+[1;33mwarning: '`x`' doesn't exist at '/The-Swift-Programming-Language/LexicalStructure'[0;0m
+   --> ReferenceManual/LexicalStructure.md:127:3-127:6
+125 | but `` `class` `` is valid.
+126 | The backticks aren't considered part of the identifier;
+127 + ``[1;32m `x[0;0m` `` and `x` have the same meaning.
+128 |
+129 | <!--
+
+[1;33mwarning: '`' doesn't exist at '/The-Swift-Programming-Language/LexicalStructure'[0;0m
+   --> ReferenceManual/LexicalStructure.md:167:24-167:25
+165 | > *identifier* → *identifier-head* *identifier-characters*_?_
+166 | >
+167 + > *identifier* → **``[1;32m [0;0m` ``** *identifier-head* *identifier-characters*_?_ **`` ` ``**
+168 | >
+169 | > *identifier* → *implicit-parameter-name*
+
+[1;33mwarning: '`' doesn't exist at '/The-Swift-Programming-Language/LexicalStructure'[0;0m
+   --> ReferenceManual/LexicalStructure.md:167:81-167:82
+165 | > *identifier* → *identifier-head* *identifier-characters*_?_
+166 | >
+167 + > *identifier* → **`` ` ``** *identifier-head* *identifier-characters*_?_ **``[1;32m [0;0m` ``**
+168 | >
+169 | > *identifier* → *implicit-parameter-name*
+
+[1;33mwarning: '`' doesn't exist at '/The-Swift-Programming-Language/LexicalStructure'[0;0m
+   --> ReferenceManual/LexicalStructure.md:464:37-464:38
+462 | `(`, `)`, `{`, `}`, `[`, `]`,
+463 | `.`, `,`, `:`, `;`, `=`, `@`, `#`,
+464 + `&` (as a prefix operator), `->`, ``[1;32m [0;0m` ``,
+465 | `?`, and `!` (as a postfix operator).
+466 |
+
+[1;33mwarning: 'Integers' doesn't exist at '/The-Swift-Programming-Language/TheBasics'[0;0m
+   --> ReferenceManual/LexicalStructure.md:584:32-584:40
+582 | The Swift standard library also defines types for various sizes of
+583 | signed and unsigned integers,
+584 + as described in <doc:TheBasics#[1;32mIntegers[0;0m>.
+    |                                ╰─[1;39msuggestion: Replace 'Integers' with 'Int'[0;0m
+585 |
+586 | <!--
+
+[1;33mwarning: 'Custom-Operators' doesn't exist at '/The-Swift-Programming-Language/AdvancedOperators'[0;0m
+    --> ReferenceManual/LexicalStructure.md:1330:28-1330:44
+1328 |
+1329 | To learn how to define new, custom operators,
+1330 + see <doc:AdvancedOperators#[1;32mCustom-Operators[0;0m> and <doc:Declarations#Operator-Declaration>.
+1331 | To learn how to overload existing operators,
+1332 | see <doc:AdvancedOperators#Operator-Methods>.
+
+[1;33mwarning: 'Operator-Declaration' doesn't exist at '/The-Swift-Programming-Language/Declarations'[0;0m
+    --> ReferenceManual/LexicalStructure.md:1330:68-1330:88
+1328 |
+1329 | To learn how to define new, custom operators,
+1330 + see <doc:AdvancedOperators#Custom-Operators> and <doc:Declarations#[1;32mOperator-Declaration[0;0m>.
+     |                                                                    ├─[1;39msuggestion: Replace 'Operator-Declaration' with 'Actor-Declaration'[0;0m
+     |                                                                    ├─[1;39msuggestion: Replace 'Operator-Declaration' with 'Enumeration-Declaration'[0;0m
+     |                                                                    ├─[1;39msuggestion: Replace 'Operator-Declaration' with 'Deinitializer-Declaration'[0;0m
+     |                                                                    ├─[1;39msuggestion: Replace 'Operator-Declaration' with 'Import-Declaration'[0;0m
+     |                                                                    ├─[1;39msuggestion: Replace 'Operator-Declaration' with 'Type-Alias-Declaration'[0;0m
+     |                                                                    ├─[1;39msuggestion: Replace 'Operator-Declaration' with 'Protocol-Declaration'[0;0m
+     |                                                                    ├─[1;39msuggestion: Replace 'Operator-Declaration' with 'Protocol-Initializer-Declaration'[0;0m
+     |                                                                    ├─[1;39msuggestion: Replace 'Operator-Declaration' with 'Structure-Declaration'[0;0m
+     |                                                                    ├─[1;39msuggestion: Replace 'Operator-Declaration' with 'Type-Subscript-Declarations'[0;0m
+     |                                                                    ╰─[1;39msuggestion: Replace 'Operator-Declaration' with 'Macro-Declaration'[0;0m
+1331 | To learn how to overload existing operators,
+1332 | see <doc:AdvancedOperators#Operator-Methods>.
+
+[1;33mwarning: 'Operator-Methods' doesn't exist at '/The-Swift-Programming-Language/AdvancedOperators'[0;0m
+    --> ReferenceManual/LexicalStructure.md:1332:28-1332:44
+1330 | see <doc:AdvancedOperators#Custom-Operators> and <doc:Declarations#Operator-Declaration>.
+1331 | To learn how to overload existing operators,
+1332 + see <doc:AdvancedOperators#[1;32mOperator-Methods[0;0m>.
+     |                            ╰─[1;39msuggestion: Replace 'Operator-Methods' with 'Operador-OR-Bit-a-Bit'[0;0m
+1333 |
+1334 | <!--
+
+[1;33mwarning: 'Valores-Asociados' doesn't exist at '/The-Swift-Programming-Language/Enumerations'[0;0m
+   --> ReferenceManual/Patterns.md:260:23-260:40
+258 | one element for each associated value. For an example that uses a `switch` statement
+259 | to match enumeration cases containing associated values,
+260 + see <doc:Enumerations#[1;32mValores-Asociados[0;0m>.
+    |                       ├─[1;39msuggestion: Replace 'Valores-Asociados' with 'Valores-asociados'[0;0m
+    |                       ├─[1;39msuggestion: Replace 'Valores-Asociados' with 'Valores-brutos'[0;0m
+    |                       ╰─[1;39msuggestion: Replace 'Valores-Asociados' with 'Valores-brutos-asignados-implícitamente'[0;0m
+261 |
+262 | An enumeration case pattern also matches
+
+[1;33mwarning: 'Conversión-de-Tipos-Para-Any-y-AnyObject' doesn't exist at '/The-Swift-Programming-Language/TypeCasting'[0;0m
+   --> ReferenceManual/Patterns.md:407:22-407:62
+405 | For an example that uses a `switch` statement
+406 | to match values with `is` and `as` patterns,
+407 + see <doc:TypeCasting#[1;32mConversión-de-Tipos-Para-Any-y-AnyObjec[0;0mt>.
+    |                      ╰─[1;39msuggestion: Replace 'Conversión-de-Tipos-Para-Any-y-AnyObject' with 'Conversión-de-tipos-para-Any-y-AnyObject'[0;0m
+408 |
+409 | > Grammar of a type casting pattern:
+
+[1;33mwarning: 'Optional-Binding' doesn't exist at '/The-Swift-Programming-Language/TheBasics'[0;0m
+   --> ReferenceManual/Statements.md:138:32-138:48
+136 | must be of type `Bool` or a type bridged to `Bool`.
+137 | The condition can also be an optional binding declaration,
+138 + as discussed in <doc:TheBasics#[1;32mOptional-Binding[0;0m>.
+139 |
+140 | > Grammar of a while statement:
+
+[1;33mwarning: 'Optional-Binding' doesn't exist at '/The-Swift-Programming-Language/TheBasics'[0;0m
+   --> ReferenceManual/Statements.md:256:32-256:48
+254 | must be of type `Bool` or a type bridged to `Bool`.
+255 | The condition can also be an optional binding declaration,
+256 + as discussed in <doc:TheBasics#[1;32mOptional-Binding[0;0m>.
+257 |
+258 | > Grammar of an if statement:
+
+[1;33mwarning: 'Optional-Binding' doesn't exist at '/The-Swift-Programming-Language/TheBasics'[0;0m
+   --> ReferenceManual/Statements.md:280:32-280:48
+278 | must be of type `Bool` or a type bridged to `Bool`.
+279 | The condition can also be an optional binding declaration,
+280 + as discussed in <doc:TheBasics#[1;32mOptional-Binding[0;0m>.
+281 |
+282 | Any constants or variables assigned a value
+
+[1;33mwarning: 'Switch' doesn't exist at '/The-Swift-Programming-Language/ControlFlow'[0;0m
+   --> ReferenceManual/Statements.md:341:22-341:28
+339 | and checked for inclusion in a specified range of values.
+340 | For examples of how to use these various types of values in `switch` statements,
+341 + see <doc:ControlFlow#[1;32mSwitch[0;0m> in <doc:ControlFlow>.
+    |                      ╰─[1;39msuggestion: Replace 'Switch' with 'switch'[0;0m
+342 |
+343 | A `switch` case can optionally contain a `where` clause after each pattern.
+
+[1;33mwarning: 'Labeled-Statements' doesn't exist at '/The-Swift-Programming-Language/ControlFlow'[0;0m
+   --> ReferenceManual/Statements.md:577:22-577:40
+575 | For more information and to see examples
+576 | of how to use statement labels,
+577 + see <doc:ControlFlow#[1;32mLabeled-Statements[0;0m> in <doc:ControlFlow>.
+578 |
+579 | <!--
+
+[1;33mwarning: 'Break' doesn't exist at '/The-Swift-Programming-Language/ControlFlow'[0;0m
+   --> ReferenceManual/Statements.md:656:22-656:27
+654 |
+655 | For examples of how to use a `break` statement,
+656 + see <doc:ControlFlow#[1;32mBreak[0;0m> and <doc:ControlFlow#Labeled-Statements>
+    |                      ╰─[1;39msuggestion: Replace 'Break' with 'break'[0;0m
+657 | in <doc:ControlFlow>.
+658 |
+
+[1;33mwarning: 'Labeled-Statements' doesn't exist at '/The-Swift-Programming-Language/ControlFlow'[0;0m
+   --> ReferenceManual/Statements.md:656:50-656:68
+654 |
+655 | For examples of how to use a `break` statement,
+656 + see <doc:ControlFlow#Break> and <doc:ControlFlow#[1;32mLabeled-Statements[0;0m>
+657 | in <doc:ControlFlow>.
+658 |
+
+[1;33mwarning: 'Continue' doesn't exist at '/The-Swift-Programming-Language/ControlFlow'[0;0m
+   --> ReferenceManual/Statements.md:692:22-692:30
+690 |
+691 | For examples of how to use a `continue` statement,
+692 + see <doc:ControlFlow#[1;32mContinue[0;0m> and <doc:ControlFlow#Labeled-Statements>
+    |                      ╰─[1;39msuggestion: Replace 'Continue' with 'continue'[0;0m
+693 | in <doc:ControlFlow>.
+694 |
+
+[1;33mwarning: 'Labeled-Statements' doesn't exist at '/The-Swift-Programming-Language/ControlFlow'[0;0m
+   --> ReferenceManual/Statements.md:692:53-692:71
+690 |
+691 | For examples of how to use a `continue` statement,
+692 + see <doc:ControlFlow#Continue> and <doc:ControlFlow#[1;32mLabeled-Statements[0;0m>
+693 | in <doc:ControlFlow>.
+694 |
+
+[1;33mwarning: 'Control-Transfer-Statements' doesn't exist at '/The-Swift-Programming-Language/ControlFlow'[0;0m
+   --> ReferenceManual/Statements.md:716:22-716:49
+714 |
+715 | For an example of how to use a `fallthrough` statement in a `switch` statement,
+716 + see <doc:ControlFlow#[1;32mControl-Transfer-Statements[0;0m>
+717 | in <doc:ControlFlow>.
+718 |
+
+[1;33mwarning: 'Failable-Initializers' doesn't exist at '/The-Swift-Programming-Language/Declarations'[0;0m
+   --> ReferenceManual/Statements.md:744:43-744:64
+742 | before it's returned to the calling function or method.
+743 |
+744 + > Note: As described in <doc:Declarations#[1;32mFailable-Initializers[0;0m>, a special form of the `return` statement (`return nil`)
+    |                                           ╰─[1;39msuggestion: Replace 'Failable-Initializers' with 'Protocol-Initializer-Declaration'[0;0m
+745 | > can be used in a failable initializer to indicate initialization failure.
+746 |
+
+[1;33mwarning: 'Propagating-Errors-Using-Throwing-Functions' doesn't exist at '/The-Swift-Programming-Language/ErrorHandling'[0;0m
+   --> ReferenceManual/Statements.md:781:24-781:67
+779 |
+780 | For an example of how to use a `throw` statement,
+781 + see <doc:ErrorHandling#[1;32mPropagating-Errors-Using-Throwing-Functions[0;0m>
+782 | in <doc:ErrorHandling>.
+783 |
+
+[1;33mwarning: 'Handling-Errors' doesn't exist at '/The-Swift-Programming-Language/ErrorHandling'[0;0m
+   --> ReferenceManual/Statements.md:960:24-960:39
+958 |
+959 | To see an example of how to use a `do` statement with several `catch` clauses,
+960 + see <doc:ErrorHandling#[1;32mHandling-Errors[0;0m>.
+961 |
+962 | > Grammar of a do statement:
+
+[1;33mwarning: '`' doesn't exist at '/The-Swift-Programming-Language/SummaryOfTheGrammar'[0;0m
+  --> ReferenceManual/SummaryOfTheGrammar.md:74:24-74:25
+72 | > *identifier* → *identifier-head* *identifier-characters*_?_
+73 | >
+74 + > *identifier* → **``[1;32m [0;0m` ``** *identifier-head* *identifier-characters*_?_ **`` ` ``**
+75 | >
+76 | > *identifier* → *implicit-parameter-name*
+
+[1;33mwarning: '`' doesn't exist at '/The-Swift-Programming-Language/SummaryOfTheGrammar'[0;0m
+  --> ReferenceManual/SummaryOfTheGrammar.md:74:81-74:82
+72 | > *identifier* → *identifier-head* *identifier-characters*_?_
+73 | >
+74 + > *identifier* → **`` ` ``** *identifier-head* *identifier-characters*_?_ **``[1;32m [0;0m` ``**
+75 | >
+76 | > *identifier* → *implicit-parameter-name*
+
+[1;33mwarning: 'Functions-with-Multiple-Return-Values' doesn't exist at '/The-Swift-Programming-Language/Functions'[0;0m
+   --> ReferenceManual/Types.md:163:36-163:73
+161 | the values of the individual elements. An element name consists of an identifier
+162 | followed immediately by a colon (:). For an example that demonstrates both of
+163 + these features, see <doc:Functions#[1;32mFunctions-with-Multiple-Return-Values[0;0m>.
+164 |
+165 | When an element of a tuple type has a name,
+
+[1;33mwarning: 'Autoclosures' doesn't exist at '/The-Swift-Programming-Language/Closures'[0;0m
+   --> ReferenceManual/Types.md:225:19-225:31
+223 | when you call the function.
+224 | For an example of an autoclosure function type parameter,
+225 + see <doc:Closures#[1;32mAutoclosures[0;0m>.
+    |                   ╰─[1;39msuggestion: Replace 'Autoclosures' with 'Autoclausuras'[0;0m
+226 |
+227 | A function type can have variadic parameters in its *parameter type*.
+
+[1;33mwarning: 'Variadic-Parameters' doesn't exist at '/The-Swift-Programming-Language/Functions'[0;0m
+   --> ReferenceManual/Types.md:233:20-233:39
+231 | of the base type name. For instance, the variadic parameter `Int...` is treated
+232 | as `[Int]`. For an example that uses a variadic parameter,
+233 + see <doc:Functions#[1;32mVariadic-Parameters[0;0m>.
+234 |
+235 | To specify an in-out parameter, prefix the parameter type with the `inout` keyword.
+
+[1;33mwarning: 'In-Out-Parameters' doesn't exist at '/The-Swift-Programming-Language/Functions'[0;0m
+   --> ReferenceManual/Types.md:237:51-237:68
+235 | To specify an in-out parameter, prefix the parameter type with the `inout` keyword.
+236 | You can't mark a variadic parameter or a return type with the `inout` keyword.
+237 + In-out parameters are discussed in <doc:Functions#[1;32mIn-Out-Parameters[0;0m>.
+238 |
+239 | If a function type has only one parameter
+
+[1;33mwarning: 'Arrays' doesn't exist at '/The-Swift-Programming-Language/CollectionTypes'[0;0m
+   --> ReferenceManual/Types.md:585:26-585:32
+583 |
+584 | For a detailed discussion of the Swift standard library `Array` type,
+585 + see <doc:CollectionTypes#[1;32mArrays[0;0m>.
+    |                          ╰─[1;39msuggestion: Replace 'Arrays' with 'Arreglos'[0;0m
+586 |
+587 | > Grammar of an array type:
+
+[1;33mwarning: 'Dictionaries' doesn't exist at '/The-Swift-Programming-Language/CollectionTypes'[0;0m
+   --> ReferenceManual/Types.md:636:26-636:38
+634 |
+635 | For a detailed discussion of the Swift standard library `Dictionary` type,
+636 + see <doc:CollectionTypes#[1;32mDictionaries[0;0m>.
+    |                          ╰─[1;39msuggestion: Replace 'Dictionaries' with 'Diccionarios'[0;0m
+637 |
+638 | > Grammar of a dictionary type:
+
+[1;33mwarning: 'Optionals' doesn't exist at '/The-Swift-Programming-Language/TheBasics'[0;0m
+   --> ReferenceManual/Types.md:716:20-716:29
+714 |
+715 | For more information and to see examples that show how to use optional types,
+716 + see <doc:TheBasics#[1;32mOptionals[0;0m>.
+    |                    ╰─[1;39msuggestion: Replace 'Optionals' with 'Opcionales'[0;0m
+717 |
+718 | > Grammar of an optional type:
+
+[1;33mwarning: 'Implicitly-Unwrapped-Optionals' doesn't exist at '/The-Swift-Programming-Language/TheBasics'[0;0m
+   --> ReferenceManual/Types.md:773:20-773:50
+771 |
+772 | For more information about implicitly unwrapped optional types,
+773 + see <doc:TheBasics#[1;32mImplicitly-Unwrapped-Optionals[0;0m>.
+774 |
+775 | > Grammar of an implicitly unwrapped optional type:
+
+[1;33mwarning: 'Raw-Values' doesn't exist at '/The-Swift-Programming-Language/Enumerations'[0;0m
+    --> ReferenceManual/Types.md:1299:62-1299:72
+1297 | a single, named type that specifies the type of those raw values.
+1298 | For an example of an enumeration definition that uses a type inheritance clause
+1299 + to specify the type of its raw values, see <doc:Enumerations#[1;32mRaw-Values[0;0m>.
+1300 |
+1301 | > Grammar of a type inheritance clause:
+
+[1;33mwarning: 'Deferred-Actions' doesn't exist at '/The-Swift-Programming-Language/ControlFlow'[0;0m
+  --> RevisionHistory/RevisionHistory.md:28:30-28:46
+26 |
+27 | - Updated for Swift 5.8.
+28 + - Added the <doc:ControlFlow#[1;32mDeferred-Actions[0;0m> section,
+29 |   showing `defer` outside of error handling.
+30 | - Adopted Swift-DocC for publication.
+
+[1;33mwarning: 'Sendable-Types' doesn't exist at '/The-Swift-Programming-Language/Concurrency'[0;0m
+  --> RevisionHistory/RevisionHistory.md:36:30-36:44
+34 |
+35 | - Updated for Swift 5.7.
+36 + - Added the <doc:Concurrency#[1;32mSendable-Types[0;0m> section,
+37 |   with information about sending data between actors and tasks,
+38 |   and added information about the `@Sendable` and `@unchecked` attributes
+
+[1;33mwarning: 'Optional-Binding' doesn't exist at '/The-Swift-Programming-Language/TheBasics'[0;0m
+  --> RevisionHistory/RevisionHistory.md:43:25-43:41
+41 |   with information about creating a regular expression.
+42 | - Added information about the short form of `if`-`let`
+43 +   to the <doc:TheBasics#[1;32mOptional-Binding[0;0m> section.
+44 | - Added information about `#unavailable`
+45 |   to the <doc:ControlFlow#Checking-API-Availability> section.
+
+[1;33mwarning: 'Checking-API-Availability' doesn't exist at '/The-Swift-Programming-Language/ControlFlow'[0;0m
+  --> RevisionHistory/RevisionHistory.md:45:27-45:52
+43 |   to the <doc:TheBasics#Optional-Binding> section.
+44 | - Added information about `#unavailable`
+45 +   to the <doc:ControlFlow#[1;32mChecking-API-Availability[0;0m> section.
+46 |
+47 | **2022-03-14**
+
+[1;33mwarning: 'Result-Builders' doesn't exist at '/The-Swift-Programming-Language/AdvancedOperators'[0;0m
+  --> RevisionHistory/RevisionHistory.md:69:36-69:51
+67 |
+68 | - Updated for Swift 5.4.
+69 + - Added the <doc:AdvancedOperators#[1;32mResult-Builders[0;0m>
+70 |   and <doc:Attributes#resultBuilder> sections
+71 |   with information about result builders.
+
+[1;33mwarning: 'Variadic-Parameters' doesn't exist at '/The-Swift-Programming-Language/Functions'[0;0m
+  --> RevisionHistory/RevisionHistory.md:75:30-75:49
+73 |   with information about how in-out parameters
+74 |   can be implicitly converted to unsafe pointers in a function call.
+75 + - Updated the <doc:Functions#[1;32mVariadic-Parameters[0;0m>
+76 |   and <doc:Declarations#Function-Declaration> sections,
+77 |   now that a function can have multiple variadic parameters.
+
+[1;33mwarning: 'Trailing-Closures' doesn't exist at '/The-Swift-Programming-Language/Closures'[0;0m
+  --> RevisionHistory/RevisionHistory.md:85:24-85:41
+83 | - Updated for Swift 5.3.
+84 | - Added information about multiple trailing closures
+85 +   to the <doc:Closures#[1;32mTrailing-Closures[0;0m> section,
+86 |   and added information about how trailing closures are matched to parameters
+87 |   to the <doc:Expressions#Function-Call-Expression> section.
+
+[1;33mwarning: 'Adopting-a-Protocol-Using-a-Synthesized-Implementation' doesn't exist at '/The-Swift-Programming-Language/Protocols'[0;0m
+  --> RevisionHistory/RevisionHistory.md:90:25-90:79
+88 | - Added information about synthesized implementations
+89 |   of `Comparable` for enumerations
+90 +   to the <doc:Protocols#[1;32mAdopting-a-Protocol-Using-a-Synthesized-Implementation[0;0m> section.
+   |                         ├─[1;39msuggestion: Replace 'Adopting-a-Protocol-Using-a-Synthesized-Implementation' with 'Adoptando-Un-Protocolo-Mediante-Una-Implementación-Sintetizada'[0;0m
+   |                         ╰─[1;39msuggestion: Replace 'Adopting-a-Protocol-Using-a-Synthesized-Implementation' with 'Providing-Default-Implementations'[0;0m
+91 | - Added the <doc:Generics#Contextual-Where-Clauses> section
+92 |   now that you can write a generic `where` clause in more places.
+
+[1;33mwarning: 'Unowned-Optional-References' doesn't exist at '/The-Swift-Programming-Language/AutomaticReferenceCounting'[0;0m
+  --> RevisionHistory/RevisionHistory.md:93:45-93:72
+91 | - Added the <doc:Generics#Contextual-Where-Clauses> section
+92 |   now that you can write a generic `where` clause in more places.
+93 + - Added the <doc:AutomaticReferenceCounting#[1;32mUnowned-Optional-References[0;0m> section
+94 |   with information about using unowned references with optional values.
+95 | - Added information about the `@main` attribute
+
+[1;33mwarning: 'Escaping-Closures' doesn't exist at '/The-Swift-Programming-Language/Closures'[0;0m
+   --> RevisionHistory/RevisionHistory.md:99:29-99:46
+97  | - Added `#filePath` to the <doc:Expressions#Literal-Expression> section,
+98  |   and updated the discussion of `#file`.
+99  + - Updated the <doc:Closures#[1;32mEscaping-Closures[0;0m> section,
+100 |   now that closures can refer to `self` implicitly in more scenarios.
+101 | - Updated the <doc:ErrorHandling#Handling-Errors-Using-Do-Catch>
+
+[1;33mwarning: 'Handling-Errors-Using-Do-Catch' doesn't exist at '/The-Swift-Programming-Language/ErrorHandling'[0;0m
+   --> RevisionHistory/RevisionHistory.md:101:34-101:64
+99  | - Updated the <doc:Closures#Escaping-Closures> section,
+100 |   now that closures can refer to `self` implicitly in more scenarios.
+101 + - Updated the <doc:ErrorHandling#[1;32mHandling-Errors-Using-Do-Catch[0;0m>
+102 |   and <doc:Statements#Do-Statement> sections,
+103 |   now that a `catch` clause can match against multiple errors.
+
+[1;33mwarning: 'Subscript-Options' doesn't exist at '/The-Swift-Programming-Language/Subscripts'[0;0m
+   --> RevisionHistory/RevisionHistory.md:123:31-123:48
+121 |   with information about syntactic sugar the lets instances of
+122 |   classes, structures, and enumerations be used with function call syntax.
+123 + - Updated the <doc:Subscripts#[1;32mSubscript-Options[0;0m> section,
+124 |   now that subscripts support parameters with default values.
+125 | - Updated the <doc:Types#Self-Type> section,
+
+[1;33mwarning: 'Implicitly-Unwrapped-Optionals' doesn't exist at '/The-Swift-Programming-Language/TheBasics'[0;0m
+   --> RevisionHistory/RevisionHistory.md:127:30-127:60
+125 | - Updated the <doc:Types#Self-Type> section,
+126 |   now that the `Self` can be used in more contexts.
+127 + - Updated the <doc:TheBasics#[1;32mImplicitly-Unwrapped-Optionals[0;0m> section
+128 |   to make it clearer that an implicitly unwrapped optional value
+129 |   can be used as either an optional or non-optional value.
+
+[1;33mwarning: 'Functions-With-an-Implicit-Return' doesn't exist at '/The-Swift-Programming-Language/Functions'[0;0m
+   --> RevisionHistory/RevisionHistory.md:143:28-143:61
+141 |   that are frozen for library evolution
+142 |   to the <doc:Attributes#frozen> section.
+143 + - Added the <doc:Functions#[1;32mFunctions-With-an-Implicit-Return[0;0m>
+    |                            ╰─[1;39msuggestion: Replace 'Functions-With-an-Implicit-Return' with 'Funciones-Con-Devolución-Implícita'[0;0m
+144 |   and <doc:Properties#Shorthand-Getter-Declaration> sections
+145 |   with information about functions that omit `return`.
+
+[1;33mwarning: 'Shorthand-Getter-Declaration' doesn't exist at '/The-Swift-Programming-Language/Properties'[0;0m
+   --> RevisionHistory/RevisionHistory.md:144:23-144:51
+142 |   to the <doc:Attributes#frozen> section.
+143 | - Added the <doc:Functions#Functions-With-an-Implicit-Return>
+144 +   and <doc:Properties#[1;32mShorthand-Getter-Declaration[0;0m> sections
+    |                       ╰─[1;39msuggestion: Replace 'Shorthand-Getter-Declaration' with 'Shorthand-Setter-Declaration'[0;0m
+145 |   with information about functions that omit `return`.
+146 | - Added information about using subscripts on types
+
+[1;33mwarning: 'Type-Subscripts' doesn't exist at '/The-Swift-Programming-Language/Subscripts'[0;0m
+   --> RevisionHistory/RevisionHistory.md:147:26-147:41
+145 |   with information about functions that omit `return`.
+146 | - Added information about using subscripts on types
+147 +   to the <doc:Subscripts#[1;32mType-Subscripts[0;0m> section.
+148 | - Updated the <doc:Patterns#Enumeration-Case-Pattern> section,
+149 |   now that an enumeration case pattern can match an optional value.
+
+[1;33mwarning: 'Enumeration-Case-Pattern' doesn't exist at '/The-Swift-Programming-Language/Patterns'[0;0m
+   --> RevisionHistory/RevisionHistory.md:148:29-148:53
+146 | - Added information about using subscripts on types
+147 |   to the <doc:Subscripts#Type-Subscripts> section.
+148 + - Updated the <doc:Patterns#[1;32mEnumeration-Case-Pattern[0;0m> section,
+149 |   now that an enumeration case pattern can match an optional value.
+150 | - Updated the <doc:Initialization#Memberwise-Initializers-for-Structure-Types> section,
+
+[1;33mwarning: 'Memberwise-Initializers-for-Structure-Types' doesn't exist at '/The-Swift-Programming-Language/Initialization'[0;0m
+   --> RevisionHistory/RevisionHistory.md:150:35-150:78
+148 | - Updated the <doc:Patterns#Enumeration-Case-Pattern> section,
+149 |   now that an enumeration case pattern can match an optional value.
+150 + - Updated the <doc:Initialization#[1;32mMemberwise-Initializers-for-Structure-Types[0;0m> section,
+151 |   now that memberwise initializers support
+152 |   omitting parameters for properties that have a default value.
+
+[1;33mwarning: 'Extended-String-Delimiters' doesn't exist at '/The-Swift-Programming-Language/StringsAndCharacters'[0;0m
+   --> RevisionHistory/RevisionHistory.md:165:39-165:65
+163 |
+164 | - Updated for Swift 5.0.
+165 + - Added the <doc:StringsAndCharacters#[1;32mExtended-String-Delimiters[0;0m> section
+166 |   and updated the <doc:LexicalStructure#String-Literals> section
+167 |   with information about extended string delimiters.
+
+[1;33mwarning: 'Iterating-over-Enumeration-Cases' doesn't exist at '/The-Swift-Programming-Language/Enumerations'[0;0m
+   --> RevisionHistory/RevisionHistory.md:184:28-184:60
+182 | - Updated for Swift 4.2.
+183 | - Added information about accessing all of an enumeration's cases
+184 +   to the <doc:Enumerations#[1;32mIterating-over-Enumeration-Cases[0;0m> section.
+185 | - Added information about `#error` and `#warning`
+186 |   to the <doc:Statements#Compile-Time-Diagnostic-Statement> section.
+
+[1;33mwarning: 'Equivalence-Operators' doesn't exist at '/The-Swift-Programming-Language/AdvancedOperators'[0;0m
+   --> RevisionHistory/RevisionHistory.md:205:33-205:54
+203 | - Updated for Swift 4.1.
+204 | - Added information about synthesized implementations of equivalence operators
+205 +   to the <doc:AdvancedOperators#[1;32mEquivalence-Operators[0;0m> section.
+206 | - Added information about conditional protocol conformance
+207 |   to the <doc:Declarations#Extension-Declaration> section
+
+[1;33mwarning: 'String-Literals' doesn't exist at '/The-Swift-Programming-Language/StringsAndCharacters'[0;0m
+   --> RevisionHistory/RevisionHistory.md:232:36-232:51
+230 |   to constrain associated types.
+231 | - Added information about multiline string literals
+232 +   to the <doc:StringsAndCharacters#[1;32mString-Literals[0;0m> section
+233 |   of the <doc:StringsAndCharacters> chapter,
+234 |   and to the <doc:LexicalStructure#String-Literals> section
+
+[1;33mwarning: 'Assertions-and-Preconditions' doesn't exist at '/The-Swift-Programming-Language/TheBasics'[0;0m
+   --> RevisionHistory/RevisionHistory.md:251:25-251:53
+249 |   now that `final` isn't allowed in them.
+250 | - Added information about preconditions and fatal errors
+251 +   to the <doc:TheBasics#[1;32mAssertions-and-Preconditions[0;0m> section.
+    |                         ╰─[1;39msuggestion: Replace 'Assertions-and-Preconditions' with 'Aserciones-y-precondiciones'[0;0m
+252 |
+253 | **2017-03-27**
+
+[1;33mwarning: 'For-In-Loops' doesn't exist at '/The-Swift-Programming-Language/ControlFlow'[0;0m
+   --> RevisionHistory/RevisionHistory.md:259:27-259:39
+257 |   with information about extensions that include requirements.
+258 | - Added examples of iterating over a range
+259 +   to the <doc:ControlFlow#[1;32mFor-In-Loops[0;0m> section.
+260 | - Added an example of failable numeric conversions
+261 |   to the <doc:Initialization#Failable-Initializers> section.
+
+[1;33mwarning: 'Failable-Initializers' doesn't exist at '/The-Swift-Programming-Language/Initialization'[0;0m
+   --> RevisionHistory/RevisionHistory.md:261:30-261:51
+259 |   to the <doc:ControlFlow#For-In-Loops> section.
+260 | - Added an example of failable numeric conversions
+261 +   to the <doc:Initialization#[1;32mFailable-Initializers[0;0m> section.
+262 | - Added information to the <doc:Attributes#Declaration-Attributes> section
+263 |   about using the `available` attribute with a Swift language version.
+
+[1;33mwarning: 'Type-Casting-for-Any-and-AnyObject' doesn't exist at '/The-Swift-Programming-Language/TypeCasting'[0;0m
+   --> RevisionHistory/RevisionHistory.md:285:40-285:74
+283 |   declaration modifiers
+284 |   in the <doc:Declarations#Declaration-Modifiers> section.
+285 + - Added a note to the <doc:TypeCasting#[1;32mType-Casting-for-Any-and-AnyObject[0;0m> section
+    |                                        ╰─[1;39msuggestion: Replace 'Type-Casting-for-Any-and-AnyObject' with 'Conversión-de-tipos-para-Any-y-AnyObject'[0;0m
+286 |   about using an optional value when a value of type `Any` is expected.
+287 | - Updated the <doc:Expressions> chapter
+
+[1;33mwarning: 'Escaping-Closures' doesn't exist at '/The-Swift-Programming-Language/Closures'[0;0m
+   --> RevisionHistory/RevisionHistory.md:305:24-305:41
+303 |   instead of in front of a parameter's name.
+304 | - Updated the discussion of the `@noescape` and `@autoclosure` attributes
+305 +   in the <doc:Closures#[1;32mEscaping-Closures[0;0m> and <doc:Closures#Autoclosures> sections
+306 |   and the <doc:Attributes> chapter
+307 |   now that they're type attributes, rather than declaration attributes.
+
+[1;33mwarning: 'Autoclosures' doesn't exist at '/The-Swift-Programming-Language/Closures'[0;0m
+   --> RevisionHistory/RevisionHistory.md:305:61-305:73
+303 |   instead of in front of a parameter's name.
+304 | - Updated the discussion of the `@noescape` and `@autoclosure` attributes
+305 +   in the <doc:Closures#Escaping-Closures> and <doc:Closures#[1;32mAutoclosures[0;0m> sections
+    |                                                             ╰─[1;39msuggestion: Replace 'Autoclosures' with 'Autoclausuras'[0;0m
+306 |   and the <doc:Attributes> chapter
+307 |   now that they're type attributes, rather than declaration attributes.
+
+[1;33mwarning: 'Precedence-for-Custom-Infix-Operators' doesn't exist at '/The-Swift-Programming-Language/AdvancedOperators'[0;0m
+   --> RevisionHistory/RevisionHistory.md:309:33-309:70
+307 |   now that they're type attributes, rather than declaration attributes.
+308 | - Added information about operator precedence groups
+309 +   to the <doc:AdvancedOperators#[1;32mPrecedence-for-Custom-Infix-Operators[0;0m> section
+    |                                 ├─[1;39msuggestion: Replace 'Precedence-for-Custom-Infix-Operators' with 'Precedencia-para-operadores-interfijos-personalizados'[0;0m
+    |                                 ╰─[1;39msuggestion: Replace 'Precedence-for-Custom-Infix-Operators' with 'Precedencia-y-asociatividad'[0;0m
+310 |   of the <doc:AdvancedOperators> chapter,
+311 |   and to the <doc:Declarations#Precedence-Group-Declaration> section
+
+[1;33mwarning: 'Escaping-Closures' doesn't exist at '/The-Swift-Programming-Language/Closures'[0;0m
+   --> RevisionHistory/RevisionHistory.md:323:47-323:64
+321 |   and in the <doc:GenericParametersAndArguments> chapter,
+322 |   now that generic `where` clauses are written at the end of a declaration.
+323 + - Updated the discussion in the <doc:Closures#[1;32mEscaping-Closures[0;0m> section,
+324 |   now that closures are nonescaping by default.
+325 | - Updated the discussion
+
+[1;33mwarning: 'Optional-Binding' doesn't exist at '/The-Swift-Programming-Language/TheBasics'[0;0m
+   --> RevisionHistory/RevisionHistory.md:326:25-326:41
+324 |   now that closures are nonescaping by default.
+325 | - Updated the discussion
+326 +   in the <doc:TheBasics#[1;32mOptional-Binding[0;0m> section
+327 |   of the <doc:TheBasics> chapter
+328 |   and the <doc:Statements#While-Statement> section
+
+[1;33mwarning: 'Switch' doesn't exist at '/The-Swift-Programming-Language/ControlFlow'[0;0m
+   --> RevisionHistory/RevisionHistory.md:333:27-333:33
+331 |   use a comma-separated list of conditions without `where` clauses.
+332 | - Added information about switch cases that have multiple patterns
+333 +   to the <doc:ControlFlow#[1;32mSwitch[0;0m> section
+    |                           ╰─[1;39msuggestion: Replace 'Switch' with 'switch'[0;0m
+334 |   of the <doc:ControlFlow> chapter
+335 |   and the <doc:Statements#Switch-Statement> section
+
+[1;33mwarning: 'In-Out-Parameters' doesn't exist at '/The-Swift-Programming-Language/Declarations'[0;0m
+   --> RevisionHistory/RevisionHistory.md:355:51-355:68
+353 | - Added information about playground literals
+354 |   to the <doc:Expressions#Literal-Expression> section.
+355 + - Updated the discussion in the <doc:Declarations#[1;32mIn-Out-Parameters[0;0m> section
+    |                                                   ╰─[1;39msuggestion: Replace 'In-Out-Parameters' with 'Special-Kinds-of-Parameters'[0;0m
+356 |   to note that only nonescaping closures can capture in-out parameters.
+357 | - Updated the discussion about default parameters
+
+[1;33mwarning: 'Default-Parameter-Values' doesn't exist at '/The-Swift-Programming-Language/Functions'[0;0m
+   --> RevisionHistory/RevisionHistory.md:358:25-358:49
+356 |   to note that only nonescaping closures can capture in-out parameters.
+357 | - Updated the discussion about default parameters
+358 +   in the <doc:Functions#[1;32mDefault-Parameter-Values[0;0m> section,
+359 |   now that they can't be reordered in function calls.
+360 | - Updated attribute arguments to use a colon
+
+[1;33mwarning: 'Failable-Initializers' doesn't exist at '/The-Swift-Programming-Language/Initialization'[0;0m
+   --> RevisionHistory/RevisionHistory.md:407:30-407:51
+405 | - Updated information about initializers that return `nil`
+406 |   before the instance is fully initialized
+407 +   in the <doc:Initialization#[1;32mFailable-Initializers[0;0m> section.
+408 | - Added information about comparing tuples
+409 |   to the <doc:BasicOperators#Comparison-Operators> section.
+
+[1;33mwarning: 'Comparison-Operators' doesn't exist at '/The-Swift-Programming-Language/BasicOperators'[0;0m
+   --> RevisionHistory/RevisionHistory.md:409:30-409:50
+407 |   in the <doc:Initialization#Failable-Initializers> section.
+408 | - Added information about comparing tuples
+409 +   to the <doc:BasicOperators#[1;32mComparison-Operators[0;0m> section.
+410 | - Added information about using keywords as external parameter names
+411 |   to the <doc:LexicalStructure#Keywords-and-Punctuation> section.
+
+[1;33mwarning: 'Operators' doesn't exist at '/The-Swift-Programming-Language/LexicalStructure'[0;0m
+   --> RevisionHistory/RevisionHistory.md:415:37-415:46
+413 |   in the <doc:Attributes#Declaration-Attributes> section to note that
+414 |   enumerations and enumeration cases can use this attribute.
+415 + - Updated the <doc:LexicalStructure#[1;32mOperators[0;0m> section
+    |                                     ╰─[1;39msuggestion: Replace 'Operators' with 'Operadores'[0;0m
+416 |   with discussion of custom operators that contain a dot.
+417 | - Added a note
+
+[1;33mwarning: 'Weak-References' doesn't exist at '/The-Swift-Programming-Language/AutomaticReferenceCounting'[0;0m
+   --> RevisionHistory/RevisionHistory.md:426:35-426:50
+424 |   to the <doc:GuidedTour> chapter.
+425 | - Updated figures in the
+426 +   <doc:AutomaticReferenceCounting#[1;32mWeak-References[0;0m>
+427 |   section to show the deallocation process more clearly.
+428 | - Removed discussion of C-style `for` loops,
+
+[1;33mwarning: 'String-Interpolation' doesn't exist at '/The-Swift-Programming-Language/StringsAndCharacters'[0;0m
+   --> RevisionHistory/RevisionHistory.md:437:41-437:61
+435 |
+436 | - Updated for Swift 2.1.
+437 + - Updated the <doc:StringsAndCharacters#[1;32mString-Interpolation[0;0m>
+438 |   and <doc:LexicalStructure#String-Literals> sections
+439 |   now that string interpolations can contain string literals.
+
+[1;33mwarning: 'Escaping-Closures' doesn't exist at '/The-Swift-Programming-Language/Closures'[0;0m
+   --> RevisionHistory/RevisionHistory.md:440:27-440:44
+438 |   and <doc:LexicalStructure#String-Literals> sections
+439 |   now that string interpolations can contain string literals.
+440 + - Added the <doc:Closures#[1;32mEscaping-Closures[0;0m> section
+441 |   with information about the `@noescape` attribute.
+442 | - Updated the <doc:Attributes#Declaration-Attributes>
+
+[1;33mwarning: 'In-Out-Parameters' doesn't exist at '/The-Swift-Programming-Language/Declarations'[0;0m
+   --> RevisionHistory/RevisionHistory.md:446:28-446:45
+444 |   with information about tvOS.
+445 | - Added information about the behavior of in-out parameters
+446 +   to the <doc:Declarations#[1;32mIn-Out-Parameters[0;0m> section.
+    |                            ╰─[1;39msuggestion: Replace 'In-Out-Parameters' with 'Special-Kinds-of-Parameters'[0;0m
+447 | - Added information to the <doc:Expressions#Capture-Lists> section
+448 |   about how values specified in closure capture lists are captured.
+
+[1;33mwarning: 'Capture-Lists' doesn't exist at '/The-Swift-Programming-Language/Expressions'[0;0m
+   --> RevisionHistory/RevisionHistory.md:447:45-447:58
+445 | - Added information about the behavior of in-out parameters
+446 |   to the <doc:Declarations#In-Out-Parameters> section.
+447 + - Added information to the <doc:Expressions#[1;32mCapture-Lists[0;0m> section
+448 |   about how values specified in closure capture lists are captured.
+449 | - Updated the
+
+[1;33mwarning: 'Autoclosures' doesn't exist at '/The-Swift-Programming-Language/Closures'[0;0m
+   --> RevisionHistory/RevisionHistory.md:454:24-454:36
+452 |   behaves.
+453 | - Improved the discussion of autoclosures
+454 +   in the <doc:Closures#[1;32mAutoclosures[0;0m> section.
+    |                        ╰─[1;39msuggestion: Replace 'Autoclosures' with 'Autoclausuras'[0;0m
+455 | - Added an example that uses the `??` operator
+456 |   to the <doc:GuidedTour> chapter.
+
+[1;33mwarning: 'Representing-and-Throwing-Errors' doesn't exist at '/The-Swift-Programming-Language/ErrorHandling'[0;0m
+   --> RevisionHistory/RevisionHistory.md:467:34-467:66
+465 |   the <doc:Statements#Defer-Statement> section,
+466 |   and the <doc:Expressions#Try-Operator> section.
+467 + - Updated the <doc:ErrorHandling#[1;32mRepresenting-and-Throwing-Errors[0;0m> section,
+    |                                  ╰─[1;39msuggestion: Replace 'Representing-and-Throwing-Errors' with 'Representar-y-arrojar-errores'[0;0m
+468 |   now that all types can conform to the `ErrorType` protocol.
+469 | - Added information about the new `try?` keyword
+
+[1;33mwarning: 'Converting-Errors-to-Optional-Values' doesn't exist at '/The-Swift-Programming-Language/ErrorHandling'[0;0m
+   --> RevisionHistory/RevisionHistory.md:470:29-470:65
+468 |   now that all types can conform to the `ErrorType` protocol.
+469 | - Added information about the new `try?` keyword
+470 +   to the <doc:ErrorHandling#[1;32mConverting-Errors-to-Optional-Values[0;0m> section.
+    |                             ╰─[1;39msuggestion: Replace 'Converting-Errors-to-Optional-Values' with 'Conversión-de-errores-en-valores-opcionales'[0;0m
+471 | - Added information about recursive enumerations
+472 |   to the <doc:Enumerations#Recursive-Enumerations> section
+
+[1;33mwarning: 'Recursive-Enumerations' doesn't exist at '/The-Swift-Programming-Language/Enumerations'[0;0m
+   --> RevisionHistory/RevisionHistory.md:472:28-472:50
+470 |   to the <doc:ErrorHandling#Converting-Errors-to-Optional-Values> section.
+471 | - Added information about recursive enumerations
+472 +   to the <doc:Enumerations#[1;32mRecursive-Enumerations[0;0m> section
+473 |   of the <doc:Enumerations> chapter
+474 |   and the <doc:Declarations#Enumerations-with-Cases-of-Any-Type> section
+
+[1;33mwarning: 'Checking-API-Availability' doesn't exist at '/The-Swift-Programming-Language/ControlFlow'[0;0m
+   --> RevisionHistory/RevisionHistory.md:477:27-477:52
+475 |   of the <doc:Declarations> chapter.
+476 | - Added information about API availability checking
+477 +   to the <doc:ControlFlow#[1;32mChecking-API-Availability[0;0m> section
+478 |   of the <doc:ControlFlow> chapter
+479 |   and the <doc:Statements#Availability-Condition> section
+
+[1;33mwarning: 'Early-Exit' doesn't exist at '/The-Swift-Programming-Language/ControlFlow'[0;0m
+   --> RevisionHistory/RevisionHistory.md:482:27-482:37
+480 |   of the <doc:Statements> chapter.
+481 | - Added information about the new `guard` statement
+482 +   to the <doc:ControlFlow#[1;32mEarly-Exit[0;0m> section
+483 |   of the <doc:ControlFlow> chapter
+484 |   and the <doc:Statements#Guard-Statement> section
+
+[1;33mwarning: 'Access-Levels-for-Unit-Test-Targets' doesn't exist at '/The-Swift-Programming-Language/AccessControl'[0;0m
+   --> RevisionHistory/RevisionHistory.md:490:29-490:64
+488 |   of the <doc:Protocols> chapter.
+489 | - Added information about access control for unit testing
+490 +   to the <doc:AccessControl#[1;32mAccess-Levels-for-Unit-Test-Targets[0;0m> section
+491 |   of the <doc:AccessControl> chapter.
+492 | - Added information about the new optional pattern
+
+[1;33mwarning: 'Optional-Pattern' doesn't exist at '/The-Swift-Programming-Language/Patterns'[0;0m
+   --> RevisionHistory/RevisionHistory.md:493:24-493:40
+491 |   of the <doc:AccessControl> chapter.
+492 | - Added information about the new optional pattern
+493 +   to the <doc:Patterns#[1;32mOptional-Pattern[0;0m> section
+494 |   of the <doc:Patterns> chapter.
+495 | - Updated the <doc:ControlFlow#Repeat-While> section
+
+[1;33mwarning: 'Repeat-While' doesn't exist at '/The-Swift-Programming-Language/ControlFlow'[0;0m
+   --> RevisionHistory/RevisionHistory.md:495:32-495:44
+493 |   to the <doc:Patterns#Optional-Pattern> section
+494 |   of the <doc:Patterns> chapter.
+495 + - Updated the <doc:ControlFlow#[1;32mRepeat-While[0;0m> section
+    |                                ╰─[1;39msuggestion: Replace 'Repeat-While' with 'repeat-while'[0;0m
+496 |   with information about the `repeat`-`while` loop.
+497 | - Updated the <doc:StringsAndCharacters> chapter,
+
+[1;33mwarning: 'Printing-Constants-and-Variables' doesn't exist at '/The-Swift-Programming-Language/TheBasics'[0;0m
+   --> RevisionHistory/RevisionHistory.md:502:25-502:57
+500 | - Added information about the new Swift standard library
+501 |   `print(_:separator:terminator)` function
+502 +   to the <doc:TheBasics#[1;32mPrinting-Constants-and-Variables[0;0m> section.
+    |                         ├─[1;39msuggestion: Replace 'Printing-Constants-and-Variables' with 'Impresión-de-Constantes-y-Variables'[0;0m
+    |                         ├─[1;39msuggestion: Replace 'Printing-Constants-and-Variables' with 'Nombrar-constantes-y-variables'[0;0m
+    |                         ├─[1;39msuggestion: Replace 'Printing-Constants-and-Variables' with 'Declaración-de-constantes-y-variables'[0;0m
+    |                         ╰─[1;39msuggestion: Replace 'Printing-Constants-and-Variables' with 'Constantes-y-variables'[0;0m
+503 | - Added information about the behavior
+504 |   of enumeration cases with `String` raw values
+
+[1;33mwarning: 'Implicitly-Assigned-Raw-Values' doesn't exist at '/The-Swift-Programming-Language/Enumerations'[0;0m
+   --> RevisionHistory/RevisionHistory.md:505:28-505:58
+503 | - Added information about the behavior
+504 |   of enumeration cases with `String` raw values
+505 +   to the <doc:Enumerations#[1;32mImplicitly-Assigned-Raw-Values[0;0m> section
+506 |   of the <doc:Enumerations> chapter
+507 |   and the <doc:Declarations#Enumerations-with-Cases-of-a-Raw-Value-Type> section
+
+[1;33mwarning: 'Autoclosures' doesn't exist at '/The-Swift-Programming-Language/Closures'[0;0m
+   --> RevisionHistory/RevisionHistory.md:511:24-511:36
+509 | - Added information about the `@autoclosure` attribute ---
+510 |   including its `@autoclosure(escaping)` form ---
+511 +   to the <doc:Closures#[1;32mAutoclosures[0;0m> section.
+    |                        ╰─[1;39msuggestion: Replace 'Autoclosures' with 'Autoclausuras'[0;0m
+512 | - Updated the <doc:Attributes#Declaration-Attributes> section
+513 |   with information about the `@available`
+
+[1;33mwarning: 'Optional-Binding' doesn't exist at '/The-Swift-Programming-Language/TheBasics'[0;0m
+   --> RevisionHistory/RevisionHistory.md:519:25-519:41
+517 | - Added an example of using multiple optional bindings
+518 |   with a `where` clause
+519 +   to the <doc:TheBasics#[1;32mOptional-Binding[0;0m> section.
+520 | - Added information to the <doc:LexicalStructure#String-Literals> section
+521 |   about how concatenating string literals using the `+` operator
+
+[1;33mwarning: 'Debugging-with-Assertions' doesn't exist at '/The-Swift-Programming-Language/TheBasics'[0;0m
+   --> RevisionHistory/RevisionHistory.md:526:38-526:63
+524 |   about comparing metatype values and using them
+525 |   to construct instances with initializer expressions.
+526 + - Added a note to the <doc:TheBasics#[1;32mDebugging-with-Assertions[0;0m> section
+527 |   about when user-defined assertions are disabled.
+528 | - Updated the discussion of the `@NSManaged` attribute
+
+[1;33mwarning: 'Variadic-Parameters' doesn't exist at '/The-Swift-Programming-Language/Functions'[0;0m
+   --> RevisionHistory/RevisionHistory.md:531:30-531:49
+529 |   in the <doc:Attributes#Declaration-Attributes> section,
+530 |   now that the attribute can be applied to certain instance methods.
+531 + - Updated the <doc:Functions#[1;32mVariadic-Parameters[0;0m> section,
+532 |   now that variadic parameters can be declared in any position
+533 |   in a function's parameter list.
+
+[1;33mwarning: 'Overriding-a-Failable-Initializer' doesn't exist at '/The-Swift-Programming-Language/Initialization'[0;0m
+   --> RevisionHistory/RevisionHistory.md:535:30-535:63
+533 |   in a function's parameter list.
+534 | - Added information
+535 +   to the <doc:Initialization#[1;32mOverriding-a-Failable-Initializer[0;0m> section
+536 |   about how a nonfailable initializer can delegate
+537 |   up to a failable initializer
+
+[1;33mwarning: 'Weak-References' doesn't exist at '/The-Swift-Programming-Language/AutomaticReferenceCounting'[0;0m
+   --> RevisionHistory/RevisionHistory.md:549:35-549:50
+547 |   about constructing class instances from metatype values.
+548 | - Added a note to the
+549 +   <doc:AutomaticReferenceCounting#[1;32mWeak-References[0;0m>
+550 |   section about weak references being unsuitable for caching.
+551 | - Updated a note in the <doc:Properties#Type-Properties> section
+
+[1;33mwarning: 'Capturing-Values' doesn't exist at '/The-Swift-Programming-Language/Closures'[0;0m
+   --> RevisionHistory/RevisionHistory.md:553:29-553:45
+551 | - Updated a note in the <doc:Properties#Type-Properties> section
+552 |   to mention that stored type properties are lazily initialized.
+553 + - Updated the <doc:Closures#[1;32mCapturing-Values[0;0m> section
+    |                             ╰─[1;39msuggestion: Replace 'Capturing-Values' with 'Captura-de-valores'[0;0m
+554 |   to clarify how variables and constants are captured in closures.
+555 | - Updated the <doc:Attributes#Declaration-Attributes> section
+
+[1;33mwarning: 'Handling-Errors' doesn't exist at '/The-Swift-Programming-Language/ErrorHandling'[0;0m
+   --> RevisionHistory/RevisionHistory.md:557:42-557:57
+555 | - Updated the <doc:Attributes#Declaration-Attributes> section
+556 |   to describe when you can apply the `@objc` attribute to classes.
+557 + - Added a note to the <doc:ErrorHandling#[1;32mHandling-Errors[0;0m> section
+558 |   about the performance of executing a `throw` statement.
+559 |   Added similar information about the `do` statement
+
+[1;33mwarning: 'Access-Levels' doesn't exist at '/The-Swift-Programming-Language/AccessControl'[0;0m
+   --> RevisionHistory/RevisionHistory.md:568:42-568:55
+566 | - Updated a note in the <doc:Properties#Property-Observers> section
+567 |   to clarify the behavior of `willSet` and `didSet` observers.
+568 + - Added a note to the <doc:AccessControl#[1;32mAccess-Levels[0;0m> section
+569 |   with information about the scope of `private` access.
+570 | - Added a note to the
+
+[1;33mwarning: 'Weak-References' doesn't exist at '/The-Swift-Programming-Language/AutomaticReferenceCounting'[0;0m
+   --> RevisionHistory/RevisionHistory.md:571:35-571:50
+569 |   with information about the scope of `private` access.
+570 | - Added a note to the
+571 +   <doc:AutomaticReferenceCounting#[1;32mWeak-References[0;0m>
+572 |   section about the differences in weak references
+573 |   between garbage collected systems and ARC.
+
+[1;33mwarning: 'Special-Characters-in-String-Literals' doesn't exist at '/The-Swift-Programming-Language/StringsAndCharacters'[0;0m
+   --> RevisionHistory/RevisionHistory.md:575:29-575:66
+573 |   between garbage collected systems and ARC.
+574 | - Updated the
+575 +   <doc:StringsAndCharacters#[1;32mSpecial-Characters-in-String-Literals[0;0m> section
+576 |   with a more precise definition of Unicode scalars.
+577 |
+
+[1;33mwarning: 'String-Indices' doesn't exist at '/The-Swift-Programming-Language/StringsAndCharacters'[0;0m
+   --> RevisionHistory/RevisionHistory.md:594:29-594:43
+592 |   see <doc:Protocols#Checking-for-Protocol-Conformance>.
+593 | - Added a new guide section about
+594 +   <doc:StringsAndCharacters#[1;32mString-Indices[0;0m>.
+595 | - Removed the overflow division (`&/`) and
+596 |   overflow remainder (`&%`) operators
+
+[1;33mwarning: 'Overflow-Operators' doesn't exist at '/The-Swift-Programming-Language/AdvancedOperators'[0;0m
+   --> RevisionHistory/RevisionHistory.md:597:31-597:49
+595 | - Removed the overflow division (`&/`) and
+596 |   overflow remainder (`&%`) operators
+597 +   from <doc:AdvancedOperators#[1;32mOverflow-Operators[0;0m>.
+598 | - Updated the rules for constant and
+599 |   constant property declaration and initialization.
+
+[1;33mwarning: 'Special-Characters-in-String-Literals' doesn't exist at '/The-Swift-Programming-Language/StringsAndCharacters'[0;0m
+   --> RevisionHistory/RevisionHistory.md:602:33-602:70
+600 |   For more information, see <doc:Declarations#Constant-Declaration>.
+601 | - Updated the definition of Unicode scalars in string literals.
+602 +   See <doc:StringsAndCharacters#[1;32mSpecial-Characters-in-String-Literals[0;0m>.
+603 | - Updated <doc:BasicOperators#Range-Operators> to note that
+604 |   a half-open range with the same start and end index will be empty.
+
+[1;33mwarning: 'Range-Operators' doesn't exist at '/The-Swift-Programming-Language/BasicOperators'[0;0m
+   --> RevisionHistory/RevisionHistory.md:603:31-603:46
+601 | - Updated the definition of Unicode scalars in string literals.
+602 |   See <doc:StringsAndCharacters#Special-Characters-in-String-Literals>.
+603 + - Updated <doc:BasicOperators#[1;32mRange-Operators[0;0m> to note that
+604 |   a half-open range with the same start and end index will be empty.
+605 | - Updated <doc:Closures#Closures-Are-Reference-Types> to clarify
+
+[1;33mwarning: 'Closures-Are-Reference-Types' doesn't exist at '/The-Swift-Programming-Language/Closures'[0;0m
+   --> RevisionHistory/RevisionHistory.md:605:25-605:53
+603 | - Updated <doc:BasicOperators#Range-Operators> to note that
+604 |   a half-open range with the same start and end index will be empty.
+605 + - Updated <doc:Closures#[1;32mClosures-Are-Reference-Types[0;0m> to clarify
+606 |   the capturing rules for variables.
+607 | - Updated <doc:AdvancedOperators#Value-Overflow> to clarify
+
+[1;33mwarning: 'Value-Overflow' doesn't exist at '/The-Swift-Programming-Language/AdvancedOperators'[0;0m
+   --> RevisionHistory/RevisionHistory.md:607:34-607:48
+605 | - Updated <doc:Closures#Closures-Are-Reference-Types> to clarify
+606 |   the capturing rules for variables.
+607 + - Updated <doc:AdvancedOperators#[1;32mValue-Overflow[0;0m> to clarify
+608 |   the overflow behavior of signed and unsigned integers
+609 | - Updated <doc:Declarations#Protocol-Declaration> to clarify
+
+[1;33mwarning: 'Defining-a-Capture-List' doesn't exist at '/The-Swift-Programming-Language/AutomaticReferenceCounting'[0;0m
+   --> RevisionHistory/RevisionHistory.md:611:43-611:66
+609 | - Updated <doc:Declarations#Protocol-Declaration> to clarify
+610 |   protocol declaration scope and members.
+611 + - Updated <doc:AutomaticReferenceCounting#[1;32mDefining-a-Capture-List[0;0m>
+    |                                           ╰─[1;39msuggestion: Replace 'Defining-a-Capture-List' with 'Definición-de-una-lista-de-captura'[0;0m
+612 |   to clarify the syntax for
+613 |   weak and unowned references in closure capture lists.
+
+[1;33mwarning: 'Operators' doesn't exist at '/The-Swift-Programming-Language/LexicalStructure'[0;0m
+   --> RevisionHistory/RevisionHistory.md:614:33-614:42
+612 |   to clarify the syntax for
+613 |   weak and unowned references in closure capture lists.
+614 + - Updated <doc:LexicalStructure#[1;32mOperators[0;0m> to explicitly mention
+    |                                 ╰─[1;39msuggestion: Replace 'Operators' with 'Operadores'[0;0m
+615 |   examples of supported characters for custom operators,
+616 |   such as those in the Mathematical Operators, Miscellaneous Symbols,
+
+[1;33mwarning: 'Assigning-Constant-Properties-During-Initialization' doesn't exist at '/The-Swift-Programming-Language/Initialization'[0;0m
+   --> RevisionHistory/RevisionHistory.md:624:27-624:78
+622 | - In an initializer, constant properties can now only assign a value once.
+623 |   For more information,
+624 +   see <doc:Initialization#[1;32mAssigning-Constant-Properties-During-Initialization[0;0m>.
+625 | - Multiple optional bindings can now appear in a single `if` statement
+626 |   as a comma-separated list of assignment expressions.
+
+[1;33mwarning: 'Optional-Binding' doesn't exist at '/The-Swift-Programming-Language/TheBasics'[0;0m
+   --> RevisionHistory/RevisionHistory.md:627:44-627:60
+625 | - Multiple optional bindings can now appear in a single `if` statement
+626 |   as a comma-separated list of assignment expressions.
+627 +   For more information, see <doc:TheBasics#[1;32mOptional-Binding[0;0m>.
+628 | - An <doc:Expressions#Optional-Chaining-Expression>
+629 |   must appear within a postfix expression.
+
+[1;33mwarning: 'Failable-Initializers' doesn't exist at '/The-Swift-Programming-Language/Initialization'[0;0m
+   --> RevisionHistory/RevisionHistory.md:639:45-639:66
+637 |
+638 | - Updated for Swift 1.1.
+639 + - Added a full guide to <doc:Initialization#[1;32mFailable-Initializers[0;0m>.
+640 | - Added a description of <doc:Protocols#Failable-Initializer-Requirements>
+641 |   for protocols.
+
+[1;33mwarning: 'Type-Casting-for-Any-and-AnyObject' doesn't exist at '/The-Swift-Programming-Language/TypeCasting'[0;0m
+   --> RevisionHistory/RevisionHistory.md:643:63-643:97
+641 |   for protocols.
+642 | - Constants and variables of type `Any` can now contain
+643 +   function instances. Updated the example in <doc:TypeCasting#[1;32mType-Casting-for-Any-and-AnyObject[0;0m>
+    |                                                               ╰─[1;39msuggestion: Replace 'Type-Casting-for-Any-and-AnyObject' with 'Conversión-de-tipos-para-Any-y-AnyObject'[0;0m
+644 |   to show how to check for and cast to a function type
+645 |   within a `switch` statement.
+
+[1;33mwarning: 'Raw-Values' doesn't exist at '/The-Swift-Programming-Language/Enumerations'[0;0m
+   --> RevisionHistory/RevisionHistory.md:650:47-650:57
+648 |   and a failable initializer with a `rawValue` parameter
+649 |   rather than a `fromRaw()` method.
+650 +   For more information, see <doc:Enumerations#[1;32mRaw-Values[0;0m>
+651 |   and <doc:Declarations#Enumerations-with-Cases-of-a-Raw-Value-Type>.
+652 | - Added a new reference section about
+
+[1;33mwarning: 'Failable-Initializers' doesn't exist at '/The-Swift-Programming-Language/Declarations'[0;0m
+   --> RevisionHistory/RevisionHistory.md:653:21-653:42
+651 |   and <doc:Declarations#Enumerations-with-Cases-of-a-Raw-Value-Type>.
+652 | - Added a new reference section about
+653 +   <doc:Declarations#[1;32mFailable-Initializers[0;0m>,
+    |                     ╰─[1;39msuggestion: Replace 'Failable-Initializers' with 'Protocol-Initializer-Declaration'[0;0m
+654 |   which can trigger initialization failure.
+655 | - Custom operators can now contain the `?` character.
+
+[1;33mwarning: 'Operators' doesn't exist at '/The-Swift-Programming-Language/LexicalStructure'[0;0m
+   --> RevisionHistory/RevisionHistory.md:656:37-656:46
+654 |   which can trigger initialization failure.
+655 | - Custom operators can now contain the `?` character.
+656 +   Updated the <doc:LexicalStructure#[1;32mOperators[0;0m> reference to describe
+    |                                     ╰─[1;39msuggestion: Replace 'Operators' with 'Operadores'[0;0m
+657 |   the revised rules.
+658 |   Removed a duplicate description of the valid set of operator characters
+
+[1;33mwarning: 'Custom-Operators' doesn't exist at '/The-Swift-Programming-Language/AdvancedOperators'[0;0m
+   --> RevisionHistory/RevisionHistory.md:659:31-659:47
+657 |   the revised rules.
+658 |   Removed a duplicate description of the valid set of operator characters
+659 +   from <doc:AdvancedOperators#[1;32mCustom-Operators[0;0m>.
+660 |
+661 | **2014-08-18**
+
+[1;33mwarning: 'Assertions-and-Preconditions' doesn't exist at '/The-Swift-Programming-Language/TheBasics'[0;0m
+   --> RevisionHistory/RevisionHistory.md:668:18-668:46
+666 |   <doc:Protocols#Initializer-Requirements> in protocols.
+667 | - Added a new section about <doc:Protocols#Class-Only-Protocols>.
+668 + - <doc:TheBasics#[1;32mAssertions-and-Preconditions[0;0m> can now use string interpolation.
+    |                  ╰─[1;39msuggestion: Replace 'Assertions-and-Preconditions' with 'Aserciones-y-precondiciones'[0;0m
+669 |   Removed a note to the contrary.
+670 | - Updated the
+
+[1;33mwarning: 'Concatenating-Strings-and-Characters' doesn't exist at '/The-Swift-Programming-Language/StringsAndCharacters'[0;0m
+   --> RevisionHistory/RevisionHistory.md:671:29-671:65
+669 |   Removed a note to the contrary.
+670 | - Updated the
+671 +   <doc:StringsAndCharacters#[1;32mConcatenating-Strings-and-Characters[0;0m> section
+    |                             ╰─[1;39msuggestion: Replace 'Concatenating-Strings-and-Characters' with 'Concatenación-de-cadenas-y-caracteres'[0;0m
+672 |   to reflect the fact that `String` and `Character` values
+673 |   can no longer be combined with the addition operator (`+`)
+
+[1;33mwarning: 'Optionals' doesn't exist at '/The-Swift-Programming-Language/TheBasics'[0;0m
+   --> RevisionHistory/RevisionHistory.md:680:18-680:27
+678 | - Added information about the `availability` attribute to
+679 |   the <doc:Attributes#Declaration-Attributes> section.
+680 + - <doc:TheBasics#[1;32mOptionals[0;0m> no longer implicitly evaluate to
+    |                  ╰─[1;39msuggestion: Replace 'Optionals' with 'Opcionales'[0;0m
+681 |   `true` when they have a value and `false` when they do not,
+682 |   to avoid confusion when working with optional `Bool` values.
+
+[1;33mwarning: 'Nil-Coalescing-Operator' doesn't exist at '/The-Swift-Programming-Language/BasicOperators'[0;0m
+   --> RevisionHistory/RevisionHistory.md:686:39-686:62
+684 |   with the `==` or `!=` operators
+685 |   to find out if an optional contains a value.
+686 + - Swift now has a <doc:BasicOperators#[1;32mNil-Coalescing-Operator[0;0m>
+    |                                       ╰─[1;39msuggestion: Replace 'Nil-Coalescing-Operator' with 'Operador-nil-coalescing'[0;0m
+687 |   (`a ?? b`), which unwraps an optional's value if it exists,
+688 |   or returns a default value if the optional is `nil`.
+
+[1;33mwarning: 'Comparing-Strings' doesn't exist at '/The-Swift-Programming-Language/StringsAndCharacters'[0;0m
+   --> RevisionHistory/RevisionHistory.md:690:33-690:50
+688 |   or returns a default value if the optional is `nil`.
+689 | - Updated and expanded
+690 +   the <doc:StringsAndCharacters#[1;32mComparing-Strings[0;0m> section
+    |                                 ╰─[1;39msuggestion: Replace 'Comparing-Strings' with 'Comparación-de-cadenas'[0;0m
+691 |   to reflect and demonstrate that string and character comparison
+692 |   and prefix / suffix comparison are now based on
+
+[1;33mwarning: 'Accessing-and-Modifying-an-Array' doesn't exist at '/The-Swift-Programming-Language/CollectionTypes'[0;0m
+   --> RevisionHistory/RevisionHistory.md:706:36-706:68
+704 |   <doc:OptionalChaining#Accessing-Subscripts-of-Optional-Type>
+705 |   through optional chaining.
+706 + - Updated the <doc:CollectionTypes#[1;32mAccessing-and-Modifying-an-Array[0;0m> section
+707 |   to note that you can no longer append a single item to an array
+708 |   with the `+=` operator.
+
+[1;33mwarning: 'Range-Operators' doesn't exist at '/The-Swift-Programming-Language/BasicOperators'[0;0m
+   --> RevisionHistory/RevisionHistory.md:712:31-712:46
+710 |   or append a single-item array with the `+=` operator.
+711 | - Added a note that the start value `a`
+712 +   for the <doc:BasicOperators#[1;32mRange-Operators[0;0m> `a...b` and `a..<b`
+713 |   must not be greater than the end value `b`.
+714 | - Rewrote the <doc:Inheritance> chapter
+
+[1;33mwarning: 'Overriding-Property-Getters-and-Setters' doesn't exist at '/The-Swift-Programming-Language/Inheritance'[0;0m
+   --> RevisionHistory/RevisionHistory.md:720:20-720:59
+718 |   and the modification of existing functionality with overrides.
+719 |   The chapter's example of
+720 +   <doc:Inheritance#[1;32mOverriding-Property-Getters-and-Setters[0;0m>
+721 |   has been rewritten to show how to override a `description` property.
+722 |   (The examples of modifying an inherited property's default value
+
+[1;33mwarning: 'Initializer-Inheritance-and-Overriding' doesn't exist at '/The-Swift-Programming-Language/Initialization'[0;0m
+   --> RevisionHistory/RevisionHistory.md:726:23-726:61
+724 |   the <doc:Initialization> chapter.)
+725 | - Updated the
+726 +   <doc:Initialization#[1;32mInitializer-Inheritance-and-Overriding[0;0m> section
+727 |   to note that overrides of a designated initializer
+728 |   must now be marked with the `override` modifier.
+
+[1;33mwarning: 'Required-Initializers' doesn't exist at '/The-Swift-Programming-Language/Initialization'[0;0m
+   --> RevisionHistory/RevisionHistory.md:729:35-729:56
+727 |   to note that overrides of a designated initializer
+728 |   must now be marked with the `override` modifier.
+729 + - Updated the <doc:Initialization#[1;32mRequired-Initializers[0;0m> section
+730 |   to note that the `required` modifier is now written before
+731 |   every subclass implementation of a required initializer,
+
+[1;33mwarning: 'Operator-Methods' doesn't exist at '/The-Swift-Programming-Language/AdvancedOperators'[0;0m
+   --> RevisionHistory/RevisionHistory.md:734:32-734:48
+732 |   and that the requirements for required initializers
+733 |   can now be satisfied by automatically inherited initializers.
+734 + - Infix <doc:AdvancedOperators#[1;32mOperator-Methods[0;0m> no longer require
+    |                                ╰─[1;39msuggestion: Replace 'Operator-Methods' with 'Operador-OR-Bit-a-Bit'[0;0m
+735 |   the `@infix` attribute.
+736 | - The `@prefix` and `@postfix` attributes
+
+[1;33mwarning: 'Prefix-and-Postfix-Operators' doesn't exist at '/The-Swift-Programming-Language/AdvancedOperators'[0;0m
+   --> RevisionHistory/RevisionHistory.md:737:30-737:58
+735 |   the `@infix` attribute.
+736 | - The `@prefix` and `@postfix` attributes
+737 +   for <doc:AdvancedOperators#[1;32mPrefix-and-Postfix-Operators[0;0m>
+738 |   have been replaced by `prefix` and `postfix` declaration modifiers.
+739 | - Added a note about the order in which
+
+[1;33mwarning: 'Prefix-and-Postfix-Operators' doesn't exist at '/The-Swift-Programming-Language/AdvancedOperators'[0;0m
+   --> RevisionHistory/RevisionHistory.md:740:26-740:54
+738 |   have been replaced by `prefix` and `postfix` declaration modifiers.
+739 | - Added a note about the order in which
+740 +   <doc:AdvancedOperators#[1;32mPrefix-and-Postfix-Operators[0;0m> are applied
+741 |   when both a prefix and a postfix operator are applied to
+742 |   the same operand.
+
+[1;33mwarning: 'Compound-Assignment-Operators' doesn't exist at '/The-Swift-Programming-Language/AdvancedOperators'[0;0m
+   --> RevisionHistory/RevisionHistory.md:744:26-744:55
+742 |   the same operand.
+743 | - Operator functions for
+744 +   <doc:AdvancedOperators#[1;32mCompound-Assignment-Operators[0;0m> no longer use
+745 |   the `@assignment` attribute when defining the function.
+746 | - The order in which modifiers are specified when defining
+
+[1;33mwarning: 'Custom-Operators' doesn't exist at '/The-Swift-Programming-Language/AdvancedOperators'[0;0m
+   --> RevisionHistory/RevisionHistory.md:747:26-747:42
+745 |   the `@assignment` attribute when defining the function.
+746 | - The order in which modifiers are specified when defining
+747 +   <doc:AdvancedOperators#[1;32mCustom-Operators[0;0m> has changed.
+748 |   You now write `prefix operator` rather than `operator prefix`,
+749 |   for example.
+
+[1;33mwarning: 'Extended-Grapheme-Clusters' doesn't exist at '/The-Swift-Programming-Language/StringsAndCharacters'[0;0m
+   --> RevisionHistory/RevisionHistory.md:760:29-760:55
+758 |   a single Unicode extended grapheme cluster.
+759 |   Includes a new section on
+760 +   <doc:StringsAndCharacters#[1;32mExtended-Grapheme-Clusters[0;0m>
+761 |   and more information about
+762 |   <doc:StringsAndCharacters#Unicode-Scalar-Values>
+
+[1;33mwarning: 'Unicode-Scalar-Values' doesn't exist at '/The-Swift-Programming-Language/StringsAndCharacters'[0;0m
+   --> RevisionHistory/RevisionHistory.md:762:29-762:50
+760 |   <doc:StringsAndCharacters#Extended-Grapheme-Clusters>
+761 |   and more information about
+762 +   <doc:StringsAndCharacters#[1;32mUnicode-Scalar-Values[0;0m>
+    |                             ╰─[1;39msuggestion: Replace 'Unicode-Scalar-Values' with 'Unicode'[0;0m
+763 |   and <doc:StringsAndCharacters#Comparing-Strings>.
+764 | - Updated the <doc:StringsAndCharacters#String-Literals> section
+
+[1;33mwarning: 'Comparing-Strings' doesn't exist at '/The-Swift-Programming-Language/StringsAndCharacters'[0;0m
+   --> RevisionHistory/RevisionHistory.md:763:33-763:50
+761 |   and more information about
+762 |   <doc:StringsAndCharacters#Unicode-Scalar-Values>
+763 +   and <doc:StringsAndCharacters#[1;32mComparing-Strings[0;0m>.
+    |                                 ╰─[1;39msuggestion: Replace 'Comparing-Strings' with 'Comparación-de-cadenas'[0;0m
+764 | - Updated the <doc:StringsAndCharacters#String-Literals> section
+765 |   to note that Unicode scalars inside string literals
+
+[1;33mwarning: 'String-Literals' doesn't exist at '/The-Swift-Programming-Language/StringsAndCharacters'[0;0m
+   --> RevisionHistory/RevisionHistory.md:764:41-764:56
+762 |   <doc:StringsAndCharacters#Unicode-Scalar-Values>
+763 |   and <doc:StringsAndCharacters#Comparing-Strings>.
+764 + - Updated the <doc:StringsAndCharacters#[1;32mString-Literals[0;0m> section
+765 |   to note that Unicode scalars inside string literals
+766 |   are now written as `\u{n}`,
+
+[1;33mwarning: 'Initializer-Parameters-Without-Argument-Labels' doesn't exist at '/The-Swift-Programming-Language/Initialization'[0;0m
+   --> RevisionHistory/RevisionHistory.md:777:23-777:69
+775 |   has been removed, and various code examples have been updated.
+776 | - Added a new section about
+777 +   <doc:Initialization#[1;32mInitializer-Parameters-Without-Argument-Labels[0;0m>.
+778 | - Added a new section about
+779 |   <doc:Initialization#Required-Initializers>.
+
+[1;33mwarning: 'Required-Initializers' doesn't exist at '/The-Swift-Programming-Language/Initialization'[0;0m
+   --> RevisionHistory/RevisionHistory.md:779:23-779:44
+777 |   <doc:Initialization#Initializer-Parameters-Without-Argument-Labels>.
+778 | - Added a new section about
+779 +   <doc:Initialization#[1;32mRequired-Initializers[0;0m>.
+780 | - Added a new section about <doc:Functions#Optional-Tuple-Return-Types>.
+781 | - Updated the <doc:TheBasics#Type-Annotations> section to note that
+
+[1;33mwarning: 'Optional-Tuple-Return-Types' doesn't exist at '/The-Swift-Programming-Language/Functions'[0;0m
+   --> RevisionHistory/RevisionHistory.md:780:44-780:71
+778 | - Added a new section about
+779 |   <doc:Initialization#Required-Initializers>.
+780 + - Added a new section about <doc:Functions#[1;32mOptional-Tuple-Return-Types[0;0m>.
+781 | - Updated the <doc:TheBasics#Type-Annotations> section to note that
+782 |   multiple related variables can be defined on a single line
+
+[1;33mwarning: 'Type-Annotations' doesn't exist at '/The-Swift-Programming-Language/TheBasics'[0;0m
+   --> RevisionHistory/RevisionHistory.md:781:30-781:46
+779 |   <doc:Initialization#Required-Initializers>.
+780 | - Added a new section about <doc:Functions#Optional-Tuple-Return-Types>.
+781 + - Updated the <doc:TheBasics#[1;32mType-Annotations[0;0m> section to note that
+782 |   multiple related variables can be defined on a single line
+783 |   with one type annotation.
+
+[1;33mwarning: 'Half-Open-Range-Operator' doesn't exist at '/The-Swift-Programming-Language/BasicOperators'[0;0m
+   --> RevisionHistory/RevisionHistory.md:788:27-788:51
+786 |   <doc:Declarations#Declaration-Modifiers>.
+787 | - Updated the entire book to refer to `..<` as
+788 +   the <doc:BasicOperators#[1;32mHalf-Open-Range-Operator[0;0m>
+789 |   (rather than the “half-closed range operator”).
+790 | - Updated the <doc:CollectionTypes#Accessing-and-Modifying-a-Dictionary>
+
+[1;33mwarning: 'Accessing-and-Modifying-a-Dictionary' doesn't exist at '/The-Swift-Programming-Language/CollectionTypes'[0;0m
+   --> RevisionHistory/RevisionHistory.md:790:36-790:72
+788 |   the <doc:BasicOperators#Half-Open-Range-Operator>
+789 |   (rather than the “half-closed range operator”).
+790 + - Updated the <doc:CollectionTypes#[1;32mAccessing-and-Modifying-a-Dictionary[0;0m>
+791 |   section to note that `Dictionary` now has
+792 |   a Boolean `isEmpty` property.
+
+[1;33mwarning: 'Custom-Operators' doesn't exist at '/The-Swift-Programming-Language/AdvancedOperators'[0;0m
+   --> RevisionHistory/RevisionHistory.md:794:40-794:56
+792 |   a Boolean `isEmpty` property.
+793 | - Clarified the full list of characters that can be used
+794 +   when defining <doc:AdvancedOperators#[1;32mCustom-Operators[0;0m>.
+795 | - `nil` and the Booleans `true` and `false` are now <doc:LexicalStructure#Literals>.
+796 | - Swift's `Array` type now has full value semantics.
+
+[1;33mwarning: 'Mutability-of-Collections' doesn't exist at '/The-Swift-Programming-Language/CollectionTypes'[0;0m
+   --> RevisionHistory/RevisionHistory.md:797:54-797:79
+795 | - `nil` and the Booleans `true` and `false` are now <doc:LexicalStructure#Literals>.
+796 | - Swift's `Array` type now has full value semantics.
+797 +   Updated the information about <doc:CollectionTypes#[1;32mMutability-of-Collections[0;0m>
+    |                                                      ╰─[1;39msuggestion: Replace 'Mutability-of-Collections' with 'Mutabilidad-de-las-colecciones'[0;0m
+798 |   and <doc:CollectionTypes#Arrays> to reflect the new approach.
+799 |   Also clarified the assignment and copy behavior for strings arrays and dictionaries.
+
+[1;33mwarning: 'Arrays' doesn't exist at '/The-Swift-Programming-Language/CollectionTypes'[0;0m
+   --> RevisionHistory/RevisionHistory.md:798:28-798:34
+796 | - Swift's `Array` type now has full value semantics.
+797 |   Updated the information about <doc:CollectionTypes#Mutability-of-Collections>
+798 +   and <doc:CollectionTypes#[1;32mArrays[0;0m> to reflect the new approach.
+    |                            ╰─[1;39msuggestion: Replace 'Arrays' with 'Arreglos'[0;0m
+799 |   Also clarified the assignment and copy behavior for strings arrays and dictionaries.
+800 | - <doc:CollectionTypes#Array-Type-Shorthand-Syntax> is now written as
+
+[1;33mwarning: 'Array-Type-Shorthand-Syntax' doesn't exist at '/The-Swift-Programming-Language/CollectionTypes'[0;0m
+   --> RevisionHistory/RevisionHistory.md:800:24-800:51
+798 |   and <doc:CollectionTypes#Arrays> to reflect the new approach.
+799 |   Also clarified the assignment and copy behavior for strings arrays and dictionaries.
+800 + - <doc:CollectionTypes#[1;32mArray-Type-Shorthand-Syntax[0;0m> is now written as
+801 |   `[SomeType]` rather than `SomeType[]`.
+802 | - Added a new section about <doc:CollectionTypes#Dictionary-Type-Shorthand-Syntax>,
+
+[1;33mwarning: 'Dictionary-Type-Shorthand-Syntax' doesn't exist at '/The-Swift-Programming-Language/CollectionTypes'[0;0m
+   --> RevisionHistory/RevisionHistory.md:802:50-802:82
+800 | - <doc:CollectionTypes#Array-Type-Shorthand-Syntax> is now written as
+801 |   `[SomeType]` rather than `SomeType[]`.
+802 + - Added a new section about <doc:CollectionTypes#[1;32mDictionary-Type-Shorthand-Syntax[0;0m>,
+803 |   which is written as `[KeyType: ValueType]`.
+804 | - Added a new section about <doc:CollectionTypes#Hash-Values-for-Set-Types>.
+
+[1;33mwarning: 'Hash-Values-for-Set-Types' doesn't exist at '/The-Swift-Programming-Language/CollectionTypes'[0;0m
+   --> RevisionHistory/RevisionHistory.md:804:50-804:75
+802 | - Added a new section about <doc:CollectionTypes#Dictionary-Type-Shorthand-Syntax>,
+803 |   which is written as `[KeyType: ValueType]`.
+804 + - Added a new section about <doc:CollectionTypes#[1;32mHash-Values-for-Set-Types[0;0m>.
+805 | - Examples of <doc:Closures#Closure-Expressions> now use
+806 |   the global `sorted(_:_:)` function
+
+[1;33mwarning: 'Closure-Expressions' doesn't exist at '/The-Swift-Programming-Language/Closures'[0;0m
+   --> RevisionHistory/RevisionHistory.md:805:29-805:48
+803 |   which is written as `[KeyType: ValueType]`.
+804 | - Added a new section about <doc:CollectionTypes#Hash-Values-for-Set-Types>.
+805 + - Examples of <doc:Closures#[1;32mClosure-Expressions[0;0m> now use
+806 |   the global `sorted(_:_:)` function
+807 |   rather than the global `sort(_:_:)` function,
+
+[1;33mwarning: 'Memberwise-Initializers-for-Structure-Types' doesn't exist at '/The-Swift-Programming-Language/Initialization'[0;0m
+   --> RevisionHistory/RevisionHistory.md:809:53-809:96
+807 |   rather than the global `sort(_:_:)` function,
+808 |   to reflect the new array value semantics.
+809 + - Updated the information about <doc:Initialization#[1;32mMemberwise-Initializers-for-Structure-Types[0;0m>
+810 |   to clarify that the memberwise structure initializer is made available
+811 |   even if a structure's stored properties don't have default values.
+
+[1;33mwarning: 'Half-Open-Range-Operator' doesn't exist at '/The-Swift-Programming-Language/BasicOperators'[0;0m
+   --> RevisionHistory/RevisionHistory.md:813:31-813:55
+811 |   even if a structure's stored properties don't have default values.
+812 | - Updated to `..<` rather than `..`
+813 +   for the <doc:BasicOperators#[1;32mHalf-Open-Range-Operator[0;0m>.
+814 | - Added an example of <doc:Generics#Extending-a-Generic-Type>.
+815 |

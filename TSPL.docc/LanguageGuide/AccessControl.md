@@ -1,4 +1,4 @@
-# Control de Acceso
+# Control de acceso
 
 Manage the visibility of code by declaration, file, and module.
 
@@ -23,7 +23,7 @@ you may not need to specify explicit access control levels at all.
 > (properties, types, functions, and so on)
 > are referred to as “entities” in the sections below, for brevity.
 
-## Módulos y Archivos de Código Fuente
+## Módulos y archivos de código fuente
 
 Swift's access control model is based on the concept of modules and source files.
 
@@ -44,7 +44,7 @@ A *source file* is a single Swift source code file within a module
 Although it's common to define individual types in separate source files,
 a single source file can contain definitions for multiple types, functions, and so on.
 
-## Niveles de Acceso
+## Niveles de acceso
 
 Swift provides five different *access levels* for entities within your code.
 These access levels are relative to the source file in which an entity is defined,
@@ -78,13 +78,13 @@ and private access is the lowest (most restrictive) access level.
 Open access applies only to classes and class members,
 and it differs from public access
 by allowing code outside the module to subclass and override,
-as discussed below in <doc:AccessControl#Creación-de-Subclases>.
+as discussed below in <doc:AccessControl#Creación-de-subclases>.
 Marking a class as open explicitly indicates
 that you've considered the impact of code from other modules
 using that class as a superclass,
 and that you've designed your class's code accordingly.
 
-### Principio Guía de los Niveles de Acceso
+### Principio guía de los niveles de acceso
 
 Access levels in Swift follow an overall guiding principle:
 *No entity can be defined in terms of another entity that has
@@ -101,7 +101,7 @@ For example:
 The specific implications of this guiding principle for different aspects of the language
 are covered in detail below.
 
-### Niveles de Acceso Predeterminados
+### Niveles de acceso predeterminados
 
 All entities in your code
 (with a few specific exceptions, as described later in this chapter)
@@ -110,7 +110,7 @@ if you don't specify an explicit access level yourself.
 As a result, in many cases you don't need to specify
 an explicit access level in your code.
 
-### Niveles de Acceso para Apps de un Solo Objetivo
+### Niveles de acceso para apps de un solo objetivo
 
 When you write a simple single-target app,
 the code in your app is typically self-contained within the app
@@ -120,7 +120,7 @@ Therefore, you don't need to specify a custom access level.
 You may, however, want to mark some parts of your code as file private or private
 in order to hide their implementation details from other code within the app's module.
 
-### Niveles de Acceso para Frameworks
+### Niveles de acceso para frameworks
 
 When you develop a framework,
 mark the public-facing interface to that framework
@@ -136,7 +136,7 @@ This public-facing interface is the application programming interface
 > You need to mark an entity as open or public only if you want it to become
 > part of your framework's API.
 
-### Niveles de Acceso para Objetivos de Prueba Unitaria
+### Niveles de acceso para objetivos de prueba unitaria
 
 When you write an app with a unit test target,
 the code in your app needs to be made available to that module in order to be tested.
@@ -146,7 +146,7 @@ However, a unit test target can access any internal entity,
 if you mark the import declaration for a product module with the `@testable` attribute
 and compile that product module with testing enabled.
 
-## Sintaxis de Control de Acceso
+## Sintaxis de control de acceso
 
 Define the access level for an entity by placing
 one of the `open`, `public`, `internal`, `fileprivate`, or `private` modifiers
@@ -185,7 +185,7 @@ private func somePrivateFunction() {}
 -->
 
 Unless otherwise specified, the default access level is internal,
-as described in <doc:AccessControl#Niveles-de-Acceso-Predeterminados>.
+as described in <doc:AccessControl#Niveles-de-acceso-predeterminados>.
 This means that `SomeInternalClass` and `someInternalConstant` can be written
 without an explicit access-level modifier,
 and will still have an access level of internal:
@@ -204,7 +204,7 @@ let someInternalConstant = 0            // implicitly internal
   ```
 -->
 
-## Tipos Personalizados
+## Tipos personalizados
 
 If you want to specify an explicit access level for a custom type,
 do so at the point that you define the type.
@@ -282,7 +282,7 @@ private class SomePrivateClass {                // explicitly private class
   ```
 -->
 
-### Tipos Tupla
+### Tipos tupla
 
 The access level for a tuple type is
 the most restrictive access level of all types used in that tuple.
@@ -364,7 +364,7 @@ the access level for that compound tuple type will be private.
 > from the types that make up the tuple type,
 > and can't be specified explicitly.
 
-### Tipos de Función
+### Tipos de función
 
 The access level for a function type is calculated as
 the most restrictive access level of the function's parameter types and return type.
@@ -398,7 +398,7 @@ func someFunction() -> (SomeInternalClass, SomePrivateClass) {
 -->
 
 The function's return type is
-a tuple type composed from two of the custom classes defined above in <doc:AccessControl#Tipos-Personalizados>.
+a tuple type composed from two of the custom classes defined above in <doc:AccessControl#Tipos-personalizados>.
 One of these classes is defined as internal,
 and the other is defined as private.
 Therefore, the overall access level of the compound tuple type is private
@@ -431,7 +431,7 @@ or to use the default setting of internal,
 because public or internal users of the function might not have appropriate access
 to the private class used in the function's return type.
 
-### Tipos de Enumeración
+### Tipos de enumeración
 
 The individual cases of an enumeration automatically receive the same access level as
 the enumeration they belong to.
@@ -486,7 +486,7 @@ public enum CompassPoint {
   ```
 -->
 
-#### Valores Brutos y Valores Asociados
+#### Valores brutos y valores asociados
 
 The types used for any raw values or associated values in an enumeration definition
 must have an access level at least as high as the enumeration's access level.
@@ -494,7 +494,7 @@ For example,
 you can't use a private type as the raw-value type of
 an enumeration with an internal access level.
 
-### Tipos Anidados
+### Tipos anidados
 
 The access level of a nested type is the same as its containing type,
 unless the containing type is public.
@@ -639,7 +639,7 @@ you must explicitly declare the nested type as public.
   ```
 -->
 
-## Creación de Subclases
+## Creación de subclases
 
 You can subclass any class
 that can be accessed in the current access context
@@ -727,7 +727,7 @@ Because superclass `A` and subclass `B` are defined in the same source file,
 it's valid for the `B` implementation of `someMethod()` to call
 `super.someMethod()`.
 
-## Constantes, Variables, Propiedades, y Subíndices
+## Constantes, variables, propiedades, y subíndices
 
 A constant, variable, or property can't be more public than its type.
 It's not valid to write a public property with a private type, for example.
@@ -781,7 +781,7 @@ private var privateInstance = SomePrivateClass()
   ```
 -->
 
-### Getters y Setters
+### *Getters* y *setters*
 
 Getters and setters for constants, variables, properties, and subscripts
 automatically receive the same access level as
@@ -1002,16 +1002,16 @@ public struct TrackedString {
 Custom initializers can be assigned an access level less than or equal to
 the type that they initialize.
 The only exception is for required initializers
-(as defined in <doc:Initialization#Inicializadores-Obligatorios>).
+(as defined in <doc:Initialization#Inicializadores-obligatorios>).
 A required initializer must have the same access level as the class it belongs to.
 
 As with function and method parameters,
 the types of an initializer's parameters can't be more private than
 the initializer's own access level.
 
-### Inicializadores Predeterminados
+### Inicializadores predeterminados
 
-As described in <doc:Initialization#Inicializadores-Predeterminados>,
+As described in <doc:Initialization#Inicializadores-predeterminados>,
 Swift automatically provides a *default initializer* without any arguments
 for any structure or base class
 that provides default values for all of its properties
@@ -1026,7 +1026,7 @@ when used in another module,
 you must explicitly provide a public no-argument initializer yourself
 as part of the type's definition.
 
-### Inicializadores Predeterminados a Nivel de Miembros para Tipos de Estructura
+### Inicializadores predeterminados a nivel de miembros para tipos de estructura
 
 The default memberwise initializer for a structure type is considered private
 if any of the structure's stored properties are private.
@@ -1233,14 +1233,14 @@ on any type that adopts the protocol.
   ```
 -->
 
-### Herencia de Protocolos
+### Herencia de protocolos
 
 If you define a new protocol that inherits from an existing protocol,
 the new protocol can have at most the same access level as the protocol it inherits from.
 For example,
 you can't write a public protocol that inherits from an internal protocol.
 
-### Conformidad Protocolaria
+### Conformidad protocolaria
 
 A type can conform to a protocol with a lower access level than the type itself.
 For example, you can define a public type that can be used in other modules,
@@ -1362,7 +1362,7 @@ the default access level for each protocol requirement implementation within the
   ```
 -->
 
-### Miembros Privados en Extensiones
+### Miembros privados en extensiones
 
 Extensions that are in the same file as
 the class, structure, or enumeration that they extend
@@ -1437,7 +1437,7 @@ The access level for a generic type or generic function is
 the minimum of the access level of the generic type or function itself
 and the access level of any type constraints on its type parameters.
 
-## Alias de Tipos
+## Alias de tipos
 
 Any type aliases you define are treated as distinct types for the purposes of access control.
 A type alias can have an access level less than or equal to the access level of the type it aliases.
@@ -1487,7 +1487,7 @@ but a public type alias can't alias an internal, file-private, or private type.
   ```
 -->
 
-> Software Beta:
+> Software beta:
 >
 > Esta documentación contiene información preliminar sobre una API o tecnología en desarrollo. Esta información está sujeta a cambios, y todo software implementado en conformidad con esta documentación debe ser testeado con el software final del sistema operativo.
 >
@@ -1496,7 +1496,7 @@ but a public type alias can't alias an internal, file-private, or private type.
 <!--
 This source file is part of the Swift.org open source project
 
-Copyright (c) 2014 - 2023 Apple Inc. and the Swift project authors
+Copyright (c) 2014 - 2024 Apple Inc. and the Swift project authors
 Licensed under Apache License v2.0 with Runtime Library Exception
 
 See https://swift.org/LICENSE.txt for license information

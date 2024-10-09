@@ -1,4 +1,4 @@
-# Tipos Anidados
+# Tipos anidados
 
 Define types inside the scope of another type.
 
@@ -13,7 +13,7 @@ To nest a type within another type,
 write its definition within the outer braces of the type it supports.
 Types can be nested to as many levels as are required.
 
-## Tipos Anidados En Acción
+## Tipos anidados en acción
 
 The example below defines a structure called `BlackjackCard`,
 which models a playing card as used in the game of Blackjack.
@@ -141,7 +141,7 @@ inserts additional description detail for that second value.
 
 Because `BlackjackCard` is a structure with no custom initializers,
 it has an implicit memberwise initializer,
-as described in <doc:Initialization#Inicializadores-a-Nivel-de-Miembro-Para-Tipos-de-Estructura>.
+as described in <doc:Initialization#Inicializadores-a-nivel-de-miembro-para-tipos-de-estructura>.
 You can use this initializer to initialize a new constant called `theAceOfSpades`:
 
 ```swift
@@ -167,7 +167,7 @@ by their case names (`.ace` and `.spades`) alone.
 In the example above, the `description` property correctly reports that
 the Ace of Spades has a value of `1` or `11`.
 
-## Referencias a Tipos Anidados
+## Referencias a tipos anidados
 
 To use a nested type outside of its definition context,
 prefix its name with the name of the type it's nested within:

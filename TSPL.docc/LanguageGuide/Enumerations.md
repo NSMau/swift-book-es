@@ -38,7 +38,7 @@ For more about these capabilities, see
   are hashable and equatable by default (and what that means in practice)
 -->
 
-## Sintaxis de las Enumeraciones
+## Sintaxis de las enumeraciones
 
 You introduce enumerations with the `enum` keyword
 and place their entire definition within a pair of braces:
@@ -155,7 +155,7 @@ The type of `directionToHead` is already known,
 and so you can drop the type when setting its value.
 This makes for highly readable code when working with explicitly typed enumeration values.
 
-## Igualando los Valores de una Enumeración con una Instrucción switch
+## Igualando los valores de una enumeración con una instrucción switch
 
 You can match individual enumeration values with a `switch` statement:
 
@@ -239,7 +239,7 @@ default:
   ```
 -->
 
-## Iterar Sobre los Casos de una Enumeración
+## Iterar sobre los casos de una enumeración
 
 For some enumerations,
 it's useful to have a collection of all of that enumeration's cases.
@@ -310,7 +310,7 @@ marks the enumeration as conforming to the
 [`CaseIterable`](https://developer.apple.com/documentation/swift/caseiterable) protocol.
 For information about protocols, see <doc:Protocols>.
 
-## Valores Asociados
+## Valores asociados
 
 The examples in the previous section show how the cases of an enumeration are
 a defined (and typed) value in their own right.
@@ -420,7 +420,7 @@ but they can store only one of them at any given time.
 
 You can check the different barcode types using a switch statement,
 similar to the example in
-<doc:Enumerations#Igualando-los-Valores-de-una-Enumeración-con-una-Instrucción-switch>.
+<doc:Enumerations#Igualando-los-valores-de-una-enumeración-con-una-instrucción-switch>.
 This time, however,
 the associated values are extracted as part of the switch statement.
 You extract each associated value as a constant (with the `let` prefix)
@@ -479,9 +479,9 @@ case let .qrCode(productCode):
   ```
 -->
 
-## Valores Brutos
+## Valores brutos
 
-The barcode example in <doc:Enumerations#Valores-Asociados>
+The barcode example in <doc:Enumerations#Valores-asociados>
 shows how cases of an enumeration can declare that they store
 associated values of different types.
 As an alternative to associated values,
@@ -529,7 +529,7 @@ Each raw value must be unique within its enumeration declaration.
 > based on one of the enumeration's cases,
 > and can be different each time you do so.
 
-### Valores Brutos Asignados Implícitamente
+### Valores brutos asignados implícitamente
 
 When you're working with enumerations that store integer or string raw values,
 you don't have to explicitly assign a raw value for each case.
@@ -611,7 +611,7 @@ let sunsetDirection = CompassPoint.west.rawValue
   ```
 -->
 
-### Inicialización a Partir de un Valor Bruto
+### Inicialización a partir de un valor bruto
 
 If you define an enumeration with a raw-value type,
 the enumeration automatically receives an initializer
@@ -645,7 +645,7 @@ or “optional `Planet`.”
 
 > Note: The raw value initializer is a failable initializer,
 > because not every raw value will return an enumeration case.
-> For more information, see <doc:Declarations#Inicializadores-Falibles>.
+> For more information, see <doc:Declarations#Inicializadores-falibles>.
 
 If you try to find a planet with a position of `11`,
 the optional `Planet` value returned by the raw value initializer will be `nil`:
@@ -695,7 +695,7 @@ and so the `else` branch is executed instead.
   is together, and the union bits (aka Associated Values) come last.
 -->
 
-## Enumeraciones Recursivas
+## Enumeraciones recursivas
 
 A *recursive enumeration* is an enumeration
 that has another instance of the enumeration

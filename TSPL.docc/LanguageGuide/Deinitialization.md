@@ -7,7 +7,7 @@ You write deinitializers with the `deinit` keyword,
 similar to how initializers are written with the `init` keyword.
 Deinitializers are only available on class types.
 
-## Cómo Funciona la Desinicialización
+## Cómo funciona la desinicialización
 
 Swift automatically deallocates your instances when they're no longer needed,
 to free up resources.
@@ -55,7 +55,7 @@ a deinitializer can access all properties of the instance it's called on
 and can modify its behavior based on those properties
 (such as looking up the name of a file that needs to be closed).
 
-## Desinicializadores En Acción
+## Desinicializadores en acción
 
 Here's an example of a deinitializer in action.
 This example defines two new types, `Bank` and `Player`, for a simple game.

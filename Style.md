@@ -1,7 +1,7 @@
 # Estructura del libro
 
-TSPL está dividido en tres partes principales, además de un material de portada,
-los cuales cumplen funciones complementarias:
+TSPL está dividido en tres partes principales, más un material introductorio,
+el cual cumple funciones complementarias:
 
 **Un recorrido guiado**,
 comúnmente conocido como “el recorrido”,
@@ -13,34 +13,36 @@ El recorrido sólo necesita darte la sintaxis y una idea de cómo usarla;
 depende de la guía para proporcionar la verdadera explicación en profundidad
 sobre cómo funciona el encadenamiento opcional en general y cuándo debe usarse.
 
-La intención de la guía es que
+La intención del recorrido es que
 pueda leerse en su totalidad en una sola sesión.
-Un principiante obtendrá una visión general de lo que es posible en Swift.
+Un principiante tendrá una visión general de lo que se puede lograr con Swift.
 Un lector con más experiencia en programación aprenderá
 “suficiente Swift para ser peligroso”, es decir,
-lo suficiente sobre la sintaxis del lenguaje para empezar a experimentar en un primer proyecto,
+la sintaxis del lenguaje suficiente
+para empezar a experimentar en un primer proyecto,
 y luego retomar TSPL cuando esté listo para aprender más que
 la sintaxis superficial de conceptos que ya conocen de otros lenguajes.
 
 **La guía del lenguaje**,
 comúnmente conocida como "la guía",
-te conduce a través del lenguaje Swift en un orden pedagógicamente útil y lineal.
+te conduce mediante el lenguaje Swift en un orden pedagógicamente útil y lineal.
 No promete mostrarte cada característica del
 lenguaje o de la librería estándar,
 y pasa por alto los detalles exactos
 de algunas de las partes subyacentes más complicadas.
-La guía se apoya en la referencia para resolver aquellas preguntas sobre detalles específicos
+La guía se apoya en la referencia
+para resolver aquellas preguntas sobre detalles específicos
 y para cubrir exhaustivamente el lenguaje.
 A diferencia de la referencia,
-te guiará a través de explicaciones paso a paso,
+te guia a través de explicaciones paso a paso,
 mostrando ejemplos de las características del lenguaje en acción,
 y asume muy pocos conocimientos previos.
 
 Al agregar nuevas secciones a la guía,
-asegúrate de que toda la sintaxis y los conceptos que utilices en tus explicaciones
+asegúrate de que toda la sintaxis y los conceptos que uses en tus explicaciones
 ya hayan sido tratados en capítulos anteriores,
 de manera que se pueda mantener la promesa de un orden de lectura lineal.
-“Fundamentos” existe, en mayor parte, para introducir un montón de sintaxis y conceptos
+“Fundamentos” existe, en mayor parte, para introducir mucha sintaxis y conceptos
 que se necesitan en los primeros capítulos de la guía
 — muchos de los temas de “Fundamentos” se vuelven a tratar más adelante en la guía
 con mayor detenimiento.
@@ -52,7 +54,7 @@ ser capaces de construir nada útil sin ellos.
 Esta última razón incluye un juicio de valor.
 Al introducir nuevos tipos en la biblioteca estándar,
 es usual que tengamos que discutir si se deben o no añadir a TSPL,
-al igual que dónde deben ser agregados.
+al igual que en dónde deben ser agregados.
 
 La guía puede dividirse en tres partes principales:
 temas básicos, temas de modelado de datos y temas avanzados.
@@ -64,7 +66,8 @@ El flujo lineal pretende tener sentido,
 incluso si dejas de leer por un tiempo entre las secciones.
 Por ejemplo, leer sólo los temas básicos te da suficiente información
 para escribir programas que sólo tienen datos “primitivos” no estructurados.
-Los capítulos de cada sección están ordenados con los temas fundamentales al principio,
+Los capítulos de cada sección
+están ordenados con los temas fundamentales al principio,
 y, al final, los temas que la mayoría de los lectores pueden saltarse.
 
 **La referencia del lenguaje**,
@@ -73,46 +76,51 @@ describe cada aspecto del lenguaje Swift con todo detalle,
 pero no intenta ser un texto instructivo.
 Su material está ordenado acorde a la estructura de la gramática formal,
 y pasa por alto ejemplos y aplicativos.
-Para ejemplos, muchas partes remiten al lector, de manera explícita, de vuelta a la guía.
+Para ejemplos, muchas partes remiten al lector, de manera explícita,
+de vuelta a la guía.
 No hace falta que la referencia sea tan accesible para los principiantes,
 puesto que la guía se encarga de eso,
 pero sí tiene que ser precisa y carecer de ambigüedades,
 haciendo énfasis en las áreas menos exploradas del lenguaje.
 Para lograr esto,
 a veces debe sacrificar la accesibilidad o la facilidad de uso.
-Esto no es un problema, puesto que muchos lectores ni siquiera necesitarán la referencia;
+Esto no representa un problema,
+puesto que muchos lectores ni siquiera necesitarán la referencia;
 pero si esta no es clara,
-aquellos lectores que necesiten una respuesta, no tendrán adónde ir.
+aquellos lectores que necesiten una respuesta, no tendrán adónde más recurrir.
 
-Dentro de la referencia, las secciones siguen una estructura predecible de cuatro partes:
+Dentro de la referencia,
+las secciones siguen una estructura predecible de cuatro partes:
 
-* Algunas oraciones describen, brevemente, la construcción lingüística nombrada por el título.
-* Un esquema de código muestra su forma sintáctica general.
-* Algunos párrafos lo describen con más detalle.
-* Una gramática describe la sintaxis de manera formal.
+- Algunas oraciones describen, brevemente, la construcción lingüística nombrada por el título.
+- Un esquema de código muestra su forma sintáctica general.
+- Algunos párrafos lo describen con más detalle.
+- Un inciso de gramática describe la sintaxis de manera formal.
 
 El objetivo de la gramática formal
-es poder responder sin ambigüedad a preguntas sobre qué se considera código Swift válido
+es poder responder sin ambigüedad
+preguntas sobre qué se considera código Swift válido
 (sin comentar sobre el significado)
-para aquellos lectores cuya pregunta no fue totalmente respondida por la prosa de la referencia.
+para aquellos lectores
+cuya pregunta no fue totalmente respondida por la prosa de la referencia.
 Está dirigida, principalmente, a lectores humanos,
 lo que significa que no siempre resulta adecuada
 para generar un analizador sintáctico (*parser*) de código Swift.
 
-# Terms and Rules
+## Términos y Reglas
 
-## attribute names
+### Nombres de atributos
 
-In the guide, write `@` before attribute names;
-in the reference, omit it.
+En la guía, escribe `@` antes del nombre de un atributo;
+en la referencia, omítelo.
 
-## back deploy
+### back deploy
 
-Spelled as two words, not closed up or hyphenated.
+Se escribe como dos palabras, no junto ni separado por guión.
 
-## compiler, the
+### compiler, the
 
-See entry for *Swift*.
+Ver entrada para *Swift*.
 
 ## function
 
@@ -143,7 +151,7 @@ Not hyphenated as “member-wise”.
 
 ## method
 
-See entry for *function*.
+See entry for _function_.
 
 ## non-optional
 
@@ -165,7 +173,7 @@ For example:
 
 > By default,
 > custom classes and structures don’t have an implementation of
-> the *equal to* operator (`==`) or *not equal to* operator (`!=`).
+> the _equal to_ operator (`==`) or _not equal to_ operator (`!=`).
 > You usually implement the `==` operator,
 > and use the standard library’s default implementation of the `!=` operator
 > that negates the result of the `==` operator.
@@ -237,7 +245,7 @@ and an error that comes from or is related to the Swift runtime environment.
 ## shared mutable state
 
 Avoid when describing actors.
-By design, actors specifically *avoid* having shared mutable state —
+By design, actors specifically _avoid_ having shared mutable state —
 their mutable state is private,
 and accessible only through the actor's (async) methods.
 
@@ -249,7 +257,7 @@ to match the API symbol name.
 
 ## suspension point
 
-See entry for *potential suspension point*.
+See entry for _potential suspension point_.
 
 ## syntax outline
 
@@ -363,7 +371,7 @@ As a historical note,
 “UNIX for Beginners” by Brian W. Kernighan in 1974
 is possibly the origin of this approach.
 Page 11 has the following guidance
-in the section *Hints for Preparing Documents*:
+in the section _Hints for Preparing Documents_:
 
 > Most documents go through several versions
 > (always more than you expected)
@@ -412,8 +420,8 @@ Don’t refer to them from the English prose above them.
 There are cases where this isn’t feasible because of space considerations.
 For example, in the grammar for a C-style for statement,
 the category that defines the initialization part of the for statement
-had to be shortened to *for-init*
-(instead of *for-initialization*, as the rule specifies).
+had to be shortened to _for-init_
+(instead of _for-initialization_, as the rule specifies).
 In this case, nothing seems lost from a readability or pedagogical perspective.
 
     c-style-for-statement --> ``for`` for-init-OPT ``;`` expression-OPT ``;`` basic-expression-OPT brace-item-list
@@ -426,8 +434,8 @@ When there are too many alternatives
 to fit on a single line, use a new line for each alternative.
 Don’t mix pipes and newlines.
 
-For example, to specify that a *case-block-item* can consist of a *declaration*,
-*expression*, or a *statement*, you can use a pipe instead of a new line,
+For example, to specify that a _case-block-item_ can consist of a _declaration_,
+_expression_, or a _statement_, you can use a pipe instead of a new line,
 because all three alternatives fit nicely on one line:
 
     code-block-item --> declaration | expression | statement
@@ -503,4 +511,3 @@ This BNF rule was a bit dense and required the application of several of the rul
 It became:
 
     switch-case --> case-labels brace-items-OPT | default-label brace-items-OPT
-

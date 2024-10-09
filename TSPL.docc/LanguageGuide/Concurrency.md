@@ -92,7 +92,7 @@ you end up writing nested closures.
 In this style,
 more complex code with deep nesting can quickly become unwieldy.
 
-## Definición y Llamado de Funciones Asíncronas
+## Definición y llamado de funciones asíncronas
 
 An *asynchronous function* or *asynchronous method*
 is a special kind of function or method
@@ -245,7 +245,7 @@ only certain places in your program can call asynchronous functions or methods:
   a structure, class, or enumeration that's marked with `@main`.
 
 - Code in an unstructured child task,
-  as shown in <doc:Concurrency#Concurrencia-Desestructurada> below.
+  as shown in <doc:Concurrency#Concurrencia-desestructurada> below.
 
 <!--
   SE-0296 specifically calls out that top-level code is *not* an async context,
@@ -348,7 +348,7 @@ you'll get compile-time error instead of introducing a bug.
   (discussion of @MainActor closures can probably go here too)
 -->
 
-## Secuencias Asíncronas
+## Secuencias asíncronas
 
 The `listPhotos(inGallery:)` function in the previous section
 asynchronously returns the whole array at once,
@@ -424,7 +424,7 @@ by adding conformance to the
   }
 -->
 
-## Invocación de Funciones Asíncronas en Paralelo
+## Invocación de funciones asíncronas en paralelo
 
 <!--
   FIXME
@@ -542,7 +542,7 @@ Here's how you can think about the differences between these two approaches:
 
 You can also mix both of these approaches in the same code.
 
-## Tasks y Task Groups
+## *Tasks* y *Task Groups*
 
 A *task* is a unit of work
 that can be run asynchronously as part of your program.
@@ -694,7 +694,7 @@ see [`TaskGroup`](https://developer.apple.com/documentation/swift/taskgroup).
   This is a sort of cooperative multitasking for long-running work.
 -->
 
-### Concurrencia Desestructurada
+### Concurrencia desestructurada
 
 In addition to the structured approaches to concurrency
 described in the previous sections,
@@ -730,7 +730,7 @@ see [`Task`](https://developer.apple.com/documentation/swift/task).
   (Pull from my 2021-04-21 notes from Ben's talk rehearsal.)
 -->
 
-### Cancelación de Tasks
+### Cancelación de *Tasks*
 
 Swift concurrency uses a cooperative cancellation model.
 Each task checks whether it has been canceled
@@ -793,7 +793,7 @@ Actors let you safely share information between concurrent code.
 
 Like classes, actors are reference types,
 so the comparison of value types and reference types
-in <doc:ClassesAndStructures#Las-Clases-Son-Tipos-de-Referencia>
+in <doc:ClassesAndStructures#Las-clases-son-tipos-de-referencia>
 applies to actors as well as classes.
 Unlike classes,
 actors allow only one task to access their mutable state at a time,
@@ -990,7 +990,7 @@ This guarantee is known as *actor isolation*.
        print(await logger.getMax())
 -->
 
-## Tipos Enviables
+## Tipos enviables
 
 Tasks and actors let you divide a program
 into pieces that can safely run concurrently.

@@ -22,7 +22,7 @@ Extensions in Swift can:
 In Swift,
 you can even extend a protocol to provide implementations of its requirements
 or add additional functionality that conforming types can take advantage of.
-For more details, see <doc:Protocols#Extensión-de-Protocolos>.
+For more details, see <doc:Protocols#Extensión-de-protocolos>.
 
 > Note: Extensions can add new functionality to a type,
 > but they can't override existing functionality.
@@ -75,7 +75,7 @@ For more details, see <doc:Protocols#Extensión-de-Protocolos>.
   ```
 -->
 
-## Sintaxis de una Extensión
+## Sintaxis de una extensión
 
 Declare extensions with the `extension` keyword:
 
@@ -120,18 +120,18 @@ extension SomeType: SomeProtocol, AnotherProtocol {
 -->
 
 Adding protocol conformance in this way is described in
-<doc:Protocols#Agregar-Conformidad-Protocolaria-Mediante-una-Extensión>.
+<doc:Protocols#Agregar-conformidad-protocolaria-mediante-una-extensión>.
 
 An extension can be used to extend an existing generic type,
-as described in <doc:Generics#Extendiendo-un-Tipo-Genérico>.
+as described in <doc:Generics#Extendiendo-un-tipo-genérico>.
 You can also extend a generic type to conditionally add functionality,
-as described in <doc:Generics#Extensiones-con-una-Cláusula-where-Genérica>.
+as described in <doc:Generics#Extensiones-con-una-cláusula-where-genérica>.
 
 > Note: If you define an extension to add new functionality to an existing type,
 > the new functionality will be available on all existing instances of that type,
 > even if they were created before the extension was defined.
 
-## Propiedades Computadas
+## Propiedades computadas
 
 Extensions can add computed instance properties and computed type properties to existing types.
 This example adds five computed instance properties to Swift's built-in `Double` type,
@@ -252,7 +252,7 @@ you can call the default initializer and memberwise initializer for that value t
 from within your extension's initializer.
 This wouldn't be the case if you had written the initializer
 as part of the value type's original implementation,
-as described in <doc:Initialization#Delegación-de-Inicializadores-Para-Tipos-de-Valor>.
+as described in <doc:Initialization#Delegación-de-inicializadores-para-tipos-de-valor>.
 
 If you use an extension to add an initializer to a structure
 that was declared in another module,
@@ -295,7 +295,7 @@ struct Rect {
 
 Because the `Rect` structure provides default values for all of its properties,
 it receives a default initializer and a memberwise initializer automatically,
-as described in <doc:Initialization#Inicializadores-Predeterminados>.
+as described in <doc:Initialization#Inicializadores-predeterminados>.
 These initializers can be used to create new `Rect` instances:
 
 ```swift
@@ -426,7 +426,7 @@ to perform a task that many number of times:
   ```
 -->
 
-### Métodos de Instancia Modificadores
+### Métodos de instancia modificadores
 
 Instance methods added with an extension can also modify (or *mutate*) the instance itself.
 Structure and enumeration methods that modify `self` or its properties
@@ -570,7 +570,7 @@ as if the number had been padded with zeros to the left:
   Tracking bug is <rdar://problem/35301593>
 -->
 
-## Tipos Anidados
+## Tipos anidados
 
 Extensions can add new nested types to existing classes, structures, and enumerations:
 

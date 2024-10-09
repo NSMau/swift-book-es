@@ -1,4 +1,4 @@
-# Manejo de Errores
+# Manejo de errores
 
 Respond to and recover from errors.
 
@@ -29,7 +29,7 @@ and to communicate to the user any errors it can't resolve.
 > For more information about this class,
 > see [Handling Cocoa Errors in Swift](https://developer.apple.com/documentation/swift/cocoa_design_patterns/handling_cocoa_errors_in_swift).
 
-## Representar y Arrojar Errores
+## Representar y arrojar errores
 
 In Swift, errors are represented by
 values of types that conform to the `Error` protocol.
@@ -83,7 +83,7 @@ throw VendingMachineError.insufficientFunds(coinsNeeded: 5)
   ```
 -->
 
-## Manejo de Errores
+## Manejo de errores
 
 When an error is thrown,
 some surrounding piece of code must be responsible
@@ -117,7 +117,7 @@ These keywords are described in the sections below.
 > of a `throw` statement
 > are comparable to those of a `return` statement.
 
-### Propagación de Errores Mediante Funciones Que Arrojan Errores
+### Propagación de errores mediante funciones que arrojan errores
 
 To indicate that a function, method, or initializer can throw an error,
 you write the `throws` keyword in the function's declaration
@@ -379,7 +379,7 @@ struct PurchasedSnack {
   ```
 -->
 
-### Manejo de Errores Mediante do-catch
+### Manejo de errores mediante do-catch
 
 You use a `do`-`catch` statement to handle errors
 by running a block of code.
@@ -584,7 +584,7 @@ this `catch` clause handles them by printing a message.
 Any other errors are propagated to the surrounding scope,
 including any vending-machine errors that might be added later.
 
-### Conversión de Errores En Valores Opcionales
+### Conversión de errores en valores opcionales
 
 You use `try?` to handle an error by converting it to an optional value.
 If an error is thrown while evaluating the `try?` expression,
@@ -667,7 +667,7 @@ func fetchData() -> Data? {
   ```
 -->
 
-### Inhabilitar la Propagación de Errores
+### Inhabilitar la propagación de errores
 
 Sometimes you know a throwing function or method
 won't, in fact, throw an error at runtime.
@@ -699,7 +699,7 @@ let photo = try! loadImage(atPath: "./Resources/John Appleseed.jpg")
   ```
 -->
 
-## Especificando Acciones de Limpieza
+## Especificando acciones de limpieza
 
 You use a `defer` statement to execute a set of statements
 just before code execution leaves the current block of code.

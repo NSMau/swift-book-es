@@ -1,4 +1,4 @@
-# Estructuras y Clases
+# Estructuras y clases
 
 Model custom types that encapsulate data.
 
@@ -21,7 +21,7 @@ automatically made available for other code to use.
 > instances of *either* a class or a structure type.
 > Because of this, the more general term *instance* is used.
 
-## Comparando Estructuras y Clases
+## Comparando estructuras y clases
 
 Structures and classes in Swift have many things in common.
 Both can:
@@ -61,7 +61,7 @@ see [Choosing Between Structures and Classes](https://developer.apple.com/docume
 > Note: Classes and actors share many of the same characteristics and behaviors.
 > For information about actors, see <doc:Concurrency>.
 
-### Sintaxis de Definición
+### Sintaxis de definición
 
 Structures and classes have a similar definition syntax.
 You introduce structures with the `struct` keyword
@@ -153,7 +153,7 @@ and an optional `String` value called `name`.
 The `name` property is automatically given a default value of `nil`,
 or “no `name` value”, because it's of an optional type.
 
-### Instancias de Estructuras y Clases
+### Instancias de estructuras y clases
 
 The `Resolution` structure definition and the `VideoMode` class definition
 only describe what a `Resolution` or `VideoMode` will look like.
@@ -189,7 +189,7 @@ in <doc:Initialization>.
   for all properties on a structure or class.
 -->
 
-### Accediendo a Propiedades
+### Accediendo a propiedades
 
 You can access the properties of an instance using *dot syntax*.
 In dot syntax, you write the property name immediately after the instance name,
@@ -248,7 +248,7 @@ print("The width of someVideoMode is now \(someVideoMode.resolution.width)")
   ```
 -->
 
-### Inicializadores a Nivel de Miembro Para Tipos de Estructura
+### Inicializadores a nivel de miembro para tipos de estructura
 
 All structures have an automatically generated *memberwise initializer*,
 which you can use to initialize the member properties of new structure instances.
@@ -283,7 +283,7 @@ Initializers are described in more detail in <doc:Initialization>.
   ```
 -->
 
-## Las Estructuras y las Enumeraciones Son Tipos de Valor
+## Las estructuras y las enumeraciones son tipos de valor
 
 A *value type* is a type whose value is *copied*
 when it's assigned to a variable or constant,
@@ -456,7 +456,7 @@ the copy of the original value that was stored in `rememberedDirection`.
   TODO: Should I give an example of passing a value type to a function here?
 -->
 
-## Las Clases Son Tipos de Referencia
+## Las clases son tipos de referencia
 
 Unlike value types, *reference types* are *not* copied
 when they're assigned to a variable or constant,
@@ -569,7 +569,7 @@ not the values of the constant references to that `VideoMode`.
   and about how you can make a class that's a value type.
 -->
 
-### Operadores de Identidad
+### Operadores de identidad
 
 Because classes are reference types,
 it's possible for multiple constants and variables to refer to
@@ -650,7 +650,7 @@ for some appropriate meaning of *equal*, as defined by the type's designer.
 When you define your own custom structures and classes,
 it's your responsibility to decide what qualifies as two instances being equal.
 The process of defining your own implementations of the `==` and `!=` operators
-is described in <doc:AdvancedOperators#Operadores-de-Equivalencia>.
+is described in <doc:AdvancedOperators#Operadores-de-equivalencia>.
 
 <!--
   - test: `classesDontGetEqualityByDefault`

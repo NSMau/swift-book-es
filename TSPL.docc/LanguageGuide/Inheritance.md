@@ -22,7 +22,7 @@ in order to be notified when the value of a property changes.
 Property observers can be added to any property,
 regardless of whether it was originally defined as a stored or computed property.
 
-## Definición de una Clase Base
+## Definición de una clase base
 
 Any class that doesn't inherit from another class is known as a *base class*.
 
@@ -107,7 +107,7 @@ but isn't much use in itself.
 To make it more useful,
 you need to refine it to describe more specific kinds of vehicles.
 
-## Creación de Subclases
+## Creación de subclases
 
 *Subclassing* is the act of basing a new class on an existing class.
 The subclass inherits characteristics from the existing class, which you can then refine.
@@ -269,7 +269,7 @@ to check that your overriding class's superclass (or one of its parents)
 has a declaration that matches the one you provided for the override.
 This check ensures that your overriding definition is correct.
 
-### Acceso a Métodos, Propiedades, y Subíndices de Superclases
+### Acceso a métodos, propiedades, y subíndices de superclases
 
 When you provide a method, property, or subscript override for a subclass,
 it's sometimes useful to use the existing superclass implementation
@@ -288,7 +288,7 @@ by using the `super` prefix:
 - An overridden subscript for `someIndex` can access the superclass version of the same subscript
   as `super[someIndex]` from within the overriding subscript implementation.
 
-### Sustitución de Métodos
+### Sustitución de métodos
 
 You can override an inherited instance or type method
 to provide a tailored or alternative implementation of the method within your subclass.
@@ -335,14 +335,14 @@ train.makeNoise()
   ```
 -->
 
-### Sustitución de Propiedades
+### Sustitución de propiedades
 
 You can override an inherited instance or type property
 to provide your own custom getter and setter for that property,
 or to add property observers to enable the overriding property
 to observe when the underlying property value changes.
 
-#### Sustitución de getters y setters de Propiedades
+#### Sustitución de *getters* y *setters* de propiedades
 
 You can provide a custom getter (and setter, if appropriate)
 to override *any* inherited property,
@@ -424,12 +424,12 @@ print("Car: \(car.description)")
   ```
 -->
 
-#### Sustitución de Observadores de Propiedades
+#### Sustitución de observadores de propiedades
 
 You can use property overriding to add property observers to an inherited property.
 This enables you to be notified when the value of an inherited property changes,
 regardless of how that property was originally implemented.
-For more information on property observers, see <doc:Properties#Observadores-de-Propiedades>.
+For more information on property observers, see <doc:Properties#Observadores-de-propiedades>.
 
 > Note: You can't add property observers to
 > inherited constant stored properties or inherited read-only computed properties.
@@ -498,7 +498,7 @@ print("AutomaticCar: \(automatic.description)")
   ```
 -->
 
-## Prevención de Sustituciones
+## Prevención de sustituciones
 
 You can prevent a method, property, or subscript from being overridden
 by marking it as *final*.

@@ -1,4 +1,4 @@
-# Operadores Avanzados
+# Operadores avanzados
 
 Define custom operators, perform bitwise operations, and use builder syntax.
 
@@ -178,7 +178,7 @@ let outputBits = firstBits ^ otherBits  // equals 00010001
   ```
 -->
 
-### Operadores Bit a Bit de Desplazamiento a la Izquierda y a la Derecha
+### Operadores Bit a Bit de desplazamiento a la izquierda y a la derecha
 
 The *bitwise left shift operator* (`<<`)
 and *bitwise right shift operator* (`>>`)
@@ -194,7 +194,7 @@ whereas shifting it to the right by one position halves its value.
   TODO: mention the caveats to this claim.
 -->
 
-#### Comportamiento de Desplazamiento para Enteros Sin Signo
+#### Comportamiento de desplazamiento para enteros sin signo
 
 The bit-shifting behavior for unsigned integers is as follows:
 
@@ -308,7 +308,7 @@ Because `0x000099` already equals `0x99`,
 which has a decimal value of `153`,
 this value is used without shifting it to the right,
 
-#### Comportamiento de Desplazamiento para Enteros Con Signo
+#### Comportamiento de desplazamiento para enteros con signo
 
 The shifting behavior is more complex for signed integers than for unsigned integers,
 because of the way signed integers are represented in binary.
@@ -376,7 +376,7 @@ shifting either of them to the right moves them closer to zero.
 Keeping the sign bit the same during this shift means that
 negative integers remain negative as their value moves closer to zero.
 
-## Operadores de Desbordamiento
+## Operadores de desbordamiento
 
 If you try to insert a number into an integer constant or variable
 that can't hold that value,
@@ -422,7 +422,7 @@ These operators all begin with an ampersand (`&`):
 - Overflow subtraction (`&-`)
 - Overflow multiplication (`&*`)
 
-### Desbordamiento de Valores
+### Desbordamiento de valores
 
 Numbers can overflow in both the positive and negative direction.
 
@@ -496,7 +496,7 @@ or `255` in decimal.
 Overflow also occurs for signed integers.
 All addition and subtraction for signed integers is performed in bitwise fashion,
 with the sign bit included as part of the numbers being added or subtracted,
-as described in <doc:AdvancedOperators#Operadores-Bit-a-Bit-de-Desplazamiento-a-la-Izquierda-y-a-la-Derecha>.
+as described in <doc:AdvancedOperators#Operadores-Bit-a-Bit-de-desplazamiento-a-la-izquierda-y-a-la-derecha>.
 
 ```swift
 var signedOverflow = Int8.min
@@ -533,7 +533,7 @@ wraps around from the maximum valid integer value back to the minimum,
 and overflow in the negative direction
 wraps around from the minimum value to the maximum.
 
-## Precedencia y Asociatividad
+## Precedencia y asociatividad
 
 Operator *precedence* gives some operators higher priority than others;
 these operators are applied first.
@@ -666,7 +666,7 @@ see [Operator Declarations](https://developer.apple.com/documentation/swift/oper
 > Be careful to ensure that operator interactions still behave in the way you intend
 > when porting existing code to Swift.
 
-## Métodos Operadores
+## Métodos operadores
 
 Classes and structures can provide their own implementations of existing operators.
 This is known as *overloading* the existing operators.
@@ -754,7 +754,7 @@ to make the vector `(5.0, 5.0)`, as illustrated below.
 
 ![](vectorAddition)
 
-### Operadores Prefijos y Postfijos
+### Operadores prefijos y postfijos
 
 The example shown above demonstrates a custom implementation of a binary infix operator.
 Classes and structures can also provide implementations
@@ -819,7 +819,7 @@ let alsoPositive = -negative
   ```
 -->
 
-### Operadores de Asignación Compuestos
+### Operadores de asignación compuestos
 
 *Compound assignment operators* combine assignment (`=`) with another operation.
 For example, the addition assignment operator (`+=`)
@@ -899,7 +899,7 @@ original += vectorToAdd
   ```
 -->
 
-### Operadores de Equivalencia
+### Operadores de equivalencia
 
 By default, custom classes and structures don't have an implementation of
 the *equivalence operators*,
@@ -970,9 +970,9 @@ if twoThree == anotherTwoThree {
 
 In many simple cases, you can ask Swift
 to provide synthesized implementations of the equivalence operators for you,
-as described in <doc:Protocols#Adoptando-Un-Protocolo-Mediante-Una-Implementación-Sintetizada>.
+as described in <doc:Protocols#Adoptando-un-protocolo-mediante-una-implementación-sintetizada>.
 
-## Operadores Personalizados
+## Operadores personalizados
 
 You can declare and implement your own *custom operators* in addition to
 the standard operators provided by Swift.
@@ -1038,12 +1038,12 @@ let afterDoubling = +++toBeDoubled
   ```
 -->
 
-### Precedencia para Operadores Interfijos Personalizados
+### Precedencia para operadores interfijos personalizados
 
 Custom infix operators each belong to a precedence group.
 A precedence group specifies an operator's precedence relative
 to other infix operators, as well as the operator's associativity.
-See <doc:AdvancedOperators#Precedencia-y-Asociatividad> for an explanation of
+See <doc:AdvancedOperators#Precedencia-y-asociatividad> for an explanation of
 how these characteristics affect an infix operator's interaction
 with other infix operators.
 
@@ -1095,7 +1095,7 @@ including a complete list of the operator precedence groups and associativity se
 see [Operator Declarations](https://developer.apple.com/documentation/swift/operator_declarations).
 For more information about precedence groups and to see the syntax for
 defining your own operators and precedence groups,
-see <doc:Declarations#Declaración-de-Operadores>.
+see <doc:Declarations#Declaración-de-operadores>.
 
 > Note: You don't specify a precedence when defining a prefix or postfix operator.
 > However, if you apply both a prefix and a postfix operator to the same operand,
@@ -1126,7 +1126,7 @@ see <doc:Declarations#Declaración-de-Operadores>.
   ```
 -->
 
-## Constructores de Resultados
+## Constructores de resultados
 
 A *result builder* is a type you define
 that adds syntax for creating nested data,

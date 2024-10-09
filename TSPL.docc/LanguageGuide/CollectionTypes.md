@@ -1,4 +1,4 @@
-# Tipos de Colecciones
+# Tipos de colecciones
 
 Organize data using arrays, sets, and dictionaries.
 
@@ -33,7 +33,7 @@ you will retrieve from a collection.
   TODO: discuss collection equality
 -->
 
-## Mutabilidad de las Colecciones
+## Mutabilidad de las colecciones
 
 If you create an array, a set, or a dictionary, and assign it to a variable,
 the collection that's created will be *mutable*.
@@ -59,7 +59,7 @@ The same value can appear in an array multiple times at different positions.
 > For more information about using `Array` with Foundation and Cocoa,
 > see [Bridging Between Array and NSArray](https://developer.apple.com/documentation/swift/array#2846730).
 
-### Sintaxis Concisa Para el Tipo Arreglo
+### Sintaxis concisa para el tipo arreglo
 
 The type of a Swift array is written in full as `Array<Element>`,
 where `Element` is the type of values the array is allowed to store.
@@ -68,7 +68,7 @@ Although the two forms are functionally identical,
 the shorthand form is preferred
 and is used throughout this guide when referring to the type of an array.
 
-### Creación de un Arreglo Vacío
+### Creación de un arreglo vacío
 
 You can create an empty array of a certain type
 using initializer syntax:
@@ -117,7 +117,7 @@ someInts = []
   ```
 -->
 
-### Creación de un Arreglo con un Valor Predeterminado
+### Creación de un arreglo con un valor predeterminado
 
 Swift's `Array` type also provides
 an initializer for creating an array of a certain size
@@ -141,7 +141,7 @@ var threeDoubles = Array(repeating: 0.0, count: 3)
   ```
 -->
 
-### Creación de un Arreglo Sumando Dos Arreglos
+### Creación de un arreglo sumando dos arreglos
 
 You can create a new array by adding together two existing arrays with compatible types
 with the addition operator (`+`).
@@ -182,7 +182,7 @@ var sixDoubles = threeDoubles + anotherThreeDoubles
   Likewise I'm holding off writing about it until NewArray lands.
 -->
 
-### Creación de un Arreglo a Partir de un Literal de Arreglo
+### Creación de un arreglo a partir de un literal de arreglo
 
 You can also initialize an array with an *array literal*,
 which is a shorthand way to write one or more values as an array collection.
@@ -247,7 +247,7 @@ Because all values in the array literal are of the same type,
 Swift can infer that `[String]` is
 the correct type to use for the `shoppingList` variable.
 
-### Acceso y Modificación de un Arreglo
+### Acceso y modificación de un arreglo
 
 You access and modify an array through its methods and properties,
 or by using subscript syntax.
@@ -506,7 +506,7 @@ let apples = shoppingList.removeLast()
   ```
 -->
 
-### Iterar Sobre un Arreglo
+### Iterar sobre un arreglo
 
 You can iterate over the entire set of values in an array with the `for`-`in` loop:
 
@@ -591,7 +591,7 @@ or when you need to ensure that an item only appears once.
   TODO: Add note about performance characteristics of contains on sets as opposed to arrays?
 -->
 
-### Valores hash Para los Tipos Set
+### Valores hash para los tipos set
 
 A type must be *hashable* in order to be stored in a set ---
 that is, the type must provide a way to compute a *hash value* for itself.
@@ -612,13 +612,13 @@ are also hashable by default.
 > see [`Hashable`](https://developer.apple.com/documentation/swift/hashable).
 > For information about conforming to protocols, see <doc:Protocols>.
 
-### Sintaxis del Tipo Set
+### Sintaxis del tipo set
 
 The type of a Swift set is written as `Set<Element>`,
 where `Element` is the type that the set is allowed to store.
 Unlike arrays, sets don't have an equivalent shorthand form.
 
-### Creación e Inicialización de un Set Vacío
+### Creación e inicialización de un set vacío
 
 You can create an empty set of a certain type
 using initializer syntax:
@@ -665,7 +665,7 @@ letters = []
   ```
 -->
 
-### Creación de un Set a Partir de un Literal de Arreglo
+### Creación de un set a partir de un literal de arreglo
 
 You can also initialize a set with an array literal,
 as a shorthand way to write one or more values as a set collection.
@@ -721,7 +721,7 @@ Because all values in the array literal are of the same type,
 Swift can infer that `Set<String>` is
 the correct type to use for the `favoriteGenres` variable.
 
-### Acceso y Modificación de un Set
+### Acceso y modificación de un set
 
 You access and modify a set through its methods and properties.
 
@@ -837,7 +837,7 @@ if favoriteGenres.contains("Funk") {
   ```
 -->
 
-### Iterar Sobre un Set
+### Iterar sobre un set
 
 You can iterate over the values in a set with a `for`-`in` loop.
 
@@ -893,14 +893,14 @@ for genre in favoriteGenres.sorted() {
   ```
 -->
 
-## Ejecución de Operaciones de Sets
+## Ejecución de operaciones de sets
 
 You can efficiently perform fundamental set operations,
 such as combining two sets together,
 determining which values two sets have in common,
 or determining whether two sets contain all, some, or none of the same values.
 
-### Operaciones de Sets Básicas
+### Operaciones de sets básicas
 
 The illustration below depicts two sets --- `a` and `b` ---
 with the results of various set operations represented by the shaded regions.
@@ -959,7 +959,7 @@ oddDigits.symmetricDifference(singleDigitPrimeNumbers).sorted()
   Tracking bug is <rdar://problem/35301593>
 -->
 
-### Membresía e Igualdad de un Set
+### Membresía e igualdad de un set
 
 The illustration below depicts three sets --- `a`, `b` and `c` ---
 with overlapping regions representing elements shared among sets.
@@ -1036,7 +1036,7 @@ the definition for a particular word.
 > For more information about using `Dictionary` with Foundation and Cocoa,
 > see [Bridging Between Dictionary and NSDictionary](https://developer.apple.com/documentation/swift/dictionary#2846239).
 
-### Sintaxis Concisa del Tipo Diccionario
+### Sintaxis concisa del tipo diccionario
 
 The type of a Swift dictionary is written in full as `Dictionary<Key, Value>`,
 where `Key` is the type of value that can be used as a dictionary key,
@@ -1050,7 +1050,7 @@ Although the two forms are functionally identical,
 the shorthand form is preferred
 and is used throughout this guide when referring to the type of a dictionary.
 
-### Creación de un Diccionario Vacío
+### Creación de un diccionario vacío
 
 As with arrays,
 you can create an empty `Dictionary` of a certain type by using initializer syntax:
@@ -1097,7 +1097,7 @@ namesOfIntegers = [:]
   ```
 -->
 
-### Creación de un Diccionario a Partir de un Literal de Diccionario
+### Creación de un diccionario a partir de un literal de diccionario
 
 You can also initialize a dictionary with a *dictionary literal*,
 which has a similar syntax to the array literal seen earlier.
@@ -1171,7 +1171,7 @@ and likewise all values are of the same type as each other,
 Swift can infer that `[String: String]` is
 the correct type to use for the `airports` dictionary.
 
-### Acceso y Modificación de un Diccionario
+### Acceso y modificación de un diccionario
 
 You access and modify a dictionary through its methods and properties,
 or by using subscript syntax.
@@ -1375,7 +1375,7 @@ if let removedValue = airports.removeValue(forKey: "DUB") {
   ```
 -->
 
-### Iterar Sobre un Diccionario
+### Iterar sobre un diccionario
 
 You can iterate over the key-value pairs in a dictionary with a `for`-`in` loop.
 Each item in the dictionary is returned as a `(key, value)` tuple,

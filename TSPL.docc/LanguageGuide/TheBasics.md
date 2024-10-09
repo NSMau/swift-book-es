@@ -32,8 +32,8 @@ como un único valor compuesto.
 
 Swift también cuenta con tipos opcionales,
 los cuales lidian con la ausencia de un valor.
-Los opcionales indican que “*existe* un valor, y es igual a x”
-o “*no existe* un valor en lo absoluto”.
+Los opcionales indican que «*existe* un valor, y es igual a x»
+o «*no existe* un valor en lo absoluto».
 Usar opcionales es similar a usar `nil` con punteros en Objective-C,
 pero funcionan para cualquier tipo, no solo para las clases.
 Los opcionales no solo son más seguros y significativos
@@ -50,7 +50,7 @@ un `String` opcional a un fragmento de código que requiere un `String` no opcio
 La seguridad de tipos te ayuda a detectar y corregir errores lo antes posible
 en el proceso de desarrollo.
 
-## Constantes y Variables
+## Constantes y variables
 
 Las constantes y variables asocian un nombre
 (como `numeroMaximoDeIntentosDeInicioDeSesion` o `mensajeDeBienvenida`)
@@ -59,7 +59,7 @@ con un valor de un tipo particular
 El valor de una *constante* no se puede cambiar una vez que se asigna,
 mientras que a una *variable* puede asignársele un valor diferente más adelante.
 
-### Declaración de Constantes y Variables
+### Declaración de constantes y variables
 
 Las constantes y variables deben ser declararadas antes de ser utilizadas.
 Para declarar constantes, se usa la palabra clave `let`,
@@ -83,10 +83,10 @@ var intentoActualDeInicioDeSesion = 0
 
 Este código puede leerse como:
 
-“Declara una nueva constante llamada `numeroMaximoDeIntentosDeInicioDeSesion`,
+«Declara una nueva constante llamada `numeroMaximoDeIntentosDeInicioDeSesion`,
 y asígnale un valor de `10`.
 Luego, declara una nueva variable llamada `intentoActualDeInicioDeSesion`,
-y asígnale un valor inicial de `0`.”
+y asígnale un valor inicial de `0`.»
 
 En este ejemplo,
 el número máximo de intentos de inicio de sesión permitidos se declara como una constante,
@@ -115,7 +115,7 @@ var x = 0.0, y = 0.0, z = 0.0
 > siempre debes declararlo como una constante usando la palabra clave `let`.
 > Utiliza variables solo para almacenar valores que puedan cambiar.
 
-### Anotaciones de Tipo
+### Anotaciones de tipo
 
 Al declarar una constante o variable, puedes proveer una *anotación de tipo*
 para especificar el tipo de valores que dicha constante o variable puede almacenar.
@@ -138,13 +138,13 @@ var mensajeDeBienvenida: String
   ```
 -->
 
-Los dos puntos en la declaración significan *“…de tipo…”*,
+Los dos puntos en la declaración significan *«…de tipo…»*,
 por lo que el código anterior se puede leer como:
 
-“Declara una variable llamada `mensajeDeBienvenida` que sea de tipo `String`.”
+«Declara una variable llamada `mensajeDeBienvenida` que sea de tipo `String`.»
 
-La frase *“de tipo `String`”* significa “puede almacenar cualquier valor de tipo `String`”.
-Piensa en ello como *“el tipo de cosa”* (o *”la clase de cosa”*) que se puede almacenar.
+La frase *«de tipo `String`»* significa «puede almacenar cualquier valor de tipo `String`».
+Piensa en ello como *«el tipo de cosa»* (o *«la clase de cosa»*) que se puede almacenar.
 
 Ahora, a la variable `mensajeDeBienvenida` se le puede asignar cualquier cadena como valor
 sin ningún problema:
@@ -181,12 +181,12 @@ var rojo, verde, azul: Double
 > Nota: En la práctica, resulta inusual la necesidad de escribir anotaciones de tipo.
 > Si al definir una constante o variable, proporcionas un valor inicial para la misma,
 > Swift casi siempre podrá inferir el tipo que se utilizará para esa constante o variable,
-> como se describe en <doc:TheBasics#Seguridad-de-Tipos-e-Inferencia-de-Tipos>.
+> como se describe en <doc:TheBasics#Seguridad-de-tipos-e-inferencia-de-tipos>.
 > En el ejemplo anterior, no se provee ningún valor inicial,
 > por lo que el tipo de la variable `mensajeDeBienvenida`
 > se especifica con una anotación de tipo en lugar de inferirse de un valor inicial.
 
-### Nombrar Constantes y Variables
+### Nombrar constantes y variables
 
 Los nombres de constantes y variables pueden incluir casi cualquier caracter, incluyendo caracteres Unicode:
 
@@ -301,7 +301,7 @@ Para imprimir un valor sin un salto de línea después del mismo,
 pasa una cadena vacía como `terminator`.
 Por ejemplo, `print(someValue, terminator: "")`.
 Para más información sobre parámetros con valores predeterminados,
-consulta <doc:Functions#Parámetros-Con-Valores-Predeterminados>.
+consulta <doc:Functions#Parámetros-con-valores-predeterminados>.
 
 <!--
   - test: `printingWithoutNewline`
@@ -345,7 +345,7 @@ print("¡El valor actual de recepcionAmigable es \(recepcionAmigable)!")
 -->
 
 > Nota: Todas las opciones que se pueden utilizar con la interpolación de cadenas,
-> se describen en <doc:StringsAndCharacters#Interpolación-de-Cadenas>.
+> se describen en <doc:StringsAndCharacters#Interpolación-de-cadenas>.
 
 ## Comentarios
 
@@ -412,7 +412,7 @@ Los comentarios anidados de varias líneas te permiten comentar grandes bloques 
 de forma rápida y sencilla,
 incluso si el código ya contiene comentarios de varias líneas.
 
-## Punto y Coma
+## Punto y coma
 
 A diferencia de muchos otros lenguajes,
 Swift *no* requiere que escribas un punto y coma (`;`) después de cada sentencia en tu código,
@@ -446,7 +446,7 @@ de manera que un entero sin signo, de 8 bits es de tipo `UInt8`
 y un entero con signo, de 32 bits es de tipo `Int32`.
 Como todos los tipos en Swift, estos tipos enteros tienen nombres en mayúscula.
 
-### Límites de Enteros
+### Límites de enteros
 
 Puedes acceder a los valores mínimo y máximo de cada tipo de entero
 mediante las propiedades `min` y `max`:
@@ -505,9 +505,9 @@ que el tamaño nativo de una palabra en la plataforma en la que se ejecuta el c�
 > Un uso consistente de `Int` para valores enteros ayuda con la interoperabilidad del código,
 > evita la necesidad de convertir entre diferentes tipos de números,
 > y coincide con la inferencia de tipo enteros, como se describe en
-> <doc:TheBasics#Seguridad-de-Tipos-e-Inferencia-de-Tipos>.
+> <doc:TheBasics#Seguridad-de-tipos-e-inferencia-de-tipos>.
 
-## Números de Punto Flotante
+## Números de punto flotante
 
 Los *números de punto flotante* son números con un componente fraccionario,
 como `3.14159`, `0.1`, y `-273.15`.
@@ -536,7 +536,7 @@ Swift proporciona dos tipos de números de punto flotante con signo:
   TODO: mention infinity, -infinity etc.
 -->
 
-## Seguridad de Tipos e Inferencia de Tipos
+## Seguridad de tipos e inferencia de tipos
 
 Swift es un lenguaje con seguridad de tipos.
 Un lenguaje con seguridad de tipos te incita a ser claro con respecto a
@@ -635,7 +635,7 @@ El valor literal de `3` no tiene un tipo explícito en sí mismo,
 por lo que se infiere un tipo de salida adecuado `Double`
 a partir de la presencia de un literal de punto flotante como parte de la suma.
 
-## Literales Numéricos
+## Literales numéricos
 
 Los literales enteros se pueden escribir como:
 
@@ -746,7 +746,7 @@ let pocoMasDeUnMillon = 1_000_000.000_000_1
   ```
 -->
 
-## Conversión de Tipos Numéricos
+## Conversión de tipos numéricos
 
 Usa el tipo `Int` para todas las variables y constantes enteras de propósito general en tu código,
 incluso si se sabe que no son negativas.
@@ -762,7 +762,7 @@ El uso de tipos de tamaño explícito en estas situaciones
 ayuda a detectar cualquier desbordamiento accidental de valores
 y documenta, implícitamente, la naturaleza de los datos que se utilizan.
 
-### Conversión de Enteros
+### Conversión de enteros
 
 El rango de números que se pueden almacenar en una constante o variable entera
 es diferente para cada tipo numérico.
@@ -845,7 +845,7 @@ La extensión de los tipos existentes para proporcionar inicializadores que acep
 (incluidas tus propias definiciones de tipo)
 se trata en <doc:Extensions>.
 
-### Conversión de Números Enteros y de Punto Flotante
+### Conversión de números enteros y de punto flotante
 
 Toda conversión entre tipos numéricos enteros y de punto flotante debe hacerse de manera explícita:
 
@@ -906,7 +906,7 @@ Esto significa que `4.75` se convierte en `4` y `-3.9` se convierte en `-3`.
   and helps to reinforce the “just use Int” message.
 -->
 
-## Alias de Tipos
+## Alias de tipos
 
 Los “alias de tipos” (*type aliases*) definen un nombre alternativo para un tipo existente.
 Los alias de tipos se definen con la palabra clave `typealias`.
@@ -1101,7 +1101,7 @@ No hay nada que te impida tener
 una tupla de tipo `(Int, Int, Int)` o `(String, Bool)`,
 o cualquier otra permutación que necesites.
 
-Puedes “descomponer” (*decompose*) el contenido de una tupla en constantes o variables separadas,
+Puedes «descomponer» (*decompose*) el contenido de una tupla en constantes o variables separadas,
 a las que luego podrás acceder como de costumbre:
 
 ```swift
@@ -1213,7 +1213,7 @@ Al devolver una tupla con dos valores distintos,
 —cada uno de un tipo diferente—
 la función proporciona información más útil sobre su resultado
 que si solo pudiera devolver un único valor de un único tipo.
-Para obtener más información, consulta <doc:Functions#Funciones-Que-Devuelven-Múltiples-Valores>.
+Para obtener más información, consulta <doc:Functions#Funciones-que-devuelven-múltiples-valores>.
 
 > Nota: Las tuplas son útiles para grupos simples de valores relacionados.
 > Estas no son adecuadas para la creación de estructuras de datos complejas.
@@ -1329,7 +1329,7 @@ var surveyAnswer: String?
 > In Swift, `nil` isn't a pointer --- it's the absence of a value of a certain type.
 > Optionals of *any* type can be set to `nil`, not just object types.
 
-### Sentencias if y Extracción Forzada
+### Sentencias if y extracción forzada
 
 You can use an `if` statement to find out whether an optional contains a value
 by comparing the optional against `nil`.
@@ -1388,7 +1388,7 @@ For more about the `if` statement, see <doc:ControlFlow>.
 > Always make sure that an optional contains a non-`nil` value
 > before using `!` to force-unwrap its value.
 
-### Vinculación Opcional
+### Vinculación opcional
 
 You use *optional binding* to find out whether an optional contains a value,
 and if so, to make that value available as a temporary constant or variable.
@@ -1573,9 +1573,9 @@ if let firstNumber = Int("4") {
 > are available only within the body of the `if` statement.
 > In contrast, the constants and variables created with a `guard` statement
 > are available in the lines of code that follow the `guard` statement,
-> as described in <doc:ControlFlow#Salida-Temprana>.
+> as described in <doc:ControlFlow#Salida-temprana>.
 
-### Opcionales Extraídos Implícitamente
+### Opcionales extraídos implícitamente
 
 As described above,
 optionals indicate that a constant or variable is allowed to have “no value”.
@@ -1599,7 +1599,7 @@ Implicitly unwrapped optionals are useful when
 an optional's value is confirmed to exist immediately after the optional is first defined
 and can definitely be assumed to exist at every point thereafter.
 The primary use of implicitly unwrapped optionals in Swift is during class initialization,
-as described in <doc:AutomaticReferenceCounting#Referencias-Unowned-y-Propiedades-Opcionales-Extraídas-de-Forma-Implícita>.
+as described in <doc:AutomaticReferenceCounting#Referencias-unowned-y-propiedades-opcionales-extraídas-de-forma-implícita>.
 
 An implicitly unwrapped optional is a normal optional behind the scenes,
 but can also be used like a non-optional value,
@@ -1709,7 +1709,7 @@ if let definiteString = assumedString {
 > Always use a normal optional type if you need to check for a `nil` value
 > during the lifetime of a variable.
 
-## Manejo de Errores
+## Manejo de errores
 
 You use *error handling* to respond to error conditions
 your program may encounter during execution.
@@ -1845,7 +1845,7 @@ with the associated `[String]` value captured by the `catch` pattern.
 Throwing, catching, and propagating errors is covered in greater detail in
 <doc:ErrorHandling>.
 
-## Aserciones y Precondiciones
+## Aserciones y precondiciones
 
 *Assertions* and *preconditions*
 are checks that happen at runtime.
@@ -1869,7 +1869,7 @@ and preconditions help you detect issues in production.
 In addition to verifying your expectations at runtime,
 assertions and preconditions also become a useful form of documentation
 within the code.
-Unlike the error conditions discussed in <doc:TheBasics#Manejo-de-Errores> above,
+Unlike the error conditions discussed in <doc:TheBasics#Manejo-de-errores> above,
 assertions and preconditions aren't used
 for recoverable or expected errors.
 Because a failed assertion or precondition
@@ -1896,7 +1896,7 @@ This means you can use as many assertions as you want
 during your development process,
 without impacting performance in production.
 
-### Depuración Con Aserciones
+### Depuración con aserciones
 
 <!--
   If your code triggers an assertion while running in a debug environment,
@@ -1995,7 +1995,7 @@ if age > 10 {
   ```
 -->
 
-### Imposición de Precondiciones
+### Imposición de precondiciones
 
 Use a precondition whenever a condition has the potential to be false,
 but must *definitely* be true for your code to continue execution.
