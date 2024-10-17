@@ -48,7 +48,7 @@ cp -n TSPL.docc/header-staging.html TSPL.docc/header.html
 # Build documentation, writing output in the gh-pages/docs subdirectory.
 docc convert \
   --experimental-enable-custom-templates \
-  --hosting-base-path swift-book-es \
+  --hosting-base-path "" \
   --output-path "./gh-pages/docs" \
   TSPL.docc
 
