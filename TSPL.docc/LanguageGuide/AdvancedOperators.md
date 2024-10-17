@@ -970,7 +970,7 @@ if twoThree == anotherTwoThree {
 
 In many simple cases, you can ask Swift
 to provide synthesized implementations of the equivalence operators for you,
-as described in <doc:Protocols#Adoptando-un-protocolo-mediante-una-implementación-sintetizada>.
+as described in <doc:Protocols#Adoptando-Un-Protocolo-Mediante-Una-Implementación-Sintetizada>.
 
 ## Operadores personalizados
 
@@ -1095,7 +1095,7 @@ including a complete list of the operator precedence groups and associativity se
 see [Operator Declarations](https://developer.apple.com/documentation/swift/operator_declarations).
 For more information about precedence groups and to see the syntax for
 defining your own operators and precedence groups,
-see <doc:Declarations#Declaración-de-operadores>.
+see <doc:Declarations#Declaración-de-Operadores>.
 
 > Note: You don't specify a precedence when defining a prefix or postfix operator.
 > However, if you apply both a prefix and a postfix operator to the same operand,
