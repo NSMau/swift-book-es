@@ -1,7 +1,1 @@
-<<<<<<< HEAD
-{"schemaVersion":{"major":0,"minor":1,"patch":0},"bundleDisplayName":"The Swift Programming Language","bundleIdentifier":"org.swift.tspl"}
-||||||| parent of 2fa5d86d (yet one more fix attempt)
-{"bundleIdentifier":"org.swift.tspl","schemaVersion":{"patch":0,"major":0,"minor":1},"bundleDisplayName":"The Swift Programming Language"}
-=======
-{"bundleIdentifier":"org.swift.tspl","bundleDisplayName":"The Swift Programming Language","schemaVersion":{"major":0,"patch":0,"minor":1}}
->>>>>>> 2fa5d86d (yet one more fix attempt)
+{"schemaVersion":{"patch":0,"major":0,"minor":1},"bundleIdentifier":"org.swift.tspl","bundleDisplayName":"The Swift Programming Language"}

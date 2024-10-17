@@ -38,7 +38,7 @@ cp -n TSPL.docc/header-publish.html TSPL.docc/header.html
 
 xcrun docc convert \
   --experimental-enable-custom-templates \
-  --hosting-base-path https://swiftbook.es \
+  --hosting-base-path "" \
   --output-path "$output" \
   TSPL.docc
 
