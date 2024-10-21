@@ -1,1 +1,2993 @@
-{"kind":"article","schemaVersion":{"patch":0,"major":0,"minor":3},"sections":[],"abstract":[{"text":"Match and destructure values.","type":"text"}],"metadata":{"title":"Patrones"},"primaryContentSections":[{"kind":"content","content":[{"type":"paragraph","inlineContent":[{"type":"text","text":"A "},{"inlineContent":[{"type":"text","text":"pattern"}],"type":"emphasis"},{"type":"text","text":" represents the structure of a single value"},{"type":"text","text":" "},{"type":"text","text":"or a composite value."},{"type":"text","text":" "},{"type":"text","text":"For example, the structure of a tuple "},{"code":"(1, 2)","type":"codeVoice"},{"text":" is a comma-separated list of two","type":"text"},{"type":"text","text":" "},{"text":"elements. Because patterns represent the structure of a value rather than any","type":"text"},{"type":"text","text":" "},{"text":"one particular value, you can match them with a variety of values.","type":"text"},{"text":" ","type":"text"},{"type":"text","text":"For instance, the pattern "},{"type":"codeVoice","code":"(x, y)"},{"text":" matches the tuple ","type":"text"},{"type":"codeVoice","code":"(1, 2)"},{"text":" and any other","type":"text"},{"text":" ","type":"text"},{"type":"text","text":"two-element tuple. In addition to matching a pattern with a value,"},{"text":" ","type":"text"},{"type":"text","text":"you can extract part or all of a composite value and bind each part"},{"type":"text","text":" "},{"type":"text","text":"to a constant or variable name."}]},{"inlineContent":[{"text":"In Swift, there are two basic kinds of patterns:","type":"text"},{"text":" ","type":"text"},{"type":"text","text":"those that successfully match any kind of value,"},{"type":"text","text":" "},{"type":"text","text":"and those that may fail to match a specified value at runtime."}],"type":"paragraph"},{"inlineContent":[{"type":"text","text":"The first kind of pattern is used for destructuring values"},{"text":" ","type":"text"},{"text":"in simple variable, constant, and optional bindings.","type":"text"},{"type":"text","text":" "},{"type":"text","text":"These include wildcard patterns, identifier patterns,"},{"type":"text","text":" "},{"type":"text","text":"and any value binding or tuple patterns containing"},{"text":" ","type":"text"},{"text":"them. You can specify a type annotation for these patterns","type":"text"},{"type":"text","text":" "},{"text":"to constrain them to match only values of a certain type.","type":"text"}],"type":"paragraph"},{"type":"paragraph","inlineContent":[{"type":"text","text":"The second kind of pattern is used for full pattern matching,"},{"text":" ","type":"text"},{"text":"where the values you’re trying to match against may not be there at runtime.","type":"text"},{"text":" ","type":"text"},{"type":"text","text":"These include enumeration case patterns, optional patterns, expression patterns,"},{"text":" ","type":"text"},{"text":"and type-casting patterns. You use these patterns in a case label of a ","type":"text"},{"code":"switch","type":"codeVoice"},{"text":" ","type":"text"},{"text":"statement, a ","type":"text"},{"code":"catch","type":"codeVoice"},{"text":" clause of a ","type":"text"},{"code":"do","type":"codeVoice"},{"type":"text","text":" statement,"},{"type":"text","text":" "},{"text":"or in the case condition of an ","type":"text"},{"type":"codeVoice","code":"if"},{"text":", ","type":"text"},{"code":"while","type":"codeVoice"},{"type":"text","text":","},{"text":" ","type":"text"},{"type":"codeVoice","code":"guard"},{"type":"text","text":", or "},{"type":"codeVoice","code":"for"},{"text":"-","type":"text"},{"code":"in","type":"codeVoice"},{"type":"text","text":" statement."}]},{"name":"Grammar of a pattern","style":"note","content":[{"type":"paragraph","inlineContent":[{"text":"","type":"text"}]},{"type":"paragraph","inlineContent":[{"inlineContent":[{"text":"pattern","type":"text"}],"type":"emphasis"},{"type":"text","text":" → "},{"type":"emphasis","inlineContent":[{"type":"text","text":"wildcard-pattern"}]},{"text":" ","type":"text"},{"inlineContent":[{"type":"text","text":"type-annotation"}],"type":"emphasis"},{"type":"emphasis","inlineContent":[{"text":"?","type":"text"}]}]},{"inlineContent":[{"type":"emphasis","inlineContent":[{"type":"text","text":"pattern"}]},{"type":"text","text":" → "},{"type":"emphasis","inlineContent":[{"type":"text","text":"identifier-pattern"}]},{"type":"text","text":" "},{"type":"emphasis","inlineContent":[{"type":"text","text":"type-annotation"}]},{"type":"emphasis","inlineContent":[{"type":"text","text":"?"}]}],"type":"paragraph"},{"type":"paragraph","inlineContent":[{"type":"emphasis","inlineContent":[{"type":"text","text":"pattern"}]},{"type":"text","text":" → "},{"inlineContent":[{"type":"text","text":"value-binding-pattern"}],"type":"emphasis"}]},{"type":"paragraph","inlineContent":[{"type":"emphasis","inlineContent":[{"type":"text","text":"pattern"}]},{"type":"text","text":" → "},{"inlineContent":[{"text":"tuple-pattern","type":"text"}],"type":"emphasis"},{"type":"text","text":" "},{"type":"emphasis","inlineContent":[{"text":"type-annotation","type":"text"}]},{"type":"emphasis","inlineContent":[{"text":"?","type":"text"}]}]},{"inlineContent":[{"inlineContent":[{"type":"text","text":"pattern"}],"type":"emphasis"},{"type":"text","text":" → "},{"inlineContent":[{"type":"text","text":"enum-case-pattern"}],"type":"emphasis"}],"type":"paragraph"},{"inlineContent":[{"inlineContent":[{"type":"text","text":"pattern"}],"type":"emphasis"},{"type":"text","text":" → "},{"type":"emphasis","inlineContent":[{"text":"optional-pattern","type":"text"}]}],"type":"paragraph"},{"type":"paragraph","inlineContent":[{"type":"emphasis","inlineContent":[{"text":"pattern","type":"text"}]},{"text":" → ","type":"text"},{"type":"emphasis","inlineContent":[{"text":"type-casting-pattern","type":"text"}]}]},{"type":"paragraph","inlineContent":[{"inlineContent":[{"type":"text","text":"pattern"}],"type":"emphasis"},{"type":"text","text":" → "},{"inlineContent":[{"text":"expression-pattern","type":"text"}],"type":"emphasis"}]}],"type":"aside"},{"anchor":"Patr%C3%B3n-Comod%C3%ADn","level":2,"type":"heading","text":"Patrón Comodín"},{"inlineContent":[{"type":"text","text":"A "},{"type":"emphasis","inlineContent":[{"text":"wildcard pattern","type":"text"}]},{"type":"text","text":" matches and ignores any value and consists of an underscore"},{"type":"text","text":" "},{"type":"text","text":"("},{"code":"_","type":"codeVoice"},{"text":"). Use a wildcard pattern when you don’t care about the values being","type":"text"},{"text":" ","type":"text"},{"type":"text","text":"matched against. For example, the following code iterates through the closed range "},{"code":"1...3","type":"codeVoice"},{"type":"text","text":","},{"type":"text","text":" "},{"text":"ignoring the current value of the range on each iteration of the loop:","type":"text"}],"type":"paragraph"},{"code":["for _ in 1...3 {","    \/\/ Do something three times.","}"],"type":"codeListing","syntax":"swift"},{"content":[{"type":"paragraph","inlineContent":[{"type":"text","text":""}]},{"type":"paragraph","inlineContent":[{"type":"emphasis","inlineContent":[{"type":"text","text":"wildcard-pattern"}]},{"type":"text","text":" → "},{"inlineContent":[{"code":"_","type":"codeVoice"}],"type":"strong"}]}],"type":"aside","style":"note","name":"Grammar of a wildcard pattern"},{"level":2,"type":"heading","text":"Patrón Identificador","anchor":"Patr%C3%B3n-Identificador"},{"type":"paragraph","inlineContent":[{"text":"An ","type":"text"},{"type":"emphasis","inlineContent":[{"type":"text","text":"identifier pattern"}]},{"type":"text","text":" matches any value and binds the matched value to a"},{"text":" ","type":"text"},{"text":"variable or constant name.","type":"text"},{"type":"text","text":" "},{"text":"For example, in the following constant declaration, ","type":"text"},{"type":"codeVoice","code":"someValue"},{"type":"text","text":" is an identifier pattern"},{"text":" ","type":"text"},{"text":"that matches the value ","type":"text"},{"type":"codeVoice","code":"42"},{"text":" of type ","type":"text"},{"type":"codeVoice","code":"Int"},{"type":"text","text":":"}]},{"syntax":"swift","code":["let someValue = 42"],"type":"codeListing"},{"inlineContent":[{"text":"When the match succeeds, the value ","type":"text"},{"type":"codeVoice","code":"42"},{"type":"text","text":" is bound (assigned)"},{"text":" ","type":"text"},{"text":"to the constant name ","type":"text"},{"code":"someValue","type":"codeVoice"},{"type":"text","text":"."}],"type":"paragraph"},{"type":"paragraph","inlineContent":[{"text":"When the pattern on the left-hand side of a variable or constant declaration","type":"text"},{"text":" ","type":"text"},{"text":"is an identifier pattern,","type":"text"},{"text":" ","type":"text"},{"text":"the identifier pattern is implicitly a subpattern of a value-binding pattern.","type":"text"}]},{"type":"aside","content":[{"type":"paragraph","inlineContent":[{"type":"text","text":""}]},{"type":"paragraph","inlineContent":[{"inlineContent":[{"type":"text","text":"identifier-pattern"}],"type":"emphasis"},{"type":"text","text":" → "},{"inlineContent":[{"type":"text","text":"identifier"}],"type":"emphasis"}]}],"name":"Grammar of an identifier pattern","style":"note"},{"text":"Patrón de Vinculación de Valores","type":"heading","anchor":"Patr%C3%B3n-de-Vinculaci%C3%B3n-de-Valores","level":2},{"type":"paragraph","inlineContent":[{"text":"A ","type":"text"},{"type":"emphasis","inlineContent":[{"type":"text","text":"value-binding pattern"}]},{"type":"text","text":" binds matched values to variable or constant names."},{"type":"text","text":" "},{"type":"text","text":"Value-binding patterns that bind a matched value to the name of a constant"},{"type":"text","text":" "},{"text":"begin with the ","type":"text"},{"code":"let","type":"codeVoice"},{"type":"text","text":" keyword; those that bind to the name of variable"},{"text":" ","type":"text"},{"type":"text","text":"begin with the "},{"code":"var","type":"codeVoice"},{"type":"text","text":" keyword."}]},{"type":"paragraph","inlineContent":[{"text":"Identifiers patterns within a value-binding pattern","type":"text"},{"type":"text","text":" "},{"text":"bind new named variables or constants to their matching values. For example,","type":"text"},{"type":"text","text":" "},{"type":"text","text":"you can decompose the elements of a tuple and bind the value of each element to a"},{"text":" ","type":"text"},{"text":"corresponding identifier pattern.","type":"text"}]},{"type":"codeListing","code":["let point = (3, 2)","switch point {","\/\/ Bind x and y to the elements of point.","case let (x, y):","    print(\"The point is at (\\(x), \\(y)).\")","}","\/\/ Prints \"The point is at (3, 2).\""],"syntax":"swift"},{"type":"paragraph","inlineContent":[{"type":"text","text":"In the example above, "},{"code":"let","type":"codeVoice"},{"type":"text","text":" distributes to each identifier pattern in the"},{"text":" ","type":"text"},{"type":"text","text":"tuple pattern "},{"type":"codeVoice","code":"(x, y)"},{"text":". Because of this behavior, the ","type":"text"},{"code":"switch","type":"codeVoice"},{"type":"text","text":" cases"},{"text":" ","type":"text"},{"code":"case let (x, y):","type":"codeVoice"},{"text":" and ","type":"text"},{"code":"case (let x, let y):","type":"codeVoice"},{"text":" match the same values.","type":"text"}]},{"name":"Grammar of a value-binding pattern","type":"aside","content":[{"type":"paragraph","inlineContent":[{"type":"text","text":""}]},{"type":"paragraph","inlineContent":[{"type":"emphasis","inlineContent":[{"text":"value-binding-pattern","type":"text"}]},{"text":" → ","type":"text"},{"type":"strong","inlineContent":[{"type":"codeVoice","code":"var"}]},{"text":" ","type":"text"},{"type":"emphasis","inlineContent":[{"text":"pattern","type":"text"}]},{"type":"text","text":" | "},{"type":"strong","inlineContent":[{"type":"codeVoice","code":"let"}]},{"text":" ","type":"text"},{"inlineContent":[{"type":"text","text":"pattern"}],"type":"emphasis"}]}],"style":"note"},{"text":"Patrones Tupla","level":2,"anchor":"Patrones-Tupla","type":"heading"},{"type":"paragraph","inlineContent":[{"type":"text","text":"A "},{"type":"emphasis","inlineContent":[{"type":"text","text":"tuple pattern"}]},{"text":" is a comma-separated list of zero or more patterns, enclosed in","type":"text"},{"text":" ","type":"text"},{"type":"text","text":"parentheses. Tuple patterns match values of corresponding tuple types."}]},{"inlineContent":[{"type":"text","text":"You can constrain a tuple pattern to match certain kinds of tuple types"},{"type":"text","text":" "},{"text":"by using type annotations.","type":"text"},{"type":"text","text":" "},{"text":"For example, the tuple pattern ","type":"text"},{"type":"codeVoice","code":"(x, y): (Int, Int)"},{"text":" in the constant declaration","type":"text"},{"type":"text","text":" "},{"type":"codeVoice","code":"let (x, y): (Int, Int) = (1, 2)"},{"type":"text","text":" matches only tuple types in which"},{"text":" ","type":"text"},{"type":"text","text":"both elements are of type "},{"code":"Int","type":"codeVoice"},{"type":"text","text":"."}],"type":"paragraph"},{"inlineContent":[{"type":"text","text":"When a tuple pattern is used as the pattern in a "},{"code":"for","type":"codeVoice"},{"text":"-","type":"text"},{"type":"codeVoice","code":"in"},{"text":" statement","type":"text"},{"type":"text","text":" "},{"type":"text","text":"or in a variable or constant declaration, it can contain only wildcard patterns,"},{"type":"text","text":" "},{"text":"identifier patterns, optional patterns, or other tuple patterns that contain those.","type":"text"},{"text":" ","type":"text"},{"text":"For example,","type":"text"},{"type":"text","text":" "},{"type":"text","text":"the following code isn’t valid because the element "},{"code":"0","type":"codeVoice"},{"type":"text","text":" in the tuple pattern "},{"type":"codeVoice","code":"(x, 0)"},{"type":"text","text":" is"},{"text":" ","type":"text"},{"type":"text","text":"an expression pattern:"}],"type":"paragraph"},{"type":"codeListing","syntax":"swift","code":["let points = [(0, 0), (1, 0), (1, 1), (2, 0), (2, 1)]","\/\/ This code isn't valid.","for (x, 0) in points {","    \/* ... *\/","}"]},{"type":"paragraph","inlineContent":[{"type":"text","text":"The parentheses around a tuple pattern that contains a single element have no effect."},{"type":"text","text":" "},{"text":"The pattern matches values of that single element’s type. For example, the following are","type":"text"},{"text":" ","type":"text"},{"text":"equivalent:","type":"text"}]},{"type":"codeListing","syntax":"swift","code":["let a = 2        \/\/ a: Int = 2","let (a) = 2      \/\/ a: Int = 2","let (a): Int = 2 \/\/ a: Int = 2"]},{"content":[{"type":"paragraph","inlineContent":[{"type":"text","text":""}]},{"type":"paragraph","inlineContent":[{"type":"emphasis","inlineContent":[{"text":"tuple-pattern","type":"text"}]},{"text":" → ","type":"text"},{"inlineContent":[{"type":"codeVoice","code":"("}],"type":"strong"},{"text":" ","type":"text"},{"type":"emphasis","inlineContent":[{"type":"text","text":"tuple-pattern-element-list"}]},{"type":"emphasis","inlineContent":[{"text":"?","type":"text"}]},{"type":"text","text":" "},{"type":"strong","inlineContent":[{"type":"codeVoice","code":")"}]}]},{"type":"paragraph","inlineContent":[{"inlineContent":[{"type":"text","text":"tuple-pattern-element-list"}],"type":"emphasis"},{"type":"text","text":" → "},{"type":"emphasis","inlineContent":[{"text":"tuple-pattern-element","type":"text"}]},{"type":"text","text":" | "},{"type":"emphasis","inlineContent":[{"text":"tuple-pattern-element","type":"text"}]},{"type":"text","text":" "},{"type":"strong","inlineContent":[{"code":",","type":"codeVoice"}]},{"type":"text","text":" "},{"inlineContent":[{"text":"tuple-pattern-element-list","type":"text"}],"type":"emphasis"}]},{"inlineContent":[{"type":"emphasis","inlineContent":[{"text":"tuple-pattern-element","type":"text"}]},{"type":"text","text":" → "},{"type":"emphasis","inlineContent":[{"text":"pattern","type":"text"}]},{"type":"text","text":" | "},{"inlineContent":[{"text":"identifier","type":"text"}],"type":"emphasis"},{"text":" ","type":"text"},{"inlineContent":[{"type":"codeVoice","code":":"}],"type":"strong"},{"text":" ","type":"text"},{"type":"emphasis","inlineContent":[{"type":"text","text":"pattern"}]}],"type":"paragraph"}],"type":"aside","name":"Grammar of a tuple pattern","style":"note"},{"text":"Patrones de Casos de Enumeración","type":"heading","anchor":"Patrones-de-Casos-de-Enumeraci%C3%B3n","level":2},{"type":"paragraph","inlineContent":[{"type":"text","text":"An "},{"type":"emphasis","inlineContent":[{"type":"text","text":"enumeration case pattern"}]},{"type":"text","text":" matches a case of an existing enumeration type."},{"type":"text","text":" "},{"type":"text","text":"Enumeration case patterns appear in "},{"type":"codeVoice","code":"switch"},{"text":" statement","type":"text"},{"text":" ","type":"text"},{"text":"case labels and in the case conditions of ","type":"text"},{"type":"codeVoice","code":"if"},{"text":", ","type":"text"},{"code":"while","type":"codeVoice"},{"text":", ","type":"text"},{"type":"codeVoice","code":"guard"},{"type":"text","text":", and "},{"code":"for","type":"codeVoice"},{"type":"text","text":"-"},{"type":"codeVoice","code":"in"},{"text":" ","type":"text"},{"type":"text","text":"statements."}]},{"inlineContent":[{"type":"text","text":"If the enumeration case you’re trying to match has any associated values,"},{"text":" ","type":"text"},{"type":"text","text":"the corresponding enumeration case pattern must specify a tuple pattern that contains"},{"type":"text","text":" "},{"text":"one element for each associated value. For an example that uses a ","type":"text"},{"type":"codeVoice","code":"switch"},{"type":"text","text":" statement"},{"type":"text","text":" "},{"text":"to match enumeration cases containing associated values,","type":"text"},{"text":" ","type":"text"},{"type":"text","text":"see "},{"text":"doc:Enumerations#Valores-Asociados","type":"text"},{"text":".","type":"text"}],"type":"paragraph"},{"inlineContent":[{"type":"text","text":"An enumeration case pattern also matches"},{"type":"text","text":" "},{"type":"text","text":"values of that case wrapped in an optional."},{"type":"text","text":" "},{"type":"text","text":"This simplified syntax lets you omit an optional pattern."},{"type":"text","text":" "},{"text":"Note that,","type":"text"},{"type":"text","text":" "},{"type":"text","text":"because "},{"type":"codeVoice","code":"Optional"},{"text":" is implemented as an enumeration,","type":"text"},{"text":" ","type":"text"},{"type":"codeVoice","code":".none"},{"type":"text","text":" and "},{"type":"codeVoice","code":".some"},{"text":" can appear","type":"text"},{"text":" ","type":"text"},{"type":"text","text":"in the same switch as the cases of the enumeration type."}],"type":"paragraph"},{"code":["enum SomeEnum { case left, right }","let x: SomeEnum? = .left","switch x {","case .left:","    print(\"Turn left\")","case .right:","    print(\"Turn right\")","case nil:","    print(\"Keep going straight\")","}","\/\/ Prints \"Turn left\""],"syntax":"swift","type":"codeListing"},{"style":"note","name":"Grammar of an enumeration case pattern","content":[{"type":"paragraph","inlineContent":[{"text":"","type":"text"}]},{"type":"paragraph","inlineContent":[{"inlineContent":[{"text":"enum-case-pattern","type":"text"}],"type":"emphasis"},{"type":"text","text":" → "},{"type":"emphasis","inlineContent":[{"type":"text","text":"type-identifier"}]},{"inlineContent":[{"text":"?","type":"text"}],"type":"emphasis"},{"type":"text","text":" "},{"inlineContent":[{"code":".","type":"codeVoice"}],"type":"strong"},{"text":" ","type":"text"},{"type":"emphasis","inlineContent":[{"text":"enum-case-name","type":"text"}]},{"text":" ","type":"text"},{"type":"emphasis","inlineContent":[{"type":"text","text":"tuple-pattern"}]},{"inlineContent":[{"type":"text","text":"?"}],"type":"emphasis"}]}],"type":"aside"},{"text":"Patrón Opcional","type":"heading","level":2,"anchor":"Patr%C3%B3n-Opcional"},{"type":"paragraph","inlineContent":[{"type":"text","text":"An "},{"inlineContent":[{"text":"optional pattern","type":"text"}],"type":"emphasis"},{"text":" matches values wrapped in a ","type":"text"},{"code":"some(Wrapped)","type":"codeVoice"},{"type":"text","text":" case"},{"type":"text","text":" "},{"type":"text","text":"of an "},{"type":"codeVoice","code":"Optional<Wrapped>"},{"type":"text","text":" enumeration."},{"text":" ","type":"text"},{"type":"text","text":"Optional patterns consist of an identifier pattern followed immediately by a question mark"},{"text":" ","type":"text"},{"text":"and appear in the same places as enumeration case patterns.","type":"text"}]},{"inlineContent":[{"type":"text","text":"Because optional patterns are syntactic sugar for "},{"type":"codeVoice","code":"Optional"},{"text":" ","type":"text"},{"type":"text","text":"enumeration case patterns,"},{"type":"text","text":" "},{"text":"the following are equivalent:","type":"text"}],"type":"paragraph"},{"type":"codeListing","syntax":"swift","code":["let someOptional: Int? = 42","\/\/ Match using an enumeration case pattern.","if case .some(let x) = someOptional {","    print(x)","}","","\/\/ Match using an optional pattern.","if case let x? = someOptional {","    print(x)","}"]},{"type":"paragraph","inlineContent":[{"text":"The optional pattern provides a convenient way to","type":"text"},{"text":" ","type":"text"},{"type":"text","text":"iterate over an array of optional values in a "},{"type":"codeVoice","code":"for"},{"text":"-","type":"text"},{"code":"in","type":"codeVoice"},{"text":" statement,","type":"text"},{"type":"text","text":" "},{"text":"executing the body of the loop only for non-","type":"text"},{"code":"nil","type":"codeVoice"},{"type":"text","text":" elements."}]},{"code":["let arrayOfOptionalInts: [Int?] = [nil, 2, 3, nil, 5]","\/\/ Match only non-nil values.","for case let number? in arrayOfOptionalInts {","    print(\"Found a \\(number)\")","}","\/\/ Found a 2","\/\/ Found a 3","\/\/ Found a 5"],"type":"codeListing","syntax":"swift"},{"name":"Grammar of an optional pattern","type":"aside","content":[{"inlineContent":[{"type":"text","text":""}],"type":"paragraph"},{"inlineContent":[{"type":"emphasis","inlineContent":[{"type":"text","text":"optional-pattern"}]},{"text":" → ","type":"text"},{"type":"emphasis","inlineContent":[{"text":"identifier-pattern","type":"text"}]},{"type":"text","text":" "},{"type":"strong","inlineContent":[{"type":"codeVoice","code":"?"}]}],"type":"paragraph"}],"style":"note"},{"text":"Patrones de Conversión de Tipos","level":2,"anchor":"Patrones-de-Conversi%C3%B3n-de-Tipos","type":"heading"},{"inlineContent":[{"type":"text","text":"There are two type-casting patterns, the "},{"code":"is","type":"codeVoice"},{"type":"text","text":" pattern and the "},{"type":"codeVoice","code":"as"},{"text":" pattern.","type":"text"},{"type":"text","text":" "},{"type":"text","text":"The "},{"type":"codeVoice","code":"is"},{"type":"text","text":" pattern appears only in "},{"type":"codeVoice","code":"switch"},{"type":"text","text":" statement"},{"type":"text","text":" "},{"text":"case labels. The ","type":"text"},{"code":"is","type":"codeVoice"},{"type":"text","text":" and "},{"code":"as","type":"codeVoice"},{"text":" patterns have the following form:","type":"text"}],"type":"paragraph"},{"code":["is <#type#>","<#pattern#> as <#type#>"],"type":"codeListing","syntax":"swift"},{"type":"paragraph","inlineContent":[{"text":"The ","type":"text"},{"code":"is","type":"codeVoice"},{"text":" pattern matches a value if the type of that value at runtime is the same as","type":"text"},{"text":" ","type":"text"},{"type":"text","text":"the type specified in the right-hand side of the "},{"code":"is","type":"codeVoice"},{"type":"text","text":" pattern — or a subclass of that type."},{"text":" ","type":"text"},{"type":"text","text":"The "},{"type":"codeVoice","code":"is"},{"text":" pattern behaves like the ","type":"text"},{"type":"codeVoice","code":"is"},{"text":" operator in that they both perform a type cast","type":"text"},{"type":"text","text":" "},{"type":"text","text":"but discard the returned type."}]},{"type":"paragraph","inlineContent":[{"text":"The ","type":"text"},{"code":"as","type":"codeVoice"},{"type":"text","text":" pattern matches a value if the type of that value at runtime is the same as"},{"text":" ","type":"text"},{"type":"text","text":"the type specified in the right-hand side of the "},{"code":"as","type":"codeVoice"},{"type":"text","text":" pattern — or a subclass of that type."},{"text":" ","type":"text"},{"type":"text","text":"If the match succeeds,"},{"text":" ","type":"text"},{"text":"the type of the matched value is cast to the ","type":"text"},{"inlineContent":[{"type":"text","text":"pattern"}],"type":"emphasis"},{"type":"text","text":" specified in the right-hand side"},{"text":" ","type":"text"},{"text":"of the ","type":"text"},{"type":"codeVoice","code":"as"},{"text":" pattern.","type":"text"}]},{"type":"paragraph","inlineContent":[{"text":"For an example that uses a ","type":"text"},{"type":"codeVoice","code":"switch"},{"text":" statement","type":"text"},{"type":"text","text":" "},{"type":"text","text":"to match values with "},{"type":"codeVoice","code":"is"},{"type":"text","text":" and "},{"type":"codeVoice","code":"as"},{"type":"text","text":" patterns,"},{"text":" ","type":"text"},{"type":"text","text":"see "},{"type":"text","text":"doc:TypeCasting#Conversión-de-Tipos-Para-Any-y-AnyObject"},{"text":".","type":"text"}]},{"name":"Grammar of a type casting pattern","type":"aside","content":[{"type":"paragraph","inlineContent":[{"text":"","type":"text"}]},{"inlineContent":[{"type":"emphasis","inlineContent":[{"type":"text","text":"type-casting-pattern"}]},{"type":"text","text":" → "},{"type":"emphasis","inlineContent":[{"text":"is-pattern","type":"text"}]},{"type":"text","text":" | "},{"inlineContent":[{"text":"as-pattern","type":"text"}],"type":"emphasis"}],"type":"paragraph"},{"type":"paragraph","inlineContent":[{"type":"emphasis","inlineContent":[{"text":"is-pattern","type":"text"}]},{"type":"text","text":" → "},{"type":"strong","inlineContent":[{"code":"is","type":"codeVoice"}]},{"type":"text","text":" "},{"type":"emphasis","inlineContent":[{"text":"type","type":"text"}]}]},{"inlineContent":[{"type":"emphasis","inlineContent":[{"type":"text","text":"as-pattern"}]},{"type":"text","text":" → "},{"inlineContent":[{"type":"text","text":"pattern"}],"type":"emphasis"},{"type":"text","text":" "},{"type":"strong","inlineContent":[{"code":"as","type":"codeVoice"}]},{"type":"text","text":" "},{"inlineContent":[{"text":"type","type":"text"}],"type":"emphasis"}],"type":"paragraph"}],"style":"note"},{"level":2,"text":"Patrones Expresión","type":"heading","anchor":"Patrones-Expresi%C3%B3n"},{"inlineContent":[{"text":"An ","type":"text"},{"inlineContent":[{"type":"text","text":"expression pattern"}],"type":"emphasis"},{"text":" represents the value of an expression.","type":"text"},{"text":" ","type":"text"},{"type":"text","text":"Expression patterns appear only in "},{"type":"codeVoice","code":"switch"},{"type":"text","text":" statement"},{"type":"text","text":" "},{"text":"case labels.","type":"text"}],"type":"paragraph"},{"inlineContent":[{"text":"The expression represented by the expression pattern","type":"text"},{"type":"text","text":" "},{"type":"text","text":"is compared with the value of an input expression"},{"type":"text","text":" "},{"text":"using the Swift standard library ","type":"text"},{"code":"~=","type":"codeVoice"},{"text":" operator.","type":"text"},{"text":" ","type":"text"},{"type":"text","text":"The matches succeeds"},{"type":"text","text":" "},{"type":"text","text":"if the "},{"code":"~=","type":"codeVoice"},{"text":" operator returns ","type":"text"},{"code":"true","type":"codeVoice"},{"type":"text","text":". By default, the "},{"code":"~=","type":"codeVoice"},{"type":"text","text":" operator compares"},{"type":"text","text":" "},{"text":"two values of the same type using the ","type":"text"},{"type":"codeVoice","code":"=="},{"type":"text","text":" operator."},{"text":" ","type":"text"},{"text":"It can also match a value with a range of values,","type":"text"},{"text":" ","type":"text"},{"type":"text","text":"by checking whether the value is contained within the range,"},{"type":"text","text":" "},{"text":"as the following example shows.","type":"text"}],"type":"paragraph"},{"syntax":"swift","code":["let point = (1, 2)","switch point {","case (0, 0):","    print(\"(0, 0) is at the origin.\")","case (-2...2, -2...2):","    print(\"(\\(point.0), \\(point.1)) is near the origin.\")","default:","    print(\"The point is at (\\(point.0), \\(point.1)).\")","}","\/\/ Prints \"(1, 2) is near the origin.\""],"type":"codeListing"},{"inlineContent":[{"text":"You can overload the ","type":"text"},{"code":"~=","type":"codeVoice"},{"type":"text","text":" operator to provide custom expression matching behavior."},{"text":" ","type":"text"},{"text":"For example, you can rewrite the above example to compare the ","type":"text"},{"type":"codeVoice","code":"point"},{"text":" expression","type":"text"},{"text":" ","type":"text"},{"type":"text","text":"with a string representations of points."}],"type":"paragraph"},{"code":["\/\/ Overload the ~= operator to match a string with an integer.","func ~= (pattern: String, value: Int) -> Bool {","    return pattern == \"\\(value)\"","}","switch point {","case (\"0\", \"0\"):","    print(\"(0, 0) is at the origin.\")","default:","    print(\"The point is at (\\(point.0), \\(point.1)).\")","}","\/\/ Prints \"The point is at (1, 2).\""],"type":"codeListing","syntax":"swift"},{"type":"aside","style":"note","content":[{"inlineContent":[{"type":"text","text":""}],"type":"paragraph"},{"type":"paragraph","inlineContent":[{"type":"emphasis","inlineContent":[{"type":"text","text":"expression-pattern"}]},{"type":"text","text":" → "},{"type":"emphasis","inlineContent":[{"type":"text","text":"expression"}]}]}],"name":"Grammar of an expression pattern"},{"content":[{"type":"paragraph","inlineContent":[{"text":"","type":"text"}]},{"inlineContent":[{"type":"text","text":"Esta documentación contiene información preliminar sobre una API o tecnología en desarrollo. Esta información está sujeta a cambios, y todo software implementado en conformidad con esta documentación debe ser testeado con el software final del sistema operativo."}],"type":"paragraph"},{"type":"paragraph","inlineContent":[{"type":"text","text":"Conoce más acerca del uso del "},{"type":"reference","identifier":"https:\/\/developer.apple.com\/es\/support\/beta-software\/","isActive":true},{"type":"text","text":"."}]}],"type":"aside","name":"Software Beta","style":"note"}]}],"hierarchy":{"paths":[["doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language"]]},"identifier":{"interfaceLanguage":"swift","url":"doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/Patterns"},"references":{"doc://org.swift.tspl/documentation/The-Swift-Programming-Language":{"url":"\/documentation\/the-swift-programming-language","kind":"article","type":"topic","title":"The Swift Programming Language (6)","role":"collection","identifier":"doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language","abstract":[]},"https://developer.apple.com/es/support/beta-software/":{"titleInlineContent":[{"type":"text","text":"software beta de Apple"}],"url":"https:\/\/developer.apple.com\/es\/support\/beta-software\/","type":"link","title":"software beta de Apple","identifier":"https:\/\/developer.apple.com\/es\/support\/beta-software\/"}}}
+{
+  "abstract" : [
+    {
+      "text" : "Match and destructure values.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/Patterns"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "title" : "Patrones"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "inlineContent" : [
+            {
+              "text" : "A ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "pattern",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " represents the structure of a single value",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "or a composite value.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "For example, the structure of a tuple ",
+              "type" : "text"
+            },
+            {
+              "code" : "(1, 2)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is a comma-separated list of two",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "elements. Because patterns represent the structure of a value rather than any",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "one particular value, you can match them with a variety of values.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "For instance, the pattern ",
+              "type" : "text"
+            },
+            {
+              "code" : "(x, y)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " matches the tuple ",
+              "type" : "text"
+            },
+            {
+              "code" : "(1, 2)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and any other",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "two-element tuple. In addition to matching a pattern with a value,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "you can extract part or all of a composite value and bind each part",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "to a constant or variable name.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "In Swift, there are two basic kinds of patterns:",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "those that successfully match any kind of value,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "and those that may fail to match a specified value at runtime.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The first kind of pattern is used for destructuring values",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "in simple variable, constant, and optional bindings.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "These include wildcard patterns, identifier patterns,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "and any value binding or tuple patterns containing",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "them. You can specify a type annotation for these patterns",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "to constrain them to match only values of a certain type.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The second kind of pattern is used for full pattern matching,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "where the values you’re trying to match against may not be there at runtime.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "These include enumeration case patterns, optional patterns, expression patterns,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "and type-casting patterns. You use these patterns in a case label of a ",
+              "type" : "text"
+            },
+            {
+              "code" : "switch",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "statement, a ",
+              "type" : "text"
+            },
+            {
+              "code" : "catch",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " clause of a ",
+              "type" : "text"
+            },
+            {
+              "code" : "do",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " statement,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "or in the case condition of an ",
+              "type" : "text"
+            },
+            {
+              "code" : "if",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", ",
+              "type" : "text"
+            },
+            {
+              "code" : "while",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ",",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "guard",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", or ",
+              "type" : "text"
+            },
+            {
+              "code" : "for",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : "-",
+              "type" : "text"
+            },
+            {
+              "code" : "in",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " statement.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "pattern",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                },
+                {
+                  "text" : " → ",
+                  "type" : "text"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "wildcard-pattern",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "type-annotation",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "?",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                }
+              ],
+              "type" : "paragraph"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "pattern",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                },
+                {
+                  "text" : " → ",
+                  "type" : "text"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "identifier-pattern",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "type-annotation",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "?",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                }
+              ],
+              "type" : "paragraph"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "pattern",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                },
+                {
+                  "text" : " → ",
+                  "type" : "text"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "value-binding-pattern",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                }
+              ],
+              "type" : "paragraph"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "pattern",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                },
+                {
+                  "text" : " → ",
+                  "type" : "text"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "tuple-pattern",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "type-annotation",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "?",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                }
+              ],
+              "type" : "paragraph"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "pattern",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                },
+                {
+                  "text" : " → ",
+                  "type" : "text"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "enum-case-pattern",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                }
+              ],
+              "type" : "paragraph"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "pattern",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                },
+                {
+                  "text" : " → ",
+                  "type" : "text"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "optional-pattern",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                }
+              ],
+              "type" : "paragraph"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "pattern",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                },
+                {
+                  "text" : " → ",
+                  "type" : "text"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "type-casting-pattern",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                }
+              ],
+              "type" : "paragraph"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "pattern",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                },
+                {
+                  "text" : " → ",
+                  "type" : "text"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "expression-pattern",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Grammar of a pattern",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "anchor" : "Patr%C3%B3n-Comod%C3%ADn",
+          "level" : 2,
+          "text" : "Patrón Comodín",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "A ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "wildcard pattern",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " matches and ignores any value and consists of an underscore",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "(",
+              "type" : "text"
+            },
+            {
+              "code" : "_",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : "). Use a wildcard pattern when you don’t care about the values being",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "matched against. For example, the following code iterates through the closed range ",
+              "type" : "text"
+            },
+            {
+              "code" : "1...3",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ",",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "ignoring the current value of the range on each iteration of the loop:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "for _ in 1...3 {",
+            "    \/\/ Do something three times.",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "wildcard-pattern",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                },
+                {
+                  "text" : " → ",
+                  "type" : "text"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "_",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "strong"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Grammar of a wildcard pattern",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "anchor" : "Patr%C3%B3n-Identificador",
+          "level" : 2,
+          "text" : "Patrón Identificador",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "An ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "identifier pattern",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " matches any value and binds the matched value to a",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "variable or constant name.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "For example, in the following constant declaration, ",
+              "type" : "text"
+            },
+            {
+              "code" : "someValue",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is an identifier pattern",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "that matches the value ",
+              "type" : "text"
+            },
+            {
+              "code" : "42",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " of type ",
+              "type" : "text"
+            },
+            {
+              "code" : "Int",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ":",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "let someValue = 42"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "When the match succeeds, the value ",
+              "type" : "text"
+            },
+            {
+              "code" : "42",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is bound (assigned)",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "to the constant name ",
+              "type" : "text"
+            },
+            {
+              "code" : "someValue",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "When the pattern on the left-hand side of a variable or constant declaration",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "is an identifier pattern,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "the identifier pattern is implicitly a subpattern of a value-binding pattern.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "identifier-pattern",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                },
+                {
+                  "text" : " → ",
+                  "type" : "text"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "identifier",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Grammar of an identifier pattern",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "anchor" : "Patr%C3%B3n-de-Vinculaci%C3%B3n-de-Valores",
+          "level" : 2,
+          "text" : "Patrón de Vinculación de Valores",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "A ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "value-binding pattern",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " binds matched values to variable or constant names.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Value-binding patterns that bind a matched value to the name of a constant",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "begin with the ",
+              "type" : "text"
+            },
+            {
+              "code" : "let",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " keyword; those that bind to the name of variable",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "begin with the ",
+              "type" : "text"
+            },
+            {
+              "code" : "var",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " keyword.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Identifiers patterns within a value-binding pattern",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "bind new named variables or constants to their matching values. For example,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "you can decompose the elements of a tuple and bind the value of each element to a",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "corresponding identifier pattern.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "let point = (3, 2)",
+            "switch point {",
+            "\/\/ Bind x and y to the elements of point.",
+            "case let (x, y):",
+            "    print(\"The point is at (\\(x), \\(y)).\")",
+            "}",
+            "\/\/ Prints \"The point is at (3, 2).\""
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "In the example above, ",
+              "type" : "text"
+            },
+            {
+              "code" : "let",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " distributes to each identifier pattern in the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "tuple pattern ",
+              "type" : "text"
+            },
+            {
+              "code" : "(x, y)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ". Because of this behavior, the ",
+              "type" : "text"
+            },
+            {
+              "code" : "switch",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " cases",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "case let (x, y):",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and ",
+              "type" : "text"
+            },
+            {
+              "code" : "case (let x, let y):",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " match the same values.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "value-binding-pattern",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                },
+                {
+                  "text" : " → ",
+                  "type" : "text"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "var",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "strong"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "pattern",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                },
+                {
+                  "text" : " | ",
+                  "type" : "text"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "let",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "strong"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "pattern",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Grammar of a value-binding pattern",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "anchor" : "Patrones-Tupla",
+          "level" : 2,
+          "text" : "Patrones Tupla",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "A ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "tuple pattern",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " is a comma-separated list of zero or more patterns, enclosed in",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "parentheses. Tuple patterns match values of corresponding tuple types.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "You can constrain a tuple pattern to match certain kinds of tuple types",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "by using type annotations.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "For example, the tuple pattern ",
+              "type" : "text"
+            },
+            {
+              "code" : "(x, y): (Int, Int)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " in the constant declaration",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "let (x, y): (Int, Int) = (1, 2)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " matches only tuple types in which",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "both elements are of type ",
+              "type" : "text"
+            },
+            {
+              "code" : "Int",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "When a tuple pattern is used as the pattern in a ",
+              "type" : "text"
+            },
+            {
+              "code" : "for",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : "-",
+              "type" : "text"
+            },
+            {
+              "code" : "in",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " statement",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "or in a variable or constant declaration, it can contain only wildcard patterns,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "identifier patterns, optional patterns, or other tuple patterns that contain those.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "For example,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "the following code isn’t valid because the element ",
+              "type" : "text"
+            },
+            {
+              "code" : "0",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " in the tuple pattern ",
+              "type" : "text"
+            },
+            {
+              "code" : "(x, 0)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "an expression pattern:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "let points = [(0, 0), (1, 0), (1, 1), (2, 0), (2, 1)]",
+            "\/\/ This code isn't valid.",
+            "for (x, 0) in points {",
+            "    \/* ... *\/",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The parentheses around a tuple pattern that contains a single element have no effect.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The pattern matches values of that single element’s type. For example, the following are",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "equivalent:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "let a = 2        \/\/ a: Int = 2",
+            "let (a) = 2      \/\/ a: Int = 2",
+            "let (a): Int = 2 \/\/ a: Int = 2"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "tuple-pattern",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                },
+                {
+                  "text" : " → ",
+                  "type" : "text"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "(",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "strong"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "tuple-pattern-element-list",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "?",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : ")",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "strong"
+                }
+              ],
+              "type" : "paragraph"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "tuple-pattern-element-list",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                },
+                {
+                  "text" : " → ",
+                  "type" : "text"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "tuple-pattern-element",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                },
+                {
+                  "text" : " | ",
+                  "type" : "text"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "tuple-pattern-element",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : ",",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "strong"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "tuple-pattern-element-list",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                }
+              ],
+              "type" : "paragraph"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "tuple-pattern-element",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                },
+                {
+                  "text" : " → ",
+                  "type" : "text"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "pattern",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                },
+                {
+                  "text" : " | ",
+                  "type" : "text"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "identifier",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : ":",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "strong"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "pattern",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Grammar of a tuple pattern",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "anchor" : "Patrones-de-Casos-de-Enumeraci%C3%B3n",
+          "level" : 2,
+          "text" : "Patrones de Casos de Enumeración",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "An ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "enumeration case pattern",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " matches a case of an existing enumeration type.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Enumeration case patterns appear in ",
+              "type" : "text"
+            },
+            {
+              "code" : "switch",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " statement",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "case labels and in the case conditions of ",
+              "type" : "text"
+            },
+            {
+              "code" : "if",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", ",
+              "type" : "text"
+            },
+            {
+              "code" : "while",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", ",
+              "type" : "text"
+            },
+            {
+              "code" : "guard",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", and ",
+              "type" : "text"
+            },
+            {
+              "code" : "for",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : "-",
+              "type" : "text"
+            },
+            {
+              "code" : "in",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "statements.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If the enumeration case you’re trying to match has any associated values,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "the corresponding enumeration case pattern must specify a tuple pattern that contains",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "one element for each associated value. For an example that uses a ",
+              "type" : "text"
+            },
+            {
+              "code" : "switch",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " statement",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "to match enumeration cases containing associated values,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "see ",
+              "type" : "text"
+            },
+            {
+              "text" : "doc:Enumerations#Valores-Asociados",
+              "type" : "text"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "An enumeration case pattern also matches",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "values of that case wrapped in an optional.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "This simplified syntax lets you omit an optional pattern.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Note that,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "because ",
+              "type" : "text"
+            },
+            {
+              "code" : "Optional",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is implemented as an enumeration,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : ".none",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and ",
+              "type" : "text"
+            },
+            {
+              "code" : ".some",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " can appear",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "in the same switch as the cases of the enumeration type.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "enum SomeEnum { case left, right }",
+            "let x: SomeEnum? = .left",
+            "switch x {",
+            "case .left:",
+            "    print(\"Turn left\")",
+            "case .right:",
+            "    print(\"Turn right\")",
+            "case nil:",
+            "    print(\"Keep going straight\")",
+            "}",
+            "\/\/ Prints \"Turn left\""
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "enum-case-pattern",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                },
+                {
+                  "text" : " → ",
+                  "type" : "text"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "type-identifier",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "?",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : ".",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "strong"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "enum-case-name",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "tuple-pattern",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "?",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Grammar of an enumeration case pattern",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "anchor" : "Patr%C3%B3n-Opcional",
+          "level" : 2,
+          "text" : "Patrón Opcional",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "An ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "optional pattern",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " matches values wrapped in a ",
+              "type" : "text"
+            },
+            {
+              "code" : "some(Wrapped)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " case",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "of an ",
+              "type" : "text"
+            },
+            {
+              "code" : "Optional<Wrapped>",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " enumeration.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Optional patterns consist of an identifier pattern followed immediately by a question mark",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "and appear in the same places as enumeration case patterns.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Because optional patterns are syntactic sugar for ",
+              "type" : "text"
+            },
+            {
+              "code" : "Optional",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "enumeration case patterns,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "the following are equivalent:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "let someOptional: Int? = 42",
+            "\/\/ Match using an enumeration case pattern.",
+            "if case .some(let x) = someOptional {",
+            "    print(x)",
+            "}",
+            "",
+            "\/\/ Match using an optional pattern.",
+            "if case let x? = someOptional {",
+            "    print(x)",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The optional pattern provides a convenient way to",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "iterate over an array of optional values in a ",
+              "type" : "text"
+            },
+            {
+              "code" : "for",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : "-",
+              "type" : "text"
+            },
+            {
+              "code" : "in",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " statement,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "executing the body of the loop only for non-",
+              "type" : "text"
+            },
+            {
+              "code" : "nil",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " elements.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "let arrayOfOptionalInts: [Int?] = [nil, 2, 3, nil, 5]",
+            "\/\/ Match only non-nil values.",
+            "for case let number? in arrayOfOptionalInts {",
+            "    print(\"Found a \\(number)\")",
+            "}",
+            "\/\/ Found a 2",
+            "\/\/ Found a 3",
+            "\/\/ Found a 5"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "optional-pattern",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                },
+                {
+                  "text" : " → ",
+                  "type" : "text"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "identifier-pattern",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "?",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "strong"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Grammar of an optional pattern",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "anchor" : "Patrones-de-Conversi%C3%B3n-de-Tipos",
+          "level" : 2,
+          "text" : "Patrones de Conversión de Tipos",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "There are two type-casting patterns, the ",
+              "type" : "text"
+            },
+            {
+              "code" : "is",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " pattern and the ",
+              "type" : "text"
+            },
+            {
+              "code" : "as",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " pattern.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The ",
+              "type" : "text"
+            },
+            {
+              "code" : "is",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " pattern appears only in ",
+              "type" : "text"
+            },
+            {
+              "code" : "switch",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " statement",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "case labels. The ",
+              "type" : "text"
+            },
+            {
+              "code" : "is",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and ",
+              "type" : "text"
+            },
+            {
+              "code" : "as",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " patterns have the following form:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "is <#type#>",
+            "<#pattern#> as <#type#>"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The ",
+              "type" : "text"
+            },
+            {
+              "code" : "is",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " pattern matches a value if the type of that value at runtime is the same as",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "the type specified in the right-hand side of the ",
+              "type" : "text"
+            },
+            {
+              "code" : "is",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " pattern — or a subclass of that type.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The ",
+              "type" : "text"
+            },
+            {
+              "code" : "is",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " pattern behaves like the ",
+              "type" : "text"
+            },
+            {
+              "code" : "is",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " operator in that they both perform a type cast",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "but discard the returned type.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The ",
+              "type" : "text"
+            },
+            {
+              "code" : "as",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " pattern matches a value if the type of that value at runtime is the same as",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "the type specified in the right-hand side of the ",
+              "type" : "text"
+            },
+            {
+              "code" : "as",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " pattern — or a subclass of that type.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "If the match succeeds,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "the type of the matched value is cast to the ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "pattern",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " specified in the right-hand side",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "of the ",
+              "type" : "text"
+            },
+            {
+              "code" : "as",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " pattern.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For an example that uses a ",
+              "type" : "text"
+            },
+            {
+              "code" : "switch",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " statement",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "to match values with ",
+              "type" : "text"
+            },
+            {
+              "code" : "is",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and ",
+              "type" : "text"
+            },
+            {
+              "code" : "as",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " patterns,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "see ",
+              "type" : "text"
+            },
+            {
+              "text" : "doc:TypeCasting#Conversión-de-Tipos-Para-Any-y-AnyObject",
+              "type" : "text"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "type-casting-pattern",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                },
+                {
+                  "text" : " → ",
+                  "type" : "text"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "is-pattern",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                },
+                {
+                  "text" : " | ",
+                  "type" : "text"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "as-pattern",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                }
+              ],
+              "type" : "paragraph"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "is-pattern",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                },
+                {
+                  "text" : " → ",
+                  "type" : "text"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "is",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "strong"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "type",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                }
+              ],
+              "type" : "paragraph"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "as-pattern",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                },
+                {
+                  "text" : " → ",
+                  "type" : "text"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "pattern",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "as",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "strong"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "type",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Grammar of a type casting pattern",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "anchor" : "Patrones-Expresi%C3%B3n",
+          "level" : 2,
+          "text" : "Patrones Expresión",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "An ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "expression pattern",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " represents the value of an expression.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Expression patterns appear only in ",
+              "type" : "text"
+            },
+            {
+              "code" : "switch",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " statement",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "case labels.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The expression represented by the expression pattern",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "is compared with the value of an input expression",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "using the Swift standard library ",
+              "type" : "text"
+            },
+            {
+              "code" : "~=",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " operator.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The matches succeeds",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "if the ",
+              "type" : "text"
+            },
+            {
+              "code" : "~=",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " operator returns ",
+              "type" : "text"
+            },
+            {
+              "code" : "true",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ". By default, the ",
+              "type" : "text"
+            },
+            {
+              "code" : "~=",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " operator compares",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "two values of the same type using the ",
+              "type" : "text"
+            },
+            {
+              "code" : "==",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " operator.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "It can also match a value with a range of values,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "by checking whether the value is contained within the range,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "as the following example shows.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "let point = (1, 2)",
+            "switch point {",
+            "case (0, 0):",
+            "    print(\"(0, 0) is at the origin.\")",
+            "case (-2...2, -2...2):",
+            "    print(\"(\\(point.0), \\(point.1)) is near the origin.\")",
+            "default:",
+            "    print(\"The point is at (\\(point.0), \\(point.1)).\")",
+            "}",
+            "\/\/ Prints \"(1, 2) is near the origin.\""
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "You can overload the ",
+              "type" : "text"
+            },
+            {
+              "code" : "~=",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " operator to provide custom expression matching behavior.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "For example, you can rewrite the above example to compare the ",
+              "type" : "text"
+            },
+            {
+              "code" : "point",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " expression",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "with a string representations of points.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "\/\/ Overload the ~= operator to match a string with an integer.",
+            "func ~= (pattern: String, value: Int) -> Bool {",
+            "    return pattern == \"\\(value)\"",
+            "}",
+            "switch point {",
+            "case (\"0\", \"0\"):",
+            "    print(\"(0, 0) is at the origin.\")",
+            "default:",
+            "    print(\"The point is at (\\(point.0), \\(point.1)).\")",
+            "}",
+            "\/\/ Prints \"The point is at (1, 2).\""
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "expression-pattern",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                },
+                {
+                  "text" : " → ",
+                  "type" : "text"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "expression",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Grammar of an expression pattern",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Esta documentación contiene información preliminar sobre una API o tecnología en desarrollo. Esta información está sujeta a cambios, y todo software implementado en conformidad con esta documentación debe ser testeado con el software final del sistema operativo.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Conoce más acerca del uso del ",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "https:\/\/developer.apple.com\/es\/support\/beta-software\/",
+                  "isActive" : true,
+                  "type" : "reference"
+                },
+                {
+                  "text" : ".",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Software Beta",
+          "style" : "note",
+          "type" : "aside"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ]
+, 
+"references": {
+"doc://org.swift.tspl/documentation/The-Swift-Programming-Language": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language",
+  "kind" : "article",
+  "role" : "collection",
+  "title" : "The Swift Programming Language (6)",
+  "type" : "topic",
+  "url" : "\/documentation\/the-swift-programming-language"
+},
+"https://developer.apple.com/es/support/beta-software/": {
+  "identifier" : "https:\/\/developer.apple.com\/es\/support\/beta-software\/",
+  "title" : "software beta de Apple",
+  "titleInlineContent" : [
+    {
+      "text" : "software beta de Apple",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/developer.apple.com\/es\/support\/beta-software\/"
+}
+}
+}

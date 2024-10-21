@@ -1,1 +1,440 @@
-{"abstract":[{"text":"Aprende cuáles funcionalidades están disponibles en versiones anteriores del lenguaje.","type":"text"}],"kind":"article","identifier":{"interfaceLanguage":"swift","url":"doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/Compatibility"},"sections":[],"primaryContentSections":[{"content":[{"inlineContent":[{"type":"text","text":"Este libro describe Swift 5.9,"},{"text":" ","type":"text"},{"type":"text","text":"la versión predeterminada de Swift que se incluye en Xcode 15."},{"type":"text","text":" "},{"type":"text","text":"Puedes usar Xcode 15 para compilar "},{"type":"emphasis","inlineContent":[{"type":"text","text":"targets"}]},{"type":"text","text":" "},{"type":"text","text":"que han sido desarrollados en Swift 5.9, Swift 4.2, o Swift 4."}],"type":"paragraph"},{"type":"paragraph","inlineContent":[{"type":"text","text":"Al usar Xcode 15 para compilar código Swift 4 y Swift 4.2,"},{"type":"text","text":" "},{"type":"text","text":"la mayoría de las funcionalidades de Swift 5.9 estarán disponibles."},{"text":" ","type":"text"},{"type":"text","text":"Dicho esto,"},{"type":"text","text":" "},{"text":"los siguientes cambios solo están disponibles","type":"text"},{"type":"text","text":" "},{"type":"text","text":"para código desarrollado en Swift 5.9 o posterior:"}]},{"type":"unorderedList","items":[{"content":[{"inlineContent":[{"type":"text","text":"Las funciones que devuelven un tipo opaco requieren el runtime de Swift 5.1."}],"type":"paragraph"}]},{"content":[{"inlineContent":[{"type":"text","text":"La expresión "},{"type":"codeVoice","code":"try?"},{"type":"text","text":" no introduce un nivel adicional de opcionalidad en las"},{"type":"text","text":" "},{"type":"text","text":"expresiones que ya devuelven opcionales."}],"type":"paragraph"}]},{"content":[{"type":"paragraph","inlineContent":[{"text":"Se infiere que las expresiones de inicialización de enteros literales","type":"text"},{"text":" ","type":"text"},{"text":"grandes son del tipo de entero correcto.","type":"text"},{"text":" ","type":"text"},{"type":"text","text":"Por ejemplo, "},{"code":"UInt64(0xffff_ffff_ffff_ffff)","type":"codeVoice"},{"text":" resulta en el valor correcto","type":"text"},{"type":"text","text":" "},{"text":"en lugar de desbordarse.","type":"text"}]}]}]},{"type":"paragraph","inlineContent":[{"text":"La concurrencia requiere Swift 5.9 o posterior,","type":"text"},{"text":" ","type":"text"},{"type":"text","text":"y una versión de la biblioteca estándar de Swift"},{"text":" ","type":"text"},{"type":"text","text":"que proporcione los tipos de concurrencia correspondientes."},{"type":"text","text":" "},{"type":"text","text":"En las plataformas de Apple,"},{"type":"text","text":" "},{"type":"text","text":"fija un objetivo de implementación ("},{"type":"emphasis","inlineContent":[{"text":"deployment target","type":"text"}]},{"text":")","type":"text"},{"text":" ","type":"text"},{"text":"de —por lo menos— iOS 13, macOS 10.15, tvOS 13, o watchOS 6.","type":"text"}]},{"inlineContent":[{"text":"Un ","type":"text"},{"inlineContent":[{"text":"target","type":"text"}],"type":"emphasis"},{"type":"text","text":" escrito en Swift 5.9 puede depender"},{"type":"text","text":" "},{"type":"text","text":"de uno escrito en Swift 4.2 o Swift 4,"},{"type":"text","text":" "},{"type":"text","text":"y viceversa."},{"text":" ","type":"text"},{"type":"text","text":"Esto significa que si tienes un proyecto grande"},{"type":"text","text":" "},{"text":"que está dividido en varios ","type":"text"},{"type":"emphasis","inlineContent":[{"type":"text","text":"frameworks"}]},{"type":"text","text":","},{"text":" ","type":"text"},{"text":"podrás migrar tu código de Swift 4 a Swift 5.9","type":"text"},{"type":"text","text":" "},{"type":"text","text":"un "},{"type":"emphasis","inlineContent":[{"text":"framework","type":"text"}]},{"type":"text","text":" a la vez."}],"type":"paragraph"},{"name":"Software Beta","style":"note","type":"aside","content":[{"inlineContent":[{"text":"","type":"text"}],"type":"paragraph"},{"inlineContent":[{"text":"Esta documentación contiene información preliminar sobre una API o tecnología en desarrollo. Esta información está sujeta a cambios, y todo software implementado en conformidad con esta documentación debe ser testeado con el software final del sistema operativo.","type":"text"}],"type":"paragraph"},{"inlineContent":[{"type":"text","text":"Conoce más acerca del uso del "},{"identifier":"https:\/\/developer.apple.com\/es\/support\/beta-software\/","type":"reference","isActive":true},{"type":"text","text":"."}],"type":"paragraph"}]}],"kind":"content"}],"hierarchy":{"paths":[["doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language"]]},"schemaVersion":{"patch":0,"major":0,"minor":3},"metadata":{"title":"Compatibilidad de Versiones"},"references":{"doc://org.swift.tspl/documentation/The-Swift-Programming-Language":{"url":"\/documentation\/the-swift-programming-language","kind":"article","type":"topic","title":"The Swift Programming Language (6)","role":"collection","identifier":"doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language","abstract":[]},"https://developer.apple.com/es/support/beta-software/":{"identifier":"https:\/\/developer.apple.com\/es\/support\/beta-software\/","type":"link","url":"https:\/\/developer.apple.com\/es\/support\/beta-software\/","titleInlineContent":[{"text":"software beta de Apple","type":"text"}],"title":"software beta de Apple"}}}
+{
+  "abstract" : [
+    {
+      "text" : "Aprende cuáles funcionalidades están disponibles en versiones anteriores del lenguaje.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/Compatibility"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "title" : "Compatibilidad de Versiones"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "inlineContent" : [
+            {
+              "text" : "Este libro describe Swift 5.9,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "la versión predeterminada de Swift que se incluye en Xcode 15.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Puedes usar Xcode 15 para compilar ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "targets",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "que han sido desarrollados en Swift 5.9, Swift 4.2, o Swift 4.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Al usar Xcode 15 para compilar código Swift 4 y Swift 4.2,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "la mayoría de las funcionalidades de Swift 5.9 estarán disponibles.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Dicho esto,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "los siguientes cambios solo están disponibles",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "para código desarrollado en Swift 5.9 o posterior:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Las funciones que devuelven un tipo opaco requieren el runtime de Swift 5.1.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "La expresión ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "try?",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " no introduce un nivel adicional de opcionalidad en las",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "expresiones que ya devuelven opcionales.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Se infiere que las expresiones de inicialización de enteros literales",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "grandes son del tipo de entero correcto.",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "Por ejemplo, ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "UInt64(0xffff_ffff_ffff_ffff)",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " resulta en el valor correcto",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "en lugar de desbordarse.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "La concurrencia requiere Swift 5.9 o posterior,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "y una versión de la biblioteca estándar de Swift",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "que proporcione los tipos de concurrencia correspondientes.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "En las plataformas de Apple,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "fija un objetivo de implementación (",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "deployment target",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : ")",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "de —por lo menos— iOS 13, macOS 10.15, tvOS 13, o watchOS 6.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Un ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "target",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " escrito en Swift 5.9 puede depender",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "de uno escrito en Swift 4.2 o Swift 4,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "y viceversa.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Esto significa que si tienes un proyecto grande",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "que está dividido en varios ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "frameworks",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : ",",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "podrás migrar tu código de Swift 4 a Swift 5.9",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "un ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "framework",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " a la vez.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Esta documentación contiene información preliminar sobre una API o tecnología en desarrollo. Esta información está sujeta a cambios, y todo software implementado en conformidad con esta documentación debe ser testeado con el software final del sistema operativo.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Conoce más acerca del uso del ",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "https:\/\/developer.apple.com\/es\/support\/beta-software\/",
+                  "isActive" : true,
+                  "type" : "reference"
+                },
+                {
+                  "text" : ".",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Software Beta",
+          "style" : "note",
+          "type" : "aside"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ]
+, 
+"references": {
+"doc://org.swift.tspl/documentation/The-Swift-Programming-Language": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language",
+  "kind" : "article",
+  "role" : "collection",
+  "title" : "The Swift Programming Language (6)",
+  "type" : "topic",
+  "url" : "\/documentation\/the-swift-programming-language"
+},
+"https://developer.apple.com/es/support/beta-software/": {
+  "identifier" : "https:\/\/developer.apple.com\/es\/support\/beta-software\/",
+  "title" : "software beta de Apple",
+  "titleInlineContent" : [
+    {
+      "text" : "software beta de Apple",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/developer.apple.com\/es\/support\/beta-software\/"
+}
+}
+}

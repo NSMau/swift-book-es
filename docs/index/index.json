@@ -1,1 +1,252 @@
-{"includedArchiveIdentifiers":["org.swift.tspl"],"interfaceLanguages":{"swift":[{"children":[{"title":"Welcome to Swift","type":"groupMarker"},{"path":"\/documentation\/the-swift-programming-language\/aboutswift","title":"Acerca de Swift","type":"article"},{"path":"\/documentation\/the-swift-programming-language\/compatibility","title":"Compatibilidad de Versiones","type":"article"},{"path":"\/documentation\/the-swift-programming-language\/guidedtour","title":"Un Recorrido por Swift","type":"article"},{"title":"Language Guide","type":"groupMarker"},{"path":"\/documentation\/the-swift-programming-language\/thebasics","title":"Fundamentos","type":"article"},{"path":"\/documentation\/the-swift-programming-language\/basicoperators","title":"Operadores básicos","type":"article"},{"path":"\/documentation\/the-swift-programming-language\/stringsandcharacters","title":"Cadenas y caracteres","type":"article"},{"path":"\/documentation\/the-swift-programming-language\/collectiontypes","title":"Tipos de colecciones","type":"article"},{"path":"\/documentation\/the-swift-programming-language\/controlflow","title":"Flujo de control","type":"article"},{"path":"\/documentation\/the-swift-programming-language\/functions","title":"Funciones","type":"article"},{"path":"\/documentation\/the-swift-programming-language\/closures","title":"Clausuras","type":"article"},{"path":"\/documentation\/the-swift-programming-language\/enumerations","title":"Enumeraciones","type":"article"},{"path":"\/documentation\/the-swift-programming-language\/classesandstructures","title":"Estructuras y clases","type":"article"},{"path":"\/documentation\/the-swift-programming-language\/properties","title":"Propiedades","type":"article"},{"path":"\/documentation\/the-swift-programming-language\/methods","title":"Métodos","type":"article"},{"path":"\/documentation\/the-swift-programming-language\/subscripts","title":"Subíndices","type":"article"},{"path":"\/documentation\/the-swift-programming-language\/inheritance","title":"Herencia","type":"article"},{"path":"\/documentation\/the-swift-programming-language\/initialization","title":"Inicialización","type":"article"},{"path":"\/documentation\/the-swift-programming-language\/deinitialization","title":"Desinicialización","type":"article"},{"path":"\/documentation\/the-swift-programming-language\/optionalchaining","title":"Optional Chaining","type":"article"},{"path":"\/documentation\/the-swift-programming-language\/errorhandling","title":"Manejo de errores","type":"article"},{"path":"\/documentation\/the-swift-programming-language\/concurrency","title":"Concurrencia","type":"article"},{"path":"\/documentation\/the-swift-programming-language\/macros","title":"Macros","type":"article"},{"path":"\/documentation\/the-swift-programming-language\/typecasting","title":"Conversión de Tipos","type":"article"},{"path":"\/documentation\/the-swift-programming-language\/nestedtypes","title":"Tipos anidados","type":"article"},{"path":"\/documentation\/the-swift-programming-language\/extensions","title":"Extensiones","type":"article"},{"path":"\/documentation\/the-swift-programming-language\/protocols","title":"Protocols","type":"article"},{"path":"\/documentation\/the-swift-programming-language\/generics","title":"Generics","type":"article"},{"path":"\/documentation\/the-swift-programming-language\/opaquetypes","title":"Opaque and Boxed Types","type":"article"},{"path":"\/documentation\/the-swift-programming-language\/automaticreferencecounting","title":"Conteo automático de referencias","type":"article"},{"path":"\/documentation\/the-swift-programming-language\/memorysafety","title":"Memory Safety","type":"article"},{"path":"\/documentation\/the-swift-programming-language\/accesscontrol","title":"Control de acceso","type":"article"},{"path":"\/documentation\/the-swift-programming-language\/advancedoperators","title":"Operadores avanzados","type":"article"},{"title":"Language Reference","type":"groupMarker"},{"path":"\/documentation\/the-swift-programming-language\/aboutthelanguagereference","title":"About the Language Reference","type":"article"},{"path":"\/documentation\/the-swift-programming-language\/lexicalstructure","title":"Lexical Structure","type":"article"},{"path":"\/documentation\/the-swift-programming-language\/types","title":"Types","type":"article"},{"path":"\/documentation\/the-swift-programming-language\/expressions","title":"Expressions","type":"article"},{"path":"\/documentation\/the-swift-programming-language\/statements","title":"Statements","type":"article"},{"path":"\/documentation\/the-swift-programming-language\/declarations","title":"Declaraciones","type":"article"},{"path":"\/documentation\/the-swift-programming-language\/attributes","title":"Attributes","type":"article"},{"path":"\/documentation\/the-swift-programming-language\/patterns","title":"Patrones","type":"article"},{"path":"\/documentation\/the-swift-programming-language\/genericparametersandarguments","title":"Generic Parameters and Arguments","type":"article"},{"path":"\/documentation\/the-swift-programming-language\/summaryofthegrammar","title":"Summary of the Grammar","type":"article"},{"title":"Revision History","type":"groupMarker"},{"path":"\/documentation\/the-swift-programming-language\/revisionhistory","title":"Historial de Revisiones","type":"article"}],"path":"\/documentation\/the-swift-programming-language","title":"The Swift Programming Language (6)","type":"article"}]},"schemaVersion":{"major":0,"minor":1,"patch":2}}
+{
+  "includedArchiveIdentifiers" : [
+    "org.swift.tspl"
+  ],
+  "interfaceLanguages" : {
+    "swift" : [
+      {
+        "children" : [
+          {
+            "title" : "Welcome to Swift",
+            "type" : "groupMarker"
+          },
+          {
+            "path" : "\/documentation\/the-swift-programming-language\/aboutswift",
+            "title" : "Acerca de Swift",
+            "type" : "article"
+          },
+          {
+            "path" : "\/documentation\/the-swift-programming-language\/compatibility",
+            "title" : "Compatibilidad de Versiones",
+            "type" : "article"
+          },
+          {
+            "path" : "\/documentation\/the-swift-programming-language\/guidedtour",
+            "title" : "Un Recorrido por Swift",
+            "type" : "article"
+          },
+          {
+            "title" : "Language Guide",
+            "type" : "groupMarker"
+          },
+          {
+            "path" : "\/documentation\/the-swift-programming-language\/thebasics",
+            "title" : "Fundamentos",
+            "type" : "article"
+          },
+          {
+            "path" : "\/documentation\/the-swift-programming-language\/basicoperators",
+            "title" : "Operadores básicos",
+            "type" : "article"
+          },
+          {
+            "path" : "\/documentation\/the-swift-programming-language\/stringsandcharacters",
+            "title" : "Cadenas y caracteres",
+            "type" : "article"
+          },
+          {
+            "path" : "\/documentation\/the-swift-programming-language\/collectiontypes",
+            "title" : "Tipos de colecciones",
+            "type" : "article"
+          },
+          {
+            "path" : "\/documentation\/the-swift-programming-language\/controlflow",
+            "title" : "Flujo de control",
+            "type" : "article"
+          },
+          {
+            "path" : "\/documentation\/the-swift-programming-language\/functions",
+            "title" : "Funciones",
+            "type" : "article"
+          },
+          {
+            "path" : "\/documentation\/the-swift-programming-language\/closures",
+            "title" : "Clausuras",
+            "type" : "article"
+          },
+          {
+            "path" : "\/documentation\/the-swift-programming-language\/enumerations",
+            "title" : "Enumeraciones",
+            "type" : "article"
+          },
+          {
+            "path" : "\/documentation\/the-swift-programming-language\/classesandstructures",
+            "title" : "Estructuras y clases",
+            "type" : "article"
+          },
+          {
+            "path" : "\/documentation\/the-swift-programming-language\/properties",
+            "title" : "Propiedades",
+            "type" : "article"
+          },
+          {
+            "path" : "\/documentation\/the-swift-programming-language\/methods",
+            "title" : "Métodos",
+            "type" : "article"
+          },
+          {
+            "path" : "\/documentation\/the-swift-programming-language\/subscripts",
+            "title" : "Subíndices",
+            "type" : "article"
+          },
+          {
+            "path" : "\/documentation\/the-swift-programming-language\/inheritance",
+            "title" : "Herencia",
+            "type" : "article"
+          },
+          {
+            "path" : "\/documentation\/the-swift-programming-language\/initialization",
+            "title" : "Inicialización",
+            "type" : "article"
+          },
+          {
+            "path" : "\/documentation\/the-swift-programming-language\/deinitialization",
+            "title" : "Desinicialización",
+            "type" : "article"
+          },
+          {
+            "path" : "\/documentation\/the-swift-programming-language\/optionalchaining",
+            "title" : "Optional Chaining",
+            "type" : "article"
+          },
+          {
+            "path" : "\/documentation\/the-swift-programming-language\/errorhandling",
+            "title" : "Manejo de errores",
+            "type" : "article"
+          },
+          {
+            "path" : "\/documentation\/the-swift-programming-language\/concurrency",
+            "title" : "Concurrencia",
+            "type" : "article"
+          },
+          {
+            "path" : "\/documentation\/the-swift-programming-language\/macros",
+            "title" : "Macros",
+            "type" : "article"
+          },
+          {
+            "path" : "\/documentation\/the-swift-programming-language\/typecasting",
+            "title" : "Conversión de Tipos",
+            "type" : "article"
+          },
+          {
+            "path" : "\/documentation\/the-swift-programming-language\/nestedtypes",
+            "title" : "Tipos anidados",
+            "type" : "article"
+          },
+          {
+            "path" : "\/documentation\/the-swift-programming-language\/extensions",
+            "title" : "Extensiones",
+            "type" : "article"
+          },
+          {
+            "path" : "\/documentation\/the-swift-programming-language\/protocols",
+            "title" : "Protocols",
+            "type" : "article"
+          },
+          {
+            "path" : "\/documentation\/the-swift-programming-language\/generics",
+            "title" : "Generics",
+            "type" : "article"
+          },
+          {
+            "path" : "\/documentation\/the-swift-programming-language\/opaquetypes",
+            "title" : "Opaque and Boxed Types",
+            "type" : "article"
+          },
+          {
+            "path" : "\/documentation\/the-swift-programming-language\/automaticreferencecounting",
+            "title" : "Conteo automático de referencias",
+            "type" : "article"
+          },
+          {
+            "path" : "\/documentation\/the-swift-programming-language\/memorysafety",
+            "title" : "Memory Safety",
+            "type" : "article"
+          },
+          {
+            "path" : "\/documentation\/the-swift-programming-language\/accesscontrol",
+            "title" : "Control de acceso",
+            "type" : "article"
+          },
+          {
+            "path" : "\/documentation\/the-swift-programming-language\/advancedoperators",
+            "title" : "Operadores avanzados",
+            "type" : "article"
+          },
+          {
+            "title" : "Language Reference",
+            "type" : "groupMarker"
+          },
+          {
+            "path" : "\/documentation\/the-swift-programming-language\/aboutthelanguagereference",
+            "title" : "About the Language Reference",
+            "type" : "article"
+          },
+          {
+            "path" : "\/documentation\/the-swift-programming-language\/lexicalstructure",
+            "title" : "Lexical Structure",
+            "type" : "article"
+          },
+          {
+            "path" : "\/documentation\/the-swift-programming-language\/types",
+            "title" : "Types",
+            "type" : "article"
+          },
+          {
+            "path" : "\/documentation\/the-swift-programming-language\/expressions",
+            "title" : "Expressions",
+            "type" : "article"
+          },
+          {
+            "path" : "\/documentation\/the-swift-programming-language\/statements",
+            "title" : "Statements",
+            "type" : "article"
+          },
+          {
+            "path" : "\/documentation\/the-swift-programming-language\/declarations",
+            "title" : "Declaraciones",
+            "type" : "article"
+          },
+          {
+            "path" : "\/documentation\/the-swift-programming-language\/attributes",
+            "title" : "Attributes",
+            "type" : "article"
+          },
+          {
+            "path" : "\/documentation\/the-swift-programming-language\/patterns",
+            "title" : "Patrones",
+            "type" : "article"
+          },
+          {
+            "path" : "\/documentation\/the-swift-programming-language\/genericparametersandarguments",
+            "title" : "Generic Parameters and Arguments",
+            "type" : "article"
+          },
+          {
+            "path" : "\/documentation\/the-swift-programming-language\/summaryofthegrammar",
+            "title" : "Summary of the Grammar",
+            "type" : "article"
+          },
+          {
+            "title" : "Revision History",
+            "type" : "groupMarker"
+          },
+          {
+            "path" : "\/documentation\/the-swift-programming-language\/revisionhistory",
+            "title" : "Historial de Revisiones",
+            "type" : "article"
+          }
+        ],
+        "path" : "\/documentation\/the-swift-programming-language",
+        "title" : "The Swift Programming Language (6)",
+        "type" : "article"
+      }
+    ]
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 1,
+    "patch" : 2
+  }
+}

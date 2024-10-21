@@ -1,1 +1,9 @@
-{"schemaVersion":{"patch":0,"major":0,"minor":1},"bundleIdentifier":"org.swift.tspl","bundleDisplayName":"The Swift Programming Language"}
+{
+  "bundleDisplayName" : "The Swift Programming Language",
+  "bundleIdentifier" : "org.swift.tspl",
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 1,
+    "patch" : 0
+  }
+}
