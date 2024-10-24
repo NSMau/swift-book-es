@@ -1,4 +1,4 @@
-# Patterns
+# Patrones
 
 Match and destructure values.
 
@@ -49,7 +49,7 @@ or in the case condition of an `if`, `while`,
 >
 > *pattern* → *expression-pattern*
 
-## Wildcard Pattern
+## Patrón Comodín
 
 A *wildcard pattern* matches and ignores any value and consists of an underscore
 (`_`). Use a wildcard pattern when you don't care about the values being
@@ -76,7 +76,7 @@ for _ in 1...3 {
 >
 > *wildcard-pattern* → **`_`**
 
-## Identifier Pattern
+## Patrón Identificador
 
 An *identifier pattern* matches any value and binds the matched value to a
 variable or constant name.
@@ -106,7 +106,7 @@ the identifier pattern is implicitly a subpattern of a value-binding pattern.
 >
 > *identifier-pattern* → *identifier*
 
-## Value-Binding Pattern
+## Patrón de Vinculación de Valores
 
 A *value-binding pattern* binds matched values to variable or constant names.
 Value-binding patterns that bind a matched value to the name of a constant
@@ -158,7 +158,7 @@ tuple pattern `(x, y)`. Because of this behavior, the `switch` cases
   "Variable pattern" is ambiguous between those two meanings.
 -->
 
-## Tuple Pattern
+## Patrones Tupla
 
 A *tuple pattern* is a comma-separated list of zero or more patterns, enclosed in
 parentheses. Tuple patterns match values of corresponding tuple types.
@@ -246,7 +246,7 @@ let (a): Int = 2 // a: Int = 2
 >
 > *tuple-pattern-element* → *pattern* | *identifier* **`:`** *pattern*
 
-## Enumeration Case Pattern
+## Patrones de Casos de Enumeración
 
 An *enumeration case pattern* matches a case of an existing enumeration type.
 Enumeration case patterns appear in `switch` statement
@@ -257,7 +257,7 @@ If the enumeration case you're trying to match has any associated values,
 the corresponding enumeration case pattern must specify a tuple pattern that contains
 one element for each associated value. For an example that uses a `switch` statement
 to match enumeration cases containing associated values,
-see <doc:Enumerations#Associated-Values>.
+see <doc:Enumerations#Valores-Asociados>.
 
 An enumeration case pattern also matches
 values of that case wrapped in an optional.
@@ -303,7 +303,7 @@ case nil:
 >
 > *enum-case-pattern* → *type-identifier*_?_ **`.`** *enum-case-name* *tuple-pattern*_?_
 
-## Optional Pattern
+## Patrón Opcional
 
 An *optional pattern* matches values wrapped in a `some(Wrapped)` case
 of an `Optional<Wrapped>` enumeration.
@@ -380,7 +380,7 @@ for case let number? in arrayOfOptionalInts {
 >
 > *optional-pattern* → *identifier-pattern* **`?`**
 
-## Type-Casting Patterns
+## Patrones de Conversión de Tipos
 
 There are two type-casting patterns, the `is` pattern and the `as` pattern.
 The `is` pattern appears only in `switch` statement
@@ -404,7 +404,7 @@ of the `as` pattern.
 
 For an example that uses a `switch` statement
 to match values with `is` and `as` patterns,
-see <doc:TypeCasting#Type-Casting-for-Any-and-AnyObject>.
+see <doc:TypeCasting#Conversión-de-Tipos-Para-Any-y-AnyObject>.
 
 > Grammar of a type casting pattern:
 >
@@ -414,7 +414,7 @@ see <doc:TypeCasting#Type-Casting-for-Any-and-AnyObject>.
 >
 > *as-pattern* → *pattern* **`as`** *type*
 
-## Expression Pattern
+## Patrones Expresión
 
 An *expression pattern* represents the value of an expression.
 Expression patterns appear only in `switch` statement
@@ -500,16 +500,16 @@ default:
 >
 > *expression-pattern* → *expression*
 
-> Beta Software:
+> Software Beta:
 >
-> This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+> Esta documentación contiene información preliminar sobre una API o tecnología en desarrollo. Esta información está sujeta a cambios, y todo software implementado en conformidad con esta documentación debe ser testeado con el software final del sistema operativo.
 >
-> Learn more about using [Apple's beta software](https://developer.apple.com/support/beta-software/).
+> Conoce más acerca del uso del [software beta de Apple](https://developer.apple.com/es/support/beta-software/).
 
 <!--
 This source file is part of the Swift.org open source project
 
-Copyright (c) 2014 - 2022 Apple Inc. and the Swift project authors
+Copyright (c) 2014 - 2023 Apple Inc. and the Swift project authors
 Licensed under Apache License v2.0 with Runtime Library Exception
 
 See https://swift.org/LICENSE.txt for license information

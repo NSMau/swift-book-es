@@ -1,4 +1,4 @@
-# Deinitialization
+# Desinicialización
 
 Release resources that require custom cleanup.
 
@@ -7,7 +7,7 @@ You write deinitializers with the `deinit` keyword,
 similar to how initializers are written with the `init` keyword.
 Deinitializers are only available on class types.
 
-## How Deinitialization Works
+## Cómo funciona la desinicialización
 
 Swift automatically deallocates your instances when they're no longer needed,
 to free up resources.
@@ -55,7 +55,7 @@ a deinitializer can access all properties of the instance it's called on
 and can modify its behavior based on those properties
 (such as looking up the name of a file that needs to be closed).
 
-## Deinitializers in Action
+## Desinicializadores en acción
 
 Here's an example of a deinitializer in action.
 This example defines two new types, `Bank` and `Player`, for a simple game.
@@ -242,16 +242,16 @@ and so it's deallocated in order to free up its memory.
 Just before this happens, its deinitializer is called automatically,
 and its coins are returned to the bank.
 
-> Beta Software:
+> Software Beta:
 >
-> This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+> Esta documentación contiene información preliminar sobre una API o tecnología en desarrollo. Esta información está sujeta a cambios, y todo software implementado en conformidad con esta documentación debe ser testeado con el software final del sistema operativo.
 >
-> Learn more about using [Apple's beta software](https://developer.apple.com/support/beta-software/).
+> Conoce más acerca del uso del [software beta de Apple](https://developer.apple.com/es/support/beta-software/).
 
 <!--
 This source file is part of the Swift.org open source project
 
-Copyright (c) 2014 - 2022 Apple Inc. and the Swift project authors
+Copyright (c) 2014 - 2023 Apple Inc. and the Swift project authors
 Licensed under Apache License v2.0 with Runtime Library Exception
 
 See https://swift.org/LICENSE.txt for license information

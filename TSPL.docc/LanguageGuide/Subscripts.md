@@ -1,4 +1,4 @@
-# Subscripts
+# Subíndices
 
 Access the elements of a collection.
 
@@ -21,7 +21,7 @@ to suit your custom type's needs.
   as per Joe Groff's example from rdar://16555559.
 -->
 
-## Subscript Syntax
+## Sintaxis de los subíndices
 
 Subscripts enable you to query instances of a type
 by writing one or more values in square brackets after the instance name.
@@ -136,7 +136,7 @@ which returns a value of `18`, or `3` times `6`.
 > It isn't appropriate to set `threeTimesTable[someIndex]` to a new value,
 > and so the subscript for `TimesTable` is defined as a read-only subscript.
 
-## Subscript Usage
+## Uso de subíndices
 
 The exact meaning of “subscript” depends on the context in which it's used.
 Subscripts are typically used as a shortcut for accessing
@@ -172,7 +172,7 @@ this example uses subscript assignment to add
 a `String` key of `"bird"` and an `Int` value of `2` to the dictionary.
 
 For more information about `Dictionary` subscripting,
-see <doc:CollectionTypes#Accessing-and-Modifying-a-Dictionary>.
+see <doc:CollectionTypes#Acceso-y-modificación-de-un-diccionario>.
 
 > Note: Swift's `Dictionary` type implements its key-value subscripting
 > as a subscript that takes and returns an *optional* type.
@@ -183,7 +183,7 @@ see <doc:CollectionTypes#Accessing-and-Modifying-a-Dictionary>.
 > not every key will have a value, and to give a way to delete a value for a key
 > by assigning a `nil` value for that key.
 
-## Subscript Options
+## Opciones de los subíndices
 
 Subscripts can take any number of input parameters,
 and these input parameters can be of any type.
@@ -192,8 +192,8 @@ Subscripts can also return a value of any type.
 Like functions,
 subscripts can take a varying number of parameters
 and provide default values for their parameters,
-as discussed in <doc:Functions#Variadic-Parameters>
-and <doc:Functions#Default-Parameter-Values>.
+as discussed in <doc:Functions#Parámetros-variádicos>
+and <doc:Functions#Parámetros-con-valores-predeterminados>.
 However, unlike functions,
 subscripts can't use in-out parameters.
 
@@ -285,7 +285,7 @@ Each position in the matrix is given an initial value of `0.0`.
 To achieve this, the array's size, and an initial cell value of `0.0`,
 are passed to an array initializer that creates and initializes a new array of the correct size.
 This initializer is described in more detail
-in <doc:CollectionTypes#Creating-an-Array-with-a-Default-Value>.
+in <doc:CollectionTypes#Creación-de-un-arreglo-con-un-valor-predeterminado>.
 
 You can construct a new `Matrix` instance by passing
 an appropriate row and column count to its initializer:
@@ -382,7 +382,7 @@ let someValue = matrix[2, 2]
   ```
 -->
 
-## Type Subscripts
+## Subíndices de tipos
 
 Instance subscripts, as described above,
 are subscripts that you call on an instance of a particular type.
@@ -422,16 +422,16 @@ print(mars)
   ```
 -->
 
-> Beta Software:
+> Software Beta:
 >
-> This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+> Esta documentación contiene información preliminar sobre una API o tecnología en desarrollo. Esta información está sujeta a cambios, y todo software implementado en conformidad con esta documentación debe ser testeado con el software final del sistema operativo.
 >
-> Learn more about using [Apple's beta software](https://developer.apple.com/support/beta-software/).
+> Conoce más acerca del uso del [software beta de Apple](https://developer.apple.com/es/support/beta-software/).
 
 <!--
 This source file is part of the Swift.org open source project
 
-Copyright (c) 2014 - 2022 Apple Inc. and the Swift project authors
+Copyright (c) 2014 - 2023 Apple Inc. and the Swift project authors
 Licensed under Apache License v2.0 with Runtime Library Exception
 
 See https://swift.org/LICENSE.txt for license information

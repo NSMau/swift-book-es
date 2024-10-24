@@ -1,4 +1,4 @@
-# Functions
+# Funciones
 
 Define and call functions, label their arguments, and use their return values.
 
@@ -22,7 +22,7 @@ and to return functions from functions.
 Functions can also be written within other functions
 to encapsulate useful functionality within a nested function scope.
 
-## Defining and Calling Functions
+## Definición e Invocación de Funciones
 
 When you define a function,
 you can optionally define one or more named, typed values that the function takes as input,
@@ -106,8 +106,8 @@ to print that string and see its return value, as shown above.
 > doesn't have a label for its first argument,
 > and its other arguments are optional because they have a default value.
 > These variations on function syntax are discussed below
-> in <doc:Functions#Function-Argument-Labels-and-Parameter-Names>
-> and <doc:Functions#Default-Parameter-Values>.
+> in <doc:Functions#Etiquetas-de-Argumentos-y-Nombres-de-Parámetros-de-Funciones>
+> and <doc:Functions#Parámetros-Con-Valores-Predeterminados>.
 
 The body of the `greet(person:)` function starts by
 defining a new `String` constant called `greeting`
@@ -144,13 +144,13 @@ print(greetAgain(person: "Anna"))
   ```
 -->
 
-## Function Parameters and Return Values
+## Parámetros de Funciones y Valores de Devolución
 
 Function parameters and return values are extremely flexible in Swift.
 You can define anything from a simple utility function with a single unnamed parameter
 to a complex function with expressive parameter names and different parameter options.
 
-### Functions Without Parameters
+### Funciones Sin Parámetros
 
 Functions aren't required to define input parameters.
 Here's a function with no input parameters,
@@ -181,7 +181,7 @@ even though it doesn't take any parameters.
 The function name is also followed by
 an empty pair of parentheses when the function is called.
 
-### Functions With Multiple Parameters
+### Funciones Con Múltiples Parámetros
 
 Functions can have multiple input parameters,
 which are written within the function's parentheses, separated by commas.
@@ -228,7 +228,7 @@ Although both functions have names that begin with `greet`,
 the `greet(person:alreadyGreeted:)` function takes two arguments
 but the `greet(person:)` function takes only one.
 
-### Functions Without Return Values
+### Funciones Sin Valores de Devolución
 
 Functions aren't required to define a return type.
 Here's a version of the `greet(person:)` function,
@@ -332,7 +332,7 @@ like array.removeFirst(...) ---
 otherwise, using `_ = foo()` at the call site is better.
 -->
 
-### Functions with Multiple Return Values
+### Funciones que devuelven múltiples valores
 
 You can use a tuple type as the return type for a function
 to return multiple values as part of one compound return value.
@@ -410,7 +410,7 @@ Note that the tuple's members don't need to be named
 at the point that the tuple is returned from the function,
 because their names are already specified as part of the function's return type.
 
-#### Optional Tuple Return Types
+#### Tipos Tupla de Devolución Opcionales
 
 If the tuple type to be returned from a function
 has the potential to have “no value” for the entire tuple,
@@ -493,7 +493,7 @@ if let bounds = minMax(array: [8, -6, 2, 109, 3, 71]) {
   ```
 -->
 
-### Functions With an Implicit Return
+### Funciones Con Devolución Implícita
 
 If the entire body of the function is a single expression,
 the function implicitly returns that expression.
@@ -539,7 +539,7 @@ The `anotherGreeting(for:)` function returns the same greeting message,
 using the `return` keyword like a longer function.
 Any function that you write as just one `return` line can omit the `return`.
 
-As you'll see in <doc:Properties#Shorthand-Getter-Declaration>,
+As you'll see in <doc:Properties#Declaración-Concisa-de-getters>,
 property getters can also use an implicit return.
 
 > Note: The code you write as an implicit return value
@@ -571,7 +571,7 @@ property getters can also use an implicit return.
   ```
 -->
 
-## Function Argument Labels and Parameter Names
+## Etiquetas de Argumentos y Nombres de Parámetros de Funciones
 
 Each function parameter has both an *argument label*
 and a *parameter name*.
@@ -615,7 +615,7 @@ unique argument labels help make your code more readable.
   ```
 -->
 
-### Specifying Argument Labels
+### Especificando Etiquetas de Argumentos
 
 You write an argument label before the parameter name,
 separated by a space:
@@ -666,7 +666,7 @@ The use of argument labels can allow a function
 to be called in an expressive, sentence-like manner,
 while still providing a function body that's readable and clear in intent.
 
-### Omitting Argument Labels
+### Omitiendo Etiquetas de Argumentos
 
 If you don't want an argument label for a parameter,
 write an underscore (`_`) instead of an explicit argument label for that parameter.
@@ -694,7 +694,7 @@ someFunction(1, secondParameterName: 2)
 If a parameter has an argument label,
 the argument *must* be labeled when you call the function.
 
-### Default Parameter Values
+### Parámetros con valores predeterminados
 
 You can define a *default value* for any parameter in a function
 by assigning a value to the parameter after that parameter's type.
@@ -731,7 +731,7 @@ writing them first makes it easier to recognize
 that the same function is being called,
 regardless of whether any default parameters are omitted.
 
-### Variadic Parameters
+### Parámetros Variádicos
 
 A *variadic parameter* accepts zero or more values of a specified type.
 You use a variadic parameter to specify that the parameter can be passed
@@ -824,7 +824,7 @@ that come after the variadic parameter.
   ```
 -->
 
-### In-Out Parameters
+### Parámetros in-out
 
 Function parameters are constants by default.
 Trying to change the value of a function parameter
@@ -841,7 +841,7 @@ is modified by the function,
 and is passed back *out* of the function to replace the original value.
 For a detailed discussion of the behavior of in-out parameters
 and associated compiler optimizations,
-see <doc:Declarations#In-Out-Parameters>.
+see <doc:Declarations#Parámetros-in-out>.
 
 You can only pass a variable as the argument for an in-out parameter.
 You can't pass a constant or a literal value as the argument,
@@ -923,7 +923,7 @@ even though they were originally defined outside of the function.
   Would be great to show an example of this as a way to avoid temporary variables.
 -->
 
-## Function Types
+## Tipos de Funciones
 
 Every function has a specific *function type*,
 made up of the parameter types and the return type of the function.
@@ -991,7 +991,7 @@ func printHelloWorld() {
 The type of this function is `() -> Void`,
 or “a function that has no parameters, and returns `Void`.”
 
-### Using Function Types
+### Usando Tipos de Funciones
 
 You use function types just like any other types in Swift.
 For example, you can define a constant or variable to be of a function type
@@ -1078,7 +1078,7 @@ let anotherMathFunction = addTwoInts
   TODO: talk about defining typealiases for function types somewhere?
 -->
 
-### Function Types as Parameter Types
+### Tipos de Funciones Como Tipos de Parámetros
 
 You can use a function type such as `(Int, Int) -> Int`
 as a parameter type for another function.
@@ -1124,7 +1124,7 @@ it matters only that the function is of the correct type.
 This enables `printMathResult(_:_:_:)` to hand off some of its functionality
 to the caller of the function in a type-safe way.
 
-### Function Types as Return Types
+### Tipos de Funciones Como Tipos de Devolución
 
 You can use a function type as the return type of another function.
 You do this by writing a complete function type
@@ -1241,7 +1241,7 @@ print("zero!")
   ```
 -->
 
-## Nested Functions
+## Funciones Anidadas
 
 All of the functions you have encountered so far in this chapter
 have been examples of *global functions*, which are defined at a global scope.
@@ -1304,16 +1304,16 @@ print("zero!")
   ```
 -->
 
-> Beta Software:
+> Software Beta:
 >
-> This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+> Esta documentación contiene información preliminar sobre una API o tecnología en desarrollo. Esta información está sujeta a cambios, y todo software implementado en conformidad con esta documentación debe ser testeado con el software final del sistema operativo.
 >
-> Learn more about using [Apple's beta software](https://developer.apple.com/support/beta-software/).
+> Conoce más acerca del uso del [software beta de Apple](https://developer.apple.com/es/support/beta-software/).
 
 <!--
 This source file is part of the Swift.org open source project
 
-Copyright (c) 2014 - 2022 Apple Inc. and the Swift project authors
+Copyright (c) 2014 - 2023 Apple Inc. and the Swift project authors
 Licensed under Apache License v2.0 with Runtime Library Exception
 
 See https://swift.org/LICENSE.txt for license information

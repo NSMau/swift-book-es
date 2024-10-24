@@ -1,1 +1,2163 @@
-{"primaryContentSections":[{"kind":"content","content":[{"type":"paragraph","inlineContent":[{"type":"emphasis","inlineContent":[{"type":"text","text":"Extensions"}]},{"type":"text","text":" add new functionality to an existing"},{"type":"text","text":" "},{"type":"text","text":"class, structure, enumeration, or protocol type."},{"type":"text","text":" "},{"type":"text","text":"This includes the ability to extend types"},{"type":"text","text":" "},{"type":"text","text":"for which you don’t have access to the original source code"},{"type":"text","text":" "},{"type":"text","text":"(known as "},{"type":"emphasis","inlineContent":[{"type":"text","text":"retroactive modeling"}]},{"type":"text","text":")."},{"type":"text","text":" "},{"type":"text","text":"Extensions are similar to categories in Objective-C."},{"type":"text","text":" "},{"type":"text","text":"(Unlike Objective-C categories, Swift extensions don’t have names.)"}]},{"type":"paragraph","inlineContent":[{"type":"text","text":"Extensions in Swift can:"}]},{"type":"unorderedList","items":[{"content":[{"type":"paragraph","inlineContent":[{"type":"text","text":"Add computed instance properties and computed type properties"}]}]},{"content":[{"type":"paragraph","inlineContent":[{"type":"text","text":"Define instance methods and type methods"}]}]},{"content":[{"type":"paragraph","inlineContent":[{"type":"text","text":"Provide new initializers"}]}]},{"content":[{"type":"paragraph","inlineContent":[{"type":"text","text":"Define subscripts"}]}]},{"content":[{"type":"paragraph","inlineContent":[{"type":"text","text":"Define and use new nested types"}]}]},{"content":[{"type":"paragraph","inlineContent":[{"type":"text","text":"Make an existing type conform to a protocol"}]}]}]},{"type":"paragraph","inlineContent":[{"type":"text","text":"In Swift,"},{"type":"text","text":" "},{"type":"text","text":"you can even extend a protocol to provide implementations of its requirements"},{"type":"text","text":" "},{"type":"text","text":"or add additional functionality that conforming types can take advantage of."},{"type":"text","text":" "},{"type":"text","text":"For more details, see "},{"type":"reference","isActive":true,"identifier":"doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/Protocols#Protocol-Extensions"},{"type":"text","text":"."}]},{"style":"note","content":[{"type":"paragraph","inlineContent":[{"type":"text","text":"Extensions can add new functionality to a type,"},{"type":"text","text":" "},{"type":"text","text":"but they can’t override existing functionality."}]}],"type":"aside","name":"Note"},{"anchor":"Extension-Syntax","level":2,"type":"heading","text":"Extension Syntax"},{"type":"paragraph","inlineContent":[{"type":"text","text":"Declare extensions with the "},{"type":"codeVoice","code":"extension"},{"type":"text","text":" keyword:"}]},{"type":"codeListing","syntax":"swift","code":["extension SomeType {","    \/\/ new functionality to add to SomeType goes here","}"]},{"type":"paragraph","inlineContent":[{"type":"text","text":"An extension can extend an existing type to make it adopt one or more protocols."},{"type":"text","text":" "},{"type":"text","text":"To add protocol conformance,"},{"type":"text","text":" "},{"type":"text","text":"you write the protocol names"},{"type":"text","text":" "},{"type":"text","text":"the same way as you write them for a class or structure:"}]},{"type":"codeListing","syntax":"swift","code":["extension SomeType: SomeProtocol, AnotherProtocol {","    \/\/ implementation of protocol requirements goes here","}"]},{"type":"paragraph","inlineContent":[{"type":"text","text":"Adding protocol conformance in this way is described in"},{"type":"text","text":" "},{"type":"reference","isActive":true,"identifier":"doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/Protocols#Adding-Protocol-Conformance-with-an-Extension"},{"type":"text","text":"."}]},{"type":"paragraph","inlineContent":[{"type":"text","text":"An extension can be used to extend an existing generic type,"},{"type":"text","text":" "},{"type":"text","text":"as described in "},{"type":"reference","isActive":true,"identifier":"doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/Generics#Extending-a-Generic-Type"},{"type":"text","text":"."},{"type":"text","text":" "},{"type":"text","text":"You can also extend a generic type to conditionally add functionality,"},{"type":"text","text":" "},{"type":"text","text":"as described in "},{"type":"reference","isActive":true,"identifier":"doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/Generics#Extensions-with-a-Generic-Where-Clause"},{"type":"text","text":"."}]},{"style":"note","content":[{"type":"paragraph","inlineContent":[{"type":"text","text":"If you define an extension to add new functionality to an existing type,"},{"type":"text","text":" "},{"type":"text","text":"the new functionality will be available on all existing instances of that type,"},{"type":"text","text":" "},{"type":"text","text":"even if they were created before the extension was defined."}]}],"type":"aside","name":"Note"},{"anchor":"Computed-Properties","level":2,"type":"heading","text":"Computed Properties"},{"type":"paragraph","inlineContent":[{"type":"text","text":"Extensions can add computed instance properties and computed type properties to existing types."},{"type":"text","text":" "},{"type":"text","text":"This example adds five computed instance properties to Swift’s built-in "},{"type":"codeVoice","code":"Double"},{"type":"text","text":" type,"},{"type":"text","text":" "},{"type":"text","text":"to provide basic support for working with distance units:"}]},{"type":"codeListing","syntax":"swift","code":["extension Double {","    var km: Double { return self * 1_000.0 }","    var m: Double { return self }","    var cm: Double { return self \/ 100.0 }","    var mm: Double { return self \/ 1_000.0 }","    var ft: Double { return self \/ 3.28084 }","}","let oneInch = 25.4.mm","print(\"One inch is \\(oneInch) meters\")","\/\/ Prints \"One inch is 0.0254 meters\"","let threeFeet = 3.ft","print(\"Three feet is \\(threeFeet) meters\")","\/\/ Prints \"Three feet is 0.914399970739201 meters\""]},{"type":"paragraph","inlineContent":[{"type":"text","text":"These computed properties express that a "},{"type":"codeVoice","code":"Double"},{"type":"text","text":" value"},{"type":"text","text":" "},{"type":"text","text":"should be considered as a certain unit of length."},{"type":"text","text":" "},{"type":"text","text":"Although they’re implemented as computed properties,"},{"type":"text","text":" "},{"type":"text","text":"the names of these properties can be appended to"},{"type":"text","text":" "},{"type":"text","text":"a floating-point literal value with dot syntax,"},{"type":"text","text":" "},{"type":"text","text":"as a way to use that literal value to perform distance conversions."}]},{"type":"paragraph","inlineContent":[{"type":"text","text":"In this example, a "},{"type":"codeVoice","code":"Double"},{"type":"text","text":" value of "},{"type":"codeVoice","code":"1.0"},{"type":"text","text":" is considered to represent “one meter”."},{"type":"text","text":" "},{"type":"text","text":"This is why the "},{"type":"codeVoice","code":"m"},{"type":"text","text":" computed property returns "},{"type":"codeVoice","code":"self"},{"type":"text","text":" —"},{"type":"text","text":" "},{"type":"text","text":"the expression "},{"type":"codeVoice","code":"1.m"},{"type":"text","text":" is considered to calculate a "},{"type":"codeVoice","code":"Double"},{"type":"text","text":" value of "},{"type":"codeVoice","code":"1.0"},{"type":"text","text":"."}]},{"type":"paragraph","inlineContent":[{"type":"text","text":"Other units require some conversion to be expressed as a value measured in meters."},{"type":"text","text":" "},{"type":"text","text":"One kilometer is the same as 1,000 meters,"},{"type":"text","text":" "},{"type":"text","text":"so the "},{"type":"codeVoice","code":"km"},{"type":"text","text":" computed property multiplies the value by "},{"type":"codeVoice","code":"1_000.00"},{"type":"text","text":" "},{"type":"text","text":"to convert into a number expressed in meters."},{"type":"text","text":" "},{"type":"text","text":"Similarly, there are 3.28084 feet in a meter,"},{"type":"text","text":" "},{"type":"text","text":"and so the "},{"type":"codeVoice","code":"ft"},{"type":"text","text":" computed property divides the underlying "},{"type":"codeVoice","code":"Double"},{"type":"text","text":" value"},{"type":"text","text":" "},{"type":"text","text":"by "},{"type":"codeVoice","code":"3.28084"},{"type":"text","text":", to convert it from feet to meters."}]},{"type":"paragraph","inlineContent":[{"type":"text","text":"These properties are read-only computed properties,"},{"type":"text","text":" "},{"type":"text","text":"and so they’re expressed without the "},{"type":"codeVoice","code":"get"},{"type":"text","text":" keyword, for brevity."},{"type":"text","text":" "},{"type":"text","text":"Their return value is of type "},{"type":"codeVoice","code":"Double"},{"type":"text","text":","},{"type":"text","text":" "},{"type":"text","text":"and can be used within mathematical calculations wherever a "},{"type":"codeVoice","code":"Double"},{"type":"text","text":" is accepted:"}]},{"type":"codeListing","syntax":"swift","code":["let aMarathon = 42.km + 195.m","print(\"A marathon is \\(aMarathon) meters long\")","\/\/ Prints \"A marathon is 42195.0 meters long\""]},{"style":"note","content":[{"type":"paragraph","inlineContent":[{"type":"text","text":"Extensions can add new computed properties, but they can’t add stored properties,"},{"type":"text","text":" "},{"type":"text","text":"or add property observers to existing properties."}]}],"type":"aside","name":"Note"},{"anchor":"Initializers","level":2,"type":"heading","text":"Initializers"},{"type":"paragraph","inlineContent":[{"type":"text","text":"Extensions can add new initializers to existing types."},{"type":"text","text":" "},{"type":"text","text":"This enables you to extend other types to accept"},{"type":"text","text":" "},{"type":"text","text":"your own custom types as initializer parameters,"},{"type":"text","text":" "},{"type":"text","text":"or to provide additional initialization options"},{"type":"text","text":" "},{"type":"text","text":"that were not included as part of the type’s original implementation."}]},{"type":"paragraph","inlineContent":[{"type":"text","text":"Extensions can add new convenience initializers to a class,"},{"type":"text","text":" "},{"type":"text","text":"but they can’t add new designated initializers or deinitializers to a class."},{"type":"text","text":" "},{"type":"text","text":"Designated initializers and deinitializers"},{"type":"text","text":" "},{"type":"text","text":"must always be provided by the original class implementation."}]},{"type":"paragraph","inlineContent":[{"type":"text","text":"If you use an extension to add an initializer to a value type that provides"},{"type":"text","text":" "},{"type":"text","text":"default values for all of its stored properties"},{"type":"text","text":" "},{"type":"text","text":"and doesn’t define any custom initializers,"},{"type":"text","text":" "},{"type":"text","text":"you can call the default initializer and memberwise initializer for that value type"},{"type":"text","text":" "},{"type":"text","text":"from within your extension’s initializer."},{"type":"text","text":" "},{"type":"text","text":"This wouldn’t be the case if you had written the initializer"},{"type":"text","text":" "},{"type":"text","text":"as part of the value type’s original implementation,"},{"type":"text","text":" "},{"type":"text","text":"as described in "},{"type":"reference","isActive":true,"identifier":"doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/Initialization#Initializer-Delegation-for-Value-Types"},{"type":"text","text":"."}]},{"type":"paragraph","inlineContent":[{"type":"text","text":"If you use an extension to add an initializer to a structure"},{"type":"text","text":" "},{"type":"text","text":"that was declared in another module,"},{"type":"text","text":" "},{"type":"text","text":"the new initializer can’t access "},{"type":"codeVoice","code":"self"},{"type":"text","text":" until it calls"},{"type":"text","text":" "},{"type":"text","text":"an initializer from the defining module."}]},{"type":"paragraph","inlineContent":[{"type":"text","text":"The example below defines a custom "},{"type":"codeVoice","code":"Rect"},{"type":"text","text":" structure to represent a geometric rectangle."},{"type":"text","text":" "},{"type":"text","text":"The example also defines two supporting structures called "},{"type":"codeVoice","code":"Size"},{"type":"text","text":" and "},{"type":"codeVoice","code":"Point"},{"type":"text","text":","},{"type":"text","text":" "},{"type":"text","text":"both of which provide default values of "},{"type":"codeVoice","code":"0.0"},{"type":"text","text":" for all of their properties:"}]},{"type":"codeListing","syntax":"swift","code":["struct Size {","    var width = 0.0, height = 0.0","}","struct Point {","    var x = 0.0, y = 0.0","}","struct Rect {","    var origin = Point()","    var size = Size()","}"]},{"type":"paragraph","inlineContent":[{"type":"text","text":"Because the "},{"type":"codeVoice","code":"Rect"},{"type":"text","text":" structure provides default values for all of its properties,"},{"type":"text","text":" "},{"type":"text","text":"it receives a default initializer and a memberwise initializer automatically,"},{"type":"text","text":" "},{"type":"text","text":"as described in "},{"type":"reference","isActive":true,"identifier":"doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/Initialization#Default-Initializers"},{"type":"text","text":"."},{"type":"text","text":" "},{"type":"text","text":"These initializers can be used to create new "},{"type":"codeVoice","code":"Rect"},{"type":"text","text":" instances:"}]},{"type":"codeListing","syntax":"swift","code":["let defaultRect = Rect()","let memberwiseRect = Rect(origin: Point(x: 2.0, y: 2.0),","    size: Size(width: 5.0, height: 5.0))"]},{"type":"paragraph","inlineContent":[{"type":"text","text":"You can extend the "},{"type":"codeVoice","code":"Rect"},{"type":"text","text":" structure to provide an additional initializer"},{"type":"text","text":" "},{"type":"text","text":"that takes a specific center point and size:"}]},{"type":"codeListing","syntax":"swift","code":["extension Rect {","    init(center: Point, size: Size) {","        let originX = center.x - (size.width \/ 2)","        let originY = center.y - (size.height \/ 2)","        self.init(origin: Point(x: originX, y: originY), size: size)","    }","}"]},{"type":"paragraph","inlineContent":[{"type":"text","text":"This new initializer starts by calculating an appropriate origin point based on"},{"type":"text","text":" "},{"type":"text","text":"the provided "},{"type":"codeVoice","code":"center"},{"type":"text","text":" point and "},{"type":"codeVoice","code":"size"},{"type":"text","text":" value."},{"type":"text","text":" "},{"type":"text","text":"The initializer then calls the structure’s automatic memberwise initializer"},{"type":"text","text":" "},{"type":"codeVoice","code":"init(origin:size:)"},{"type":"text","text":", which stores the new origin and size values"},{"type":"text","text":" "},{"type":"text","text":"in the appropriate properties:"}]},{"type":"codeListing","syntax":"swift","code":["let centerRect = Rect(center: Point(x: 4.0, y: 4.0),","    size: Size(width: 3.0, height: 3.0))","\/\/ centerRect's origin is (2.5, 2.5) and its size is (3.0, 3.0)"]},{"style":"note","content":[{"type":"paragraph","inlineContent":[{"type":"text","text":"If you provide a new initializer with an extension,"},{"type":"text","text":" "},{"type":"text","text":"you are still responsible for making sure that each instance is fully initialized"},{"type":"text","text":" "},{"type":"text","text":"once the initializer completes."}]}],"type":"aside","name":"Note"},{"anchor":"Methods","level":2,"type":"heading","text":"Methods"},{"type":"paragraph","inlineContent":[{"type":"text","text":"Extensions can add new instance methods and type methods to existing types."},{"type":"text","text":" "},{"type":"text","text":"The following example adds a new instance method called "},{"type":"codeVoice","code":"repetitions"},{"type":"text","text":" to the "},{"type":"codeVoice","code":"Int"},{"type":"text","text":" type:"}]},{"type":"codeListing","syntax":"swift","code":["extension Int {","    func repetitions(task: () -> Void) {","        for _ in 0..<self {","            task()","        }","    }","}"]},{"type":"paragraph","inlineContent":[{"type":"text","text":"The "},{"type":"codeVoice","code":"repetitions(task:)"},{"type":"text","text":" method takes a single argument of type "},{"type":"codeVoice","code":"() -> Void"},{"type":"text","text":","},{"type":"text","text":" "},{"type":"text","text":"which indicates a function that has no parameters and doesn’t return a value."}]},{"type":"paragraph","inlineContent":[{"type":"text","text":"After defining this extension,"},{"type":"text","text":" "},{"type":"text","text":"you can call the "},{"type":"codeVoice","code":"repetitions(task:)"},{"type":"text","text":" method on any integer"},{"type":"text","text":" "},{"type":"text","text":"to perform a task that many number of times:"}]},{"type":"codeListing","syntax":"swift","code":["3.repetitions {","    print(\"Hello!\")","}","\/\/ Hello!","\/\/ Hello!","\/\/ Hello!"]},{"anchor":"Mutating-Instance-Methods","level":3,"type":"heading","text":"Mutating Instance Methods"},{"type":"paragraph","inlineContent":[{"type":"text","text":"Instance methods added with an extension can also modify (or "},{"type":"emphasis","inlineContent":[{"type":"text","text":"mutate"}]},{"type":"text","text":") the instance itself."},{"type":"text","text":" "},{"type":"text","text":"Structure and enumeration methods that modify "},{"type":"codeVoice","code":"self"},{"type":"text","text":" or its properties"},{"type":"text","text":" "},{"type":"text","text":"must mark the instance method as "},{"type":"codeVoice","code":"mutating"},{"type":"text","text":","},{"type":"text","text":" "},{"type":"text","text":"just like mutating methods from an original implementation."}]},{"type":"paragraph","inlineContent":[{"type":"text","text":"The example below adds a new mutating method called "},{"type":"codeVoice","code":"square"},{"type":"text","text":" to Swift’s "},{"type":"codeVoice","code":"Int"},{"type":"text","text":" type,"},{"type":"text","text":" "},{"type":"text","text":"which squares the original value:"}]},{"type":"codeListing","syntax":"swift","code":["extension Int {","    mutating func square() {","        self = self * self","    }","}","var someInt = 3","someInt.square()","\/\/ someInt is now 9"]},{"anchor":"Subscripts","level":2,"type":"heading","text":"Subscripts"},{"type":"paragraph","inlineContent":[{"type":"text","text":"Extensions can add new subscripts to an existing type."},{"type":"text","text":" "},{"type":"text","text":"This example adds an integer subscript to Swift’s built-in "},{"type":"codeVoice","code":"Int"},{"type":"text","text":" type."},{"type":"text","text":" "},{"type":"text","text":"This subscript "},{"type":"codeVoice","code":"[n]"},{"type":"text","text":" returns the decimal digit "},{"type":"codeVoice","code":"n"},{"type":"text","text":" places in"},{"type":"text","text":" "},{"type":"text","text":"from the right of the number:"}]},{"type":"unorderedList","items":[{"content":[{"type":"paragraph","inlineContent":[{"type":"codeVoice","code":"123456789[0]"},{"type":"text","text":" returns "},{"type":"codeVoice","code":"9"}]}]},{"content":[{"type":"paragraph","inlineContent":[{"type":"codeVoice","code":"123456789[1]"},{"type":"text","text":" returns "},{"type":"codeVoice","code":"8"}]}]}]},{"type":"paragraph","inlineContent":[{"type":"text","text":"…and so on:"}]},{"type":"codeListing","syntax":"swift","code":["extension Int {","    subscript(digitIndex: Int) -> Int {","        var decimalBase = 1","        for _ in 0..<digitIndex {","            decimalBase *= 10","        }","        return (self \/ decimalBase) % 10","    }","}","746381295[0]","\/\/ returns 5","746381295[1]","\/\/ returns 9","746381295[2]","\/\/ returns 2","746381295[8]","\/\/ returns 7"]},{"type":"paragraph","inlineContent":[{"type":"text","text":"If the "},{"type":"codeVoice","code":"Int"},{"type":"text","text":" value doesn’t have enough digits for the requested index,"},{"type":"text","text":" "},{"type":"text","text":"the subscript implementation returns "},{"type":"codeVoice","code":"0"},{"type":"text","text":","},{"type":"text","text":" "},{"type":"text","text":"as if the number had been padded with zeros to the left:"}]},{"type":"codeListing","syntax":"swift","code":["746381295[9]","\/\/ returns 0, as if you had requested:","0746381295[9]"]},{"anchor":"Nested-Types","level":2,"type":"heading","text":"Nested Types"},{"type":"paragraph","inlineContent":[{"type":"text","text":"Extensions can add new nested types to existing classes, structures, and enumerations:"}]},{"type":"codeListing","syntax":"swift","code":["extension Int {","    enum Kind {","        case negative, zero, positive","    }","    var kind: Kind {","        switch self {","        case 0:","            return .zero","        case let x where x > 0:","            return .positive","        default:","            return .negative","        }","    }","}"]},{"type":"paragraph","inlineContent":[{"type":"text","text":"This example adds a new nested enumeration to "},{"type":"codeVoice","code":"Int"},{"type":"text","text":"."},{"type":"text","text":" "},{"type":"text","text":"This enumeration, called "},{"type":"codeVoice","code":"Kind"},{"type":"text","text":","},{"type":"text","text":" "},{"type":"text","text":"expresses the kind of number that a particular integer represents."},{"type":"text","text":" "},{"type":"text","text":"Specifically, it expresses whether the number is"},{"type":"text","text":" "},{"type":"text","text":"negative, zero, or positive."}]},{"type":"paragraph","inlineContent":[{"type":"text","text":"This example also adds a new computed instance property to "},{"type":"codeVoice","code":"Int"},{"type":"text","text":","},{"type":"text","text":" "},{"type":"text","text":"called "},{"type":"codeVoice","code":"kind"},{"type":"text","text":","},{"type":"text","text":" "},{"type":"text","text":"which returns the appropriate "},{"type":"codeVoice","code":"Kind"},{"type":"text","text":" enumeration case for that integer."}]},{"type":"paragraph","inlineContent":[{"type":"text","text":"The nested enumeration can now be used with any "},{"type":"codeVoice","code":"Int"},{"type":"text","text":" value:"}]},{"type":"codeListing","syntax":"swift","code":["func printIntegerKinds(_ numbers: [Int]) {","    for number in numbers {","        switch number.kind {","        case .negative:","            print(\"- \", terminator: \"\")","        case .zero:","            print(\"0 \", terminator: \"\")","        case .positive:","            print(\"+ \", terminator: \"\")","        }","    }","    print(\"\")","}","printIntegerKinds([3, 19, -27, 0, -6, 0, 7])","\/\/ Prints \"+ + - 0 - 0 + \""]},{"type":"paragraph","inlineContent":[{"type":"text","text":"This function, "},{"type":"codeVoice","code":"printIntegerKinds(_:)"},{"type":"text","text":","},{"type":"text","text":" "},{"type":"text","text":"takes an input array of "},{"type":"codeVoice","code":"Int"},{"type":"text","text":" values and iterates over those values in turn."},{"type":"text","text":" "},{"type":"text","text":"For each integer in the array,"},{"type":"text","text":" "},{"type":"text","text":"the function considers the "},{"type":"codeVoice","code":"kind"},{"type":"text","text":" computed property for that integer,"},{"type":"text","text":" "},{"type":"text","text":"and prints an appropriate description."}]},{"style":"note","content":[{"type":"paragraph","inlineContent":[{"type":"text","text":""},{"type":"codeVoice","code":"number.kind"},{"type":"text","text":" is already known to be of type "},{"type":"codeVoice","code":"Int.Kind"},{"type":"text","text":"."},{"type":"text","text":" "},{"type":"text","text":"Because of this, all of the "},{"type":"codeVoice","code":"Int.Kind"},{"type":"text","text":" case values"},{"type":"text","text":" "},{"type":"text","text":"can be written in shorthand form inside the "},{"type":"codeVoice","code":"switch"},{"type":"text","text":" statement,"},{"type":"text","text":" "},{"type":"text","text":"such as "},{"type":"codeVoice","code":".negative"},{"type":"text","text":" rather than "},{"type":"codeVoice","code":"Int.Kind.negative"},{"type":"text","text":"."}]}],"type":"aside","name":"Note"},{"style":"note","content":[{"type":"paragraph","inlineContent":[{"type":"text","text":""}]},{"type":"paragraph","inlineContent":[{"type":"text","text":"This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software."}]},{"type":"paragraph","inlineContent":[{"type":"text","text":"Learn more about using "},{"type":"reference","isActive":true,"identifier":"https:\/\/developer.apple.com\/support\/beta-software\/"},{"type":"text","text":"."}]}],"type":"aside","name":"Beta Software"}]}],"schemaVersion":{"major":0,"minor":3,"patch":0},"sections":[],"identifier":{"url":"doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/Extensions","interfaceLanguage":"swift"},"abstract":[{"type":"text","text":"Add functionality to an existing type."}],"kind":"article","metadata":{"title":"Extensions"},"hierarchy":{"paths":[["doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language"]]},"references":{"https://developer.apple.com/support/beta-software/":{"title":"Apple’s beta software","titleInlineContent":[{"type":"text","text":"Apple’s beta software"}],"type":"link","identifier":"https:\/\/developer.apple.com\/support\/beta-software\/","url":"https:\/\/developer.apple.com\/support\/beta-software\/"},"doc://org.swift.tspl/documentation/The-Swift-Programming-Language/Protocols#Adding-Protocol-Conformance-with-an-Extension":{"abstract":[],"title":"Adding Protocol Conformance with an Extension","kind":"section","type":"topic","identifier":"doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/Protocols#Adding-Protocol-Conformance-with-an-Extension","url":"\/documentation\/the-swift-programming-language\/protocols#Adding-Protocol-Conformance-with-an-Extension"},"doc://org.swift.tspl/documentation/The-Swift-Programming-Language/Initialization#Initializer-Delegation-for-Value-Types":{"abstract":[],"title":"Initializer Delegation for Value Types","kind":"section","type":"topic","identifier":"doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/Initialization#Initializer-Delegation-for-Value-Types","url":"\/documentation\/the-swift-programming-language\/initialization#Initializer-Delegation-for-Value-Types"},"doc://org.swift.tspl/documentation/The-Swift-Programming-Language":{"role":"article","title":"El lenguaje de programación Swift (5.9 beta)","abstract":[],"identifier":"doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language","kind":"article","type":"topic","url":"\/documentation\/the-swift-programming-language"},"doc://org.swift.tspl/documentation/The-Swift-Programming-Language/Generics#Extending-a-Generic-Type":{"abstract":[],"title":"Extending a Generic Type","kind":"section","type":"topic","identifier":"doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/Generics#Extending-a-Generic-Type","url":"\/documentation\/the-swift-programming-language\/generics#Extending-a-Generic-Type"},"doc://org.swift.tspl/documentation/The-Swift-Programming-Language/Protocols#Protocol-Extensions":{"abstract":[],"title":"Protocol Extensions","kind":"section","type":"topic","identifier":"doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/Protocols#Protocol-Extensions","url":"\/documentation\/the-swift-programming-language\/protocols#Protocol-Extensions"},"doc://org.swift.tspl/documentation/The-Swift-Programming-Language/Generics#Extensions-with-a-Generic-Where-Clause":{"abstract":[],"title":"Extensions with a Generic Where Clause","kind":"section","type":"topic","identifier":"doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/Generics#Extensions-with-a-Generic-Where-Clause","url":"\/documentation\/the-swift-programming-language\/generics#Extensions-with-a-Generic-Where-Clause"},"doc://org.swift.tspl/documentation/The-Swift-Programming-Language/Initialization#Default-Initializers":{"abstract":[],"title":"Default Initializers","kind":"section","type":"topic","identifier":"doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/Initialization#Default-Initializers","url":"\/documentation\/the-swift-programming-language\/initialization#Default-Initializers"}}}
+{
+  "abstract" : [
+    {
+      "text" : "Add functionality to an existing type.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/Extensions"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "title" : "Extensiones"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "inlineContent" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Extensions",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " add new functionality to an existing",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "class, structure, enumeration, or protocol type.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "This includes the ability to extend types",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "for which you don’t have access to the original source code",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "(known as ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "retroactive modeling",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : ").",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Extensions are similar to categories in Objective-C.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "(Unlike Objective-C categories, Swift extensions don’t have names.)",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Extensions in Swift can:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Add computed instance properties and computed type properties",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Define instance methods and type methods",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Provide new initializers",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Define subscripts",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Define and use new nested types",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Make an existing type conform to a protocol",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "In Swift,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "you can even extend a protocol to provide implementations of its requirements",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "or add additional functionality that conforming types can take advantage of.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "For more details, see ",
+              "type" : "text"
+            },
+            {
+              "text" : "doc:Protocols#Extensión-de-protocolos",
+              "type" : "text"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Extensions can add new functionality to a type,",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "but they can’t override existing functionality.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "anchor" : "Sintaxis-de-una-extensi%C3%B3n",
+          "level" : 2,
+          "text" : "Sintaxis de una extensión",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Declare extensions with the ",
+              "type" : "text"
+            },
+            {
+              "code" : "extension",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " keyword:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "extension SomeType {",
+            "    \/\/ new functionality to add to SomeType goes here",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "An extension can extend an existing type to make it adopt one or more protocols.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "To add protocol conformance,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "you write the protocol names",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "the same way as you write them for a class or structure:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "extension SomeType: SomeProtocol, AnotherProtocol {",
+            "    \/\/ implementation of protocol requirements goes here",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Adding protocol conformance in this way is described in",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "doc:Protocols#Agregar-conformidad-protocolaria-mediante-una-extensión",
+              "type" : "text"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "An extension can be used to extend an existing generic type,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "as described in ",
+              "type" : "text"
+            },
+            {
+              "text" : "doc:Generics#Extendiendo-un-tipo-genérico",
+              "type" : "text"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "You can also extend a generic type to conditionally add functionality,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "as described in ",
+              "type" : "text"
+            },
+            {
+              "text" : "doc:Generics#Extensiones-con-una-cláusula-where-genérica",
+              "type" : "text"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "If you define an extension to add new functionality to an existing type,",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "the new functionality will be available on all existing instances of that type,",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "even if they were created before the extension was defined.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "anchor" : "Propiedades-computadas",
+          "level" : 2,
+          "text" : "Propiedades computadas",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Extensions can add computed instance properties and computed type properties to existing types.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "This example adds five computed instance properties to Swift’s built-in ",
+              "type" : "text"
+            },
+            {
+              "code" : "Double",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " type,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "to provide basic support for working with distance units:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "extension Double {",
+            "    var km: Double { return self * 1_000.0 }",
+            "    var m: Double { return self }",
+            "    var cm: Double { return self \/ 100.0 }",
+            "    var mm: Double { return self \/ 1_000.0 }",
+            "    var ft: Double { return self \/ 3.28084 }",
+            "}",
+            "let oneInch = 25.4.mm",
+            "print(\"One inch is \\(oneInch) meters\")",
+            "\/\/ Prints \"One inch is 0.0254 meters\"",
+            "let threeFeet = 3.ft",
+            "print(\"Three feet is \\(threeFeet) meters\")",
+            "\/\/ Prints \"Three feet is 0.914399970739201 meters\""
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "These computed properties express that a ",
+              "type" : "text"
+            },
+            {
+              "code" : "Double",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " value",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "should be considered as a certain unit of length.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Although they’re implemented as computed properties,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "the names of these properties can be appended to",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "a floating-point literal value with dot syntax,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "as a way to use that literal value to perform distance conversions.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "In this example, a ",
+              "type" : "text"
+            },
+            {
+              "code" : "Double",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " value of ",
+              "type" : "text"
+            },
+            {
+              "code" : "1.0",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is considered to represent “one meter”.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "This is why the ",
+              "type" : "text"
+            },
+            {
+              "code" : "m",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " computed property returns ",
+              "type" : "text"
+            },
+            {
+              "code" : "self",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " —",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "the expression ",
+              "type" : "text"
+            },
+            {
+              "code" : "1.m",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is considered to calculate a ",
+              "type" : "text"
+            },
+            {
+              "code" : "Double",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " value of ",
+              "type" : "text"
+            },
+            {
+              "code" : "1.0",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Other units require some conversion to be expressed as a value measured in meters.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "One kilometer is the same as 1,000 meters,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "so the ",
+              "type" : "text"
+            },
+            {
+              "code" : "km",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " computed property multiplies the value by ",
+              "type" : "text"
+            },
+            {
+              "code" : "1_000.00",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "to convert into a number expressed in meters.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Similarly, there are 3.28084 feet in a meter,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "and so the ",
+              "type" : "text"
+            },
+            {
+              "code" : "ft",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " computed property divides the underlying ",
+              "type" : "text"
+            },
+            {
+              "code" : "Double",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " value",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "by ",
+              "type" : "text"
+            },
+            {
+              "code" : "3.28084",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", to convert it from feet to meters.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "These properties are read-only computed properties,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "and so they’re expressed without the ",
+              "type" : "text"
+            },
+            {
+              "code" : "get",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " keyword, for brevity.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Their return value is of type ",
+              "type" : "text"
+            },
+            {
+              "code" : "Double",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ",",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "and can be used within mathematical calculations wherever a ",
+              "type" : "text"
+            },
+            {
+              "code" : "Double",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is accepted:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "let aMarathon = 42.km + 195.m",
+            "print(\"A marathon is \\(aMarathon) meters long\")",
+            "\/\/ Prints \"A marathon is 42195.0 meters long\""
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Extensions can add new computed properties, but they can’t add stored properties,",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "or add property observers to existing properties.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "anchor" : "Inicializadores",
+          "level" : 2,
+          "text" : "Inicializadores",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Extensions can add new initializers to existing types.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "This enables you to extend other types to accept",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "your own custom types as initializer parameters,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "or to provide additional initialization options",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "that were not included as part of the type’s original implementation.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Extensions can add new convenience initializers to a class,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "but they can’t add new designated initializers or deinitializers to a class.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Designated initializers and deinitializers",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "must always be provided by the original class implementation.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If you use an extension to add an initializer to a value type that provides",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "default values for all of its stored properties",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "and doesn’t define any custom initializers,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "you can call the default initializer and memberwise initializer for that value type",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "from within your extension’s initializer.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "This wouldn’t be the case if you had written the initializer",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "as part of the value type’s original implementation,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "as described in ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/Initialization#Delegaci%C3%B3n-de-inicializadores-para-tipos-de-valor",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If you use an extension to add an initializer to a structure",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "that was declared in another module,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "the new initializer can’t access ",
+              "type" : "text"
+            },
+            {
+              "code" : "self",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " until it calls",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "an initializer from the defining module.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The example below defines a custom ",
+              "type" : "text"
+            },
+            {
+              "code" : "Rect",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " structure to represent a geometric rectangle.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The example also defines two supporting structures called ",
+              "type" : "text"
+            },
+            {
+              "code" : "Size",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and ",
+              "type" : "text"
+            },
+            {
+              "code" : "Point",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ",",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "both of which provide default values of ",
+              "type" : "text"
+            },
+            {
+              "code" : "0.0",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " for all of their properties:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "struct Size {",
+            "    var width = 0.0, height = 0.0",
+            "}",
+            "struct Point {",
+            "    var x = 0.0, y = 0.0",
+            "}",
+            "struct Rect {",
+            "    var origin = Point()",
+            "    var size = Size()",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Because the ",
+              "type" : "text"
+            },
+            {
+              "code" : "Rect",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " structure provides default values for all of its properties,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "it receives a default initializer and a memberwise initializer automatically,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "as described in ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/Initialization#Inicializadores-predeterminados",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "These initializers can be used to create new ",
+              "type" : "text"
+            },
+            {
+              "code" : "Rect",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " instances:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "let defaultRect = Rect()",
+            "let memberwiseRect = Rect(origin: Point(x: 2.0, y: 2.0),",
+            "    size: Size(width: 5.0, height: 5.0))"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "You can extend the ",
+              "type" : "text"
+            },
+            {
+              "code" : "Rect",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " structure to provide an additional initializer",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "that takes a specific center point and size:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "extension Rect {",
+            "    init(center: Point, size: Size) {",
+            "        let originX = center.x - (size.width \/ 2)",
+            "        let originY = center.y - (size.height \/ 2)",
+            "        self.init(origin: Point(x: originX, y: originY), size: size)",
+            "    }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This new initializer starts by calculating an appropriate origin point based on",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "the provided ",
+              "type" : "text"
+            },
+            {
+              "code" : "center",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " point and ",
+              "type" : "text"
+            },
+            {
+              "code" : "size",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " value.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The initializer then calls the structure’s automatic memberwise initializer",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "init(origin:size:)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", which stores the new origin and size values",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "in the appropriate properties:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "let centerRect = Rect(center: Point(x: 4.0, y: 4.0),",
+            "    size: Size(width: 3.0, height: 3.0))",
+            "\/\/ centerRect's origin is (2.5, 2.5) and its size is (3.0, 3.0)"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "If you provide a new initializer with an extension,",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "you are still responsible for making sure that each instance is fully initialized",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "once the initializer completes.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "anchor" : "M%C3%A9todos",
+          "level" : 2,
+          "text" : "Métodos",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Extensions can add new instance methods and type methods to existing types.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The following example adds a new instance method called ",
+              "type" : "text"
+            },
+            {
+              "code" : "repetitions",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " to the ",
+              "type" : "text"
+            },
+            {
+              "code" : "Int",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " type:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "extension Int {",
+            "    func repetitions(task: () -> Void) {",
+            "        for _ in 0..<self {",
+            "            task()",
+            "        }",
+            "    }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The ",
+              "type" : "text"
+            },
+            {
+              "code" : "repetitions(task:)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " method takes a single argument of type ",
+              "type" : "text"
+            },
+            {
+              "code" : "() -> Void",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ",",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "which indicates a function that has no parameters and doesn’t return a value.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "After defining this extension,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "you can call the ",
+              "type" : "text"
+            },
+            {
+              "code" : "repetitions(task:)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " method on any integer",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "to perform a task that many number of times:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "3.repetitions {",
+            "    print(\"Hello!\")",
+            "}",
+            "\/\/ Hello!",
+            "\/\/ Hello!",
+            "\/\/ Hello!"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "anchor" : "M%C3%A9todos-de-instancia-modificadores",
+          "level" : 3,
+          "text" : "Métodos de instancia modificadores",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Instance methods added with an extension can also modify (or ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "mutate",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : ") the instance itself.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Structure and enumeration methods that modify ",
+              "type" : "text"
+            },
+            {
+              "code" : "self",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " or its properties",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "must mark the instance method as ",
+              "type" : "text"
+            },
+            {
+              "code" : "mutating",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ",",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "just like mutating methods from an original implementation.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The example below adds a new mutating method called ",
+              "type" : "text"
+            },
+            {
+              "code" : "square",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " to Swift’s ",
+              "type" : "text"
+            },
+            {
+              "code" : "Int",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " type,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "which squares the original value:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "extension Int {",
+            "    mutating func square() {",
+            "        self = self * self",
+            "    }",
+            "}",
+            "var someInt = 3",
+            "someInt.square()",
+            "\/\/ someInt is now 9"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "anchor" : "Sub%C3%ADndices",
+          "level" : 2,
+          "text" : "Subíndices",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Extensions can add new subscripts to an existing type.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "This example adds an integer subscript to Swift’s built-in ",
+              "type" : "text"
+            },
+            {
+              "code" : "Int",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " type.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "This subscript ",
+              "type" : "text"
+            },
+            {
+              "code" : "[n]",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " returns the decimal digit ",
+              "type" : "text"
+            },
+            {
+              "code" : "n",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " places in",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "from the right of the number:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "123456789[0]",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " returns ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "9",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "123456789[1]",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " returns ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "8",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "…and so on:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "extension Int {",
+            "    subscript(digitIndex: Int) -> Int {",
+            "        var decimalBase = 1",
+            "        for _ in 0..<digitIndex {",
+            "            decimalBase *= 10",
+            "        }",
+            "        return (self \/ decimalBase) % 10",
+            "    }",
+            "}",
+            "746381295[0]",
+            "\/\/ returns 5",
+            "746381295[1]",
+            "\/\/ returns 9",
+            "746381295[2]",
+            "\/\/ returns 2",
+            "746381295[8]",
+            "\/\/ returns 7"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If the ",
+              "type" : "text"
+            },
+            {
+              "code" : "Int",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " value doesn’t have enough digits for the requested index,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "the subscript implementation returns ",
+              "type" : "text"
+            },
+            {
+              "code" : "0",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ",",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "as if the number had been padded with zeros to the left:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "746381295[9]",
+            "\/\/ returns 0, as if you had requested:",
+            "0746381295[9]"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "anchor" : "Tipos-anidados",
+          "level" : 2,
+          "text" : "Tipos anidados",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Extensions can add new nested types to existing classes, structures, and enumerations:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "extension Int {",
+            "    enum Kind {",
+            "        case negative, zero, positive",
+            "    }",
+            "    var kind: Kind {",
+            "        switch self {",
+            "        case 0:",
+            "            return .zero",
+            "        case let x where x > 0:",
+            "            return .positive",
+            "        default:",
+            "            return .negative",
+            "        }",
+            "    }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This example adds a new nested enumeration to ",
+              "type" : "text"
+            },
+            {
+              "code" : "Int",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "This enumeration, called ",
+              "type" : "text"
+            },
+            {
+              "code" : "Kind",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ",",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "expresses the kind of number that a particular integer represents.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Specifically, it expresses whether the number is",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "negative, zero, or positive.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This example also adds a new computed instance property to ",
+              "type" : "text"
+            },
+            {
+              "code" : "Int",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ",",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "called ",
+              "type" : "text"
+            },
+            {
+              "code" : "kind",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ",",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "which returns the appropriate ",
+              "type" : "text"
+            },
+            {
+              "code" : "Kind",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " enumeration case for that integer.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The nested enumeration can now be used with any ",
+              "type" : "text"
+            },
+            {
+              "code" : "Int",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " value:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "func printIntegerKinds(_ numbers: [Int]) {",
+            "    for number in numbers {",
+            "        switch number.kind {",
+            "        case .negative:",
+            "            print(\"- \", terminator: \"\")",
+            "        case .zero:",
+            "            print(\"0 \", terminator: \"\")",
+            "        case .positive:",
+            "            print(\"+ \", terminator: \"\")",
+            "        }",
+            "    }",
+            "    print(\"\")",
+            "}",
+            "printIntegerKinds([3, 19, -27, 0, -6, 0, 7])",
+            "\/\/ Prints \"+ + - 0 - 0 + \""
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This function, ",
+              "type" : "text"
+            },
+            {
+              "code" : "printIntegerKinds(_:)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ",",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "takes an input array of ",
+              "type" : "text"
+            },
+            {
+              "code" : "Int",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " values and iterates over those values in turn.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "For each integer in the array,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "the function considers the ",
+              "type" : "text"
+            },
+            {
+              "code" : "kind",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " computed property for that integer,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "and prints an appropriate description.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "",
+                  "type" : "text"
+                },
+                {
+                  "code" : "number.kind",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " is already known to be of type ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "Int.Kind",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : ".",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "Because of this, all of the ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "Int.Kind",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " case values",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "can be written in shorthand form inside the ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "switch",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " statement,",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "such as ",
+                  "type" : "text"
+                },
+                {
+                  "code" : ".negative",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " rather than ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "Int.Kind.negative",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : ".",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Esta documentación contiene información preliminar sobre una API o tecnología en desarrollo. Esta información está sujeta a cambios, y todo software implementado en conformidad con esta documentación debe ser testeado con el software final del sistema operativo.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Conoce más acerca del uso del ",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "https:\/\/developer.apple.com\/es\/support\/beta-software\/",
+                  "isActive" : true,
+                  "type" : "reference"
+                },
+                {
+                  "text" : ".",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Software Beta",
+          "style" : "note",
+          "type" : "aside"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ]
+, 
+"references": {
+"doc://org.swift.tspl/documentation/The-Swift-Programming-Language": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language",
+  "kind" : "article",
+  "role" : "collection",
+  "title" : "The Swift Programming Language (6)",
+  "type" : "topic",
+  "url" : "\/documentation\/the-swift-programming-language"
+},
+"doc://org.swift.tspl/documentation/The-Swift-Programming-Language/Initialization#Delegaci%C3%B3n-de-inicializadores-para-tipos-de-valor": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/Initialization#Delegaci%C3%B3n-de-inicializadores-para-tipos-de-valor",
+  "kind" : "section",
+  "title" : "Delegación de inicializadores para tipos de valor",
+  "type" : "topic",
+  "url" : "\/documentation\/the-swift-programming-language\/initialization#Delegaci%C3%B3n-de-inicializadores-para-tipos-de-valor"
+},
+"doc://org.swift.tspl/documentation/The-Swift-Programming-Language/Initialization#Inicializadores-predeterminados": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/Initialization#Inicializadores-predeterminados",
+  "kind" : "section",
+  "title" : "Inicializadores predeterminados",
+  "type" : "topic",
+  "url" : "\/documentation\/the-swift-programming-language\/initialization#Inicializadores-predeterminados"
+},
+"https://developer.apple.com/es/support/beta-software/": {
+  "identifier" : "https:\/\/developer.apple.com\/es\/support\/beta-software\/",
+  "title" : "software beta de Apple",
+  "titleInlineContent" : [
+    {
+      "text" : "software beta de Apple",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/developer.apple.com\/es\/support\/beta-software\/"
+}
+}
+}

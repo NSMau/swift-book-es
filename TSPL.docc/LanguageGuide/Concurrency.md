@@ -1,4 +1,4 @@
-# Concurrency
+# Concurrencia
 
 Perform asynchronous operations.
 
@@ -92,7 +92,7 @@ you end up writing nested closures.
 In this style,
 more complex code with deep nesting can quickly become unwieldy.
 
-## Defining and Calling Asynchronous Functions
+## Definición y llamado de funciones asíncronas
 
 An *asynchronous function* or *asynchronous method*
 is a special kind of function or method
@@ -245,7 +245,7 @@ only certain places in your program can call asynchronous functions or methods:
   a structure, class, or enumeration that's marked with `@main`.
 
 - Code in an unstructured child task,
-  as shown in <doc:Concurrency#Unstructured-Concurrency> below.
+  as shown in <doc:Concurrency#Concurrencia-desestructurada> below.
 
 <!--
   SE-0296 specifically calls out that top-level code is *not* an async context,
@@ -348,7 +348,7 @@ you'll get compile-time error instead of introducing a bug.
   (discussion of @MainActor closures can probably go here too)
 -->
 
-## Asynchronous Sequences
+## Secuencias asíncronas
 
 The `listPhotos(inGallery:)` function in the previous section
 asynchronously returns the whole array at once,
@@ -424,7 +424,7 @@ by adding conformance to the
   }
 -->
 
-## Calling Asynchronous Functions in Parallel
+## Invocación de funciones asíncronas en paralelo
 
 <!--
   FIXME
@@ -542,7 +542,7 @@ Here's how you can think about the differences between these two approaches:
 
 You can also mix both of these approaches in the same code.
 
-## Tasks and Task Groups
+## *Tasks* y *Task Groups*
 
 A *task* is a unit of work
 that can be run asynchronously as part of your program.
@@ -694,7 +694,7 @@ see [`TaskGroup`](https://developer.apple.com/documentation/swift/taskgroup).
   This is a sort of cooperative multitasking for long-running work.
 -->
 
-### Unstructured Concurrency
+### Concurrencia desestructurada
 
 In addition to the structured approaches to concurrency
 described in the previous sections,
@@ -730,7 +730,7 @@ see [`Task`](https://developer.apple.com/documentation/swift/task).
   (Pull from my 2021-04-21 notes from Ben's talk rehearsal.)
 -->
 
-### Task Cancellation
+### Cancelación de *Tasks*
 
 Swift concurrency uses a cooperative cancellation model.
 Each task checks whether it has been canceled
@@ -783,7 +783,7 @@ call [`Task.cancel()`](https://developer.apple.com/documentation/swift/task/3851
   (it doesn't throw like ``checkCancellation`` does)
 -->
 
-## Actors
+## Actores
 
 You can use tasks to break up your program into isolated, concurrent pieces.
 Tasks are isolated from each other,
@@ -793,7 +793,7 @@ Actors let you safely share information between concurrent code.
 
 Like classes, actors are reference types,
 so the comparison of value types and reference types
-in <doc:ClassesAndStructures#Classes-Are-Reference-Types>
+in <doc:ClassesAndStructures#Las-clases-son-tipos-de-referencia>
 applies to actors as well as classes.
 Unlike classes,
 actors allow only one task to access their mutable state at a time,
@@ -990,7 +990,7 @@ This guarantee is known as *actor isolation*.
        print(await logger.getMax())
 -->
 
-## Sendable Types
+## Tipos enviables
 
 Tasks and actors let you divide a program
 into pieces that can safely run concurrently.
@@ -1221,16 +1221,16 @@ preventing the type from being sendable.
   but maybe link to them?
 -->
 
-> Beta Software:
+> Software Beta:
 >
-> This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+> Esta documentación contiene información preliminar sobre una API o tecnología en desarrollo. Esta información está sujeta a cambios, y todo software implementado en conformidad con esta documentación debe ser testeado con el software final del sistema operativo.
 >
-> Learn more about using [Apple's beta software](https://developer.apple.com/support/beta-software/).
+> Conoce más acerca del uso del [software beta de Apple](https://developer.apple.com/es/support/beta-software/).
 
 <!--
 This source file is part of the Swift.org open source project
 
-Copyright (c) 2014 - 2022 Apple Inc. and the Swift project authors
+Copyright (c) 2014 - 2023 Apple Inc. and the Swift project authors
 Licensed under Apache License v2.0 with Runtime Library Exception
 
 See https://swift.org/LICENSE.txt for license information

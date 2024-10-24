@@ -1,4 +1,4 @@
-# El lenguaje de programación Swift (5.9 beta)
+# The Swift Programming Language (6)
 
 @Metadata {
   @TechnologyRoot
@@ -10,15 +10,15 @@
   @AutomaticArticleSubheading(disabled)
 }
 
-## Temas
+## Topics
 
-### Introduccion a Swift
+### Welcome to Swift
 
-- <doc:AcercaDeSwift>
-- <doc:Compatibilidad>
-- <doc:RecorridoGuiado>
+- <doc:AboutSwift>
+- <doc:Compatibility>
+- <doc:GuidedTour>
 
-### Guía del lenguaje
+### Language Guide
 
 - <doc:TheBasics>
 - <doc:BasicOperators>
@@ -50,7 +50,7 @@
 - <doc:AccessControl>
 - <doc:AdvancedOperators>
 
-### Referencia del lenguaje
+### Language Reference
 
 - <doc:AboutTheLanguageReference>
 - <doc:LexicalStructure>
@@ -63,16 +63,16 @@
 - <doc:GenericParametersAndArguments>
 - <doc:SummaryOfTheGrammar>
 
-### Historial de revisiones
+### Revision History
 
 - <doc:RevisionHistory>
 
 <!--
-Este archivo fuente es parte del proyecto de código abierto Swift.org
+This source file is part of the Swift.org open source project
 
-Copyright (c) 2014 - 2023 Apple Inc. y los autores del proyecto Swift
-Licenciado bajo la Licencia Apache v2.0 con Runtime Library Exception
+Copyright (c) 2014 - 2024 Apple Inc. and the Swift project authors
+Licensed under Apache License v2.0 with Runtime Library Exception
 
-Consulta https://swift.org/LICENSE.txt para información sobre la licencia
-Consulta https://swift.org/CONTRIBUTING.txt para ver la lista de autores del proyecto Swift
+See https://swift.org/LICENSE.txt for license information
+See https://swift.org/CONTRIBUTORS.txt for the list of Swift project authors
 -->

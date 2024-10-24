@@ -1,4 +1,4 @@
-# Methods
+# Métodos
 
 Define and call functions that are part of an instance or type.
 
@@ -15,7 +15,7 @@ In Objective-C, classes are the only types that can define methods.
 In Swift, you can choose whether to define a class, structure, or enumeration,
 and still have the flexibility to define methods on the type you create.
 
-## Instance Methods
+## Métodos de instancia
 
 *Instance methods* are functions that belong to instances of
 a particular class, structure, or enumeration.
@@ -110,11 +110,11 @@ counter.reset()
 
 Function parameters can have both a name (for use within the function's body)
 and an argument label (for use when calling the function),
-as described in <doc:Functions#Function-Argument-Labels-and-Parameter-Names>.
+as described in <doc:Functions#Etiquetas-de-argumentos-y-nombres-de-parámetros-de-funciones>.
 The same is true for method parameters,
 because methods are just functions that are associated with a type.
 
-### The self Property
+### La propiedad self
 
 Every instance of a type has an implicit property called `self`,
 which is exactly equivalent to the instance itself.
@@ -198,7 +198,7 @@ if somePoint.isToTheRightOf(x: 1.0) {
 Without the `self` prefix,
 Swift would assume that both uses of `x` referred to the method parameter called `x`.
 
-### Modifying Value Types from Within Instance Methods
+### Modificando tipos de valor desde adentro de métodos de instancia
 
 Structures and enumerations are *value types*.
 By default, the properties of a value type can't be modified from within its instance methods.
@@ -260,7 +260,7 @@ to enable it to modify its properties.
 
 Note that you can't call a mutating method on a constant of structure type,
 because its properties can't be changed, even if they're variable properties,
-as described in <doc:Properties#Stored-Properties-of-Constant-Structure-Instances>:
+as described in <doc:Properties#Propiedades-almacenadas-de-instancias-de-estructuras-constantes>:
 
 ```swift
 let fixedPoint = Point(x: 3.0, y: 3.0)
@@ -299,7 +299,7 @@ fixedPoint.moveBy(x: 2.0, y: 3.0)
   if the setter for the computed property is explicitly defined as @!mutating.
 -->
 
-### Assigning to self Within a Mutating Method
+### Asignación a self dentro de un método modificador
 
 Mutating methods can assign an entirely new instance to the implicit `self` property.
 The `Point` example shown above could have been written in the following way instead:
@@ -389,7 +389,7 @@ The switch cycles between three different power states
 (`off`, `low` and `high`)
 every time its `next()` method is called.
 
-## Type Methods
+## Métodos de tipo
 
 Instance methods, as described above,
 are methods that you call on an instance of a particular type.
@@ -650,16 +650,16 @@ if player.tracker.advance(to: 6) {
   (see Doug's comments from the 2014-03-12 release notes)
 -->
 
-> Beta Software:
+> Software Beta:
 >
-> This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+> Esta documentación contiene información preliminar sobre una API o tecnología en desarrollo. Esta información está sujeta a cambios, y todo software implementado en conformidad con esta documentación debe ser testeado con el software final del sistema operativo.
 >
-> Learn more about using [Apple's beta software](https://developer.apple.com/support/beta-software/).
+> Conoce más acerca del uso del [software beta de Apple](https://developer.apple.com/es/support/beta-software/).
 
 <!--
 This source file is part of the Swift.org open source project
 
-Copyright (c) 2014 - 2022 Apple Inc. and the Swift project authors
+Copyright (c) 2014 - 2023 Apple Inc. and the Swift project authors
 Licensed under Apache License v2.0 with Runtime Library Exception
 
 See https://swift.org/LICENSE.txt for license information

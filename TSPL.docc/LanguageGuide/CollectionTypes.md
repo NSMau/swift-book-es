@@ -1,4 +1,4 @@
-# Collection Types
+# Tipos de colecciones
 
 Organize data using arrays, sets, and dictionaries.
 
@@ -33,7 +33,7 @@ you will retrieve from a collection.
   TODO: discuss collection equality
 -->
 
-## Mutability of Collections
+## Mutabilidad de las colecciones
 
 If you create an array, a set, or a dictionary, and assign it to a variable,
 the collection that's created will be *mutable*.
@@ -49,7 +49,7 @@ and its size and contents can't be changed.
 > and enables the Swift compiler to optimize the performance of
 > the collections you create.
 
-## Arrays
+## Arreglos
 
 An *array* stores values of the same type in an ordered list.
 The same value can appear in an array multiple times at different positions.
@@ -59,7 +59,7 @@ The same value can appear in an array multiple times at different positions.
 > For more information about using `Array` with Foundation and Cocoa,
 > see [Bridging Between Array and NSArray](https://developer.apple.com/documentation/swift/array#2846730).
 
-### Array Type Shorthand Syntax
+### Sintaxis concisa para el tipo arreglo
 
 The type of a Swift array is written in full as `Array<Element>`,
 where `Element` is the type of values the array is allowed to store.
@@ -68,7 +68,7 @@ Although the two forms are functionally identical,
 the shorthand form is preferred
 and is used throughout this guide when referring to the type of an array.
 
-### Creating an Empty Array
+### Creación de un arreglo vacío
 
 You can create an empty array of a certain type
 using initializer syntax:
@@ -117,7 +117,7 @@ someInts = []
   ```
 -->
 
-### Creating an Array with a Default Value
+### Creación de un arreglo con un valor predeterminado
 
 Swift's `Array` type also provides
 an initializer for creating an array of a certain size
@@ -141,7 +141,7 @@ var threeDoubles = Array(repeating: 0.0, count: 3)
   ```
 -->
 
-### Creating an Array by Adding Two Arrays Together
+### Creación de un arreglo sumando dos arreglos
 
 You can create a new array by adding together two existing arrays with compatible types
 with the addition operator (`+`).
@@ -182,7 +182,7 @@ var sixDoubles = threeDoubles + anotherThreeDoubles
   Likewise I'm holding off writing about it until NewArray lands.
 -->
 
-### Creating an Array with an Array Literal
+### Creación de un arreglo a partir de un literal de arreglo
 
 You can also initialize an array with an *array literal*,
 which is a shorthand way to write one or more values as an array collection.
@@ -247,7 +247,7 @@ Because all values in the array literal are of the same type,
 Swift can infer that `[String]` is
 the correct type to use for the `shoppingList` variable.
 
-### Accessing and Modifying an Array
+### Acceso y modificación de un arreglo
 
 You access and modify an array through its methods and properties,
 or by using subscript syntax.
@@ -506,7 +506,7 @@ let apples = shoppingList.removeLast()
   ```
 -->
 
-### Iterating Over an Array
+### Iterar sobre un arreglo
 
 You can iterate over the entire set of values in an array with the `for`-`in` loop:
 
@@ -573,7 +573,7 @@ for (index, value) in shoppingList.enumerated() {
   ```
 -->
 
-For more about the `for`-`in` loop, see <doc:ControlFlow#For-In-Loops>.
+For more about the `for`-`in` loop, see <doc:ControlFlow#Ciclos-for-in>.
 
 ## Sets
 
@@ -591,7 +591,7 @@ or when you need to ensure that an item only appears once.
   TODO: Add note about performance characteristics of contains on sets as opposed to arrays?
 -->
 
-### Hash Values for Set Types
+### Valores hash para los tipos set
 
 A type must be *hashable* in order to be stored in a set ---
 that is, the type must provide a way to compute a *hash value* for itself.
@@ -612,13 +612,13 @@ are also hashable by default.
 > see [`Hashable`](https://developer.apple.com/documentation/swift/hashable).
 > For information about conforming to protocols, see <doc:Protocols>.
 
-### Set Type Syntax
+### Sintaxis del tipo set
 
 The type of a Swift set is written as `Set<Element>`,
 where `Element` is the type that the set is allowed to store.
 Unlike arrays, sets don't have an equivalent shorthand form.
 
-### Creating and Initializing an Empty Set
+### Creación e inicialización de un set vacío
 
 You can create an empty set of a certain type
 using initializer syntax:
@@ -665,7 +665,7 @@ letters = []
   ```
 -->
 
-### Creating a Set with an Array Literal
+### Creación de un set a partir de un literal de arreglo
 
 You can also initialize a set with an array literal,
 as a shorthand way to write one or more values as a set collection.
@@ -721,7 +721,7 @@ Because all values in the array literal are of the same type,
 Swift can infer that `Set<String>` is
 the correct type to use for the `favoriteGenres` variable.
 
-### Accessing and Modifying a Set
+### Acceso y modificación de un set
 
 You access and modify a set through its methods and properties.
 
@@ -837,7 +837,7 @@ if favoriteGenres.contains("Funk") {
   ```
 -->
 
-### Iterating Over a Set
+### Iterar sobre un set
 
 You can iterate over the values in a set with a `for`-`in` loop.
 
@@ -863,7 +863,7 @@ for genre in favoriteGenres {
   ```
 -->
 
-For more about the `for`-`in` loop, see <doc:ControlFlow#For-In-Loops>.
+For more about the `for`-`in` loop, see <doc:ControlFlow#Ciclos-for-in>.
 
 Swift's `Set` type doesn't have a defined ordering.
 To iterate over the values of a set in a specific order,
@@ -893,14 +893,14 @@ for genre in favoriteGenres.sorted() {
   ```
 -->
 
-## Performing Set Operations
+## Ejecución de operaciones de sets
 
 You can efficiently perform fundamental set operations,
 such as combining two sets together,
 determining which values two sets have in common,
 or determining whether two sets contain all, some, or none of the same values.
 
-### Fundamental Set Operations
+### Operaciones de sets básicas
 
 The illustration below depicts two sets --- `a` and `b` ---
 with the results of various set operations represented by the shaded regions.
@@ -959,7 +959,7 @@ oddDigits.symmetricDifference(singleDigitPrimeNumbers).sorted()
   Tracking bug is <rdar://problem/35301593>
 -->
 
-### Set Membership and Equality
+### Membresía e igualdad de un set
 
 The illustration below depicts three sets --- `a`, `b` and `c` ---
 with overlapping regions representing elements shared among sets.
@@ -1019,7 +1019,7 @@ farmAnimals.isDisjoint(with: cityAnimals)
   Tracking bug is <rdar://problem/35301593>
 -->
 
-## Dictionaries
+## Diccionarios
 
 A *dictionary* stores associations between
 keys of the same type and values of the same type
@@ -1036,7 +1036,7 @@ the definition for a particular word.
 > For more information about using `Dictionary` with Foundation and Cocoa,
 > see [Bridging Between Dictionary and NSDictionary](https://developer.apple.com/documentation/swift/dictionary#2846239).
 
-### Dictionary Type Shorthand Syntax
+### Sintaxis concisa del tipo diccionario
 
 The type of a Swift dictionary is written in full as `Dictionary<Key, Value>`,
 where `Key` is the type of value that can be used as a dictionary key,
@@ -1050,7 +1050,7 @@ Although the two forms are functionally identical,
 the shorthand form is preferred
 and is used throughout this guide when referring to the type of a dictionary.
 
-### Creating an Empty Dictionary
+### Creación de un diccionario vacío
 
 As with arrays,
 you can create an empty `Dictionary` of a certain type by using initializer syntax:
@@ -1097,7 +1097,7 @@ namesOfIntegers = [:]
   ```
 -->
 
-### Creating a Dictionary with a Dictionary Literal
+### Creación de un diccionario a partir de un literal de diccionario
 
 You can also initialize a dictionary with a *dictionary literal*,
 which has a similar syntax to the array literal seen earlier.
@@ -1171,7 +1171,7 @@ and likewise all values are of the same type as each other,
 Swift can infer that `[String: String]` is
 the correct type to use for the `airports` dictionary.
 
-### Accessing and Modifying a Dictionary
+### Acceso y modificación de un diccionario
 
 You access and modify a dictionary through its methods and properties,
 or by using subscript syntax.
@@ -1375,7 +1375,7 @@ if let removedValue = airports.removeValue(forKey: "DUB") {
   ```
 -->
 
-### Iterating Over a Dictionary
+### Iterar sobre un diccionario
 
 You can iterate over the key-value pairs in a dictionary with a `for`-`in` loop.
 Each item in the dictionary is returned as a `(key, value)` tuple,
@@ -1402,7 +1402,7 @@ for (airportCode, airportName) in airports {
   ```
 -->
 
-For more about the `for`-`in` loop, see <doc:ControlFlow#For-In-Loops>.
+For more about the `for`-`in` loop, see <doc:ControlFlow#Ciclos-for-in>.
 
 You can also retrieve an iterable collection of a dictionary's keys or values
 by accessing its `keys` and `values` properties:
@@ -1469,16 +1469,16 @@ Swift's `Dictionary` type doesn't have a defined ordering.
 To iterate over the keys or values of a dictionary in a specific order,
 use the `sorted()` method on its `keys` or `values` property.
 
-> Beta Software:
+> Software Beta:
 >
-> This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+> Esta documentación contiene información preliminar sobre una API o tecnología en desarrollo. Esta información está sujeta a cambios, y todo software implementado en conformidad con esta documentación debe ser testeado con el software final del sistema operativo.
 >
-> Learn more about using [Apple's beta software](https://developer.apple.com/support/beta-software/).
+> Conoce más acerca del uso del [software beta de Apple](https://developer.apple.com/es/support/beta-software/).
 
 <!--
 This source file is part of the Swift.org open source project
 
-Copyright (c) 2014 - 2022 Apple Inc. and the Swift project authors
+Copyright (c) 2014 - 2023 Apple Inc. and the Swift project authors
 Licensed under Apache License v2.0 with Runtime Library Exception
 
 See https://swift.org/LICENSE.txt for license information

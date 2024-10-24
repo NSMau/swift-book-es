@@ -1,4 +1,4 @@
-# Nested Types
+# Tipos anidados
 
 Define types inside the scope of another type.
 
@@ -13,7 +13,7 @@ To nest a type within another type,
 write its definition within the outer braces of the type it supports.
 Types can be nested to as many levels as are required.
 
-## Nested Types in Action
+## Tipos anidados en acción
 
 The example below defines a structure called `BlackjackCard`,
 which models a playing card as used in the game of Blackjack.
@@ -141,7 +141,7 @@ inserts additional description detail for that second value.
 
 Because `BlackjackCard` is a structure with no custom initializers,
 it has an implicit memberwise initializer,
-as described in <doc:Initialization#Memberwise-Initializers-for-Structure-Types>.
+as described in <doc:Initialization#Inicializadores-a-nivel-de-miembro-para-tipos-de-estructura>.
 You can use this initializer to initialize a new constant called `theAceOfSpades`:
 
 ```swift
@@ -167,7 +167,7 @@ by their case names (`.ace` and `.spades`) alone.
 In the example above, the `description` property correctly reports that
 the Ace of Spades has a value of `1` or `11`.
 
-## Referring to Nested Types
+## Referencias a tipos anidados
 
 To use a nested type outside of its definition context,
 prefix its name with the name of the type it's nested within:
@@ -191,16 +191,16 @@ For the example above,
 this enables the names of `Suit`, `Rank`, and `Values` to be kept deliberately short,
 because their names are naturally qualified by the context in which they're defined.
 
-> Beta Software:
+> Software Beta:
 >
-> This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+> Esta documentación contiene información preliminar sobre una API o tecnología en desarrollo. Esta información está sujeta a cambios, y todo software implementado en conformidad con esta documentación debe ser testeado con el software final del sistema operativo.
 >
-> Learn more about using [Apple's beta software](https://developer.apple.com/support/beta-software/).
+> Conoce más acerca del uso del [software beta de Apple](https://developer.apple.com/es/support/beta-software/).
 
 <!--
 This source file is part of the Swift.org open source project
 
-Copyright (c) 2014 - 2022 Apple Inc. and the Swift project authors
+Copyright (c) 2014 - 2023 Apple Inc. and the Swift project authors
 Licensed under Apache License v2.0 with Runtime Library Exception
 
 See https://swift.org/LICENSE.txt for license information

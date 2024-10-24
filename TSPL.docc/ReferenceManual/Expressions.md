@@ -1053,7 +1053,7 @@ Otherwise, the closure expression is escaping.
 
 For more information about escaping closures, see <doc:Closures#Escaping-Closures>.
 
-#### Capture Lists
+#### Listas de Captura
 
 By default, a closure expression captures
 constants and variables from its surrounding scope

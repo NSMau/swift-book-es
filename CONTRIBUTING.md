@@ -1,103 +1,106 @@
-# Contributing to *The Swift Programming Language* book
+# Contribuyendo al libro *The Swift Programming Language*
 
-By submitting a pull request,
-you represent that you have the right to license your contribution
-to Apple and the community,
-and agree by submitting the patch
-that your contributions are licensed under
-the [Swift license](https://swift.org/LICENSE.txt).
+Al enviar un *pull request*,
+declaras que tienes el derecho de licenciar tu contribución
+a Apple y a la comunidad,
+y aceptas, al enviar tus cambios,
+que tus contribuciones están licenciadas bajo
+la [licencia Swift](https://swift.org/LICENSE.txt).
 
-For small changes,
-like typo fixes and revisions within a few paragraphs,
-the discussion of those changes is usually small enough
-to be part of the pull request.
-For large changes,
-like new chapters and sections,
-start a thread in the [Swift forums][forum]
-to discuss your approach and identify possible issues
-before you invest a lot of time in writing.
-In general,
-the amount of discussion around a change before making a pull request
-corresponds to the size of that change.
+Para cambios pequeños,
+como correcciones tipográficas y revisiones dentro de unos pocos párrafos,
+la discusión de dichos cambios suele ser lo suficientemente mínima
+para formar parte del *pull request*.
+Para cambios grandes,
+como nuevos capítulos y secciones,
+inicia un hilo en los [foros Swift][foro]
+para discutir tu enfoque e identificar posibles problemas
+antes de invertir mucho tiempo escribiendo.
+En general,
+el grado de discusión en torno a un cambio antes de hacer un *pull request*
+corresponde al tamaño de dicho cambio.
 
-Content in this book follows [Apple Style Guide][asg]
-and [this book’s style guide][tspl-style].
+El contenido de este libro sigue la [Guía de estilos de Apple][asg]
+y [la guía de estilos de este libro][tspl-style].
 
 [asg]: https://help.apple.com/applestyleguide/
-[forum]: https://forums.swift.org/c/swift-documentation/92
+[foro]: https://forums.swift.org/c/swift-documentation/92
 [tspl-style]: /Style.md
 
-## Working on a feature branch
+## Trabajando en una rama *feature*
 
-If this is your first contribution,
-start by making a fork of the Git repository.
+Si esta es tu primera contribución,
+empieza por hacer un *fork* del repositorio Git.
 
-In your fork,
-make a new branch starting at `main`
-with a brief, descriptive name.
-Branch names are ephemeral:
-When a pull request is merged,
-the merge commit doesn’t include name of your feature branch.
+En tu *fork*,
+crea una nueva rama a partir de `main`,
+con un nombre breve y descriptivo.
+Los nombres de las ramas son efímeros:
+al incorporar (*merge*) un *pull request*,
+el *commit* de dicha incorporación no incluye el nombre de tu rama *feature*.
 
-If you need to incorporate changes from `main` or resolve a merge conflict,
-merge `main` into your feature branch.
-Before creating a pull request,
-you can instead rebase your feature branch onto `main` if you prefer,
-but don't rebase commits that are part of a pull request.
+Si necesitas integrar cambios de `main` o resolver un *merge conflict*,
+incorpora (*merge*) `main` en tu rama *feature*.
+Antes de crear un *pull request*,
+puedes *rebase* tu rama *feature* en `main`, si así lo prefieres,
+pero no uses *rebase* con *commits* que hacen parte de un *pull request*.
 
-## Writing commit messages
+## Escribiendo mensajes de *commits*
 
-Use the Git commit message to communicate with other contributors --
-both the people working on the project now
-who are reviewing your changes,
-and people who join the project in the future
-who will need to understand what you changed and why.
+Usa el mensaje de *commits* de Git para comunicarte con otros colaboradores:
+tanto con las personas que están trabajando en el proyecto ahora
+—quienes están revisando tus cambios—,
+como con las personas que se unan al proyecto en el futuro,
+quienes necesitarán entender qué has cambiado y por qué.
 
-Every commit starts with a one-sentence summary.
-The summary usually fits in 50 characters,
-but it's ok to exceed that amount occasionally
-if rewriting for brevity would make it too hard to read.
-If it's hard to write a good summary,
-try breaking your changes into multiple smaller commits.
+Cada *commit* comienza con un resumen de una frase.
+El resumen suele caber en 50 caracteres,
+pero está bien exceder esa cantidad de vez en cuando
+si reescribirlo por brevedad lo hace demasiado difícil de leer.
+Si te resulta difícil escribir un buen resumen,
+intenta dividir los cambios en varios *commits* más pequeños.
 
-If you can't explain the commit entirely in its summary,
-skip one line and add additional information.
-This additional information includes information like
-the reasons for the change,
-the approach you took when making it,
-alternatives you considered,
-and a summary of what you changed.
-Hard wrap these lines at 72 characters
-and leave a blank line between paragraphs.
-The body of a commit is plain text,
-not markdown like the content of the book.
+Si no puedes explicar el *commit* por completo en su resumen,
+sáltate una línea y añade información adicional.
+Esta información adicional incluye detalles como
+las razones del cambio,
+el enfoque que adoptaste al realizarlo,
+las alternativas que consideraste,
+y un resumen de lo que cambiaste.
+Aplica un *hard wrap* de 72 caracteres a estas líneas
+y deja una línea en blanco entre párrafos.
+El cuerpo de un *commit* es texto plano,
+no *markdown* como el contenido del libro.
 
-Following these formatting conventions in your commit
-makes it easier to read
-in places like the output from `git` and notification emails.
-Most text editors can help you write a commit message
-by marking lines that are too long
-and hard wrapping text automatically.
+Seguir estas convenciones de formato en tu *commit*
+facilita su legibilidad
+en lugares como el *output* de `git`
+y en correos electrónicos de notificaciones.
+La mayoría de los editores de texto
+pueden ayudarte a escribir un mensaje para un *commit*
+marcando las líneas que son demasiado largas
+y aplicando *hard wrap* al texto automáticamente.
 
-## Submitting a pull request
+## Enviando un *pull request*
 
-Use the following steps when creating a new pull request:
+Sigue los siguientes pasos al crear un nuevo *pull request*:
 
-1. Test that your changes build locally by running `docc preview TSPL.docc`.
-2. Create a pull request in this repository.
-3. Write a brief message in the pull request to introduce your work in context.
+1. Comprueba que tus cambios se compilan localmente ejecutando `docc preview TSPL.docc`.
+2. Crea un *pull request* en este repositorio.
+3. Escribe un breve mensaje en el *pull request* para presentar tu trabajo en contexto.
 
-Within a few days,
-someone will assign reviewers and start a build in CI.
+En unos días
+alguien asignará revisores e iniciará una compilación en CI.
 
-During the review of the pull request,
-add new commits on your branch to incorporate feedback,
-but don’t rebase or force push.
-Rewriting the branch's history
-makes it hard for reviewers to see
-what changed since the last time they reviewed your changes.
-If there are merge conflicts,
-merge `main` into your branch or use the GitHub web UI
-to resolve the conflicts when accepting the pull request.
+Durante la revisión del *pull request*,
+añade nuevos *commits* en tu rama para incorporar la retroalimentación,
+pero no uses *rebase* o *force push*.
+Reescribir la historia de la rama
+hace que sea difícil para los revisores ver
+qué cambió desde la última vez que revisaron tus cambios.
+Si hay *merge conflicts*,
+incorpora (*merge*) `main` en tu rama o usa la interfaz web de GitHub
+para resolver los conflictos al aceptar el *pull request*.
 
-After a pull request is merged, delete the feature branch.
+Una vez que un *pull request* haya sido incorporado (*merged*),
+elimina la rama *feature*.

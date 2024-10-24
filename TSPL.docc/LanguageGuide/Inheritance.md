@@ -1,4 +1,4 @@
-# Inheritance
+# Herencia
 
 Subclass to add or override functionality.
 
@@ -22,7 +22,7 @@ in order to be notified when the value of a property changes.
 Property observers can be added to any property,
 regardless of whether it was originally defined as a stored or computed property.
 
-## Defining a Base Class
+## Definición de una clase base
 
 Any class that doesn't inherit from another class is known as a *base class*.
 
@@ -107,7 +107,7 @@ but isn't much use in itself.
 To make it more useful,
 you need to refine it to describe more specific kinds of vehicles.
 
-## Subclassing
+## Creación de subclases
 
 *Subclassing* is the act of basing a new class on an existing class.
 The subclass inherits characteristics from the existing class, which you can then refine.
@@ -249,7 +249,7 @@ print("Tandem: \(tandem.description)")
   ```
 -->
 
-## Overriding
+## Sustituciones (Overriding)
 
 A subclass can provide its own custom implementation of
 an instance method, type method, instance property, type property, or subscript
@@ -269,7 +269,7 @@ to check that your overriding class's superclass (or one of its parents)
 has a declaration that matches the one you provided for the override.
 This check ensures that your overriding definition is correct.
 
-### Accessing Superclass Methods, Properties, and Subscripts
+### Acceso a métodos, propiedades, y subíndices de superclases
 
 When you provide a method, property, or subscript override for a subclass,
 it's sometimes useful to use the existing superclass implementation
@@ -288,7 +288,7 @@ by using the `super` prefix:
 - An overridden subscript for `someIndex` can access the superclass version of the same subscript
   as `super[someIndex]` from within the overriding subscript implementation.
 
-### Overriding Methods
+### Sustitución de métodos
 
 You can override an inherited instance or type method
 to provide a tailored or alternative implementation of the method within your subclass.
@@ -335,14 +335,14 @@ train.makeNoise()
   ```
 -->
 
-### Overriding Properties
+### Sustitución de propiedades
 
 You can override an inherited instance or type property
 to provide your own custom getter and setter for that property,
 or to add property observers to enable the overriding property
 to observe when the underlying property value changes.
 
-#### Overriding Property Getters and Setters
+#### Sustitución de *getters* y *setters* de propiedades
 
 You can provide a custom getter (and setter, if appropriate)
 to override *any* inherited property,
@@ -424,12 +424,12 @@ print("Car: \(car.description)")
   ```
 -->
 
-#### Overriding Property Observers
+#### Sustitución de observadores de propiedades
 
 You can use property overriding to add property observers to an inherited property.
 This enables you to be notified when the value of an inherited property changes,
 regardless of how that property was originally implemented.
-For more information on property observers, see <doc:Properties#Property-Observers>.
+For more information on property observers, see <doc:Properties#Observadores-de-propiedades>.
 
 > Note: You can't add property observers to
 > inherited constant stored properties or inherited read-only computed properties.
@@ -498,7 +498,7 @@ print("AutomaticCar: \(automatic.description)")
   ```
 -->
 
-## Preventing Overrides
+## Prevención de sustituciones
 
 You can prevent a method, property, or subscript from being overridden
 by marking it as *final*.
@@ -607,16 +607,16 @@ Any attempt to subclass a final class is reported as a compile-time error.
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 -->
 
-> Beta Software:
+> Software Beta:
 >
-> This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+> Esta documentación contiene información preliminar sobre una API o tecnología en desarrollo. Esta información está sujeta a cambios, y todo software implementado en conformidad con esta documentación debe ser testeado con el software final del sistema operativo.
 >
-> Learn more about using [Apple's beta software](https://developer.apple.com/support/beta-software/).
+> Conoce más acerca del uso del [software beta de Apple](https://developer.apple.com/es/support/beta-software/).
 
 <!--
 This source file is part of the Swift.org open source project
 
-Copyright (c) 2014 - 2022 Apple Inc. and the Swift project authors
+Copyright (c) 2014 - 2023 Apple Inc. and the Swift project authors
 Licensed under Apache License v2.0 with Runtime Library Exception
 
 See https://swift.org/LICENSE.txt for license information

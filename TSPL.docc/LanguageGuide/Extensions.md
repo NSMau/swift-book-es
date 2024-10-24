@@ -1,4 +1,4 @@
-# Extensions
+# Extensiones
 
 Add functionality to an existing type.
 
@@ -22,7 +22,7 @@ Extensions in Swift can:
 In Swift,
 you can even extend a protocol to provide implementations of its requirements
 or add additional functionality that conforming types can take advantage of.
-For more details, see <doc:Protocols#Protocol-Extensions>.
+For more details, see <doc:Protocols#Extensión-de-protocolos>.
 
 > Note: Extensions can add new functionality to a type,
 > but they can't override existing functionality.
@@ -75,7 +75,7 @@ For more details, see <doc:Protocols#Protocol-Extensions>.
   ```
 -->
 
-## Extension Syntax
+## Sintaxis de una extensión
 
 Declare extensions with the `extension` keyword:
 
@@ -120,18 +120,18 @@ extension SomeType: SomeProtocol, AnotherProtocol {
 -->
 
 Adding protocol conformance in this way is described in
-<doc:Protocols#Adding-Protocol-Conformance-with-an-Extension>.
+<doc:Protocols#Agregar-conformidad-protocolaria-mediante-una-extensión>.
 
 An extension can be used to extend an existing generic type,
-as described in <doc:Generics#Extending-a-Generic-Type>.
+as described in <doc:Generics#Extendiendo-un-tipo-genérico>.
 You can also extend a generic type to conditionally add functionality,
-as described in <doc:Generics#Extensions-with-a-Generic-Where-Clause>.
+as described in <doc:Generics#Extensiones-con-una-cláusula-where-genérica>.
 
 > Note: If you define an extension to add new functionality to an existing type,
 > the new functionality will be available on all existing instances of that type,
 > even if they were created before the extension was defined.
 
-## Computed Properties
+## Propiedades computadas
 
 Extensions can add computed instance properties and computed type properties to existing types.
 This example adds five computed instance properties to Swift's built-in `Double` type,
@@ -232,7 +232,7 @@ print("A marathon is \(aMarathon) meters long")
   TODO: change this example to something more advisable / less contentious.
 -->
 
-## Initializers
+## Inicializadores
 
 Extensions can add new initializers to existing types.
 This enables you to extend other types to accept
@@ -252,7 +252,7 @@ you can call the default initializer and memberwise initializer for that value t
 from within your extension's initializer.
 This wouldn't be the case if you had written the initializer
 as part of the value type's original implementation,
-as described in <doc:Initialization#Initializer-Delegation-for-Value-Types>.
+as described in <doc:Initialization#Delegación-de-inicializadores-para-tipos-de-valor>.
 
 If you use an extension to add an initializer to a structure
 that was declared in another module,
@@ -295,7 +295,7 @@ struct Rect {
 
 Because the `Rect` structure provides default values for all of its properties,
 it receives a default initializer and a memberwise initializer automatically,
-as described in <doc:Initialization#Default-Initializers>.
+as described in <doc:Initialization#Inicializadores-predeterminados>.
 These initializers can be used to create new `Rect` instances:
 
 ```swift
@@ -368,7 +368,7 @@ let centerRect = Rect(center: Point(x: 4.0, y: 4.0),
 > you are still responsible for making sure that each instance is fully initialized
 > once the initializer completes.
 
-## Methods
+## Métodos
 
 Extensions can add new instance methods and type methods to existing types.
 The following example adds a new instance method called `repetitions` to the `Int` type:
@@ -426,7 +426,7 @@ to perform a task that many number of times:
   ```
 -->
 
-### Mutating Instance Methods
+### Métodos de instancia modificadores
 
 Instance methods added with an extension can also modify (or *mutate*) the instance itself.
 Structure and enumeration methods that modify `self` or its properties
@@ -463,7 +463,7 @@ someInt.square()
   ```
 -->
 
-## Subscripts
+## Subíndices
 
 Extensions can add new subscripts to an existing type.
 This example adds an integer subscript to Swift's built-in `Int` type.
@@ -570,7 +570,7 @@ as if the number had been padded with zeros to the left:
   Tracking bug is <rdar://problem/35301593>
 -->
 
-## Nested Types
+## Tipos anidados
 
 Extensions can add new nested types to existing classes, structures, and enumerations:
 
@@ -682,16 +682,16 @@ and prints an appropriate description.
 > can be written in shorthand form inside the `switch` statement,
 > such as `.negative` rather than `Int.Kind.negative`.
 
-> Beta Software:
+> Software Beta:
 >
-> This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+> Esta documentación contiene información preliminar sobre una API o tecnología en desarrollo. Esta información está sujeta a cambios, y todo software implementado en conformidad con esta documentación debe ser testeado con el software final del sistema operativo.
 >
-> Learn more about using [Apple's beta software](https://developer.apple.com/support/beta-software/).
+> Conoce más acerca del uso del [software beta de Apple](https://developer.apple.com/es/support/beta-software/).
 
 <!--
 This source file is part of the Swift.org open source project
 
-Copyright (c) 2014 - 2022 Apple Inc. and the Swift project authors
+Copyright (c) 2014 - 2023 Apple Inc. and the Swift project authors
 Licensed under Apache License v2.0 with Runtime Library Exception
 
 See https://swift.org/LICENSE.txt for license information

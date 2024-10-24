@@ -1,4 +1,4 @@
-# Initialization
+# Inicialización
 
 Set the initial values for a type's stored properties and perform one-time setup.
 
@@ -19,7 +19,7 @@ Instances of class types can also implement a *deinitializer*,
 which performs any custom cleanup just before an instance of that class is deallocated.
 For more information about deinitializers, see <doc:Deinitialization>.
 
-## Setting Initial Values for Stored Properties
+## Asignación de valores iniciales para propiedades almacenadas
 
 Classes and structures *must* set all of their stored properties
 to an appropriate initial value by the time
@@ -35,7 +35,7 @@ These actions are described in the following sections.
 > the value of that property is set directly,
 > without calling any property observers.
 
-### Initializers
+### Inicializadores
 
 *Initializers* are called to create a new instance of a particular type.
 In its simplest form, an initializer is like an instance method with no parameters,
@@ -96,7 +96,7 @@ The structure defines a single initializer, `init`, with no parameters,
 which initializes the stored temperature with a value of `32.0`
 (the freezing point of water in degrees Fahrenheit).
 
-### Default Property Values
+### Valores predeterminados de propiedades
 
 You can set the initial value of a stored property from within an initializer,
 as shown above.
@@ -135,14 +135,14 @@ struct Fahrenheit {
   ```
 -->
 
-## Customizing Initialization
+## Personalización de la inicialización
 
 You can customize the initialization process
 with input parameters and optional property types,
 or by assigning constant properties during initialization,
 as described in the following sections.
 
-### Initialization Parameters
+### Parámetros de inicialización
 
 You can provide *initialization parameters* as part of an initializer's definition,
 to define the types and names of values that customize the initialization process.
@@ -207,7 +207,7 @@ and store this value in a property called `temperatureInCelsius`.
   to show they can help you to get multiple initializers "for free" (after a fashion).
 -->
 
-### Parameter Names and Argument Labels
+### Nombres de parámetros y etiquetas de argumentos
 
 As with function and method parameters,
 initialization parameters can have both a parameter name
@@ -311,14 +311,14 @@ let veryGreen = Color(0.0, 1.0, 0.0)
   ```
 -->
 
-### Initializer Parameters Without Argument Labels
+### Parámetros de inicialización sin etiquetas de argumentos
 
 If you don't want to use an argument label for an initializer parameter,
 write an underscore (`_`) instead of an explicit argument label for that parameter
 to override the default behavior.
 
 Here's an expanded version of the `Celsius` example
-from <doc:Initialization#Initialization-Parameters> above,
+from <doc:Initialization#Parámetros-de-inicialización> above,
 with an additional initializer to create a new `Celsius` instance
 from a `Double` value that's already in the Celsius scale:
 
@@ -366,7 +366,7 @@ without the need for an argument label.
 It's therefore appropriate to write this initializer as `init(_ celsius: Double)`
 so that it can be called by providing an unnamed `Double` value.
 
-### Optional Property Types
+### Tipos de propiedades opcionales
 
 If your custom type has a stored property that's logically allowed to have “no value” ---
 perhaps because its value can't be set during initialization,
@@ -423,7 +423,7 @@ or “optional `String`”.
 It's automatically assigned a default value of `nil`, meaning “no string yet”,
 when a new instance of `SurveyQuestion` is initialized.
 
-### Assigning Constant Properties During Initialization
+### Asignación de propiedades constantes durante la inicialización
 
 You can assign a value to a constant property
 at any point during initialization,
@@ -524,7 +524,7 @@ beetsQuestion.response = "I also like beets. (But not with cheese.)"
   ```
 -->
 
-## Default Initializers
+## Inicializadores predeterminados
 
 Swift provides a *default initializer*
 for any structure or class
@@ -585,7 +585,7 @@ to create a new instance of the class with initializer syntax,
 written as `ShoppingListItem()`,
 and assigns this new instance to a variable called `item`.
 
-### Memberwise Initializers for Structure Types
+### Inicializadores a nivel de miembro para tipos de estructura
 
 Structure types automatically receive a *memberwise initializer*
 if they don't define any of their own custom initializers.
@@ -671,7 +671,7 @@ print(zeroByZero.width, zeroByZero.height)
   ```
 -->
 
-## Initializer Delegation for Value Types
+## Delegación de inicializadores para tipos de valor
 
 Initializers can call other initializers to perform part of an instance's initialization.
 This process, known as *initializer delegation*,
@@ -688,7 +688,7 @@ as described in <doc:Inheritance>.
 This means that classes have additional responsibilities for ensuring that
 all stored properties they inherit are assigned a suitable value during initialization.
 These responsibilities are described in
-<doc:Initialization#Class-Inheritance-and-Initialization> below.
+<doc:Initialization#Herencide-de-clases-e-inicialización> below.
 
 For value types, you use `self.init` to refer to other initializers
 from the same value type when writing your own custom initializers.
@@ -861,7 +861,7 @@ that already provides exactly that functionality.
 > the `init()` and `init(origin:size:)` initializers yourself,
 > see <doc:Extensions>.
 
-## Class Inheritance and Initialization
+## Herencia de clases e inicialización
 
 All of a class's stored properties ---
 including any properties the class inherits from its superclass ---
@@ -871,7 +871,7 @@ Swift defines two kinds of initializers for class types
 to help ensure all stored properties receive an initial value.
 These are known as designated initializers and convenience initializers.
 
-### Designated Initializers and Convenience Initializers
+### Inicializadores designados e inicializadores de conveniencia
 
 *Designated initializers* are the primary initializers for a class.
 A designated initializer fully initializes all properties introduced by that class
@@ -886,7 +886,7 @@ and through which the initialization process continues up the superclass chain.
 Every class must have at least one designated initializer.
 In some cases, this requirement is satisfied
 by inheriting one or more designated initializers from a superclass,
-as described in <doc:Initialization#Automatic-Initializer-Inheritance> below.
+as described in <doc:Initialization#Herencia-automática-de-inicializadores> below.
 
 *Convenience initializers* are secondary, supporting initializers for a class.
 You can define a convenience initializer to call a designated initializer
@@ -899,7 +899,7 @@ You don't have to provide convenience initializers if your class doesn't require
 Create convenience initializers whenever a shortcut to a common initialization pattern
 will save time or make initialization of the class clearer in intent.
 
-### Syntax for Designated and Convenience Initializers
+### Sintaxis para inicializadores designados y de conveniencia
 
 Designated initializers for classes are written in the same way as
 simple initializers for value types:
@@ -920,7 +920,7 @@ convenience init(<#parameters#>) {
 }
 ```
 
-### Initializer Delegation for Class Types
+### Delegación de inicializadores para tipos de clase
 
 To simplify the relationships between designated and convenience initializers,
 Swift applies the following three rules for delegation calls between initializers:
@@ -968,7 +968,7 @@ simplifying the interrelationships among classes in the chain:
 
 ![](initializerDelegation02)
 
-### Two-Phase Initialization
+### Inicialización de dos fases
 
 Class initialization in Swift is a two-phase process.
 In the first phase, each stored property is assigned an initial value
@@ -1091,7 +1091,7 @@ Finally, once the subclass's designated initializer is finished,
 the convenience initializer that was originally called
 can perform additional customization.
 
-### Initializer Inheritance and Overriding
+### Herencia y sustitución de inicializadores
 
 Unlike subclasses in Objective-C,
 Swift subclasses don't inherit their superclass initializers by default.
@@ -1102,7 +1102,7 @@ that isn't fully or correctly initialized.
 
 > Note: Superclass initializers *are* inherited in certain circumstances,
 > but only when it's safe and appropriate to do so.
-> For more information, see <doc:Initialization#Automatic-Initializer-Inheritance> below.
+> For more information, see <doc:Initialization#Herencia-automática-de-inicializadores> below.
 
 If you want a custom subclass to present
 one or more of the same initializers as its superclass,
@@ -1112,7 +1112,7 @@ When you write a subclass initializer that matches a superclass *designated* ini
 you are effectively providing an override of that designated initializer.
 Therefore, you must write the `override` modifier before the subclass's initializer definition.
 This is true even if you are overriding an automatically provided default initializer,
-as described in <doc:Initialization#Default-Initializers>.
+as described in <doc:Initialization#Inicializadores-predeterminados>.
 
 As with an overridden property, method or subscript,
 the presence of the `override` modifier prompts Swift to check that
@@ -1174,7 +1174,7 @@ and validates that the parameters for your overriding initializer have been spec
 
 Conversely, if you write a subclass initializer that matches a superclass *convenience* initializer,
 that superclass convenience initializer can never be called directly by your subclass,
-as per the rules described above in <doc:Initialization#Initializer-Delegation-for-Class-Types>.
+as per the rules described above in <doc:Initialization#Delegación-de-inicializadores-para-tipos-de-clase>.
 Therefore, your subclass is not (strictly speaking) providing an override of the superclass initializer.
 As a result, you don't write the `override` modifier when providing
 a matching implementation of a superclass convenience initializer.
@@ -1252,7 +1252,7 @@ class Vehicle {
 The `Vehicle` class provides a default value for its only stored property,
 and doesn't provide any custom initializers itself.
 As a result, it automatically receives a default initializer,
-as described in <doc:Initialization#Default-Initializers>.
+as described in <doc:Initialization#Inicializadores-predeterminados>.
 The default initializer (when available) is always a designated initializer for a class,
 and can be used to create a new `Vehicle` instance with a `numberOfWheels` of `0`:
 
@@ -1430,7 +1430,7 @@ print("Hoverboard: \(hoverboard.description)")
   ```
 -->
 
-### Automatic Initializer Inheritance
+### Herencia automática de inicializadores
 
 As mentioned above,
 subclasses don't inherit their superclass initializers by default.
@@ -1469,7 +1469,7 @@ These rules apply even if your subclass adds further convenience initializers.
   When is this? Either way, I need to mention it in here.
 -->
 
-### Designated and Convenience Initializers in Action
+### Inicializadores designados y de conveniencia en acción
 
 The following example shows designated initializers, convenience initializers,
 and automatic initializer inheritance in action.
@@ -1611,7 +1611,7 @@ which is the only new property introduced by `RecipeIngredient`.
 After doing so, the initializer delegates up to
 the `init(name: String)` initializer of the `Food` class.
 This process satisfies safety check 1
-from <doc:Initialization#Two-Phase-Initialization> above.
+from <doc:Initialization#Inicialización-de-dos-fases> above.
 
 `RecipeIngredient` also defines a convenience initializer, `init(name: String)`,
 which is used to create a `RecipeIngredient` instance by name alone.
@@ -1628,7 +1628,7 @@ The `init(name: String)` convenience initializer provided by `RecipeIngredient`
 takes the same parameters as the `init(name: String)` *designated* initializer from `Food`.
 Because this convenience initializer overrides a designated initializer from its superclass,
 it must be marked with the `override` modifier
-(as described in <doc:Initialization#Initializer-Inheritance-and-Overriding>).
+(as described in <doc:Initialization#Herencia-y-sustitución-de-inicializadores>).
 
 Even though `RecipeIngredient` provides
 the `init(name: String)` initializer as a convenience initializer,
@@ -1778,7 +1778,7 @@ shows that their default states have been set as expected.
   through these inherited initializers.
 -->
 
-## Failable Initializers
+## Inicializadores falibles
 
 It's sometimes useful to define a class, structure, or enumeration
 for which initialization can fail.
@@ -1963,7 +1963,7 @@ if anonymousCreature == nil {
 > To model this restriction,
 > the failable initializer triggers an initialization failure if an empty string is found.
 
-### Failable Initializers for Enumerations
+### Inicializadores falibles para enumeraciones
 
 You can use a failable initializer to select an appropriate enumeration case
 based on one or more parameters.
@@ -2052,7 +2052,7 @@ if unknownUnit == nil {
   ```
 -->
 
-### Failable Initializers for Enumerations with Raw Values
+### Inicializadores falibles para enumeraciones con valores brutos
 
 Enumerations with raw values automatically receive a failable initializer,
 `init?(rawValue:)`,
@@ -2104,7 +2104,7 @@ if unknownUnit == nil {
   ```
 -->
 
-### Propagation of Initialization Failure
+### Propagación de fallas de inicialización
 
 A failable initializer of a class, structure, or enumeration
 can delegate across to another failable initializer from the same class, structure, or enumeration.
@@ -2297,7 +2297,7 @@ if let oneUnnamed = CartItem(name: "", quantity: 1) {
   ```
 -->
 
-### Overriding a Failable Initializer
+### Sustitución de un inicializador falible
 
 You can override a superclass failable initializer in a subclass,
 just like any other initializer.
@@ -2454,7 +2454,7 @@ However, because it's called with a string constant,
 you can see that the initializer won't fail,
 so no runtime error can occur in this case.
 
-### The init! Failable Initializer
+### El inicializador falible init!
 
 You typically define a failable initializer
 that creates an optional instance of the appropriate type
@@ -2642,7 +2642,7 @@ if the `init!` initializer causes initialization to fail.
   ```
 -->
 
-## Required Initializers
+## Inicializadores obligatorios
 
 Write the `required` modifier before the definition of a class initializer
 to indicate that every subclass of the class must implement that initializer:
@@ -2797,7 +2797,7 @@ class SomeSubclass: SomeClass {
   See the corresponding FIXME in the Protocols chapter introduction too.
 -->
 
-## Setting a Default Property Value with a Closure or Function
+## Asignación de un valor predeterminado a una propiedad mediante una clausura o función
 
 If a stored property's default value requires some customization or setup,
 you can use a closure or global function to provide
@@ -2954,16 +2954,16 @@ print(board.squareIsBlackAt(row: 7, column: 7))
   ```
 -->
 
-> Beta Software:
+> Software Beta:
 >
-> This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+> Esta documentación contiene información preliminar sobre una API o tecnología en desarrollo. Esta información está sujeta a cambios, y todo software implementado en conformidad con esta documentación debe ser testeado con el software final del sistema operativo.
 >
-> Learn more about using [Apple's beta software](https://developer.apple.com/support/beta-software/).
+> Conoce más acerca del uso del [software beta de Apple](https://developer.apple.com/es/support/beta-software/).
 
 <!--
 This source file is part of the Swift.org open source project
 
-Copyright (c) 2014 - 2022 Apple Inc. and the Swift project authors
+Copyright (c) 2014 - 2023 Apple Inc. and the Swift project authors
 Licensed under Apache License v2.0 with Runtime Library Exception
 
 See https://swift.org/LICENSE.txt for license information
